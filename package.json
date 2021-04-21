@@ -1,0 +1,41 @@
+{
+  "name": "viva-terlingua",
+  "description": "Tolbert's Chili Cook Off website",
+  "version": "0.1.2",
+  "author": "Andrew Riefenstahl",
+  "dependencies": {
+    "gatsby": "^2.32.9",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-resolve-src": "^2.1.0",
+    "gatsby-plugin-sass": "^3.2.0",
+    "gatsby-source-filesystem": "^2.11.1",
+    "node-sass": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "gatsby",
+    "sass",
+    "scss"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "develop": "gatsby develop",
+    "lint": "Get started linting your code with Eslint and stylelint",
+    "format": "Get started formatting your code with Eslint, Prettier, and stylelint",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "test": "echo 'Write tests! -> https://gatsby.dev/unit-testing'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colbyfayock/gatsby-starter-sass"
+  },
+  "bugs": {
+    "url": "https://github.com/colbyfayock/gatsby-starter-sass/issues"
+  }
+}
