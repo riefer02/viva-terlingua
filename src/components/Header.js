@@ -1,21 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
-import Container from "components/Container";
+import NavBar from "components/NavBar";
 
 const Header = () => {
   return (
-    <header>
-      <Container>
-        <p>My Gatsby Site</p>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2/">Page 2</Link>
-          </li>
-        </ul>
-      </Container>
+    <header className="shadow-lg">
+      <div className="container mx-auto">
+        <p>Terlingua Chili Cook Off</p>
+        <NavBar />
+      </div>
     </header>
   );
 };

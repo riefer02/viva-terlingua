@@ -1,0 +1,74 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+// PSEUDO-CLASS ANIMATIONS
+.slider-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-text {
+  position: relative;
+  transition: 0.5s;
+}
+
+.slider-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 55px;
+  background-color: $color-primary;
+  transform: translate(-110%, 0) skew(-30deg);
+  transition: 0.5s;
+}
+
+.slider-bg:hover .slider-text {
+  color: $color-white;
+}
+
+.slider-bg:hover::before {
+  transform: translate(-5%, 0) skew(-15deg);
+}

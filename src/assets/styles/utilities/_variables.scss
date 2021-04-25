@@ -1,0 +1,32 @@
+// COLOR: Chili Color Palette
+$color-primary: #e74853;
+$color-primary-light: scale-color($color-primary, $lightness: 20%);
+$color-primary-dark: scale-color($color-primary, $lightness: -20%);
+
+$color-secondary: #46747c;
+$color-secondary-light: scale-color($color-secondary, $lightness: 20%);
+$color-secondary-dark: scale-color($color-secondary, $lightness: -20%);
+
+$color-tertiary: #ece5e3;
+$color-tertiary-light: scale-color($color-tertiary, $lightness: 20%);
+$color-tertiary-dark: scale-color($color-tertiary, $lightness: -20%);
+
+$color-brown: #946258;
+
+$color-purple-light: #c5b8cd;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+
+$primary-font-family: "Lato", sans-serif;
+$secondary-font-family: "Merriweather", serif;
