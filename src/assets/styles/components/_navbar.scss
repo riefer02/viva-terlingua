@@ -14,6 +14,12 @@
   float: left;
   overflow: hidden;
   height: auto;
+  transition: all 0.3s;
+
+  &:hover > .dropdown-content > .mega-menu__row {
+    opacity: 1;
+    height: auto;
+  }
 }
 
 /* Dropdown button */
@@ -35,12 +41,12 @@
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
   width: 100%;
-  height: min-content;
   left: 0;
   z-index: 1;
+  height: 1px;
 }
 
 /* Show the dropdown menu on hover */
@@ -70,6 +76,13 @@
 }
 
 /* Clear floats after the columns */
+.mega-menu__row {
+  overflow: hidden;
+  transition: all 0.2s;
+  opacity: 0;
+  height: 1px;
+}
+
 .mega-menu__row:after {
   content: "";
   display: table;
