@@ -5,7 +5,7 @@
 .navbar__item {
   height: 100%;
   padding: 0 16px;
-  font-size: 16px;
+  font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
 }
@@ -46,7 +46,7 @@
   width: 100%;
   left: 0;
   z-index: 1;
-  height: 1px;
+  height: 0px;
 }
 
 /* Show the dropdown menu on hover */
@@ -80,7 +80,7 @@
   overflow: hidden;
   transition: all 0.2s;
   opacity: 0;
-  height: 1px;
+  height: 0px;
 }
 
 .mega-menu__row:after {

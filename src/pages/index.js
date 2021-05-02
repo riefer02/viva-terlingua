@@ -5,6 +5,7 @@ import Layout from "components/Layout";
 import Container from "components/Container";
 import Checkout from "components/Checkout";
 import SEO from "components/SEO";
+import Marquee from "components/Marquee";
 
 import img_gatsby from "assets/images/gatsby-astronaut.png";
 
@@ -15,6 +16,7 @@ const IndexPage = () => {
       <Helmet>
         <title>Home Page</title>
       </Helmet>
+      <Marquee />
       <Container>
         <p className="gatsby-astronaut">
           <img src={img_gatsby} alt="Build with Gatsby!" />

@@ -17,93 +17,93 @@ export default function NavBar() {
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Chili Cook Off</h3>
               <div className="mega-menu__list">
-                <a className="mega-menu__item slider-bg">
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>
-                <a className="mega-menu__item slider-bg">
+                </Link>
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
+                </Link>{" "}
               </div>
             </div>
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Music</h3>
               <div className="mega-menu__list">
-                <a className="mega-menu__item slider-bg">
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
+                </Link>{" "}
               </div>
             </div>
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Resources</h3>
               <div className="mega-menu__list">
-                <a className="mega-menu__item slider-bg">
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
+                </Link>{" "}
               </div>
             </div>
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Sponsors</h3>
               <div className="mega-menu__list">
-                <a className="mega-menu__item slider-bg">
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
-                <a className="mega-menu__item slider-bg">
+                </Link>{" "}
+                <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
-                </a>{" "}
+                </Link>{" "}
               </div>
             </div>
           </div>

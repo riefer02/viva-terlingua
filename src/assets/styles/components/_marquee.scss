@@ -1,0 +1,31 @@
+.marquee__container {
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  //   justify-content: center;
+}
+
+.marquee__body {
+  background-color: $color-primary-light;
+  background-position: cover;
+  height: 18.7rem;
+}
+
+.marquee__text-area {
+  display: inline-block;
+  position: relative;
+  left: 0%;
+  top: 70%;
+  //   transform: translate(-50%, -50%);
+  background-color: $color-secondary;
+  color: $color-white;
+  padding: 1rem 3rem;
+}
+
+.marquee__header-primary {
+  font-size: 4rem;
+}
+
+.marquee__header-secondary {
+  font-size: 3.5rem;
+}

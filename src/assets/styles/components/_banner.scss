@@ -1,0 +1,26 @@
+.banner {
+  background-color: $color-tertiary;
+}
+.banner__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.banner__message {
+  font-size: 1.5rem;
+  color: $color-primary;
+
+  & span {
+    color: $color-grey-dark;
+    text-decoration: underline;
+    font-style: italic;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-secondary-dark;
+    }
+  }
+}

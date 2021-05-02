@@ -26,5 +26,20 @@ module.exports = {
         allowList: ["STRIPE_API_KEY", "NODE_ENV"],
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.STRAPI_URL || "http://localhost:1337",
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`sponsors`, `users`],
+        singleTypes: [`home-page`],
+        loginData: {
+          identifier: process.env.STRAPI_IDENTIFIER,
+          password: process.env.STRAPI_PASSWORD,
+        },
+      },
+    },
   ],
 };
