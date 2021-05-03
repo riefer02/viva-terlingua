@@ -1,42 +1,66 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
 import Container from "components/Container";
 import Checkout from "components/Checkout";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
+import Quote from "components/Quote";
+import CardGallery from "components/CardGallery";
+import Feature from "components/Feature";
 
-import img_gatsby from "assets/images/gatsby-astronaut.png";
+const IndexPage = ({ data }) => {
+  const {
+    strapiHomePage: { title, content, marqueeImage },
+  } = data;
+  console.log(marqueeImage);
+  const image = getImage(marqueeImage);
 
-const IndexPage = () => {
+  const marqueeData = { title, marqueeImage };
+
   return (
     <Layout pageName="home">
       <SEO title="Home" keywords={[`terlingua`, `chili`, `cook`, "off"]} />
       <Helmet>
         <title>Home Page</title>
       </Helmet>
-      <Marquee />
+      <Marquee marquee={marqueeData} />
       <Container>
-        <p className="gatsby-astronaut">
-          <img src={img_gatsby} alt="Build with Gatsby!" />
-        </p>
-        <h1>Gatsby Sass Starter</h1>
-        <p>
-          <Checkout />
-        </p>
-        <p>Now go build something great.</p>
-        <h2>Still Getting Started?</h2>
-        <p>Run the following in your terminal!</p>
-        <pre>
-          <code>
-            gatsby new [directory]
-            https://github.com/colbyfayock/gatsby-starter-sass
-          </code>
-        </pre>
+        <Feature items={marqueeData} />
+        <Quote quote={content}></Quote>
+        <CardGallery />
+        <GatsbyImage
+          image={image}
+          alt="Hillside Journey!"
+          className="image__full-panel rounded-lg my-16 shadow-md"
+        />
+        <Checkout />
       </Container>
     </Layout>
   );
 };
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    strapiHomePage {
+      id
+      title
+      content {
+        author
+        text
+      }
+      marqueeImage {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+`;

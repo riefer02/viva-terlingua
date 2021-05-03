@@ -8,7 +8,9 @@
 .marquee__body {
   background-color: $color-primary-light;
   background-position: cover;
+
   height: 18.7rem;
+  @apply rounded-lg;
 }
 
 .marquee__text-area {

@@ -13,6 +13,9 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
+    `gatsby-plugin-image`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,19 +29,20 @@ module.exports = {
         allowList: ["STRIPE_API_KEY", "NODE_ENV"],
       },
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.STRAPI_URL || "http://localhost:1337",
         queryLimit: 1000, // Default to 100
-        contentTypes: [`sponsors`, `users`],
+        contentTypes: [`sponsors`, `users`, "quotes"],
         singleTypes: [`home-page`],
-        loginData: {
-          identifier: process.env.STRAPI_IDENTIFIER,
-          password: process.env.STRAPI_PASSWORD,
-        },
+      },
+    },
+    {
+      resolve: "gatsby-background-image-es5",
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: "/:",
       },
     },
   ],
