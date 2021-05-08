@@ -15,7 +15,6 @@ const IndexPage = ({ data }) => {
   const {
     strapiHomePage: { title, content, marqueeImage },
   } = data;
-  console.log(marqueeImage);
   const image = getImage(marqueeImage);
 
   const marqueeData = { title, marqueeImage };

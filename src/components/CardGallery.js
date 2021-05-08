@@ -12,6 +12,8 @@ function Card({ index }) {
             className="card-gallery__card-image block h-auto w-full"
             src="https://picsum.photos/600/400/?random"
             placeholder="blurred"
+            // imgStyle={{ width: "auto", height: `auto` }}
+            // style={{ width: "auto", height: `auto` }}
           />
         </Link>
         <div className="card-gallery__card-text-area shadow-md flex items-center justify-between leading-tight p-2 md:p-4">
