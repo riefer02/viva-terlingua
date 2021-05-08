@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image";
 
 export default function Feature({ items }) {
   return (
-    <div className="feature__container bg-indigo-200">
+    <div className="feature__container shadow-md">
       {/* Featured Full */}
       <BackgroundImage
         className="feature__full w-1/3"
@@ -19,14 +19,14 @@ export default function Feature({ items }) {
           <p className="feature__full-description-text">
             Feature Full Description
           </p>
-          <div className="feature__item-action">
-            <button className="feature__item-btn">Feature Full Action</button>
+          <div className="feature__full-action">
+            <button className="feature__full-btn">Feature Full Action</button>
           </div>
         </div>
       </BackgroundImage>
       {/* Featured List */}
-      {/* Featured Item */}
       <div className="feature__list w-2/3">
+      {/* Featured Item */}
         <div className="feature__item">
           <StaticImage
             src="https://picsum.photos/600/400/?random"
@@ -34,10 +34,14 @@ export default function Feature({ items }) {
             alt="random"
             className="feature__item-image"
           />
-          <h3 className="feature__item-title">Feature Title</h3>
-          <p className="feature__item-description">Feature Description</p>
-          <div className="feature__item-action">
-            <button className="feature__item-btn">Feature Action</button>
+          <div className="feature__item-group">
+            <div className="feature__item-group-details w-2/3 text-left">
+              <h3 className="feature__item-title">Feature Title</h3>
+              <p className="feature__item-description">Feature Description</p>
+            </div>
+            <div className=" w-1/3 feature__item-action">
+              <button className="feature__item-btn">Feature Action</button>
+            </div>
           </div>
         </div>
         {/* Featured Item */}
@@ -46,11 +50,16 @@ export default function Feature({ items }) {
             src="https://picsum.photos/600/400/?random"
             placeholder="blurred"
             alt="random"
+            className="feature__item-image"
           />
-          <h3 className="feature__item-title">Feature Title</h3>
-          <p className="feature__item-description">Feature Description</p>
-          <div className="feature__item-action">
-            <button className="feature__item-btn">Feature Action</button>
+          <div className="feature__item-group">
+            <div className="feature__item-group-details w-2/3 text-left">
+              <h3 className="feature__item-title">Feature Title</h3>
+              <p className="feature__item-description">Feature Description</p>
+            </div>
+            <div className=" w-1/3 feature__item-action">
+              <button className="feature__item-btn">Feature Action</button>
+            </div>
           </div>
         </div>
         {/* Featured Item */}
@@ -59,11 +68,16 @@ export default function Feature({ items }) {
             src="https://picsum.photos/600/400/?random"
             placeholder="blurred"
             alt="random"
+            className="feature__item-image"
           />
-          <h3 className="feature__item-title">Feature Title</h3>
-          <p className="feature__item-description">Feature Description</p>
-          <div className="feature__item-action">
-            <button className="feature__item-btn">Feature Action</button>
+          <div className="feature__item-group">
+            <div className=" feature__item-group-details w-2/3 text-left">
+              <h3 className="feature__item-title">Feature Title</h3>
+              <p className="feature__item-description">Feature Description</p>
+            </div>
+            <div className=" w-1/3 feature__item-action">
+              <button className="feature__item-btn">Feature Action</button>
+            </div>
           </div>
         </div>
       </div>

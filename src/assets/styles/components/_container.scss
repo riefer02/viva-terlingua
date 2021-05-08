@@ -1,3 +1,7 @@
 .container.section > * {
   margin: 3rem 0rem;
+
+  &:last-child {
+    margin: 0;
+  }
 }

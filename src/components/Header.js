@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <header className="shadow-md">
       <Banner />
-      <div className="container mx-auto">
-        <p>Terlingua Chili Cook Off</p>
+      <div className="header__container container mx-auto">
+        <p className="header__site-title">Terlingua Chili Cook Off</p>
         <NavBar />
       </div>
     </header>

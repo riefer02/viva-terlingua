@@ -1,11 +1,14 @@
 /* Navbar container */
 .navbar {
+  height: 100%;
 }
 
 .navbar__item {
+  display: flex;
+  align-items: center;
   height: 100%;
   padding: 0 16px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   text-decoration: none;
 }
@@ -13,7 +16,7 @@
 .navbar__dropdown {
   float: left;
   overflow: hidden;
-  height: auto;
+  height: 100%;
   transition: all 0.3s;
 
   &:hover > .dropdown-content > .mega-menu__row {
@@ -28,9 +31,6 @@
   margin: 0; /* Important for vertical align on mobile phones */
 }
 
-.dropbtn.navbar__item {
-  height: 100%;
-}
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
@@ -71,7 +71,7 @@
 }
 
 .mega-menu__category-header {
-  font-size: 1.8rem;
+  font-size: 2rem;
   padding: 0 1rem;
 }
 
@@ -96,10 +96,11 @@
   flex-direction: column;
   flex: 1;
   height: 150px;
+  padding: 0.8rem;
 }
 
 .mega-menu__item {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   float: none;
   color: $color-white;
   padding: 0 1rem 0;

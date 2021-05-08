@@ -1,5 +1,5 @@
 .marquee__container {
-  height: 25rem;
+  height: 43rem;
   display: flex;
   flex-direction: column;
   //   justify-content: center;
@@ -8,8 +8,9 @@
 .marquee__body {
   background-color: $color-primary-light;
   background-position: cover;
+  overflow: visible;
 
-  height: 18.7rem;
+  height: 100%;
   @apply rounded-lg;
 }
 
@@ -17,11 +18,14 @@
   display: inline-block;
   position: relative;
   left: 0%;
-  top: 70%;
+  top: -12%;
+  width: 50%;
+  margin: 0 auto;
   //   transform: translate(-50%, -50%);
   background-color: $color-secondary;
   color: $color-white;
   padding: 1rem 3rem;
+  clip-path: polygon(100% 0, 100% 87%, 50% 100%, 0 86%, 0 0);
 }
 
 .marquee__header-primary {
