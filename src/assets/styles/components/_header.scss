@@ -32,8 +32,9 @@ header {
   height: 5rem;
   display: flex;
   align-items: center;
+  font-family: $secondary-font-family;
 }
 
-.header__site-title{
+.header__site-title {
   font-size: 2.3rem;
 }

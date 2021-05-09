@@ -19,14 +19,14 @@ export default function Feature({ items }) {
           <p className="feature__full-description-text">
             Feature Full Description
           </p>
-          <div className="feature__full-action">
+          {/* <div className="feature__full-action">
             <button className="feature__full-btn">Feature Full Action</button>
-          </div>
+          </div> */}
         </div>
       </BackgroundImage>
       {/* Featured List */}
       <div className="feature__list w-2/3">
-      {/* Featured Item */}
+        {/* Featured Item */}
         <div className="feature__item">
           <StaticImage
             src="https://picsum.photos/600/400/?random"

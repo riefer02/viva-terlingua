@@ -1,5 +1,6 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
+import Sponsors from "components/Sponsors";
 
 export default function Marquee({ marquee }) {
   return (
@@ -17,12 +18,12 @@ export default function Marquee({ marquee }) {
             backgroundRepeat: "",
           }}
         >
-         
+          {" "}
+          <Sponsors />
         </BackgroundImage>
         <div className="marquee__text-area shadow-lg">
-            <div className="marquee__header-primary">{marquee.title}</div>
-            {/* <div className="marquee__header-secondary">Viva Terlingua!</div> */}
-          </div>
+          <div className="marquee__header-primary">{marquee.title}</div>
+        </div>
       </div>
     </div>
   );

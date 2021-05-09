@@ -6,17 +6,23 @@ import Layout from "components/Layout";
 import Container from "components/Container";
 // import Checkout from "components/Checkout";
 import SEO from "components/SEO";
-// import Marquee from "components/Marquee";
+import Marquee from "components/Marquee";
 // import Quote from "components/Quote";
 // import CardGallery from "components/CardGallery";
 // import Feature from "components/Feature";
 
 const EventTemplate = ({ data }) => {
   const {
-    strapiEvents: { title, description, startDateTime, endDateTime },
+    strapiEvents: {
+      title,
+      description,
+      startDateTime,
+      endDateTime,
+      marqueeImage,
+    },
   } = data;
   // const image = getImage(marqueeImage);
-  // const marqueeData = { title, marqueeImage };
+  const marqueeData = { title, marqueeImage };
 
   return (
     <Layout pageName="event">
@@ -24,7 +30,7 @@ const EventTemplate = ({ data }) => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      {/* <Marquee marquee={marqueeData} /> */}
+      <Marquee marquee={marqueeData} />
       <Container>
         <h1>{title}</h1>
         <h3>Start Time: {startDateTime}</h3>
@@ -46,7 +52,14 @@ export const pageQuery = graphql`
       id
       title
       startDateTime
-      marqueeImage
+      marqueeImage {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   }
 `;

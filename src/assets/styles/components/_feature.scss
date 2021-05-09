@@ -1,12 +1,25 @@
 .feature__container {
   display: flex;
   background-color: $color-tertiary-light;
-
+  font-family: $secondary-font-family;
 }
 
 .feature__full {
-  // margin-right: 1rem;
   margin: 2.4rem;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    & > .feature__full-description {
+      opacity: 1;
+      bottom: 0%;
+    }
+
+    & > .feature__full-banner {
+      background-color: $color-primary;
+      transform: translate(-6px) skew(-14deg, -0deg);
+    }
+  }
 
   &-banner {
     background-color: $color-primary-light;
@@ -16,16 +29,44 @@
     transform: skew(-14deg, -0deg);
     width: 75%;
     @apply shadow-md;
+    transition: all 0.2s ease-out;
 
     &-text {
-      font-size: 3rem;
+      font-size: 2.7rem;
       color: $color-white;
       transform: skew(14deg, 0deg);
     }
   }
-  
 }
 
+.feature__full {
+  &-description {
+    position: absolute;
+    width: 100%;
+    bottom: -6%;
+    left: 0;
+    background-color: rgba($color-tertiary-dark, 0.8);
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.2s ease-out;
+    font-family: $secondary-font-family;
+    padding: 1rem 0 2rem;
+    opacity: 0;
+  }
+
+  &-title {
+    font-size: 3rem;
+  }
+
+  &-description-text {
+    font-size: 2rem;
+    font-family: $primary-font-family;
+  }
+}
+
+// Feature List and Items
 .feature__list {
   display: flex;
   flex-direction: column;
@@ -42,6 +83,7 @@
   @apply shadow-md;
   background-color: $color-white;
   transition: all 0.2s;
+  color: $color-grey-dark-3;
 
   &:hover {
     background-color: $color-tertiary-dark;
@@ -54,10 +96,13 @@
 
   &-title {
     font-size: 3rem;
+    transition: all 0.2s;
   }
 
   &-description {
     font-size: 2rem;
+    font-family: $primary-font-family;
+    transition: all 0.2s;
   }
 
   &-action {
@@ -84,17 +129,21 @@
   flex: 1;
   justify-content: space-between;
   padding: 0.8rem;
-  
-  &-details {
-     padding-left: 1.5rem;
 
-     &:hover {
-       color: $color-white;
-     }
+  &-details {
+    padding-left: 1.5rem;
+
+    &:hover {
+      color: $color-white;
+    }
   }
 }
 
 .feature__item-image {
-height: 15rem;
-width: 20%;
+  height: 15rem;
+  width: 20%;
+
+  &:hover + .feature__item-group {
+    color: $color-white;
+  }
 }

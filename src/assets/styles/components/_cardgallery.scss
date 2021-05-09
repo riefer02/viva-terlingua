@@ -1,6 +1,9 @@
 .card-gallery__container {
 }
 
+.card-gallery__content {
+}
+
 .card-gallery__card {
   position: relative;
 
@@ -16,6 +19,7 @@
   background-color: $color-primary-light;
   color: $color-white;
   transform: skew(-14deg, -0deg);
+  font-family: $secondary-font-family;
 }
 .card-gallery__card-title {
   transform: skew(14deg, 0deg);

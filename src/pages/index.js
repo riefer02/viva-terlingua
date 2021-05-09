@@ -10,6 +10,7 @@ import Marquee from "components/Marquee";
 import Quote from "components/Quote";
 import CardGallery from "components/CardGallery";
 import Feature from "components/Feature";
+import TextDisplay from "components/TextDisplay.js";
 
 const IndexPage = ({ data }) => {
   const {
@@ -29,7 +30,10 @@ const IndexPage = ({ data }) => {
       <Container>
         <Feature items={marqueeData} />
         <Quote quote={content}></Quote>
+
         <CardGallery />
+
+        <TextDisplay />
         <GatsbyImage
           image={image}
           alt="Hillside Journey!"

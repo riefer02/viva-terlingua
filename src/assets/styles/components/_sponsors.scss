@@ -1,0 +1,19 @@
+.sponsors {
+  overflow: visible;
+
+  &__list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    margin: 0 auto;
+    padding: 2.5rem 0 0 0;
+  }
+  &__item {
+    width: 160px;
+    margin: 0 2.5rem;
+  }
+  &__logo {
+  }
+}

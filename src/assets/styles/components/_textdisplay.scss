@@ -1,0 +1,96 @@
+.text-display {
+  &__container {
+  }
+
+  &__content {
+    background-color: $color-tertiary-light;
+    padding: 2.5rem;
+    display: inline-block;
+    @apply shadow-md;
+    color: $color-grey-dark-3;
+
+    &-wrapper {
+      background-color: $color-white;
+      @apply shadow-md;
+      padding: 2rem 3.5rem 3.5rem;
+    }
+  }
+
+  &__author {
+    font-family: $secondary-font-family;
+    position: relative;
+    font-size: 2.7rem;
+    z-index: 2;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 60%;
+      right: -5%;
+      background-color: $color-secondary-light;
+      transform: skew(-14deg, 0deg);
+      opacity: 0.2;
+      height: 14px;
+      width: 110%;
+      z-index: 1;
+    }
+  }
+
+  &__date {
+    font-size: 2.2rem;
+    margin: 0 0 1.7rem 0;
+  }
+
+  &__tag {
+    display: inline-block;
+    margin: 0.5rem 1.9rem 3.7rem;
+    font-size: 2rem;
+    background-color: $color-tertiary-light;
+    color: $color-grey-dark-3;
+    padding: 0.2rem 0.9rem;
+    transform: skew(-14deg, -0deg);
+    @apply shadow-md;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateX(2px) skew(-14deg, -0deg);
+      background-color: $color-primary-light;
+      color: $color-white;
+    }
+
+    &-text {
+      transform: skew(14deg, 0deg);
+    }
+  }
+
+  &__text-area {
+    margin: 0 auto;
+    font-size: 2rem;
+    // width: 70ch;
+    line-height: 5rem;
+  }
+
+  &__actions {
+    margin: 3rem 1rem 1rem;
+  }
+
+  &__action-btn {
+    background-color: $color-primary-light;
+    padding: 0.8rem 1.4rem;
+    font-size: 1.8rem;
+    color: $color-white;
+    @apply shadow-md;
+    transition: all 0.2s;
+    transform: skew(-14deg, -0deg);
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+  }
+
+  &__action-text {
+    transform: skew(14deg, -0deg);
+  }
+}

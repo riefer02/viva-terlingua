@@ -11,13 +11,14 @@
   font-size: 1.8rem;
   text-align: center;
   text-decoration: none;
+  transition: all 0.2s;
 }
 
 .navbar__dropdown {
   float: left;
   overflow: hidden;
   height: 100%;
-  transition: all 0.3s;
+  transition: all 0.2s;
 
   &:hover > .dropdown-content > .mega-menu__row {
     opacity: 1;
@@ -30,7 +31,6 @@
   /* font: inherit;  Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
-
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
@@ -96,10 +96,11 @@
   flex-direction: column;
   flex: 1;
   height: 150px;
-  padding: 0.8rem;
+  padding: 0.8rem 0;
 }
 
 .mega-menu__item {
+  font-family: $primary-font-family;
   font-size: 1.8rem;
   float: none;
   color: $color-white;

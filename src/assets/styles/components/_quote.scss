@@ -1,9 +1,8 @@
 blockquote {
   font-size: 1.4em;
-  width: 70%;
+  width: 100%;
   margin: 50px auto;
-  font-family: Open Sans;
-  font-style: italic;
+  font-family: $secondary-font-family;
   color: #555555;
   padding: 1.2em 30px 1.2em 75px;
   border-left: 8px solid $color-primary-light;

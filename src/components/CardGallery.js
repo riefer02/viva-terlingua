@@ -35,7 +35,7 @@ export default function CardGallery() {
 
   return (
     <div className="card-gallery__container">
-      <div className="flex flex-wrap">{cardList()}</div>
+      <div className="card-gallery__content flex flex-wrap">{cardList()}</div>
     </div>
   );
 }
