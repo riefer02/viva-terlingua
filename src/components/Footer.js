@@ -4,9 +4,13 @@ import Container from "components/Container";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <Container>
-        <p>&copy; {new Date().getFullYear()}, My Gatsby Site</p>
+        <div className="footer__content">
+          <div className="footer__copyright">
+            &copy; {new Date().getFullYear()}, Viva Terlingua!
+          </div>
+        </div>
       </Container>
     </footer>
   );

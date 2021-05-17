@@ -8,6 +8,12 @@
   position: relative;
 
   &-content {
+    &:hover {
+      & > .card-gallery__card-text-area {
+        background-color: $color-primary;
+        transform: translateX(6px) skew(-14deg, -0deg);
+      }
+    }
   }
 }
 
@@ -20,6 +26,7 @@
   color: $color-white;
   transform: skew(-14deg, -0deg);
   font-family: $secondary-font-family;
+  transition: all 0.2s;
 }
 .card-gallery__card-title {
   transform: skew(14deg, 0deg);

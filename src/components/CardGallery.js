@@ -17,7 +17,7 @@ function Card({ index }) {
           />
         </Link>
         <div className="card-gallery__card-text-area shadow-md flex items-center justify-between leading-tight p-2 md:p-4">
-          <Link className="" to="/">
+          <Link className="card-gallery__card-link" to="/">
             <h2 className="card-gallery__card-title">Article Title</h2>
           </Link>
         </div>

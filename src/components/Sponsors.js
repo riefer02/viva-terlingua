@@ -37,9 +37,9 @@ export default function Sponsors() {
   return (
     <div className="sponsors">
       <div className="sponsors__list">
-        {sponsors.map((logo) => {
+        {sponsors.map((logo, index) => {
           return (
-            <div className="sponsors__item">
+            <div key={index} className="sponsors__item">
               <GatsbyImage
                 image={logo}
                 alt="sponsor"

@@ -8,6 +8,9 @@ module.exports = {
     description: `Official Webstite for the Frank X. Tolbert Terlingua Chili Cook Off`,
     author: `riefer02 - Andrew Riefenstahl`,
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-sass",
@@ -16,6 +19,7 @@ module.exports = {
     `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,7 +39,7 @@ module.exports = {
         apiURL: process.env.STRAPI_URL || `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`sponsors`, `users`, `quotes`, `events`],
-        singleTypes: [`home-page`],
+        singleTypes: [`home-page`, `tickets`],
       },
     },
     {

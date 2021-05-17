@@ -88,3 +88,10 @@ body {
     margin-bottom: 3rem;
   }
 }
+
+.p-lead {
+  font-size: 2rem;
+  @apply leading-normal;
+  margin-bottom: 1.6rem;
+  padding: 0.5rem 1rem;
+}
