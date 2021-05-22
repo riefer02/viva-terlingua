@@ -88,7 +88,7 @@
   &__header {
     font-size: 2.3rem;
     font-family: $secondary-font-family;
-    margin-bottom: 2rem;
+    margin-bottom: 0.2rem;
   }
 
   &__label {
@@ -96,6 +96,13 @@
     font-family: $secondary-font-family;
     text-align: left;
     margin-bottom: 0.5rem;
+  }
+  &__message {
+    font-size: 1.6rem;
+    height: 2.7rem;
+    font-family: $secondary-font-family;
+    color: $color-primary;
+    text-shadow: 1px 1px 1px $color-grey-dark-2;
   }
 
   &__input {
@@ -109,7 +116,15 @@
     @apply shadow-sm;
 
     &:focus {
-      outline: 1px solid rgba($color-primary-light, 0.5);
+      outline: 1px solid rgba($color-secondary-light, 0.5);
+      @apply shadow-inner;
+    }
+
+    &:invalid {
+    }
+
+    &:focus:invalid {
+      outline: 1px solid rgba($color-secondary-light, 0.5);
       @apply shadow-inner;
     }
   }
@@ -130,6 +145,16 @@
 
     &:hover {
       background-color: $color-secondary-light;
+      @apply shadow-sm;
+    }
+
+    &:active {
+      background-color: $color-primary-light;
+      @apply shadow-none;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 }

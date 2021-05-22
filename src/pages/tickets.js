@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,29 +9,29 @@ import Marquee from "components/Marquee";
 import SEO from "components/SEO";
 import getStripe from "../utils/stripe";
 import "../utils/fontawesome";
+import validator from "validator";
 
 const TicketsPage = ({ data }) => {
-  // Form Data
+  const [message, setMessage] = useState(null);
   const [form, setForm] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     emailConfirm: "",
-    phoneNumber: "",
-    ticketCount: 1,
+    phone: "",
+    ticketCount: null,
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form", form);
-    console.log("Proceed to Checkout");
-  };
-
   const handleInput = (e, fieldName) => {
-    console.log(e.target.value);
     switch (fieldName) {
-      case "name":
+      case "firstName":
         setForm((state) => {
-          return { ...state, name: e.target.value };
+          return { ...state, firstName: e.target.value };
+        });
+        break;
+      case "lastName":
+        setForm((state) => {
+          return { ...state, lastName: e.target.value };
         });
         break;
       case "email":
@@ -51,7 +51,7 @@ const TicketsPage = ({ data }) => {
         break;
       case "ticketCount":
         setForm((state) => {
-          return { ...state, ticketCount: e.target.value };
+          return { ...state, ticketCount: parseInt(e.target.value) };
         });
         break;
       default:
@@ -59,25 +59,80 @@ const TicketsPage = ({ data }) => {
     }
   };
 
-  // const handleValidation = () => {};
+  const handleValidation = () => {
+    const {
+      firstName,
+      lastName,
+      email,
+      emailConfirm,
+      phone,
+      ticketCount,
+    } = form;
+    console.log("tickets", ticketCount);
+
+    if (validator.isEmpty(firstName)) {
+      setMessage(`What's your first name?`);
+      return false;
+    }
+    if (validator.isEmpty(lastName)) {
+      setMessage(`What's your last name?`);
+      return false;
+    }
+    if (!validator.isEmail(email)) {
+      setMessage(`That's not a email.`);
+      return false;
+    }
+    if (email !== emailConfirm) {
+      setMessage(`These email's don't match.`);
+      return false;
+    }
+    if (!validator.isMobilePhone(phone)) {
+      setMessage(`Please provide a phone number.`);
+      return false;
+    }
+    if (!ticketCount >= 1 || ticketCount === null) {
+      setMessage(`How many tickets is that?`);
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form", form);
+    const valid = handleValidation();
+    valid
+      ? redirectToCheckout(e)
+      : console.log("We're missing your ::variable:: partner!");
+  };
 
   // Checkout Logic
-  const [loading, setLoading] = useState(false);
   const redirectToCheckout = async (event) => {
     event.preventDefault();
-    setLoading(true);
+    setMessage("Processing...");
 
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: "price_1Il2uJLGdKUm2tIda69M1hsh", quantity: 1 }],
-      successUrl: `http://localhost:8000/page-2/`,
-      cancelUrl: `http://localhost:8000/`,
+      lineItems: [
+        { price: "price_1Il2uJLGdKUm2tIda69M1hsh", quantity: form.ticketCount },
+      ],
+      customerEmail: form.email,
+      successUrl: `http://localhost:8000/thank-you`,
+      cancelUrl: `http://localhost:8000/tickets`,
+      clientReferenceId:
+        form.firstName +
+        "—" +
+        form.lastName +
+        "—" +
+        form.ticketCount +
+        "—" +
+        Date.now(),
     });
 
     if (error) {
       console.warn("Error:", error);
-      setLoading(false);
+      setMessage("Something went wrong. Try again soon.");
     }
   };
 
@@ -158,19 +213,35 @@ const TicketsPage = ({ data }) => {
           {/* Form */}
           <div className="tickets-form">
             <h2 className="tickets-form__header">Registration Form</h2>
+            <div className="tickets-form__message">
+              {message ? message : ""}
+            </div>
             <form className="tickets-form__content">
-              <label className="tickets-form__label">Name</label>
+              <label className="tickets-form__label"> First Name</label>
               <input
+                required
                 className="tickets-form__input"
                 type="text"
-                name="name"
-                placeholder="Name"
+                name="firstName"
+                placeholder="First Name"
                 onChange={(e) => {
-                  handleInput(e, "name");
+                  handleInput(e, "firstName");
+                }}
+              ></input>
+              <label className="tickets-form__label">Last Name</label>
+              <input
+                required
+                className="tickets-form__input"
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                onChange={(e) => {
+                  handleInput(e, "lastName");
                 }}
               ></input>
               <label className="tickets-form__label">Email</label>
               <input
+                required
                 className="tickets-form__input"
                 type="email"
                 name="email"
@@ -181,6 +252,7 @@ const TicketsPage = ({ data }) => {
               ></input>
               <label className="tickets-form__label">Confirm Email</label>
               <input
+                required
                 className="tickets-form__input"
                 type="email"
                 name="emailConfirm"
@@ -191,6 +263,7 @@ const TicketsPage = ({ data }) => {
               ></input>
               <label className="tickets-form__label">Phone Number</label>
               <input
+                required
                 className="tickets-form__input"
                 type="text"
                 name="phone"
@@ -201,8 +274,10 @@ const TicketsPage = ({ data }) => {
               ></input>
               <label className="tickets-form__label">Number of Tickets</label>
               <input
+                required
                 className="tickets-form__input"
                 type="number"
+                min="0"
                 name="numTickets"
                 placeholder="#"
                 onChange={(e) => {
