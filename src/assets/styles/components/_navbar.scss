@@ -11,14 +11,14 @@
   font-size: 1.8rem;
   text-align: center;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
 }
 
 .navbar__dropdown {
   float: left;
   overflow: hidden;
   height: 100%;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
 
   &:hover > .dropdown-content > .mega-menu__row {
     opacity: 1;

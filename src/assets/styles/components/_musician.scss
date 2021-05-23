@@ -1,0 +1,167 @@
+.musician__container-top {
+  display: flex;
+  background-color: $color-tertiary-light;
+  font-family: $secondary-font-family;
+  height: 500px;
+}
+
+.musician__full {
+  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-secondary;
+
+  &:hover {
+    & > .musician__full-description {
+      opacity: 1;
+      bottom: 0%;
+    }
+
+    & > .musician__full-banner {
+      background-color: $color-secondary-light;
+      transform: translate(-6px) skew(-14deg, -0deg);
+    }
+  }
+
+  &-banner {
+    background-color: $color-primary-light;
+    position: relative;
+    right: 12%;
+    top: 8%;
+    transform: skew(-14deg, -0deg);
+    width: 75%;
+    @apply shadow-md;
+    transition: all 0.2s ease-out;
+
+    &-text {
+      font-size: 2.7rem;
+      color: $color-white;
+      transform: skew(14deg, 0deg);
+    }
+  }
+}
+
+.musician__full {
+  &-description {
+    position: absolute;
+    width: 100%;
+    bottom: -6%;
+    left: 0;
+    background-color: rgba($color-tertiary-dark, 0.8);
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.2s ease-out;
+    font-family: $secondary-font-family;
+    padding: 1rem 0 2rem;
+    opacity: 0;
+  }
+
+  &-title {
+    font-size: 3rem;
+  }
+
+  &-description-text {
+    font-size: 2rem;
+    font-family: $primary-font-family;
+  }
+}
+
+// musician List and Items
+.musician__list {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  margin: 1.5rem;
+  //   background-color: $color-primary;
+
+  & > * {
+    margin-right: 1.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.musician__description {
+  color: $color-grey-dark-3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 66.6%;
+  margin: 1.5rem;
+}
+
+.musician__set-time {
+  font-family: $secondary-font-family;
+  position: relative;
+  font-size: 2.7rem;
+  z-index: 2;
+  display: inline-block;
+  margin-top: 1.7rem;
+
+  text-align: left;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 90%;
+    right: -5%;
+    background-color: $color-secondary-light;
+    // transform: skew(-14deg, 0deg);
+    opacity: 0.4;
+    height: 35px;
+    width: 110%;
+    z-index: -1;
+    clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0);
+  }
+}
+
+.musician__set-time {
+  font-family: $primary-font-family;
+}
+
+.musician__website {
+  font-family: $primary-font-family;
+  font-size: 1.5rem;
+  color: $color-white;
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  @apply shadow-md;
+
+  &:hover::before {
+    background-color: $color-secondary;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    background-color: $color-primary-light;
+    transform: skew(-14deg, 0deg);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all 0.2s ease-out;
+  }
+}
+.musician__spotify-player {
+  margin: 1.5rem;
+}
+.musician__music-video {
+  background-color: $color-tertiary-light;
+  margin-top: 8rem;
+  position: relative;
+  height: 800px;
+}

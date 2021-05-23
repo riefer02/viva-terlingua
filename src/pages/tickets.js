@@ -118,7 +118,7 @@ const TicketsPage = ({ data }) => {
         { price: "price_1Il2uJLGdKUm2tIda69M1hsh", quantity: form.ticketCount },
       ],
       customerEmail: form.email,
-      successUrl: `http://localhost:8000/thank-you`,
+      successUrl: `http://localhost:8000/thank-you?session_id={CHECKOUT_SESSION_ID}`,
       cancelUrl: `http://localhost:8000/tickets`,
       clientReferenceId:
         form.firstName +
@@ -136,7 +136,6 @@ const TicketsPage = ({ data }) => {
     }
   };
 
-  // Query Handling
   const {
     strapiTickets: { title, marqueeImage, panelImage },
   } = data;

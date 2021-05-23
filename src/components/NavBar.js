@@ -10,6 +10,9 @@ export default function NavBar() {
       <Link to="/page-2" className="navbar__item">
         About
       </Link>
+      <Link to="/tickets" className="navbar__item">
+        Tickets
+      </Link>
       <div className="navbar__dropdown">
         <div className="dropbtn navbar__item">Explore</div>
         <div className="dropdown-content shadow-lg">

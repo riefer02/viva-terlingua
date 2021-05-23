@@ -16,7 +16,7 @@
     }
 
     & > .feature__full-banner {
-      background-color: $color-primary;
+      background-color: $color-secondary-light;
       transform: translate(-6px) skew(-14deg, -0deg);
     }
   }
@@ -89,7 +89,7 @@
     background-color: $color-tertiary-dark;
 
     & > .feature__item-group > .feature__item-action {
-      background-color: $color-primary-dark;
+      background-color: $color-secondary-light;
       left: 9%;
     }
   }
@@ -129,6 +129,10 @@
   flex: 1;
   justify-content: space-between;
   padding: 0.8rem;
+
+  &:hover {
+    color: $color-white;
+  }
 
   &-details {
     padding-left: 1.5rem;

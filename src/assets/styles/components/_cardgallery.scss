@@ -10,7 +10,7 @@
   &-content {
     &:hover {
       & > .card-gallery__card-text-area {
-        background-color: $color-primary;
+        background-color: $color-secondary-light;
         transform: translateX(6px) skew(-14deg, -0deg);
       }
     }
@@ -31,4 +31,5 @@
 .card-gallery__card-title {
   transform: skew(14deg, 0deg);
   color: $color-white;
+  font-size: 1.7rem;
 }

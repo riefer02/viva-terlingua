@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-
+import { useLocation } from "@reach/router";
 import Marquee from "components/Marquee";
-
 import Layout from "components/Layout";
 import Container from "components/Container";
 
 const ThankYouPage = ({ data }) => {
+  let location = useLocation();
+  console.log(location.search);
   const {
     strapiThankYou: { title, marqueeImage, message },
   } = data;
   const marqueeData = { title, marqueeImage };
+
+  useEffect(() => {});
+
   return (
     <Layout pageName="two">
       <Helmet>

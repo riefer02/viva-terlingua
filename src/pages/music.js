@@ -6,12 +6,9 @@ import Layout from "components/Layout";
 import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
-import Quote from "components/Quote";
 import CardGallery from "components/CardGallery";
-import Feature from "components/Feature";
-import TextDisplay from "components/TextDisplay.js";
 
-const IndexPage = ({ data }) => {
+const MusicPage = ({ data }) => {
   const {
     strapiHomePage: { title, content, marqueeImage },
   } = data;
@@ -20,19 +17,17 @@ const IndexPage = ({ data }) => {
   const marqueeData = { title, marqueeImage };
 
   return (
-    <Layout pageName="home">
-      <SEO title="Home" keywords={[`terlingua`, `chili`, `cook`, "off"]} />
+    <Layout pageName="music">
+      <SEO
+        title="Home"
+        keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, "off"]}
+      />
       <Helmet>
-        <title>Home Page</title>
+        <title>Music</title>
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <Feature items={marqueeData} />
-        <Quote quote={content}></Quote>
-
         <CardGallery />
-
-        <TextDisplay />
         <GatsbyImage
           image={image}
           alt="Hillside Journey!"
@@ -43,10 +38,10 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export default IndexPage;
+export default MusicPage;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query MusicQuery {
     strapiHomePage {
       id
       title
