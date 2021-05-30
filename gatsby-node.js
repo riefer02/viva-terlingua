@@ -1,3 +1,4 @@
+const { data } = require("autoprefixer");
 const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -22,6 +23,7 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
 
+  // Create Individual Musician Page
   data.allStrapiMusicians.edges.forEach((edge) => {
     const { slug, id } = edge.node;
     actions.createPage({
@@ -34,6 +36,7 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   });
 
+  // Create Individual Event Page
   data.allStrapiEvents.edges.forEach((edge) => {
     const { slug, id } = edge.node;
     actions.createPage({

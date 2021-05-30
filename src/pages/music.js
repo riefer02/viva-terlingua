@@ -10,6 +10,7 @@ import CardGallery from "components/CardGallery";
 
 const MusicPage = ({ data }) => {
   const {
+    allStrapiMusicians,
     strapiHomePage: { title, content, marqueeImage },
   } = data;
   const image = getImage(marqueeImage);
@@ -27,7 +28,7 @@ const MusicPage = ({ data }) => {
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <CardGallery />
+        <CardGallery items={allStrapiMusicians.edges} />
         <GatsbyImage
           image={image}
           alt="Hillside Journey!"
@@ -54,6 +55,24 @@ export const pageQuery = graphql`
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
             ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+    allStrapiMusicians {
+      edges {
+        node {
+          name
+          setTime
+          slug
+          image {
+            id
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+              fluid(quality: 90, maxWidth: 400, maxHeight: 400) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
           }
         }
       }

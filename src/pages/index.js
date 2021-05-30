@@ -7,13 +7,13 @@ import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import Quote from "components/Quote";
-import CardGallery from "components/CardGallery";
+// import CardGallery from "components/CardGallery";
 import Feature from "components/Feature";
 import TextDisplay from "components/TextDisplay.js";
 
 const IndexPage = ({ data }) => {
   const {
-    strapiHomePage: { title, content, marqueeImage },
+    strapiHomePage: { title, content, marqueeImage, featured },
   } = data;
   const image = getImage(marqueeImage);
 
@@ -27,10 +27,10 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <Feature items={marqueeData} />
+        <Feature items={featured.featuresList} />
         <Quote quote={content}></Quote>
 
-        <CardGallery />
+        {/* <CardGallery /> */}
 
         <TextDisplay />
         <GatsbyImage
@@ -53,6 +53,24 @@ export const pageQuery = graphql`
       content {
         author
         text
+      }
+      featured {
+        id
+        featuresList {
+          id
+          slug
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData
+              fluid(quality: 90, maxWidth: 800, maxHeight: 800) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          description
+          calloutText
+        }
       }
       marqueeImage {
         childImageSharp {
