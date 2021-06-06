@@ -7,32 +7,26 @@ import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import Quote from "components/Quote";
-// import CardGallery from "components/CardGallery";
 import Feature from "components/Feature";
-import TextDisplay from "components/TextDisplay.js";
 
 const IndexPage = ({ data }) => {
   const {
     strapiHomePage: { title, content, marqueeImage, featured },
   } = data;
-  const image = getImage(marqueeImage);
 
+  const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout pageName="home">
       <SEO title="Home" keywords={[`terlingua`, `chili`, `cook`, "off"]} />
       <Helmet>
-        <title>Home Page</title>
+        <title>Home</title>
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
         <Feature items={featured.featuresList} />
         <Quote quote={content}></Quote>
-
-        {/* <CardGallery /> */}
-
-        <TextDisplay />
         <GatsbyImage
           image={image}
           alt="Hillside Journey!"
@@ -50,7 +44,7 @@ export const pageQuery = graphql`
     strapiHomePage {
       id
       title
-      content {
+      content: quoteContent {
         author
         text
       }

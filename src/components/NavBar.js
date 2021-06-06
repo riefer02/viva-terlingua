@@ -7,7 +7,7 @@ export default function NavBar() {
       <Link to="/" className="navbar__item">
         Home
       </Link>
-      <Link to="/page-2" className="navbar__item">
+      <Link to="/about" className="navbar__item">
         About
       </Link>
       <Link to="/tickets" className="navbar__item">
@@ -18,7 +18,7 @@ export default function NavBar() {
         <div className="dropdown-content shadow-lg">
           <div className="mega-menu__row">
             <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Chili Cook Off</h3>
+              <h3 className="mega-menu__category-header">Events</h3>
               <div className="mega-menu__list">
                 <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>
@@ -64,7 +64,7 @@ export default function NavBar() {
               </div>
             </div>
             <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Resources</h3>
+              <h3 className="mega-menu__category-header">Local Resources</h3>
               <div className="mega-menu__list">
                 <Link to="/" className="mega-menu__item slider-bg">
                   <span className="slider-text">Link 1</span>

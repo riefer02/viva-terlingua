@@ -4,8 +4,8 @@ export default function Quote({ quote }) {
   return (
     <div>
       <blockquote className="quote__text">
-        {quote[0].text}
-        <span className="quote__author">{quote[0].author}</span>
+        <div>{quote.text}</div>
+        <span className="quote__author">{quote.author}</span>
       </blockquote>
     </div>
   );

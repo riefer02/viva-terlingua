@@ -1,44 +1,50 @@
 import React from "react";
+import { Link } from "gatsby";
 
-export default function TextDisplay() {
+export default function TextDisplay({ texts }) {
+  const { Links, author, postDate, primaryText } = texts;
+
+  const linkList = () => {
+    return Links.map((link, index) => {
+      if (link.type === "internal") {
+        return (
+          <Link to={link.url} key={index} className="text-display__tag">
+            <div className="text-display__tag-text">{link.label}</div>
+          </Link>
+        );
+      } else {
+        return (
+          <a
+            href={link.url}
+            key={index}
+            target="_blank"
+            className="text-display__tag"
+          >
+            <div className="text-display__tag-text">{link.label}</div>
+          </a>
+        );
+      }
+    });
+  };
+
   return (
     <div className="text-display__container">
       <div className="text-display__content">
         <div className="text-display__content-wrapper">
-          <div className="text-display__author">Patrick Ryan</div>
-          <div className="text-display__date">May 8th, 2021</div>
-          <ul className="text-display__tags">
-            <li className="text-display__tag">
-              <div className="text-display__tag-text">Link 1</div>
-            </li>
-            <li className="text-display__tag">
-              <div className="text-display__tag-text">Link 1</div>
-            </li>{" "}
-            <li className="text-display__tag">
-              <div className="text-display__tag-text">Link 1</div>
-            </li>{" "}
-            <li className="text-display__tag">
-              <div className="text-display__tag-text">Link 1</div>
-            </li>
-          </ul>
-          <p className="text-display__text-area">
-            "At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
-            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat
-            facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-            et molestiae non recusandae. Itaque earum rerum hic tenetur a
-            sapiente delectus, ut aut reiciendis voluptatibus maiores alias
-            consequatur aut perferendis doloribus asperiores repellat."
-          </p>
+          <div className="text-display__author">{author}</div>
+          <div className="text-display__date">{postDate}</div>
+          <ul className="text-display__tags">{linkList()}</ul>
+          <p
+            className="text-display__text-area"
+            dangerouslySetInnerHTML={{ __html: primaryText }}
+          ></p>
           <div className="text-display__actions">
             <button className="text-display__action-btn">
-              <div className="text-display__action-text">Action Link</div>
+              <Link to="/tickets">
+                <div className="text-display__action-text">
+                  Join us in Terlingua
+                </div>
+              </Link>
             </button>
           </div>
         </div>

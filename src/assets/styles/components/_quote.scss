@@ -4,9 +4,9 @@ blockquote {
   margin: 50px auto;
   font-family: $secondary-font-family;
   color: #555555;
-  padding: 1.2em 30px 1.2em 75px;
+  padding: 1.2em 60px 1.2em 105px;
   border-left: 8px solid $color-primary-light;
-  line-height: 1.6;
+  line-height: 1.8;
   position: relative;
   background: $color-grey-light-2;
   @apply shadow-md;
@@ -35,7 +35,13 @@ blockquote span {
 }
 
 .quote__text {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+
+  & div {
+    font-family: $primary-font-family;
+    width: 70ch;
+    margin: 0 auto;
+  }
 }
 
 .quote__author {
