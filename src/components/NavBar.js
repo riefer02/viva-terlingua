@@ -1,7 +1,41 @@
 import React from "react";
-import { Link } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 export default function NavBar() {
+  const data = useStaticQuery(graphql`
+    query NavBarQuery {
+      allStrapiEvents {
+        nodes {
+          slug
+          title
+        }
+      }
+      allStrapiLocalAttractions {
+        nodes {
+          name
+          url
+        }
+      }
+      allStrapiMusicians {
+        nodes {
+          slug
+          name
+        }
+      }
+      allStrapiSponsors {
+        nodes {
+          website
+          name
+        }
+      }
+    }
+  `);
+
+  const events = [...data.allStrapiEvents.nodes];
+  const localAttractions = [...data.allStrapiLocalAttractions.nodes];
+  const musicians = [...data.allStrapiMusicians.nodes];
+  const sponsors = [...data.allStrapiSponsors.nodes];
+
   return (
     <div className="navbar flex justify-center items-center">
       <Link to="/" className="navbar__item">
@@ -20,93 +54,65 @@ export default function NavBar() {
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Events</h3>
               <div className="mega-menu__list">
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
+                {events.map((event, index) => {
+                  return (
+                    <Link
+                      to={event.slug}
+                      key={index}
+                      className="mega-menu__item slider-bg"
+                    >
+                      <span className="slider-text">{event.title}</span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Music</h3>
               <div className="mega-menu__list">
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
+                {musicians.map((event, index) => {
+                  return (
+                    <Link
+                      to={event.slug}
+                      key={index}
+                      className="mega-menu__item slider-bg"
+                    >
+                      <span className="slider-text">{event.name}</span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
             <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Local Resources</h3>
+              <h3 className="mega-menu__category-header">Local Attractions</h3>
               <div className="mega-menu__list">
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
+                {localAttractions.map((la, index) => {
+                  return (
+                    <a
+                      href={la.url}
+                      key={index}
+                      className="mega-menu__item slider-bg"
+                    >
+                      <span className="slider-text">{la.name}</span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Sponsors</h3>
               <div className="mega-menu__list">
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
-                <Link to="/" className="mega-menu__item slider-bg">
-                  <span className="slider-text">Link 1</span>
-                </Link>{" "}
+                {sponsors.map((sponsor, index) => {
+                  return (
+                    <a
+                      href={sponsor.website}
+                      key={index}
+                      className="mega-menu__item slider-bg"
+                    >
+                      <span className="slider-text">{sponsor.name}</span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>

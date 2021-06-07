@@ -3,7 +3,31 @@ import { Link } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 function Card({ item, index }) {
-  const { image, slug, name } = item.node;
+  // `slug` for internal links, `url` for external links
+  const { image, slug, name, url } = item.node;
+
+  if (url) {
+    return (
+      <div className="card-gallery__card my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+        <article className="card-gallery__card-content overflow-hidden rounded-lg shadow-md">
+          <a href={url}>
+            <GatsbyImage
+              alt="Placeholder"
+              className="card-gallery__card-image block h-auhref w-full"
+              image={getImage(image)}
+              placeholder="blurred"
+            />
+          </a>
+          <div className="card-gallery__card-text-area shadow-md flex items-center justify-between leading-tight p-2 md:p-4">
+            <a className="card-gallery__card-link" to={url}>
+              <h2 className="card-gallery__card-title">{name}</h2>
+            </a>
+          </div>
+        </article>
+      </div>
+    );
+  }
+
   return (
     <div className="card-gallery__card my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
       <article className="card-gallery__card-content overflow-hidden rounded-lg shadow-md">

@@ -38,7 +38,14 @@ module.exports = {
       options: {
         apiURL: process.env.STRAPI_URL || `http://localhost:1337`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`sponsors`, `users`, `quotes`, `events`, `musicians`],
+        contentTypes: [
+          `sponsors`,
+          `users`,
+          `quotes`,
+          `events`,
+          `musicians`,
+          `local-attractions`,
+        ],
         singleTypes: [`home-page`, `tickets`, "thank-you", "about-page"],
       },
     },
