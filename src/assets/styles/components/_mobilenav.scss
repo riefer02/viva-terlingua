@@ -1,0 +1,42 @@
+.mobile-nav {
+  position: fixed;
+  height: 0%;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  background-color: $color-secondary-light;
+  z-index: 12;
+
+  &.nav--open {
+    height: 100%;
+  }
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+
+  &.nav--open {
+  }
+}
+
+.mobile-nav__item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 1.8rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+  font-size: 3rem;
+  line-height: 1;
+  height: auto;
+  position: relative;
+  display: block;
+  text-align: left;
+  padding: 2.7rem 1.7rem;
+
+  @include respond(tab-land) {
+    display: none;
+  }
+}

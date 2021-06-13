@@ -11,7 +11,7 @@ export default function Feature({ items }) {
   return (
     <div className="feature__container shadow-md">
       {/* Featured Full */}
-      <Link to={mainFeature.slug} className="flex w-1/3">
+      <Link to={mainFeature.slug} className="flex w-full xl:w-1/3">
         <BackgroundImage
           className="feature__full w-1/3"
           alt="placeholder"
@@ -34,7 +34,7 @@ export default function Feature({ items }) {
         </BackgroundImage>
       </Link>
       {/* Featured List */}
-      <div className="feature__list w-2/3">
+      <div className="feature__list w-full xl:w-1/3">
         {/* Featured Item */}
         {sideFeatures.map((feature, index) => {
           const { title, description, calloutText, image, slug } = feature;
@@ -49,11 +49,11 @@ export default function Feature({ items }) {
                   objectPosition="center"
                 />
                 <div className="feature__item-group">
-                  <div className="feature__item-group-details w-2/3 text-left">
+                  <div className="feature__item-group-details w-full xl:w-2/3 text-left">
                     <h3 className="feature__item-title">{title}</h3>
                     <p className="feature__item-description">{description}</p>
                   </div>
-                  <div className=" w-1/3 feature__item-action">
+                  <div className="w-full xl:w-1/3 feature__item-action">
                     <button className="feature__item-btn">{calloutText}</button>
                   </div>
                 </div>

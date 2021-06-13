@@ -22,5 +22,12 @@ main {
   flex-direction: column;
   align-content: center;
   // justify-content: center;
-  padding: 2em 0;
+  padding: 0;
+
+  @include respond(tab-port) {
+    padding: 2em 0;
+  }
+
+  @include respond(desktop) {
+  }
 }

@@ -11,8 +11,12 @@
     padding: 2.5rem 0 0 0;
   }
   &__item {
-    width: 160px;
+    width: 60px;
     margin: 0 2.5rem;
+
+    @include respond(desktop) {
+      width: 160px;
+    }
   }
   &__logo {
   }

@@ -1,5 +1,14 @@
 .banner {
   background-color: $color-tertiary;
+  display: none;
+
+  @include respond(tab-port) {
+    display: block;
+  }
+
+  @include respond(tab-land) {
+    height: auto;
+  }
 }
 .banner__content {
   display: flex;
@@ -9,9 +18,16 @@
 }
 
 .banner__message {
-  font-size: 1.8rem;
   color: $color-primary;
+  font-size: 1.7rem;
 
+  @include respond(tab-land) {
+    font-size: 2rem;
+  }
+
+  @include respond(desktop) {
+    font-size: 1.8rem;
+  }
   & .banner__message-link {
     color: $color-grey-dark;
     margin-right: 3px;

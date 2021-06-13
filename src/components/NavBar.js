@@ -1,7 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 export default function NavBar() {
+  const [isOpen, setOpen] = useState(false);
+
+  const MobileNav = () => {
+    return (
+      <div className={`mobile-nav ${isOpen ? "nav--open" : ""}`}>
+        <div className="mobile-nav__list">
+          <Link to="/" className="mobile-nav__item">
+            Home
+          </Link>
+          <Link to="/about" className="mobile-nav__item">
+            About
+          </Link>
+          <Link to="/tickets" className="mobile-nav__item">
+            Tickets
+          </Link>
+          <Link to="/music" className="mobile-nav__item">
+            Music
+          </Link>
+          <Link to="/events" className="mobile-nav__item">
+            Events
+          </Link>
+          <Link to="/local-attractions" className="mobile-nav__item">
+            Local Attractions
+          </Link>
+        </div>
+      </div>
+    );
+  };
+
+  const Hamburger = () => {
+    return (
+      <div
+        onClick={() => {
+          setOpen(!isOpen);
+        }}
+        id="hamburger"
+        className={isOpen ? "open" : ""}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    );
+  };
+
   const data = useStaticQuery(graphql`
     query NavBarQuery {
       allStrapiEvents {
@@ -38,18 +83,22 @@ export default function NavBar() {
 
   return (
     <div className="navbar flex justify-center items-center">
-      <Link to="/" className="navbar__item">
+      <Link to="/" className="navbar__item nav--desktop">
         Home
       </Link>
-      <Link to="/about" className="navbar__item">
+      <Link to="/about" className="navbar__item nav--desktop">
         About
       </Link>
-      <Link to="/tickets" className="navbar__item">
+      <Link to="/tickets" className="navbar__item nav--desktop">
         Tickets
       </Link>
       <div className="navbar__dropdown">
-        <div className="dropbtn navbar__item">Explore</div>
+        <div className="dropbtn navbar__item">
+          <div className="dropbtn--text">Explore</div>
+          <Hamburger />
+        </div>
         <div className="dropdown-content shadow-lg">
+          <MobileNav />
           <div className="mega-menu__row">
             <div className="mega-menu__category">
               <h3 className="mega-menu__category-header">Events</h3>

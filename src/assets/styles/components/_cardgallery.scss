@@ -2,12 +2,19 @@
 }
 
 .card-gallery__content {
+  height: 100%;
 }
 
 .card-gallery__card {
   position: relative;
+  height: 340px;
+
+  & a {
+    height: 100%;
+  }
 
   &-content {
+    height: 100%;
     &:hover {
       & > .card-gallery__card-text-area {
         background-color: $color-secondary-light;

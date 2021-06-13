@@ -1,7 +1,12 @@
 .feature__container {
   display: flex;
+  flex-direction: column;
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
+
+  @include respond(desktop) {
+    flex-direction: row;
+  }
 }
 
 .feature__full {
@@ -9,6 +14,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 500px;
+
+  @include respond(desktop) {
+    height: auto;
+  }
 
   &:hover {
     & > .feature__full-description {
@@ -25,12 +35,16 @@
   &-banner {
     background-color: $color-primary-light;
     position: relative;
-    right: 12%;
+    right: 0%;
     top: 8%;
     transform: skew(-14deg, -0deg);
     width: 75%;
     @apply shadow-md;
     transition: all 0.2s ease-out;
+
+    @include respond(desktop) {
+      right: 12%;
+    }
 
     &-text {
       font-size: 2.7rem;
@@ -44,7 +58,6 @@
   &-description {
     position: absolute;
     width: 100%;
-    bottom: -6%;
     left: 0;
     background-color: rgba($color-tertiary-dark, 0.8);
     color: $color-white;
@@ -53,17 +66,28 @@
     justify-content: flex-end;
     transition: all 0.2s ease-out;
     font-family: $secondary-font-family;
-    padding: 1rem 0 2rem;
-    opacity: 0;
+    padding: 1rem 2rem 2rem;
+    bottom: 0%;
+    opacity: 1;
+
+    @include respond(desktop) {
+      padding: 1rem 0 2rem;
+      opacity: 0;
+      bottom: -6%;
+    }
   }
 
   &-title {
     font-size: 3rem;
+    font-family: $secondary-font-family;
   }
 
   &-description-text {
     font-size: 2rem;
     font-family: $primary-font-family;
+
+    @include respond(desktop) {
+    }
   }
 }
 
@@ -74,6 +98,7 @@
   justify-content: space-between;
   flex: 1;
   margin: 1.5rem;
+  width: auto;
 }
 
 .feature__item {
@@ -85,6 +110,14 @@
   background-color: $color-white;
   transition: all 0.2s;
   color: $color-grey-dark-3;
+  flex-direction: column;
+  // height: 200px;
+  margin-bottom: 4rem;
+
+  @include respond(desktop) {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
 
   &:hover {
     background-color: $color-tertiary-dark;
@@ -96,29 +129,51 @@
   }
 
   &-title {
-    font-size: 2rem;
+    font-size: 3rem;
     transition: all 0.2s;
     font-family: $secondary-font-family;
+    margin-bottom: 1rem;
+
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+
+    @include respond(desktop) {
+      font-size: 2rem;
+      margin-bottom: 0rem;
+    }
   }
 
   &-description {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-family: $primary-font-family;
     transition: all 0.2s;
+    margin-bottom: 2rem;
+    @include respond(desktop) {
+      font-size: 1.5rem;
+    }
   }
 
   &-action {
-    font-size: 2rem;
+    font-size: 3rem;
     background-color: $color-primary-light;
     position: relative;
-    left: 8%;
-    top: 7%;
     height: min-content;
     color: $color-white;
     transform: skew(-14deg, -0deg);
-    width: 30%;
     @apply shadow-md;
     transition: all 0.2s;
+
+    @include respond(tab-port) {
+      width: 45%;
+    }
+    @include respond(desktop) {
+      font-size: 2rem;
+      width: 30%;
+
+      left: 8%;
+      top: 7%;
+    }
   }
 
   &-btn {
@@ -131,16 +186,26 @@
   flex: 1;
   justify-content: space-between;
   padding: 0.8rem;
+  flex-direction: column;
+  padding: 4.2rem;
+
+  @include respond(desktop) {
+    flex-direction: row;
+    padding: 0.8rem;
+  }
 
   &:hover {
     color: $color-white;
   }
 
   &-details {
-    padding: 1.5rem 0 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include respond(desktop) {
+      padding: 1.5rem 0 1.5rem 1.5rem;
+    }
 
     &:hover {
       color: $color-white;
@@ -149,8 +214,13 @@
 }
 
 .feature__item-image {
-  height: 15rem;
-  width: 20%;
+  width: 100%;
+  height: 400px;
+
+  @include respond(desktop) {
+    width: 20%;
+    height: 15rem;
+  }
 
   &:hover + .feature__item-group {
     color: $color-white;

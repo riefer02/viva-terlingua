@@ -29,12 +29,27 @@ header {
 }
 
 .header__container {
-  height: 5rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   font-family: $secondary-font-family;
+
+  @include respond(desktop) {
+    height: 5rem;
+  }
 }
 
 .header__site-title {
   font-size: 2.3rem;
+  display: none;
+  display: block;
+  padding-left: 16px;
+
+  @include respond(tab-port) {
+    display: block;
+  }
+
+  @include respond(tab-land) {
+    padding-left: 0;
+  }
 }

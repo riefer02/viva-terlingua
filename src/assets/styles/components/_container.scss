@@ -1,6 +1,9 @@
 .container.section > * {
   margin: 0rem 0rem 8rem;
 
+  @include respond(desktop) {
+  }
+
   &:first-child {
     margin-top: 0;
   }

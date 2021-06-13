@@ -4,8 +4,6 @@ blockquote {
   margin: 50px auto;
   font-family: $secondary-font-family;
   color: #555555;
-  padding: 1.2em 60px 1.2em 105px;
-  border-left: 8px solid $color-primary-light;
   line-height: 1.8;
   position: relative;
   background: $color-grey-light-2;
@@ -14,12 +12,16 @@ blockquote {
 
 blockquote::before {
   font-family: Arial;
-  content: "\201C";
+  content: none;
   color: $color-primary-light;
   font-size: 4em;
   position: absolute;
   left: 10px;
   top: -10px;
+
+  @include respond(tab-port) {
+    content: "\201C";
+  }
 }
 
 blockquote::after {
@@ -36,11 +38,22 @@ blockquote span {
 
 .quote__text {
   font-size: 2.4rem;
+  padding: 3.2rem;
+  border-left: 8px solid $color-primary-light;
+  border-right: 8px solid $color-primary-light;
+
+  @include respond(desktop) {
+    padding: 1.2em 60px 1.2em 105px;
+    border-right: none;
+  }
 
   & div {
     font-family: $primary-font-family;
-    width: 70ch;
     margin: 0 auto;
+
+    @include respond(desktop) {
+      width: 70ch;
+    }
   }
 }
 

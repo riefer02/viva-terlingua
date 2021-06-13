@@ -1,16 +1,30 @@
+.marquee__section {
+  margin-bottom: 5rem;
+
+  @include respond(desktop) {
+    margin-bottom: 0;
+  }
+}
+
 .marquee__container {
-  height: 43rem;
   display: flex;
   flex-direction: column;
+
+  @include respond(desktop) {
+    height: 43rem;
+  }
 }
 
 .marquee__body {
   background-color: $color-primary-light;
   background-position: cover;
   overflow: visible;
-
-  height: 411px;
   @apply rounded-lg;
+  height: 40vh;
+
+  @include respond(tab-port) {
+    height: 411px;
+  }
 }
 
 .marquee__text-area {
@@ -19,19 +33,28 @@
   position: relative;
   left: 0%;
   top: -12%;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   //   transform: translate(-50%, -50%);
   background-color: $color-secondary;
   color: $color-white;
   padding: 1rem 3rem;
   clip-path: polygon(100% 0, 100% 87%, 50% 100%, 0 86%, 0 0);
+
+  @include respond(desktop) {
+    width: 50%;
+  }
 }
 
 .marquee__header-primary {
-  font-size: 4rem;
+  font-size: 3rem;
+
   position: relative;
   bottom: 0.2rem;
+
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
 }
 
 .marquee__header-secondary {
