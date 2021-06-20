@@ -72,3 +72,20 @@
 .slider-bg:hover::before {
   transform: translate(-5%, 0) skew(-15deg);
 }
+
+// Fade In
+
+.fade {
+  animation: 0.4s ease-out fadeIn 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -2,7 +2,16 @@
   display: flex;
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
-  height: 500px;
+  height: auto;
+  flex-direction: column;
+  border-bottom: 5px solid $color-primary-light;
+  border-top: 5px solid $color-primary-light;
+
+  @include respond(tab-land) {
+    height: 500px;
+    flex-direction: row;
+    border: none;
+  }
 }
 
 .musician__full {
@@ -10,6 +19,15 @@
   display: flex;
   flex-direction: column;
   background-color: $color-secondary;
+  height: 400px;
+  width: auto;
+  order: 2;
+
+  @include respond(tab-land) {
+    order: 1;
+    height: auto;
+    width: 33.3%;
+  }
 
   &:hover {
     & > .musician__full-description {
@@ -86,23 +104,44 @@
 }
 
 .musician__description {
+  order: 1;
   color: $color-grey-dark-3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 66.6%;
-  margin: 1.5rem;
+  width: 100%;
+  margin-bottom: 4rem;
+  height: 300px;
+
+  @include respond(tab-land) {
+    order: 2;
+    width: 66.6%;
+    margin: 1.5rem;
+    height: auto;
+  }
+
+  & .p-lead {
+    padding: 0 4rem;
+
+    @include respond(tab-land) {
+      padding: 0;
+    }
+  }
 }
 
 .musician__set-time {
-  font-family: $secondary-font-family;
+  font-family: $primary-font-family;
   position: relative;
   font-size: 2.7rem;
   z-index: 2;
   display: inline-block;
   margin-top: 1.7rem;
-
   text-align: left;
+  margin-bottom: 3.5rem;
+
+  @include respond(tab-land) {
+    margin-bottom: 2rem;
+  }
 
   &::before {
     content: "";
@@ -120,22 +159,24 @@
   }
 }
 
-.musician__set-time {
-  font-family: $primary-font-family;
-}
-
 .musician__website {
   font-family: $primary-font-family;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: $color-white;
   display: block;
   position: relative;
-  width: 100%;
+  width: 90%;
   text-align: center;
   z-index: 10;
   transition: all 0.2s ease-out;
   cursor: pointer;
   @apply shadow-md;
+  margin: 0 auto;
+
+  @include respond(tab-land) {
+    width: 100%;
+    font-size: 1.5rem;
+  }
 
   &:hover::before {
     background-color: $color-secondary;
@@ -157,11 +198,20 @@
   }
 }
 .musician__spotify-player {
+  order: 2;
   margin: 1.5rem;
+  height: 400px;
+
+  @include respond(tab-land) {
+    order: 3;
+    width: 33.3%;
+    height: auto;
+  }
 }
 .musician__music-video {
   background-color: $color-tertiary-light;
   margin-top: 8rem;
   position: relative;
   height: 800px;
+  width: 100%;
 }

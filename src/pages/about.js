@@ -26,8 +26,8 @@ const AboutPage = ({ data }) => {
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <Quote quote={quoteContent}></Quote>
         <TextDisplay texts={pageContent} />
+        <Quote quote={quoteContent}></Quote>
         <GatsbyImage
           image={image}
           alt="A group of people at the chili cook off"

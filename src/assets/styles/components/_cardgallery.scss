@@ -8,6 +8,11 @@
 .card-gallery__card {
   position: relative;
   height: 340px;
+  margin-bottom: 50px;
+
+  @include respond(tab-land) {
+    margin-bottom: 0;
+  }
 
   & a {
     height: 100%;
@@ -26,17 +31,27 @@
 
 .card-gallery__card-text-area {
   position: absolute;
-  bottom: 10%;
-  left: -0%;
+  bottom: 10px;
+  left: 15px;
   font-size: 1.5rem;
   background-color: $color-primary-light;
   color: $color-white;
   transform: skew(-14deg, -0deg);
   font-family: $secondary-font-family;
   transition: all 0.2s;
+  @apply shadow-md;
+
+  @include respond(tab-land) {
+    bottom: 10%;
+    left: -0%;
+  }
 }
 .card-gallery__card-title {
   transform: skew(14deg, 0deg);
   color: $color-white;
-  font-size: 1.7rem;
+  font-size: 3rem;
+
+  @include respond(tab-land) {
+    font-size: 1.7rem;
+  }
 }

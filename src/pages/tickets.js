@@ -290,7 +290,7 @@ const TicketsPage = ({ data }) => {
                   handleSubmit(e);
                 }}
               >
-                Proceed to Checkout
+                Review Order
               </button>
             </form>
           </div>

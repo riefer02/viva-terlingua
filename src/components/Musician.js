@@ -3,7 +3,6 @@ import BackgroundImage from "gatsby-background-image";
 
 export default function Musician({ artist }) {
   const {
-    name,
     artistImage,
     website,
     setTime,
@@ -17,23 +16,14 @@ export default function Musician({ artist }) {
       <div className="musician__container-top shadow-md">
         {/* Musician Image */}
         <BackgroundImage
-          className="musician__full w-1/3"
+          className="musician__full"
           alt="placeholder"
           fluid={artistImage.childImageSharp.fluid}
-        >
-          {/* <div className="musician__full-banner">
-            <h2 className="musician__full-banner-text">{name}</h2>
-          </div> */}
-          {/* <div className="musician__full-description">
-            <h3 className="musician__full-title">{name}</h3>
-            <p className="musician__full-description-text">
-              Feature Full Description
-            </p>
-          </div> */}
-        </BackgroundImage>
-        {/* <div className="musician__list w-2/3"> */}
+          imgStyle={{ objectFit: "contain" }}
+        ></BackgroundImage>
+
         {/* Artist Description */}
-        <div className="musician__description w-1/3">
+        <div className="musician__description">
           <div className="relative">
             {/* <h3 className="musician__name">{name}</h3> */}
             <h4 className="musician__set-time">{setTime}</h4>
@@ -46,7 +36,7 @@ export default function Musician({ artist }) {
           </div>
         </div>
         {/* Spotify Player */}
-        <div className="musician__spotify-player w-1/3">
+        <div className="musician__spotify-player">
           <iframe
             src={`https://open.spotify.com/embed/artist/${spotifyID}`}
             width="100%"
@@ -56,7 +46,6 @@ export default function Musician({ artist }) {
             allow="encrypted-media"
           ></iframe>
         </div>
-        {/* </div> */}
       </div>
       {/* Music Video */}
       <div className="musician__music-video">
@@ -65,7 +54,7 @@ export default function Musician({ artist }) {
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
           style={{
             position: "absolute",
             top: 0,

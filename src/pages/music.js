@@ -11,9 +11,10 @@ import CardGallery from "components/CardGallery";
 const MusicPage = ({ data }) => {
   const {
     allStrapiMusicians,
-    strapiHomePage: { title, marqueeImage },
+    strapiHomePage: { marqueeImage },
   } = data;
   const image = getImage(marqueeImage);
+  const title = `Music`;
 
   const marqueeData = { title, marqueeImage };
 
@@ -45,7 +46,6 @@ export const pageQuery = graphql`
   query MusicQuery {
     strapiHomePage {
       id
-      title
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

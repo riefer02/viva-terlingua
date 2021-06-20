@@ -23,6 +23,10 @@
     z-index: 0;
     display: inline-block;
 
+    @include respond(tab-land) {
+      font-size: 3.3rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -68,8 +72,13 @@
   &__text-area {
     margin: 0 auto;
     font-size: 2rem;
-    // width: 70ch;
     line-height: 5rem;
+
+    & p {
+      margin-bottom: 2rem;
+      text-align: left;
+      text-indent: 2ch;
+    }
   }
 
   &__actions {
@@ -84,6 +93,11 @@
     @apply shadow-md;
     transition: all 0.2s;
     transform: skew(-14deg, -0deg);
+    margin-bottom: 0;
+
+    @include respond(tab-land) {
+      margin-bottom: 2rem;
+    }
 
     &:hover {
       background-color: $color-secondary-light;

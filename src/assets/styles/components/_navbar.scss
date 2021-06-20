@@ -17,6 +17,10 @@
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: $color-secondary-light;
+  }
 }
 
 .navbar__dropdown {
@@ -34,7 +38,9 @@
 
 .navbar__dropdown .dropbtn {
   margin: 0;
+  cursor: pointer;
 }
+
 .navbar a:hover,
 .navbar__dropdown:hover .dropbtn {
   @include respond(tab-land) {

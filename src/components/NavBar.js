@@ -6,7 +6,7 @@ export default function NavBar() {
 
   const MobileNav = () => {
     return (
-      <div className={`mobile-nav ${isOpen ? "nav--open" : ""}`}>
+      <div className={`mobile-nav ${isOpen ? "nav--open fade" : ""}`}>
         <div className="mobile-nav__list">
           <Link to="/" className="mobile-nav__item">
             Home

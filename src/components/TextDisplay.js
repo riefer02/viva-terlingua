@@ -33,7 +33,6 @@ export default function TextDisplay({ texts }) {
         <div className="text-display__content-wrapper">
           <div className="text-display__author">{author}</div>
           <div className="text-display__date">{postDate}</div>
-          <ul className="text-display__tags">{linkList()}</ul>
           <p
             className="text-display__text-area"
             dangerouslySetInnerHTML={{ __html: primaryText }}
@@ -46,6 +45,8 @@ export default function TextDisplay({ texts }) {
                 </div>
               </Link>
             </button>
+            <hr />
+            <ul className="text-display__tags">{linkList()}</ul>
           </div>
         </div>
       </div>
