@@ -20,7 +20,7 @@
     font-family: $secondary-font-family;
     position: relative;
     font-size: 2.7rem;
-    z-index: 2;
+    z-index: 0;
     display: inline-block;
 
     &::before {
@@ -34,7 +34,7 @@
       opacity: 0.2;
       height: 14px;
       width: 110%;
-      z-index: 1;
+      z-index: -1;
     }
   }
 

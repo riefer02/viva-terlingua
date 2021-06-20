@@ -1,13 +1,21 @@
 blockquote {
   font-size: 1.4em;
   width: 100%;
-  margin: 50px auto;
+  margin: 0px auto;
   font-family: $secondary-font-family;
   color: #555555;
   line-height: 1.8;
   position: relative;
   background: $color-grey-light-2;
   @apply shadow-md;
+
+  @include respond(tab-land) {
+    margin: 20px auto;
+  }
+
+  @include respond(desktop) {
+    margin: 40px auto;
+  }
 }
 
 blockquote::before {
@@ -41,6 +49,10 @@ blockquote span {
   padding: 3.2rem;
   border-left: 8px solid $color-primary-light;
   border-right: 8px solid $color-primary-light;
+
+  @include respond(tab-port) {
+    padding: 4rem;
+  }
 
   @include respond(desktop) {
     padding: 1.2em 60px 1.2em 105px;

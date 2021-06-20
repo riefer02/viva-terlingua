@@ -1,5 +1,15 @@
 .marquee__section {
-  margin-bottom: 5rem;
+  margin-top: 55px;
+  margin-bottom: 2rem;
+
+  @include respond(tab-port) {
+    margin-top: 105px;
+  }
+
+  @include respond(tab-land) {
+    margin-top: 0px;
+    margin-bottom: 5rem;
+  }
 
   @include respond(desktop) {
     margin-bottom: 0;
@@ -47,14 +57,9 @@
 }
 
 .marquee__header-primary {
-  font-size: 3rem;
-
+  font-size: 4rem;
   position: relative;
   bottom: 0.2rem;
-
-  @include respond(tab-land) {
-    font-size: 4rem;
-  }
 }
 
 .marquee__header-secondary {

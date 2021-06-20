@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -153,7 +153,7 @@ const TicketsPage = ({ data }) => {
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <div className="flex">
+        <div className="flex lg:flex-row flex-col">
           {/* Description */}
           <div className="tickets-details">
             <div className="tickets-details__content">

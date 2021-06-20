@@ -100,68 +100,78 @@ export default function NavBar() {
         <div className="dropdown-content shadow-lg">
           <MobileNav />
           <div className="mega-menu__row">
-            <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Events</h3>
-              <div className="mega-menu__list">
-                {events.map((event, index) => {
-                  return (
-                    <Link
-                      to={event.slug}
-                      key={index}
-                      className="mega-menu__item slider-bg"
-                    >
-                      <span className="slider-text">{event.title}</span>
-                    </Link>
-                  );
-                })}
+            <div className="mega-menu__category-wrapper">
+              <div className="mega-menu__category">
+                <h3 className="mega-menu__category-header">Events</h3>
+                <div className="mega-menu__list">
+                  {events.map((event, index) => {
+                    return (
+                      <Link
+                        to={event.slug}
+                        key={index}
+                        className="mega-menu__item slider-bg"
+                      >
+                        <span className="slider-text">{event.title}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-            <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Music</h3>
-              <div className="mega-menu__list">
-                {musicians.map((event, index) => {
-                  return (
-                    <Link
-                      to={event.slug}
-                      key={index}
-                      className="mega-menu__item slider-bg"
-                    >
-                      <span className="slider-text">{event.name}</span>
-                    </Link>
-                  );
-                })}
+            <div className="mega-menu__category-wrapper">
+              <div className="mega-menu__category">
+                <h3 className="mega-menu__category-header">Music</h3>
+                <div className="mega-menu__list">
+                  {musicians.map((event, index) => {
+                    return (
+                      <Link
+                        to={event.slug}
+                        key={index}
+                        className="mega-menu__item slider-bg"
+                      >
+                        <span className="slider-text">{event.name}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-            <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Local Attractions</h3>
-              <div className="mega-menu__list">
-                {localAttractions.map((la, index) => {
-                  return (
-                    <a
-                      href={la.url}
-                      key={index}
-                      className="mega-menu__item slider-bg"
-                    >
-                      <span className="slider-text">{la.name}</span>
-                    </a>
-                  );
-                })}
+            <div className="mega-menu__category-wrapper">
+              <div className="mega-menu__category">
+                <h3 className="mega-menu__category-header">
+                  Local Attractions
+                </h3>
+                <div className="mega-menu__list">
+                  {localAttractions.map((la, index) => {
+                    return (
+                      <a
+                        href={la.url}
+                        key={index}
+                        className="mega-menu__item slider-bg"
+                      >
+                        <span className="slider-text">{la.name}</span>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-            <div className="mega-menu__category">
-              <h3 className="mega-menu__category-header">Sponsors</h3>
-              <div className="mega-menu__list">
-                {sponsors.map((sponsor, index) => {
-                  return (
-                    <a
-                      href={sponsor.website}
-                      key={index}
-                      className="mega-menu__item slider-bg"
-                    >
-                      <span className="slider-text">{sponsor.name}</span>
-                    </a>
-                  );
-                })}
+            <div className="mega-menu__category-wrapper">
+              <div className="mega-menu__category">
+                <h3 className="mega-menu__category-header">Sponsors</h3>
+                <div className="mega-menu__list">
+                  {sponsors.map((sponsor, index) => {
+                    return (
+                      <a
+                        href={sponsor.website}
+                        key={index}
+                        className="mega-menu__item slider-bg"
+                      >
+                        <span className="slider-text">{sponsor.name}</span>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

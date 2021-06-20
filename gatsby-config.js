@@ -21,6 +21,19 @@ module.exports = {
     "gatsby-plugin-sharp",
     `gatsby-plugin-fontawesome-css`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Tolbert's Terlingua Chili Cook Off`,
+        short_name: `Tolbert's Terlingua Chili Cook Off`,
+        description: `The official website for the Tolbert's Terlingua Chili Cook Off`,
+        start_url: `/`,
+        background_color: `#eeeeee`,
+        theme_color: `#ec6d5c`,
+        display: `standalone`,
+        icon: `src/assets/images/chili-pepper.svg`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

@@ -17,6 +17,7 @@
     "gatsby-plugin-env-variables": "^2.1.0",
     "gatsby-plugin-fontawesome-css": "^1.1.0",
     "gatsby-plugin-image": "^1.4.0",
+    "gatsby-plugin-manifest": "^3.7.1",
     "gatsby-plugin-react-helmet": "^4.4.0",
     "gatsby-plugin-resolve-src": "^2.1.0",
     "gatsby-plugin-sass": "^4.4.0",
