@@ -71,6 +71,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  description: `Tolbert's Terlingua Chili Cook Off`,
 };
 
 SEO.propTypes = {
