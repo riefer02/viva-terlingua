@@ -5,8 +5,12 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Terlingua Chili Cook Off`,
-    description: `Official Webstite for the Frank X. Tolbert Terlingua Chili Cook Off`,
-    author: `riefer02 - Andrew Riefenstahl`,
+    titleTemplate: `Terlingua Chili Cook Off`,
+    description: `Official Website for the Frank X. Tolbert Terlingua Chili Cook Off - Behind the store.`,
+    url: `https://terlinguachilicookoff.org`,
+    image: ``,
+    author: `@riefer02 - Andrew Riefenstahl`,
+    twitter: `@riefer02`,
   },
   flags: {
     DEV_SSR: false,
