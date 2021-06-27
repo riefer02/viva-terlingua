@@ -4,11 +4,15 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Terlingua Chili Cook Off`,
-    titleTemplate: `Terlingua Chili Cook Off`,
-    description: `Official Website for the Frank X. Tolbert Terlingua Chili Cook Off - Behind the store.`,
-    url: `https://terlinguachilicookoff.org`,
-    image: ``,
+    title: `Terlingua International Chili Cook Off`,
+    titleTemplate: `Terlingua International Chili Cook Off`,
+    description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
+    url: `${
+      process.env.NODE_ENV === "development"
+        ? `http://localhost:8000`
+        : `terlinguachilicookoff.org`
+    }`,
+    image: `/static/hillside-journey.jpg`,
     author: `@riefer02 - Andrew Riefenstahl`,
     twitter: `@riefer02`,
   },
@@ -27,9 +31,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Tolbert's Terlingua Chili Cook Off`,
-        short_name: `Tolbert's Terlingua Chili Cook Off`,
-        description: `The official website for the Tolbert's Terlingua Chili Cook Off`,
+        name: `Terlingua International Chili Cook Off`,
+        short_name: `Terlingua International Chili Cook Off`,
+        description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
         start_url: `/`,
         background_color: `#eeeeee`,
         theme_color: `#ec6d5c`,

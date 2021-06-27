@@ -11,15 +11,19 @@ import Feature from "components/Feature";
 
 const IndexPage = ({ data }) => {
   const {
-    strapiHomePage: { title, content, marqueeImage, featured },
+    strapiHomePage: { title, content, marqueeImage, featured, meta },
   } = data;
-
   const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout pageName="home">
-      <SEO title="Home" keywords={[`terlingua`, `chili`, `cook`, "off"]} />
+      <SEO
+        title={title}
+        description={meta.description}
+        image={image}
+        keywords={[`terlingua`, `chili`, `cook off`, `tolbert`, `wick fowler`]}
+      />
       <Helmet>
         <title>Home</title>
       </Helmet>
@@ -47,6 +51,9 @@ export const pageQuery = graphql`
       content: quoteContent {
         author
         text
+      }
+      meta {
+        description
       }
       featured {
         id
