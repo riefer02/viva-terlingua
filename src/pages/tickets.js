@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -11,6 +11,7 @@ import "../utils/fontawesome";
 import validator from "validator";
 
 const TicketsPage = ({ data }) => {
+  const formRef = useRef(null);
   const [message, setMessage] = useState(null);
   const [form, setForm] = useState({
     firstName: "",
@@ -59,6 +60,7 @@ const TicketsPage = ({ data }) => {
   };
 
   const handleValidation = () => {
+    formRef.current.scrollIntoView({ behavior: "smooth" });
     const { firstName, lastName, email, emailConfirm, phone, ticketCount } =
       form;
 
@@ -97,6 +99,11 @@ const TicketsPage = ({ data }) => {
       : console.log("We're missing your ::variable:: partner!");
   };
 
+  const siteUrl =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:8000"
+      : "https://terlinguachilicookoff.org";
+
   // Checkout Logic
   const redirectToCheckout = async (event) => {
     event.preventDefault();
@@ -109,8 +116,8 @@ const TicketsPage = ({ data }) => {
         { price: "price_1Il2uJLGdKUm2tIda69M1hsh", quantity: form.ticketCount },
       ],
       customerEmail: form.email,
-      successUrl: `http://localhost:8000/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: `http://localhost:8000/tickets`,
+      successUrl: `${siteUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+      cancelUrl: `${siteUrl}/tickets`,
       clientReferenceId:
         form.firstName +
         "—" +
@@ -199,7 +206,7 @@ const TicketsPage = ({ data }) => {
             </div>
           </div>
           {/* Form */}
-          <div className="tickets-form">
+          <div ref={formRef} className="tickets-form">
             <h2 className="tickets-form__header">Registration Form</h2>
             <div className="tickets-form__message">
               {message ? message : ""}

@@ -30,7 +30,7 @@
     &::before {
       content: "";
       position: absolute;
-      display: inline-block;
+      display: none;
       top: 60%;
       right: -5%;
       background-color: $color-secondary-light;
@@ -39,6 +39,10 @@
       height: 14px;
       width: 110%;
       z-index: -1;
+
+      @include respond(desktop) {
+        display: inline-block;
+      }
     }
   }
 
@@ -93,7 +97,7 @@
     @apply shadow-md;
     transition: all 0.2s;
     transform: skew(-14deg, -0deg);
-    margin-bottom: 0;
+    margin-bottom: 2rem;
 
     @include respond(tab-land) {
       margin-bottom: 2rem;
