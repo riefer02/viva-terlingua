@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -60,15 +59,8 @@ const TicketsPage = ({ data }) => {
   };
 
   const handleValidation = () => {
-    const {
-      firstName,
-      lastName,
-      email,
-      emailConfirm,
-      phone,
-      ticketCount,
-    } = form;
-    console.log("tickets", ticketCount);
+    const { firstName, lastName, email, emailConfirm, phone, ticketCount } =
+      form;
 
     if (validator.isEmpty(firstName)) {
       setMessage(`What's your first name?`);
@@ -99,7 +91,6 @@ const TicketsPage = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form", form);
     const valid = handleValidation();
     valid
       ? redirectToCheckout(e)
@@ -137,7 +128,7 @@ const TicketsPage = ({ data }) => {
   };
 
   const {
-    strapiTickets: { title, marqueeImage, panelImage },
+    strapiTickets: { title, marqueeImage, panelImage, meta },
   } = data;
   const image = getImage(panelImage);
   const marqueeData = { title, marqueeImage };
@@ -147,10 +138,8 @@ const TicketsPage = ({ data }) => {
       <SEO
         title="Tickets"
         keywords={[`terlingua`, `chili`, `cook`, "off", "tickets"]}
+        description={meta.description}
       />
-      <Helmet>
-        <title>Buy Tickets</title>
-      </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
         <div className="flex lg:flex-row flex-col">
@@ -310,6 +299,9 @@ export default TicketsPage;
 export const pageQuery = graphql`
   query TicketsQuery {
     strapiTickets {
+      meta {
+        description
+      }
       title
       id
       marqueeImage {

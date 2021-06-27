@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
@@ -10,20 +9,19 @@ import Quote from "components/Quote";
 import TextDisplay from "components/TextDisplay.js";
 
 const AboutPage = ({ data }) => {
-  console.log(data);
   const {
-    strapiAboutPage: { title, quoteContent, marqueeImage, pageContent },
+    strapiAboutPage: { title, quoteContent, marqueeImage, pageContent, meta },
   } = data;
   const image = getImage(marqueeImage);
-
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout pageName="about">
-      <SEO title="About" keywords={[`terlingua`, `chili`, `cook`, "off"]} />
-      <Helmet>
-        <title>About</title>
-      </Helmet>
+      <SEO
+        title="About"
+        keywords={[`about`, `history`, `terlingua`, `chili`, `cook`, "off"]}
+        description={meta.description}
+      />
       <Marquee marquee={marqueeData} />
       <Container>
         <TextDisplay texts={pageContent} />
@@ -43,6 +41,9 @@ export default AboutPage;
 export const pageQuery = graphql`
   query AboutPageQuery {
     strapiAboutPage {
+      meta {
+        description
+      }
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])

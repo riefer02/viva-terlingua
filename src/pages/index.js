@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
@@ -21,12 +20,8 @@ const IndexPage = ({ data }) => {
       <SEO
         title={title}
         description={meta.description}
-        image={image}
         keywords={[`terlingua`, `chili`, `cook off`, `tolbert`, `wick fowler`]}
       />
-      <Helmet>
-        <title>Home</title>
-      </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
         <Feature items={featured.featuresList} />

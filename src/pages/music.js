@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
@@ -15,7 +14,6 @@ const MusicPage = ({ data }) => {
   } = data;
   const image = getImage(marqueeImage);
   const title = `Music`;
-
   const marqueeData = { title, marqueeImage };
 
   return (
@@ -23,10 +21,8 @@ const MusicPage = ({ data }) => {
       <SEO
         title="Music"
         keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, "off"]}
+        description={seo.description}
       />
-      <Helmet>
-        <title>Music</title>
-      </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiMusicians.edges} />
@@ -75,3 +71,7 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const seo = {
+  description: `Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`,
+};

@@ -8,7 +8,6 @@ import Container from "components/Container";
 
 const ThankYouPage = ({ data }) => {
   let location = useLocation();
-  console.log(location.search);
   const {
     strapiThankYou: { title, marqueeImage, message },
   } = data;

@@ -1,15 +1,9 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-// import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
 import Container from "components/Container";
-// import Checkout from "components/Checkout";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
-// import Quote from "components/Quote";
-// import CardGallery from "components/CardGallery";
-// import Feature from "components/Feature";
 
 const EventTemplate = ({ data }) => {
   const {
@@ -19,17 +13,18 @@ const EventTemplate = ({ data }) => {
       startDateTime,
       endDateTime,
       marqueeImage,
+      meta,
     },
   } = data;
-  // const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout pageName="event">
-      <SEO title="Home" keywords={[`terlingua`, `chili`, `cook`, "off"]} />
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
+      <SEO
+        title="Home"
+        keywords={[`${title}`, `event`, `beer`, `terlingua`, `chili`, `cook`]}
+        description={meta.description}
+      />
       <Marquee marquee={marqueeData} />
       <Container>
         <h1>{title}</h1>
@@ -44,8 +39,11 @@ const EventTemplate = ({ data }) => {
 export default EventTemplate;
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     strapiEvents(id: { eq: $id }) {
+      meta {
+        description
+      }
       created_at
       description
       endDateTime

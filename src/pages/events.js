@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
@@ -13,8 +12,6 @@ const EventsPage = ({ data }) => {
     allStrapiEvents,
     strapiHomePage: { title, marqueeImage },
   } = data;
-  console.log(allStrapiEvents);
-
   const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
@@ -23,10 +20,8 @@ const EventsPage = ({ data }) => {
       <SEO
         title="Events"
         keywords={[`events`, `music`, `artists`, `terlingua`, `chili`, `cook`]}
+        description={seo.description}
       />
-      <Helmet>
-        <title>Events</title>
-      </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiEvents.edges} />
@@ -76,3 +71,7 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const seo = {
+  description: `Events, dates, times, and details for the Tolbert's International Chili Cook Off in Terlingua, Texas. How to enter, where to go, things to do around town, all we be listed here in the events page of the chili music festival. Beer, fun, sun, and friends.`,
+};

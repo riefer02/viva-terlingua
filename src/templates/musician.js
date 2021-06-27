@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "components/Layout";
 import Container from "components/Container";
@@ -9,20 +8,16 @@ import Musician from "components/Musician";
 
 const MusicianTemplate = ({ data }) => {
   const { strapiMusicians } = data;
-
   const artist = { ...strapiMusicians };
-
   const marqueeData = { title: artist.name, marqueeImage: artist.marqueeImage };
 
   return (
     <Layout pageName="musician">
       <SEO
         title={artist.name}
-        keywords={[`terlingua`, `chili`, `cook`, "off"]}
+        keywords={[`${artist.name}`, `terlingua`, `chili`, `cook`, "off"]}
+        description={artist.meta.description}
       />
-      <Helmet>
-        <title>{artist.name}</title>
-      </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
         <Musician artist={artist} />
@@ -34,8 +29,11 @@ const MusicianTemplate = ({ data }) => {
 export default MusicianTemplate;
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     strapiMusicians(id: { eq: $id }) {
+      meta {
+        description
+      }
       website
       spotifyID
       name
