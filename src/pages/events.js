@@ -10,8 +10,9 @@ import CardGallery from "components/CardGallery";
 const EventsPage = ({ data }) => {
   const {
     allStrapiEvents,
-    strapiHomePage: { title, marqueeImage },
+    strapiHomePage: { marqueeImage },
   } = data;
+  const title = `Events`;
   const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
@@ -40,8 +41,6 @@ export default EventsPage;
 export const pageQuery = graphql`
   query EventQuery {
     strapiHomePage {
-      id
-      title
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

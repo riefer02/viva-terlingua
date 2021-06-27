@@ -1,6 +1,6 @@
 .marquee__section {
   margin-top: 55px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   @include respond(tab-port) {
     margin-top: 105px;
@@ -26,7 +26,6 @@
 }
 
 .marquee__body {
-  background-color: $color-primary-light;
   background-position: cover;
   overflow: visible;
   @apply rounded-lg;

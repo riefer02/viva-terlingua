@@ -100,9 +100,9 @@ const TicketsPage = ({ data }) => {
   };
 
   const siteUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:8000"
-      : "https://terlinguachilicookoff.org";
+    process.env.NODE_ENV === "production"
+      ? `${process.env.DOMAIN_URL}`
+      : `http://localhost:8000`;
 
   // Checkout Logic
   const redirectToCheckout = async (event) => {

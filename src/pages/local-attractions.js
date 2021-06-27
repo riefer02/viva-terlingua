@@ -11,10 +11,10 @@ import CardGallery from "components/CardGallery";
 const EventsPage = ({ data }) => {
   const {
     allStrapiLocalAttractions,
-    strapiHomePage: { title, marqueeImage },
+    strapiHomePage: { marqueeImage },
   } = data;
-  console.log(allStrapiLocalAttractions);
 
+  const title = `Local Attractions`;
   const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
@@ -23,6 +23,7 @@ const EventsPage = ({ data }) => {
       <SEO
         title="Events"
         keywords={[`events`, `music`, `artists`, `terlingua`, `chili`, `cook`]}
+        description="Local Attractions in the Terlingua Mining Valley. Good for any visiting Chili head with a cold beer in their hands. Drink and Drink responsibly."
       />
       <Helmet>
         <title>Events</title>
@@ -45,8 +46,6 @@ export default EventsPage;
 export const pageQuery = graphql`
   query LocalAttractionsQuery {
     strapiHomePage {
-      id
-      title
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
