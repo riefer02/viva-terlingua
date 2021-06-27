@@ -18,6 +18,9 @@ const EventTemplate = ({ data }) => {
   } = data;
   const marqueeData = { title, marqueeImage };
 
+  let startDate = startDateTime.toString();
+  const startDay = new Date(startDate);
+
   return (
     <Layout pageName="event">
       <SEO
@@ -28,9 +31,11 @@ const EventTemplate = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <h1>{title}</h1>
-        <h3>Start Time: {startDateTime}</h3>
-        <h3>End Time: {endDateTime}</h3>
-        <p>{description}</p>
+        <div>
+          <h3>Start Time: {startDate}</h3>
+          <h3>End Time: {endDateTime}</h3>
+        </div>
+        <p class="p-lead">{description}</p>
       </Container>
     </Layout>
   );

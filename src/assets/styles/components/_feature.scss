@@ -18,6 +18,8 @@
 
   @include respond(desktop) {
     height: auto;
+    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
   }
 
   &:hover {
@@ -99,6 +101,10 @@
   flex: 1;
   margin: 1.5rem;
   width: auto;
+
+  @include respond(desktop) {
+    margin-top: 0.66rem;
+  }
 }
 
 .feature__item {
@@ -111,7 +117,6 @@
   transition: all 0.2s;
   color: $color-grey-dark-3;
   flex-direction: column;
-  // height: 200px;
   margin-bottom: 4rem;
 
   @include respond(desktop) {
@@ -186,7 +191,6 @@
   display: flex;
   flex: 1;
   justify-content: space-between;
-  padding: 0.8rem;
   flex-direction: column;
   padding: 4.2rem;
 
@@ -220,7 +224,7 @@
 
   @include respond(desktop) {
     width: 20%;
-    height: 15rem;
+    height: 16rem;
   }
 
   &:hover + .feature__item-group {

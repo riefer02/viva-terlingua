@@ -4,8 +4,9 @@
   width: 100%;
   overflow: hidden;
   transition: all 0.2s ease-out;
-  background-color: $color-secondary-light;
+  background-color: rgba($color-secondary-light, 0.5);
   z-index: 12;
+  @apply shadow-inner;
 
   &.nav--open {
     height: 100%;
@@ -17,6 +18,9 @@
   flex-direction: column;
   position: relative;
   z-index: 12;
+  padding: 2rem;
+  border: 5px solid $color-tertiary;
+  background-color: rgba($color-secondary-light, 1);
 
   &.nav--open {
   }

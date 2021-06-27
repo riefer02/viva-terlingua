@@ -89,6 +89,9 @@ export default function NavBar() {
       <Link to="/about" className="navbar__item nav--desktop">
         About
       </Link>
+      <Link to="/music" className="navbar__item nav--desktop">
+        Music
+      </Link>
       <Link to="/tickets" className="navbar__item nav--desktop">
         Tickets
       </Link>
@@ -102,7 +105,9 @@ export default function NavBar() {
           <div className="mega-menu__row">
             <div className="mega-menu__category-wrapper">
               <div className="mega-menu__category">
-                <h3 className="mega-menu__category-header">Events</h3>
+                <h3 className="mega-menu__category-header">
+                  <Link to="/events">Events</Link>
+                </h3>
                 <div className="mega-menu__list">
                   {events.map((event, index) => {
                     return (
@@ -120,7 +125,9 @@ export default function NavBar() {
             </div>
             <div className="mega-menu__category-wrapper">
               <div className="mega-menu__category">
-                <h3 className="mega-menu__category-header">Music</h3>
+                <h3 className="mega-menu__category-header">
+                  <Link to="/music">Music</Link>
+                </h3>
                 <div className="mega-menu__list">
                   {musicians.map((event, index) => {
                     return (
@@ -139,7 +146,7 @@ export default function NavBar() {
             <div className="mega-menu__category-wrapper">
               <div className="mega-menu__category">
                 <h3 className="mega-menu__category-header">
-                  Local Attractions
+                  <Link to="/local-attractions">Local Attractions</Link>
                 </h3>
                 <div className="mega-menu__list">
                   {localAttractions.map((la, index) => {
@@ -148,6 +155,7 @@ export default function NavBar() {
                         href={la.url}
                         key={index}
                         className="mega-menu__item slider-bg"
+                        target="_blank"
                       >
                         <span className="slider-text">{la.name}</span>
                       </a>
@@ -166,6 +174,7 @@ export default function NavBar() {
                         href={sponsor.website}
                         key={index}
                         className="mega-menu__item slider-bg"
+                        target="_blank"
                       >
                         <span className="slider-text">{sponsor.name}</span>
                       </a>
