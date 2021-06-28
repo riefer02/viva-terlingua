@@ -111,13 +111,17 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 4rem;
-  height: 300px;
+  height: auto;
 
   @include respond(tab-land) {
     order: 2;
     width: 66.6%;
     margin: 1.5rem;
     height: auto;
+  }
+
+  @include respond(desktop) {
+    height: 300px;
   }
 
   & .p-lead {
