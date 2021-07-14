@@ -22,7 +22,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-sass",
-    "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
@@ -77,5 +76,6 @@ module.exports = {
         specialChars: "/:",
       },
     },
+    "gatsby-plugin-postcss",
   ],
 };
