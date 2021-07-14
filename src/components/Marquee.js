@@ -8,7 +8,6 @@ export default function Marquee({ marquee }) {
       <div className="marquee__container container mx-auto rounded-lg">
         <BackgroundImage
           className="marquee__body shadow-lg "
-          // style={{ backgroundImage: `url(${image})` }}
           fluid={marquee.marqueeImage.childImageSharp.fluid}
           placeholder="blurred"
           style={{

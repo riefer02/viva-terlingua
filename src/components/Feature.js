@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../utils/fontawesome";
 
 export default function Feature({ items }) {
   const features = [...items];
@@ -20,6 +22,7 @@ export default function Feature({ items }) {
           <div className="feature__full-banner">
             <h2 className="feature__full-banner-text">
               {mainFeature.calloutText}
+              <FontAwesomeIcon size="xs" icon="arrow-right"></FontAwesomeIcon>
             </h2>
           </div>
           <div className="feature__full-description">
@@ -27,9 +30,6 @@ export default function Feature({ items }) {
             <p className="feature__full-description-text">
               {mainFeature.description}
             </p>
-            {/* <div className="feature__full-action">
-            <button className="feature__full-btn">Feature Full Action</button>
-          </div> */}
           </div>
         </BackgroundImage>
       </Link>
@@ -54,7 +54,13 @@ export default function Feature({ items }) {
                     <p className="feature__item-description">{description}</p>
                   </div>
                   <div className="w-full xl:w-1/3 feature__item-action">
-                    <button className="feature__item-btn">{calloutText}</button>
+                    <button className="feature__item-btn">
+                      {calloutText}{" "}
+                      <FontAwesomeIcon
+                        size="xs"
+                        icon="arrow-right"
+                      ></FontAwesomeIcon>
+                    </button>
                   </div>
                 </div>
               </div>

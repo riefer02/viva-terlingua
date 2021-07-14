@@ -29,7 +29,7 @@
   background-position: cover;
   overflow: visible;
   @apply rounded-lg;
-  height: 40vh;
+  height: 20vh;
 
   @include respond(tab-port) {
     height: 411px;

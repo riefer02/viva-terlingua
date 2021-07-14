@@ -11,7 +11,11 @@ const Header = () => {
       <div className="header__container container mx-auto">
         <Link to="/">
           <div className="flex justify-center align-center">
-            <img className="header__logo" src={logo}></img>
+            <img
+              className="header__logo"
+              src={logo}
+              alt="Tolbert's International Wick Fowler Chili Cook Off"
+            />
             <p className="header__site-title">Terlingua Chili Cook Off</p>
           </div>
         </Link>

@@ -30,6 +30,7 @@ const IndexPage = ({ data }) => {
           image={image}
           alt="Hillside Journey!"
           className="image__full-panel rounded-lg my-16 shadow-md"
+          objectPosition="0% 0%"
         />
       </Container>
     </Layout>

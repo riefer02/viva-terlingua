@@ -52,6 +52,10 @@
       font-size: 2.7rem;
       color: $color-white;
       transform: skew(14deg, 0deg);
+
+      & svg {
+        margin-left: 5px;
+      }
     }
   }
 }
@@ -184,6 +188,9 @@
 
   &-btn {
     transform: skew(14deg, 0deg);
+    & svg {
+      margin-left: 5px;
+    }
   }
 }
 
