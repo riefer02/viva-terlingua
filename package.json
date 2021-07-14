@@ -42,8 +42,10 @@
   },
   "keywords": [
     "gatsby",
-    "sass",
-    "scss"
+    "strapi",
+    "netlify",
+    "chili",
+    "terlingua"
   ],
   "license": "MIT",
   "scripts": {
@@ -57,9 +59,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/colbyfayock/gatsby-starter-sass"
+    "url": "https://github.com/riefer02/viva-terlingua"
   },
   "bugs": {
-    "url": "https://github.com/colbyfayock/gatsby-starter-sass/issues"
+    "url": "https://github.com/riefer02/viva-terlingua"
   }
 }
