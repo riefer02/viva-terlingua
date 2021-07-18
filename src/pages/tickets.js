@@ -96,13 +96,15 @@ const TicketsPage = ({ data }) => {
     const valid = handleValidation();
     valid
       ? redirectToCheckout(e)
-      : console.log("We're missing your ::variable:: partner!");
+      : setMessage("We're missing some details partner!");
   };
 
-  const siteUrl =
-    process.env.NODE_ENV === "production"
-      ? `${process.env.DOMAIN_URL}`
-      : `http://localhost:8000`;
+  let price;
+  if (process.env.NODE_ENV === "production") {
+    price = "price_1JEE3WFsCVnN1kJ0i0HG4Kes";
+  } else {
+    price = "price_1Il2uJLGdKUm2tIda69M1hsh";
+  }
 
   // Checkout Logic
   const redirectToCheckout = async (event) => {
@@ -112,12 +114,10 @@ const TicketsPage = ({ data }) => {
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [
-        { price: "price_1Il2uJLGdKUm2tIda69M1hsh", quantity: form.ticketCount },
-      ],
+      lineItems: [{ price: price, quantity: form.ticketCount }],
       customerEmail: form.email,
-      successUrl: `${siteUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: `${siteUrl}/tickets`,
+      successUrl: `${process.env.DOMAIN_URL}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+      cancelUrl: `${process.env.DOMAIN_URL}/tickets`,
       clientReferenceId:
         form.firstName +
         "—" +
