@@ -99,13 +99,6 @@ const TicketsPage = ({ data }) => {
       : setMessage("We're missing some details partner!");
   };
 
-  let price;
-  if (process.env.NODE_ENV === "production") {
-    price = "price_1JEE3WFsCVnN1kJ0i0HG4Kes";
-  } else {
-    price = "price_1Il2uJLGdKUm2tIda69M1hsh";
-  }
-
   // Checkout Logic
   const redirectToCheckout = async (event) => {
     event.preventDefault();
@@ -114,18 +107,15 @@ const TicketsPage = ({ data }) => {
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
-      lineItems: [{ price: price, quantity: form.ticketCount }],
+      lineItems: [
+        { price: "price_1JEE4QFsCVnN1kJ0MeEDuF9w", quantity: form.ticketCount },
+      ],
       customerEmail: form.email,
       successUrl: `${process.env.DOMAIN_URL}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
       cancelUrl: `${process.env.DOMAIN_URL}/tickets`,
-      clientReferenceId:
-        form.firstName +
-        "—" +
-        form.lastName +
-        "—" +
-        form.ticketCount +
-        "—" +
-        Date.now(),
+      clientReferenceId: `${form.firstName}—${form.lastName}—${
+        form.ticketCount
+      }—${form.phone}—${Date.now()}`,
     });
 
     if (error) {

@@ -3,14 +3,17 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const axios = require("axios");
 
 const recordTransaction = (session) => {
+  const personalInfo = session.client_reference_id.split("—");
+  const fullName = `${personalInfo[0]} ${personalInfo[1]}`;
+
   const transaction = {
-    name: session.customer,
-    numberOfTickets: session.amount_total,
+    name: fullName,
+    numberOfTickets: personalInfo[2],
     email: session.customer_details.email,
-    phoneNumber: "6664206969",
+    phoneNumber: personalInfo[3],
     customerID: session.customer,
     transactionID: session.id,
-    festivalYear: "2021",
+    timeOfPurchase: personalInfo[4],
   };
 
   axios
