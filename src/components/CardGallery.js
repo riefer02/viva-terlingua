@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../utils/fontawesome";
 
 function Card({ item, index }) {
   // `slug` for internal links, `url` for external links
-  const { image, slug, name, url } = item.node;
+  const { image, slug, name, url, squareImage } = item.node;
+
+  const cardImage = squareImage ? squareImage : image;
 
   if (url) {
     return (
@@ -21,6 +25,7 @@ function Card({ item, index }) {
           <div className="card-gallery__card-text-area shadow-md flex items-center justify-between leading-tight p-2 md:p-4">
             <a className="card-gallery__card-link" href={url}>
               <h2 className="card-gallery__card-title">{name}</h2>
+              <FontAwesomeIcon size="xs" icon="arrow-right"></FontAwesomeIcon>
             </a>
           </div>
         </article>
@@ -31,17 +36,18 @@ function Card({ item, index }) {
   return (
     <div className="card-gallery__card my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
       <article className="card-gallery__card-content overflow-hidden rounded-lg shadow-md">
-        <Link to={slug}>
+        <Link className="card-gallery__image-link" to={slug}>
           <GatsbyImage
             alt="Placeholder"
             className="card-gallery__card-image block h-auto w-full"
-            image={getImage(image)}
+            image={getImage(cardImage)}
             placeholder="blurred"
           />
         </Link>
         <div className="card-gallery__card-text-area shadow-md flex items-center justify-between leading-tight p-2 md:p-4">
           <Link className="card-gallery__card-link" to={slug}>
             <h2 className="card-gallery__card-title">{name}</h2>
+            <FontAwesomeIcon size="xs" icon="arrow-right"></FontAwesomeIcon>
           </Link>
         </div>
       </article>

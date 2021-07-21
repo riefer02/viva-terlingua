@@ -65,6 +65,14 @@ export const pageQuery = graphql`
               }
             }
           }
+          squareImage {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+              fluid(quality: 90, maxWidth: 400, maxHeight: 400) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
     }

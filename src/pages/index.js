@@ -10,9 +10,17 @@ import Feature from "components/Feature";
 
 const IndexPage = ({ data }) => {
   const {
-    strapiHomePage: { title, content, marqueeImage, featured, meta },
+    strapiHomePage: {
+      title,
+      content,
+      marqueeImage,
+      featured,
+      meta,
+      panelImage,
+    },
   } = data;
   const image = getImage(marqueeImage);
+  const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage };
 
   return (
@@ -27,7 +35,7 @@ const IndexPage = ({ data }) => {
         <Feature items={featured.featuresList} />
         <Quote quote={content}></Quote>
         <GatsbyImage
-          image={image}
+          image={panel}
           alt="Hillside Journey!"
           className="image__full-panel rounded-lg my-16 shadow-md"
           objectPosition="0% 0%"
@@ -70,6 +78,14 @@ export const pageQuery = graphql`
         }
       }
       marqueeImage {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      panelImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
