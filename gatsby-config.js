@@ -65,6 +65,7 @@ module.exports = {
           `events`,
           `musicians`,
           `local-attractions`,
+          `gallery-images`,
         ],
         singleTypes: [`home-page`, `tickets`, "thank-you", "about-page"],
       },

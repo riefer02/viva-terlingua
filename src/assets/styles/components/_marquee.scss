@@ -26,8 +26,7 @@
 }
 
 .marquee__body {
-  background-position: cover;
-  overflow: visible;
+  overflow: hidden;
   @apply rounded-lg;
   height: 20vh;
 

@@ -11,13 +11,10 @@ export default function Marquee({ marquee }) {
           fluid={marquee.marqueeImage.childImageSharp.fluid}
           placeholder="blurred"
           style={{
+            objectFit: "cover",
             // Defaults are overwrite-able by setting one or each of the following:
-            backgroundSize: "cover",
-            backgroundPosition: "0% 0%",
-            // backgroundRepeat: "",
           }}
         >
-          {" "}
           <Sponsors />
         </BackgroundImage>
         <div className="marquee__text-area shadow-lg">
