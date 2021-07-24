@@ -19,7 +19,6 @@ const IndexPage = ({ data }) => {
       panelImage,
     },
   } = data;
-  const image = getImage(marqueeImage);
   const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage };
 

@@ -19,6 +19,8 @@
 .marquee__container {
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 
   @include respond(desktop) {
     height: 43rem;
@@ -26,7 +28,8 @@
 }
 
 .marquee__body {
-  overflow: hidden;
+  background-position: cover;
+  overflow: visible;
   @apply rounded-lg;
   height: 20vh;
 
@@ -43,6 +46,7 @@
   top: -12%;
   width: 100%;
   margin: 0 auto;
+  //   transform: translate(-50%, -50%);
   background-color: $color-secondary;
   color: $color-white;
   padding: 1rem 3rem;
