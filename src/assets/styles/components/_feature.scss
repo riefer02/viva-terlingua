@@ -3,10 +3,7 @@
   flex-direction: column;
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
-
-  @include respond(desktop) {
-    flex-direction: row;
-  }
+  margin-top: 2rem !important;
 
   @include respond(tab-land) {
     width: 80%;
@@ -14,6 +11,7 @@
   }
 
   @include respond(desktop) {
+    flex-direction: row;
     width: auto;
     margin: unset;
   }

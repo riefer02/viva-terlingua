@@ -45,18 +45,6 @@ export default function Sponsors() {
                 </div>
               );
             })}
-
-            {/* {sponsors.map((logo, index) => {
-              return (
-                <div key={index} className="sponsors__item">
-                  <GatsbyImage
-                    image={logo}
-                    alt="sponsor"
-                    className="sponsors__logo"
-                  />
-                </div>
-              );
-            })} */}
           </div>
         </div>
       )}

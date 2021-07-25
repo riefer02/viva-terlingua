@@ -83,7 +83,7 @@
     line-height: 5rem;
     font-size: 1.7rem;
 
-    & p {
+    p {
       margin-bottom: 2rem;
       text-align: left;
       text-indent: 2ch;
@@ -91,6 +91,14 @@
 
       @include respond(tab-port) {
         font-size: 2rem;
+      }
+    }
+
+    a {
+      color: $color-primary;
+
+      &:hover {
+        color: $color-secondary-light;
       }
     }
   }

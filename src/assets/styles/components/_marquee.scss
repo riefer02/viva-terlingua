@@ -1,6 +1,6 @@
 .marquee__section {
   margin-top: 55px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   @include respond(tab-port) {
     margin-top: 90px;
@@ -21,6 +21,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  position: relative;
 
   @include respond(desktop) {
     height: 43rem;
@@ -47,6 +48,7 @@
   top: -12%;
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 4rem;
   background-color: $color-secondary;
   color: $color-white;
   padding: 1rem 3rem;
@@ -57,6 +59,7 @@
   }
 
   @include respond(desktop) {
+    margin-bottom: 0;
     width: 50%;
   }
 }
@@ -78,5 +81,18 @@
   @include respond(tab-port) {
     font-size: 1.9rem;
     padding-bottom: 8px;
+  }
+}
+
+.marquee__premiere-sponsor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  margin-left: 2rem;
+
+  @include respond(desktop) {
+    bottom: 10%;
+    width: 280px;
   }
 }

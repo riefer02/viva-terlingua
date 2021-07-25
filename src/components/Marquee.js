@@ -1,10 +1,24 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Sponsors from "components/Sponsors";
 
 export default function Marquee({ marquee }) {
   const image = getImage(marquee.marqueeImage.childImageSharp);
   const activeSub = marquee.subhead ? true : false;
+
+  const data = useStaticQuery(graphql`
+    query LiftmasterLogoQuery {
+      strapiSponsors(name: { eq: "Liftmaster" }) {
+        logo {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  `);
+  console.log(data);
 
   return (
     <div className="marquee__section">
@@ -21,6 +35,14 @@ export default function Marquee({ marquee }) {
           {activeSub && (
             <div className="marquee__header-secondary">{marquee.subhead}</div>
           )}
+        </div>
+        <div className="marquee__premiere-sponsor">
+          <GatsbyImage
+            className=""
+            image={getImage(data.strapiSponsors.logo)}
+            alt="Liftmasters Logo"
+            placeholder="blurred"
+          ></GatsbyImage>
         </div>
       </div>
     </div>
