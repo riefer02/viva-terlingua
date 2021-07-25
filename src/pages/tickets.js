@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
 import Container from "components/Container";
 import Marquee from "components/Marquee";
@@ -9,6 +9,7 @@ import SEO from "components/SEO";
 import getStripe from "../utils/stripe";
 import "../utils/fontawesome";
 import validator from "validator";
+import PanelImage from "components/PanelImage";
 
 const TicketsPage = ({ data }) => {
   const formRef = useRef(null);
@@ -281,11 +282,7 @@ const TicketsPage = ({ data }) => {
             </form>
           </div>
         </div>
-        <GatsbyImage
-          image={image}
-          alt="Hillside Journey!"
-          className="image__full-panel rounded-lg my-16 shadow-md"
-        />
+        <PanelImage image={image} />
       </Container>
     </Layout>
   );

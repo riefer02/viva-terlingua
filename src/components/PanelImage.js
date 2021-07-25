@@ -6,7 +6,7 @@ export default function PanelImage({ image }) {
     <GatsbyImage
       image={image}
       alt="Hillside Journey!"
-      className="image__full-panel my-16 shadow-md"
+      className="panel-image my-16 shadow-md"
       objectPosition="0% 0%"
     />
   );

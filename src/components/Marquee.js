@@ -13,9 +13,6 @@ export default function Marquee({ marquee }) {
           image={image}
           alt="Fun exciting scene from Terlingua"
           placeholder="blurred"
-          style={{
-            objectFit: "cover",
-          }}
         ></GatsbyImage>
         <div className="marquee__text-area shadow-lg">
           <div className="marquee__header-primary">{marquee.title}</div>

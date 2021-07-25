@@ -1,0 +1,8 @@
+.panel-image {
+  height: 14vh;
+  @apply lg:mx-20;
+
+  @include respond(tab-port) {
+    height: 411px;
+  }
+}
