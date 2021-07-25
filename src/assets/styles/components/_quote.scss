@@ -33,7 +33,17 @@ blockquote::before {
 }
 
 blockquote::after {
-  content: "";
+  font-family: Arial;
+  content: none;
+  color: $color-primary-light;
+  font-size: 4em;
+  position: absolute;
+  right: 10px;
+  top: -10px;
+
+  @include respond(tab-port) {
+    content: "\201C";
+  }
 }
 
 blockquote span {

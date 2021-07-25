@@ -6,6 +6,7 @@ import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import TextDisplay from "components/TextDisplay";
+import PanelImage from "components/PanelImage";
 
 const EventTemplate = ({ data }) => {
   const {
@@ -16,16 +17,24 @@ const EventTemplate = ({ data }) => {
       endDateTime,
       marqueeImage,
       meta,
+      panelImage,
     },
   } = data;
   const marqueeData = { title, marqueeImage };
-  let startDate = startDateTime.toString();
-  const startDay = new Date(startDate);
+  const panel = getImage(panelImage.childImageSharp);
+  let eventTime;
+  if (startDateTime && endDateTime) {
+    eventTime = `${startDateTime} — ${endDateTime}`;
+  }
   const pageContent = {
     primaryText: description,
-    Links: [{ type: "internal", url: "/", label: "Home" }],
+    Links: [
+      { type: "internal", url: "/", label: "Home" },
+      { type: "internal", url: "/music", label: "Music" },
+      { type: "internal", url: "/local-attractions", label: "Explore" },
+    ],
     author: title,
-    postDate: `${startDate} — ${endDateTime}`,
+    postDate: eventTime,
   };
 
   return (
@@ -38,11 +47,7 @@ const EventTemplate = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <TextDisplay texts={pageContent} />
-        <GatsbyImage
-          image={getImage(marqueeImage)}
-          alt="Hillside Journey!"
-          className="image__full-panel rounded-lg my-16 shadow-md"
-        />
+        <PanelImage image={panel} />.
       </Container>
     </Layout>
   );
@@ -58,16 +63,21 @@ export const pageQuery = graphql`
       }
       created_at
       description
-      endDateTime
+      endDateTime(formatString: "MMMM Do, YYYY")
       id
       title
-      startDateTime
+      startDateTime(formatString: "MMMM Do, YYYY")
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
             ...GatsbyImageSharpFluid_withWebp
           }
+        }
+      }
+      panelImage {
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }

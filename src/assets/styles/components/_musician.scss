@@ -1,3 +1,7 @@
+.musician__wrapper {
+  margin-top: 2.5rem !important; //override container;
+}
+
 .musician__container-top {
   display: flex;
   background-color: $color-tertiary-light;
@@ -8,9 +12,11 @@
   border-top: 5px solid $color-primary-light;
 
   @include respond(tab-land) {
-    height: 500px;
     flex-direction: row;
     border: none;
+  }
+
+  @include respond(desktop) {
   }
 }
 
@@ -23,10 +29,15 @@
   width: auto;
   order: 2;
 
+  @include respond(tab-port) {
+    margin-bottom: 0;
+  }
+
   @include respond(tab-land) {
     order: 1;
     height: auto;
     width: 33.3%;
+    margin-bottom: 1.5rem;
   }
 
   &:hover {
@@ -120,12 +131,20 @@
     height: auto;
   }
 
-  @include respond(desktop) {
+  @include respond(tab-land) {
     height: 300px;
   }
 
+  @include respond(desktop) {
+    height: 100%;
+  }
+
   & .p-lead {
-    padding: 0 4rem;
+    padding: 0 1rem;
+
+    @include respond(tab-port) {
+      padding: 0 4rem;
+    }
 
     @include respond(tab-land) {
       padding: 0;
@@ -136,15 +155,24 @@
 .musician__set-time {
   font-family: $primary-font-family;
   position: relative;
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   z-index: 2;
   display: inline-block;
   margin-top: 1.7rem;
   text-align: left;
-  margin-bottom: 3.5rem;
+  margin-bottom: 6rem;
+
+  @include respond(tab-port) {
+    font-size: 2.7rem;
+    margin-bottom: 3.5rem;
+  }
 
   @include respond(tab-land) {
     margin-bottom: 2rem;
+  }
+
+  @include respond(desktop) {
+    margin-bottom: 4rem;
   }
 
   &::before {
@@ -152,20 +180,25 @@
     position: absolute;
     display: inline-block;
     top: 90%;
-    right: -5%;
+    right: 0;
     background-color: $color-secondary-light;
     // transform: skew(-14deg, 0deg);
     opacity: 0.4;
     height: 35px;
-    width: 110%;
+    width: 97%;
     z-index: -1;
     clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0);
+
+    @include respond(tab-port) {
+      right: -5%;
+      width: 110%;
+    }
   }
 }
 
 .musician__website {
   font-family: $primary-font-family;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: $color-white;
   display: block;
   position: relative;
@@ -176,6 +209,10 @@
   cursor: pointer;
   @apply shadow-md;
   margin: 0 auto;
+
+  @include respond(tab-port) {
+    font-size: 2rem;
+  }
 
   @include respond(tab-land) {
     width: 100%;
@@ -216,6 +253,15 @@
   background-color: $color-tertiary-light;
   margin-top: 8rem;
   position: relative;
-  height: 800px;
+  height: 200px;
   width: 100%;
+
+  @include respond(tap-port) {
+    width: 50%;
+    height: 400px;
+  }
+
+  @include respond(desktop) {
+    height: 800px;
+  }
 }

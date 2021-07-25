@@ -1,5 +1,6 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
+import { getImage } from "gatsby-plugin-image";
 
 export default function Musician({ artist }) {
   const {
@@ -9,8 +10,15 @@ export default function Musician({ artist }) {
     description,
     spotifyID,
     musicVideoID,
+    squareImage,
   } = artist;
+  console.log(squareImage);
 
+  const adaptiveImage = squareImage
+    ? squareImage.childImageSharp.fluid
+    : artistImage.childImageSharp.fluid;
+
+  console.log(adaptiveImage);
   return (
     <div className="musician__wrapper">
       <div className="musician__container-top shadow-md">
@@ -18,7 +26,7 @@ export default function Musician({ artist }) {
         <BackgroundImage
           className="musician__full"
           alt="placeholder"
-          fluid={artistImage.childImageSharp.fluid}
+          fluid={adaptiveImage}
           imgStyle={{ objectFit: "contain" }}
         ></BackgroundImage>
 

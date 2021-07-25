@@ -7,6 +7,7 @@ import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import CardGallery from "components/CardGallery";
 import PanelImage from "components/PanelImage";
+import Itinerary from "components/Itinerary";
 
 const MusicPage = ({ data }) => {
   const { allStrapiMusicians, primaryImage, panelImage } = data;
@@ -24,6 +25,7 @@ const MusicPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
+        <Itinerary />
         <CardGallery items={allStrapiMusicians.edges} />
         <PanelImage image={panel} />
       </Container>
@@ -59,7 +61,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allStrapiMusicians {
+    allStrapiMusicians(sort: { fields: [order], order: ASC }) {
       edges {
         node {
           name
@@ -72,6 +74,11 @@ export const pageQuery = graphql`
               fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
                 ...GatsbyImageSharpFluid_withWebp
               }
+            }
+          }
+          squareImage {
+            childImageSharp {
+              gatsbyImageData
             }
           }
         }

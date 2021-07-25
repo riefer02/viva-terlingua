@@ -164,14 +164,15 @@ const TicketsPage = ({ data }) => {
                     icon="pepper-hot"
                     className="tickets-details__item-caret"
                   />
-                  Live music for three nights straight with over eight bands.
+                  Live music for four nights straight with over eight bands.
                 </li>
                 <li className="tickets-details__item">
                   <FontAwesomeIcon
                     icon="pepper-hot"
                     className="tickets-details__item-caret"
                   />
-                  Opportunity to sign up to judge in the competition.
+                  Opportunity to sign up to judge in the competition. Chili
+                  judging on Saturday is full.
                 </li>
                 <li className="tickets-details__item">
                   <FontAwesomeIcon
@@ -179,14 +180,28 @@ const TicketsPage = ({ data }) => {
                     className="tickets-details__item-caret"
                   />
                   Interact with over forty unique vendors from across the
-                  nation.
+                  nation. Texas artists and authors will be present.
                 </li>
                 <li className="tickets-details__item">
                   <FontAwesomeIcon
                     icon="pepper-hot"
                     className="tickets-details__item-caret"
                   />
-                  Proceeds go towards fighting ALS.
+                  Proceeds go towards fighting ALS, and local charities.
+                </li>
+                <li className="tickets-details__item">
+                  <FontAwesomeIcon
+                    icon="pepper-hot"
+                    className="tickets-details__item-caret"
+                  />
+                  For logistics and physical address{" "}
+                  <a
+                    className="tickets-details__link"
+                    href="http://abowlofred.com/home/local_restaurants_rv_parks__more"
+                  >
+                    click here
+                  </a>
+                  .
                 </li>
               </ul>
               <p className="tickets-details__disclaimer">

@@ -233,3 +233,12 @@
     }
   }
 }
+
+.tickets-details__link {
+  color: $color-primary;
+  font-style: italic;
+
+  &::hover {
+    color: $color-secondary-light;
+  }
+}

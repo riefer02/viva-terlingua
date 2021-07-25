@@ -21,7 +21,7 @@ export default function NavBar() {
             Music
           </Link>
           <Link to="/events" className="mobile-nav__item">
-            Events
+            Events/News
           </Link>
           <Link to="/local-attractions" className="mobile-nav__item">
             Local Attractions
@@ -106,7 +106,7 @@ export default function NavBar() {
             <div className="mega-menu__category-wrapper">
               <div className="mega-menu__category">
                 <h3 className="mega-menu__category-header">
-                  <Link to="/events">Events</Link>
+                  <Link to="/events">Events/News</Link>
                 </h3>
                 <div className="mega-menu__list">
                   {events.map((event, index) => {

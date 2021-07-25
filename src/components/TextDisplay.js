@@ -32,7 +32,7 @@ export default function TextDisplay({ texts }) {
       <div className="text-display__content">
         <div className="text-display__content-wrapper">
           <div className="text-display__author">{author}</div>
-          <div className="text-display__date">{postDate}</div>
+          {postDate && <div className="text-display__date">{postDate}</div>}
           <p
             className="text-display__text-area"
             dangerouslySetInnerHTML={{ __html: primaryText }}
