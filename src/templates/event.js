@@ -1,9 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
 import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
+import TextDisplay from "components/TextDisplay";
 
 const EventTemplate = ({ data }) => {
   const {
@@ -17,9 +19,14 @@ const EventTemplate = ({ data }) => {
     },
   } = data;
   const marqueeData = { title, marqueeImage };
-
   let startDate = startDateTime.toString();
   const startDay = new Date(startDate);
+  const pageContent = {
+    primaryText: description,
+    Links: [{ type: "internal", url: "/", label: "Home" }],
+    author: title,
+    postDate: `${startDate} — ${endDateTime}`,
+  };
 
   return (
     <Layout pageName="event">
@@ -30,12 +37,12 @@ const EventTemplate = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <h1>{title}</h1>
-        <div>
-          <h3>Start Time: {startDate}</h3>
-          <h3>End Time: {endDateTime}</h3>
-        </div>
-        <p class="p-lead">{description}</p>
+        <TextDisplay texts={pageContent} />
+        <GatsbyImage
+          image={getImage(marqueeImage)}
+          alt="Hillside Journey!"
+          className="image__full-panel rounded-lg my-16 shadow-md"
+        />
       </Container>
     </Layout>
   );

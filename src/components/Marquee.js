@@ -6,7 +6,7 @@ export default function Marquee({ marquee }) {
   const image = getImage(marquee.marqueeImage.childImageSharp);
   return (
     <div className="marquee__section">
-      <div className="marquee__container container mx-auto rounded-lg">
+      <div className="marquee__container container mx-auto">
         <Sponsors />
         <GatsbyImage
           className="marquee__body shadow-lg "

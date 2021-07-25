@@ -14,10 +14,10 @@ function Card({ item, index }) {
     return (
       <div className="card-gallery__card my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
         <article className="card-gallery__card-content overflow-hidden rounded-lg shadow-md">
-          <a href={url}>
+          <a className="card-gallery__card-wrapper" href={url}>
             <GatsbyImage
               alt="Placeholder"
-              className="card-gallery__card-image block h-auhref w-full"
+              className="card-gallery__card-image block w-full"
               image={getImage(image)}
               placeholder="blurred"
             />
@@ -39,7 +39,7 @@ function Card({ item, index }) {
         <Link className="card-gallery__image-link" to={slug}>
           <GatsbyImage
             alt="Placeholder"
-            className="card-gallery__card-image block h-auto w-full"
+            className="card-gallery__card-image block w-full"
             image={getImage(cardImage)}
             placeholder="blurred"
           />

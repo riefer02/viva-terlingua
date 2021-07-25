@@ -29,8 +29,7 @@
 
 .marquee__body {
   background-position: cover;
-  overflow: visible;
-  @apply rounded-lg;
+  overflow: hidden;
   height: 20vh;
 
   @include respond(tab-port) {

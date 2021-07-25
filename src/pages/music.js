@@ -1,18 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import Layout from "components/Layout";
 import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import CardGallery from "components/CardGallery";
+import PanelImage from "components/PanelImage";
 
 const MusicPage = ({ data }) => {
-  const {
-    allStrapiMusicians,
-    strapiHomePage: { marqueeImage },
-  } = data;
-  const image = getImage(marqueeImage);
+  const { allStrapiMusicians, primaryImage, panelImage } = data;
+  const marqueeImage = primaryImage.image;
+  const panel = getImage(panelImage.image.childImageSharp);
   const title = `Music`;
   const marqueeData = { title, marqueeImage };
 
@@ -26,11 +25,7 @@ const MusicPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiMusicians.edges} />
-        <GatsbyImage
-          image={image}
-          alt="Hillside Journey!"
-          className="image__full-panel rounded-lg my-16 shadow-md"
-        />
+        <PanelImage image={panel} />
       </Container>
     </Layout>
   );
@@ -40,14 +35,27 @@ export default MusicPage;
 
 export const pageQuery = graphql`
   query MusicQuery {
-    strapiHomePage {
-      id
-      marqueeImage {
+    panelImage: strapiGalleryImages(
+      role: { eq: "panel" }
+      page: { eq: "music" }
+    ) {
+      title
+      description
+      image {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData
+        }
+      }
+    }
+    primaryImage: strapiGalleryImages(
+      role: { eq: "marquee" }
+      page: { eq: "music" }
+    ) {
+      title
+      description
+      image {
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
@@ -61,7 +69,7 @@ export const pageQuery = graphql`
             id
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-              fluid(quality: 90, maxWidth: 400, maxHeight: 400) {
+              fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

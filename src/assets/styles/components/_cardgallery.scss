@@ -7,11 +7,21 @@
 
 .card-gallery__card {
   position: relative;
+  overflow: hidden;
   height: 340px;
   margin-bottom: 50px;
 
   @include respond(tab-land) {
     margin-bottom: 0;
+    height: 237px;
+  }
+
+  @include respond(desktop) {
+    height: 300px;
+  }
+
+  @include respond(big-desktop) {
+    height: 340px;
   }
 
   & a {
@@ -63,9 +73,4 @@
   & svg {
     margin-left: 5px;
   }
-}
-
-.card-gallery__image-link {
-  width: 100%;
-  height: 100%;
 }

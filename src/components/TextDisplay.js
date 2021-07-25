@@ -53,3 +53,15 @@ export default function TextDisplay({ texts }) {
     </div>
   );
 }
+
+TextDisplay.defaultProps = {
+  texts: {
+    Links: [
+      { type: "internal", url: "/", label: "Home" },
+      { type: "internal", url: "/tickets", label: "Tickets" },
+    ],
+    author: "John Doe",
+    postDate: "Today",
+    primaryText: "It was a good day.",
+  },
+};

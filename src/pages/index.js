@@ -7,6 +7,7 @@ import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import Quote from "components/Quote";
 import Feature from "components/Feature";
+import PanelImage from "components/PanelImage";
 
 const IndexPage = ({ data }) => {
   const {
@@ -33,12 +34,7 @@ const IndexPage = ({ data }) => {
       <Container>
         <Feature items={featured.featuresList} />
         <Quote quote={content}></Quote>
-        <GatsbyImage
-          image={panel}
-          alt="Hillside Journey!"
-          className="image__full-panel rounded-lg my-16 shadow-md"
-          objectPosition="0% 0%"
-        />
+        <PanelImage image={panel} />
       </Container>
     </Layout>
   );

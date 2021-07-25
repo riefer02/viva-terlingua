@@ -7,15 +7,14 @@ import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import CardGallery from "components/CardGallery";
+import PanelImage from "components/PanelImage";
 
 const EventsPage = ({ data }) => {
-  const {
-    allStrapiLocalAttractions,
-    strapiHomePage: { marqueeImage },
-  } = data;
+  const { allStrapiLocalAttractions, primaryImage, panel } = data;
 
   const title = `Local Attractions`;
-  const image = getImage(marqueeImage);
+  const marqueeImage = primaryImage.image;
+  const panelImage = getImage(panel.image);
   const marqueeData = { title, marqueeImage };
 
   return (
@@ -31,11 +30,7 @@ const EventsPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiLocalAttractions.edges} />
-        <GatsbyImage
-          image={image}
-          alt="Hillside Journey!"
-          className="image__full-panel rounded-lg my-16 shadow-md"
-        />
+        <PanelImage image={panelImage} />
       </Container>
     </Layout>
   );
@@ -45,13 +40,21 @@ export default EventsPage;
 
 export const pageQuery = graphql`
   query LocalAttractionsQuery {
-    strapiHomePage {
-      marqueeImage {
+    primaryImage: strapiGalleryImages(title: { eq: "2-Alarm Chili" }) {
+      image {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData
+        }
+      }
+      title
+      description
+    }
+    panel: strapiGalleryImages(title: { eq: "Watching the Show" }) {
+      title
+      description
+      image {
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }

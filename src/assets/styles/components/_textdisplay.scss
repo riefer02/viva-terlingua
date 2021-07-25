@@ -1,13 +1,18 @@
 .text-display {
   &__container {
+    margin-top: 0rem !important; // Override container scss
   }
 
   &__content {
     background-color: $color-tertiary-light;
-    padding: 2.5rem;
+    padding: 1rem;
     display: inline-block;
     @apply shadow-md;
     color: $color-grey-dark-3;
+
+    @include respond(tab-port) {
+      padding: 2.5rem;
+    }
 
     &-wrapper {
       background-color: $color-white;
@@ -75,13 +80,17 @@
 
   &__text-area {
     margin: 0 auto;
-    font-size: 2rem;
     line-height: 5rem;
 
     & p {
       margin-bottom: 2rem;
       text-align: left;
       text-indent: 2ch;
+      font-size: 1.7rem;
+
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
     }
   }
 
