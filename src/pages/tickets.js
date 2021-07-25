@@ -144,10 +144,9 @@ const TicketsPage = ({ data }) => {
           {/* Description */}
           <div className="tickets-details">
             <div className="tickets-details__content">
-              <p className="p-lead font-semibold">
+              <p>
                 Buy your ticket for the 2021 Tolbert's Chili Cook Off today.
-                Each ticket is priced at $40 per person and includes the
-                following:
+                Each ticket is priced at $40 per person and includes:
               </p>
               <div className="relative">
                 <h2 className="tickets-details__header">What's Included</h2>

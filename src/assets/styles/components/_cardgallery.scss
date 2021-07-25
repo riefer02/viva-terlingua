@@ -8,8 +8,13 @@
 .card-gallery__card {
   position: relative;
   overflow: hidden;
-  height: 340px;
-  margin-bottom: 50px;
+  height: 300px;
+  margin-bottom: 20px;
+
+  @include respond(tab-port) {
+    height: 340px;
+    margin-bottom: 50px;
+  }
 
   @include respond(tab-land) {
     margin-bottom: 0;
@@ -30,6 +35,7 @@
 
   &-content {
     height: 100%;
+
     &:hover {
       & > .card-gallery__card-text-area {
         background-color: $color-secondary-light;
@@ -59,7 +65,11 @@
 .card-gallery__card-title {
   transform: skew(14deg, 0deg);
   color: $color-white;
-  font-size: 3rem;
+  font-size: 2.5rem;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
 
   @include respond(tab-land) {
     font-size: 1.7rem;

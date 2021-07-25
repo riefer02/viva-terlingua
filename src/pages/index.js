@@ -18,10 +18,11 @@ const IndexPage = ({ data }) => {
       featured,
       meta,
       panelImage,
+      secondaryText,
     },
   } = data;
   const panel = getImage(panelImage);
-  const marqueeData = { title, marqueeImage };
+  const marqueeData = { title, marqueeImage, subhead: secondaryText };
 
   return (
     <Layout pageName="home">
@@ -51,6 +52,7 @@ export const pageQuery = graphql`
         author
         text
       }
+      secondaryText
       meta {
         description
       }

@@ -3,7 +3,7 @@
   margin-bottom: 3rem;
 
   @include respond(tab-port) {
-    margin-top: 105px;
+    margin-top: 90px;
   }
 
   @include respond(tab-land) {
@@ -62,11 +62,21 @@
 }
 
 .marquee__header-primary {
-  font-size: 3.2rem;
+  font-size: 3rem;
   position: relative;
   bottom: 0.2rem;
+
+  @include respond(tab-port) {
+    font-size: 3.2rem;
+  }
 }
 
 .marquee__header-secondary {
-  font-size: 3.5rem;
+  font-style: italic;
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+  @include respond(tab-port) {
+    font-size: 1.9rem;
+    padding-bottom: 8px;
+  }
 }
