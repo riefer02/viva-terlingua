@@ -7,6 +7,7 @@ import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import Quote from "components/Quote";
 import TextDisplay from "components/TextDisplay.js";
+import PanelImage from "components/PanelImage";
 
 const AboutPage = ({ data }) => {
   const {
@@ -26,11 +27,7 @@ const AboutPage = ({ data }) => {
       <Container>
         <TextDisplay texts={pageContent} />
         <Quote quote={quoteContent}></Quote>
-        <GatsbyImage
-          image={image}
-          alt="A group of people at the chili cook off"
-          className="image__full-panel rounded-lg my-16 shadow-md"
-        />
+        <PanelImage image={image} />
       </Container>
     </Layout>
   );
