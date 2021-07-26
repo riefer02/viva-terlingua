@@ -18,6 +18,7 @@
 }
 
 .feature__full {
+  pointer-events: none;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -151,6 +152,7 @@
 }
 
 .feature__item {
+  pointer-events: none;
   display: flex;
   flex: 1;
   justify-content: space-between;
