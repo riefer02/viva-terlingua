@@ -10,7 +10,6 @@
   overflow: visible;
   height: 300px;
   margin-bottom: 20px;
-  pointer-events: none;
 
   @include respond(tab-port) {
     height: 340px;
