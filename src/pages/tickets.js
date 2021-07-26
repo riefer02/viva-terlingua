@@ -109,7 +109,7 @@ const TicketsPage = ({ data }) => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [
-        { price: "price_1JEE4QFsCVnN1kJ0MeEDuF9w", quantity: form.ticketCount },
+        { price: process.env.TICKET_PRICE, quantity: form.ticketCount },
       ],
       customerEmail: form.email,
       successUrl: `${process.env.DOMAIN_URL}/thank-you?session_id={CHECKOUT_SESSION_ID}`,

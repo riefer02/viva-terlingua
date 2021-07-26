@@ -1,7 +1,11 @@
 .tickets-details {
   color: $color-grey-dark-3;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
+
+  @include respond(tab-port) {
+    margin-bottom: 50px;
+  }
 
   @include respond(tab-land) {
     width: 66.6%;
@@ -71,8 +75,12 @@
 
   &__list {
     height: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     padding: 0 1rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 40px;
+    }
 
     @include respond(tab-land) {
       margin-bottom: 0;
@@ -177,7 +185,7 @@
   }
 
   &__input {
-    margin-bottom: 2rem;
+    margin-bottom: 0.4rem;
     display: block;
     height: 40px;
     padding: 1.5rem 1rem;
@@ -185,6 +193,10 @@
     border: none;
     font-size: 1.3rem;
     @apply shadow-sm;
+
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+    }
 
     &:focus {
       outline: 1px solid rgba($color-secondary-light, 0.5);
@@ -210,9 +222,13 @@
     @apply shadow-md;
     background-color: $color-primary;
     padding: 0.5rem 1.6rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: $secondary-font-family;
     transition: all 0.2s;
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
 
     @include respond(tab-land) {
       font-size: 2rem;

@@ -50,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ["STRIPE_API_KEY", "NODE_ENV", "DOMAIN_URL"],
+        allowList: ["STRIPE_API_KEY", "NODE_ENV", "DOMAIN_URL", "TICKET_PRICE"],
       },
     },
     {
