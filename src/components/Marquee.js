@@ -18,7 +18,6 @@ export default function Marquee({ marquee }) {
       }
     }
   `);
-  console.log(data);
 
   return (
     <div className="marquee__section">
