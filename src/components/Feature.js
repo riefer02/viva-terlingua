@@ -10,6 +10,7 @@ export default function Feature({ items }) {
   const mainFeature = features[0];
   features.shift();
   const sideFeatures = features;
+
   return (
     <div className="feature__container shadow-md">
       {/* Featured Full */}
