@@ -23,6 +23,12 @@ const TicketsPage = ({ data }) => {
     ticketCount: null,
   });
 
+  const {
+    strapiTickets: { title, marqueeImage, panelImage, meta },
+  } = data;
+  const image = getImage(panelImage);
+  const marqueeData = { title, marqueeImage };
+
   const handleInput = (e, fieldName) => {
     switch (fieldName) {
       case "firstName":
@@ -124,12 +130,6 @@ const TicketsPage = ({ data }) => {
       setMessage("Something went wrong. Try again soon.");
     }
   };
-
-  const {
-    strapiTickets: { title, marqueeImage, panelImage, meta },
-  } = data;
-  const image = getImage(panelImage);
-  const marqueeData = { title, marqueeImage };
 
   return (
     <Layout pageName="tickets">

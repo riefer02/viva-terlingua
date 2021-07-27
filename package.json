@@ -4,7 +4,6 @@
   "version": "0.1.2",
   "author": "Andrew Riefenstahl",
   "dependencies": {
-    "@fontsource/bilbo": "^4.3.0",
     "@fontsource/lato": "^4.2.2",
     "@fontsource/merriweather": "^4.2.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
