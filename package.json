@@ -33,12 +33,12 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "stripe": "^8.163.0",
-    "tailwindcss": "^2.2.4",
+    "stripe": "^8.165.0",
+    "tailwindcss": "^2.2.7",
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "netlify-cli": "^4.1.2"
+    "netlify-cli": "^5.2.6"
   },
   "keywords": [
     "gatsby",
