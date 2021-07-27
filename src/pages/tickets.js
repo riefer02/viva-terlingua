@@ -212,7 +212,7 @@ const TicketsPage = ({ data }) => {
           </div>
           {/* Form */}
           <div ref={formRef} className="tickets-form">
-            <h2 className="tickets-form__header">Registration Form</h2>
+            <h2 className="tickets-form__header">Ticket Order Form</h2>
             <div className="tickets-form__message">
               {message ? message : ""}
             </div>
