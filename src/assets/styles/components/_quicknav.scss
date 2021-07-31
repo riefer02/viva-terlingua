@@ -1,0 +1,40 @@
+.quick-nav {
+}
+
+.quick-nav__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  @include respond(tab-port) {
+    flex-direction: row;
+  }
+}
+
+.quick-nav__link {
+  margin: 1rem;
+
+  background-color: $color-primary-light;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.8rem;
+  color: $color-white;
+  @apply shadow-md;
+  transition: all 0.2s;
+  transform: skew(-14deg, -0deg);
+  margin-bottom: 2rem;
+
+  @include respond(tab-land) {
+    margin-bottom: 2rem;
+  }
+
+  &:hover {
+    background-color: $color-secondary-light;
+  }
+}
+
+.quick-nav__text {
+  transform: skew(14deg, -0deg);
+}

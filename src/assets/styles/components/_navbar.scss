@@ -2,6 +2,7 @@
 .navbar {
   height: 100%;
   display: inline-block;
+  user-select: none;
 
   @include respond(tab-land) {
     display: flex;
@@ -17,9 +18,12 @@
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease-out;
+  user-select: none;
 
-  &:hover {
-    background-color: $color-secondary-light;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $color-secondary-light;
+    }
   }
 }
 
@@ -55,13 +59,13 @@
   left: 0;
   z-index: 1;
   height: 0px;
+  user-select: none;
 }
 
 .navbar__dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Clear floats after the columns */
 .mega-menu__row {
   overflow: hidden;
   transition: all 0.2s;
@@ -70,7 +74,6 @@
   background-color: $color-tertiary-light;
   display: none;
   border: none;
-
   @apply shadow-md;
 
   @include respond(tab-land) {
@@ -83,9 +86,6 @@
   content: "";
   display: table;
   clear: both;
-}
-
-.mega-menu__category-wrapper {
 }
 
 .mega-menu__category {

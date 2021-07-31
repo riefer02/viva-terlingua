@@ -1,34 +1,29 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-import { useLocation } from "@reach/router";
+import { getImage } from "gatsby-plugin-image";
 import Marquee from "components/Marquee";
 import Layout from "components/Layout";
 import Container from "components/Container";
+import PanelImage from "components/PanelImage";
+import QuickNav from "components/QuickNav";
 
 const ThankYouPage = ({ data }) => {
-  let location = useLocation();
   const {
     strapiThankYou: { title, marqueeImage, message },
   } = data;
   const marqueeData = { title, marqueeImage };
-
-  useEffect(() => {});
 
   return (
     <Layout pageName="two">
       <Helmet>
         <title>Thank you</title>
       </Helmet>
+      <Marquee marquee={marqueeData} />
       <Container>
-        <Marquee marquee={marqueeData} />
-        <h1>{message}</h1>
-        <h2>Here are some local attractions to look up.</h2>
-        <ul>
-          <li>Easter Egg Motel</li>
-          <li>Ghost Town</li>
-        </ul>
-        <p>Welcome to page 2</p>
+        <h1 className="thank-you__message">{message}</h1>
+        <QuickNav />
+        <PanelImage image={getImage(marqueeImage)} />
       </Container>
     </Layout>
   );

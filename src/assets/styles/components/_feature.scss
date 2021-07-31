@@ -4,6 +4,7 @@
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
   margin-top: 2rem !important;
+  user-select: none;
 
   @include respond(tab-land) {
     width: 80%;

@@ -1,6 +1,5 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
-import { getImage } from "gatsby-plugin-image";
 
 export default function Musician({ artist }) {
   const {

@@ -143,10 +143,15 @@
 
 .tickets-form {
   width: 100%;
-  padding: 2rem 5rem 4rem;
+  padding: 2rem 2rem 4rem;
   @apply shadow-md;
-  background-color: $color-tertiary-light;
+  background-color: $color-white;
   color: $color-grey-dark-3;
+  border-radius: 1rem;
+
+  @include respond(tab-port) {
+    padding: 2rem 5rem 4rem;
+  }
 
   @include respond(tab-land) {
     width: 50%;
@@ -162,9 +167,14 @@
   }
 
   &__header {
-    font-size: 3.8rem;
+    font-size: 3.4rem;
     font-family: $secondary-font-family;
     margin-bottom: 0.2rem;
+
+    @include respond(tab-port) {
+      font-size: 3.8rem;
+    }
+
     @include respond(tab-land) {
       font-size: 2.3rem;
     }
@@ -176,6 +186,7 @@
     text-align: left;
     margin-bottom: 0.5rem;
   }
+
   &__message {
     font-size: 1.6rem;
     height: 2.7rem;
@@ -190,16 +201,21 @@
     height: 40px;
     padding: 1.5rem 1rem;
     width: 100%;
-    border: none;
+    border: 1px solid rgba($color-grey-light-2, 0.5);
     font-size: 1.3rem;
-    @apply shadow-sm;
+    margin-bottom: 1rem;
+    background-color: $color-grey-light-1;
+    @apply shadow-inner;
+    border-radius: 1rem;
 
     @include respond(tab-port) {
       margin-bottom: 2rem;
     }
 
     &:focus {
-      outline: 1px solid rgba($color-secondary-light, 0.5);
+      border: 1px solid rgba($color-tertiary-light, 0.5);
+      outline: none;
+      // outline: 1px solid rgba($color-secondary-light, 0.5);
       @apply shadow-inner;
     }
 
@@ -207,7 +223,9 @@
     }
 
     &:focus:invalid {
-      outline: 1px solid rgba($color-secondary-light, 0.5);
+      border: 1px solid rgba($color-secondary-light, 0.5);
+      outline: none;
+      // outline: 1px solid rgba($color-secondary-light, 0.5);
       @apply shadow-inner;
     }
   }
@@ -221,10 +239,11 @@
     font-weight: 700;
     @apply shadow-md;
     background-color: $color-primary;
-    padding: 0.5rem 1.6rem;
+    padding: 1rem 1.6rem;
     font-size: 2rem;
     font-family: $secondary-font-family;
     transition: all 0.2s;
+    width: 100%;
 
     @include respond(tab-port) {
       font-size: 3rem;

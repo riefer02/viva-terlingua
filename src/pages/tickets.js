@@ -217,7 +217,9 @@ const TicketsPage = ({ data }) => {
               {message ? message : ""}
             </div>
             <form className="tickets-form__content">
-              <label className="tickets-form__label"> First Name</label>
+              <label className="tickets-form__label" for="firstName">
+                First Name
+              </label>
               <input
                 required
                 className="tickets-form__input"
@@ -228,7 +230,9 @@ const TicketsPage = ({ data }) => {
                   handleInput(e, "firstName");
                 }}
               ></input>
-              <label className="tickets-form__label">Last Name</label>
+              <label className="tickets-form__label" for="lastName">
+                Last Name
+              </label>
               <input
                 required
                 className="tickets-form__input"
@@ -239,7 +243,9 @@ const TicketsPage = ({ data }) => {
                   handleInput(e, "lastName");
                 }}
               ></input>
-              <label className="tickets-form__label">Email</label>
+              <label className="tickets-form__label" for="email">
+                Email
+              </label>
               <input
                 required
                 className="tickets-form__input"
@@ -250,7 +256,9 @@ const TicketsPage = ({ data }) => {
                   handleInput(e, "email");
                 }}
               ></input>
-              <label className="tickets-form__label">Confirm Email</label>
+              <label className="tickets-form__label" for="emailConfirm">
+                Confirm Email
+              </label>
               <input
                 required
                 className="tickets-form__input"
@@ -261,7 +269,9 @@ const TicketsPage = ({ data }) => {
                   handleInput(e, "emailConfirm");
                 }}
               ></input>
-              <label className="tickets-form__label">Phone Number</label>
+              <label className="tickets-form__label" for="phone">
+                Phone Number
+              </label>
               <input
                 required
                 className="tickets-form__input"
@@ -272,7 +282,9 @@ const TicketsPage = ({ data }) => {
                   handleInput(e, "phone");
                 }}
               ></input>
-              <label className="tickets-form__label">Number of Tickets</label>
+              <label className="tickets-form__label" for="numTickets">
+                Number of Tickets
+              </label>
               <input
                 required
                 className="tickets-form__input"
@@ -293,6 +305,13 @@ const TicketsPage = ({ data }) => {
               >
                 Review Order
               </button>
+              <sub className="mt-5 text-sm">
+                *All information is handled through{" "}
+                <a class="text-indigo-600" href="https://stripe.com/">
+                  Stripe
+                </a>{" "}
+                payment integration systems.
+              </sub>
             </form>
           </div>
         </div>
