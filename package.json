@@ -38,7 +38,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "netlify-cli": "^5.2.6"
+    "netlify-cli": "^5.4.7"
   },
   "keywords": [
     "gatsby",
