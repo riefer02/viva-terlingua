@@ -16,7 +16,9 @@ const Header = () => {
               src={logo}
               alt="Tolbert's International Wick Fowler Chili Cook Off"
             />
-            <p className="header__site-title">Terlingua Chili Cook Off</p>
+            <p className="header__site-title">
+              Tolbert's Terlingua Chili Cook Off
+            </p>
           </div>
         </Link>
         <NavBar />

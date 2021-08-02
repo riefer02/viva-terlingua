@@ -10,7 +10,7 @@ export default function Banner() {
           <Link to="/tickets" className="banner__message-link">
             Here
           </Link>{" "}
-          for 2021 Terlingua Chili Cook Off
+          for {new Date().getFullYear()} Tolbert's Terlingua Chili Cook Off
         </p>
       </div>
     </div>

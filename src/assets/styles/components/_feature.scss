@@ -4,7 +4,6 @@
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
   margin-top: 2rem !important;
-  user-select: none;
 
   @include respond(tab-land) {
     width: 80%;
@@ -32,6 +31,7 @@
   }
 
   @include respond(desktop) {
+    pointer-events: auto;
     height: auto;
     margin-bottom: 1.6rem;
     margin-top: 1.6rem;
@@ -57,8 +57,8 @@
     left: 8px;
     transform: skew(-14deg, -0deg);
     width: 75%;
-    @apply shadow-md;
     transition: all 0.2s ease-out;
+    @apply shadow-md;
 
     @include respond(tab-port) {
       bottom: 24px;
@@ -166,6 +166,7 @@
   margin-bottom: 4rem;
 
   @include respond(desktop) {
+    pointer-events: auto;
     flex-direction: row;
     margin-bottom: 0;
   }
@@ -209,7 +210,7 @@
     }
 
     @include respond(desktop) {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 0;
       padding-bottom: 1rem;
       margin-left: 1rem;
