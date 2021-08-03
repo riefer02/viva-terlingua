@@ -43,18 +43,26 @@ exports.handler = async function ({ body, headers }, context) {
       webhookSecret
     );
 
+    let session;
+    let axiosRecord;
+
     if (stripeEvent.type === "checkout.session.completed") {
-      const session = stripeEvent.data.object;
-      recordTransaction(session);
+      session = stripeEvent.data.object;
+      axiosRecord = recordTransaction(session);
     }
     return {
       statusCode: 200,
-      body: JSON.stringify({ received: true }),
+      body: JSON.stringify({
+        received: true,
+        stripeEvent,
+        axiosRecord,
+        session,
+      }),
     };
   } catch (err) {
     return {
       statusCode: 400,
-      body: `Webhook Error: ${err.message}`,
+      body: `Webhook Error: ${err.message} + ${webhookSecret}`,
     };
   }
 };
