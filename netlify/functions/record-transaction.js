@@ -43,19 +43,15 @@ exports.handler = async function ({ body, headers }, context) {
       webhookSecret
     );
 
-    let session;
-    let record;
-
     if (stripeEvent.type === "checkout.session.completed") {
-      session = stripeEvent.data.object;
-      record = await recordTransaction(session);
+      const session = stripeEvent.data.object;
+      await recordTransaction(session);
     }
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         received: true,
-        record,
       }),
     };
   } catch (err) {
