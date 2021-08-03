@@ -2,7 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_API_KEY);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const axios = require("axios");
 
-const recordTransaction = (session) => {
+const recordTransaction = async (session) => {
   const personalInfo = session.client_reference_id.split("—");
   const fullName = `${personalInfo[0]} ${personalInfo[1]}`;
 
@@ -16,7 +16,7 @@ const recordTransaction = (session) => {
     timeOfPurchase: personalInfo[4],
   };
 
-  axios
+  await axios
     .post(`${process.env.STRAPI_URL}/ticket-holders`, transaction)
     .then((res) => {
       return {
@@ -48,7 +48,7 @@ exports.handler = async function ({ body, headers }, context) {
 
     if (stripeEvent.type === "checkout.session.completed") {
       session = stripeEvent.data.object;
-      axiosRecord = recordTransaction(session);
+      axiosRecord = await recordTransaction(session);
     }
     return {
       statusCode: 200,
