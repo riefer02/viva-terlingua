@@ -10,7 +10,7 @@ import QuickNav from "components/QuickNav";
 
 const ThankYouPage = ({ data }) => {
   const {
-    strapiThankYou: { title, marqueeImage, message },
+    strapiThankYou: { title, marqueeImage, message, panelImage },
   } = data;
   const marqueeData = { title, marqueeImage };
 
@@ -23,7 +23,7 @@ const ThankYouPage = ({ data }) => {
       <Container>
         <h1 className="thank-you__message">{message}</h1>
         <QuickNav />
-        <PanelImage image={getImage(marqueeImage)} />
+        <PanelImage image={getImage(panelImage)} />
       </Container>
     </Layout>
   );
@@ -38,6 +38,14 @@ export const pageQuery = graphql`
       id
       message
       marqueeImage {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      panelImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {

@@ -5,9 +5,8 @@ export default function PanelImage({ image }) {
   return (
     <GatsbyImage
       image={image}
-      alt="Hillside Journey!"
+      alt="People enjoying themselves in Terlingua"
       className="panel-image my-16 shadow-md"
-      objectPosition="0% 0%"
     />
   );
 }
