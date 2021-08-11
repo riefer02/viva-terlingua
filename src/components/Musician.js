@@ -30,7 +30,6 @@ export default function Musician({ artist }) {
         {/* Artist Description */}
         <div className="musician__description">
           <div className="relative">
-            {/* <h3 className="musician__name">{name}</h3> */}
             <h4 className="musician__set-time">{setTime}</h4>
           </div>
           <p className="p-lead">{description}</p>

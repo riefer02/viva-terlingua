@@ -10,7 +10,7 @@ module.exports = {
     url: `${
       process.env.NODE_ENV === "development"
         ? `http://localhost:8000`
-        : `https://sad-sammet-139539.netlify.app`
+        : `https://terlinguachilicookoff.org`
     }`,
     image: `/static/hillside-journey.jpg`,
     author: `@riefer02 - Andrew Riefenstahl`,
