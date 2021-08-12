@@ -7,6 +7,7 @@ module.exports = {
     title: `Terlingua International Chili Cook Off`,
     titleTemplate: `Terlingua International Chili Cook Off`,
     description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
+    siteUrl: `https://terlinguachilicookoff.org`,
     url: `${
       process.env.NODE_ENV === "development"
         ? `http://localhost:8000`
@@ -27,6 +28,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
