@@ -38,6 +38,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "@netlify/plugin-sitemap": "^0.8.1",
     "netlify-cli": "^5.4.7"
   },
   "keywords": [
