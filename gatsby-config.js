@@ -13,7 +13,7 @@ module.exports = {
         ? `http://localhost:8000`
         : `https://terlinguachilicookoff.org`
     }`,
-    image: `/static/hillside-journey.jpg`,
+    image: `/static/oticcc-logo-black.png`,
     author: `@riefer02 - Andrew Riefenstahl`,
     twitter: `@riefer02`,
   },
@@ -28,7 +28,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-plugin-fontawesome-css`,
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
