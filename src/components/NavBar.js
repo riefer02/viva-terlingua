@@ -82,7 +82,7 @@ export default function NavBar() {
   const sponsors = [...data.allStrapiSponsors.nodes];
 
   return (
-    <div className="navbar flex justify-center items-center">
+    <nav className="navbar flex justify-center items-center">
       <Link to="/" className="navbar__item nav--desktop">
         Home
       </Link>
@@ -186,6 +186,6 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

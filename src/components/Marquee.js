@@ -43,6 +43,9 @@ export default function Marquee({ marquee }) {
             placeholder="blurred"
           ></GatsbyImage>
         </div>
+        <div className="marquee__cookoff-dates">
+            <div className="marquee__date-text">November 3rd - 6th, 2021</div>
+        </div>
       </div>
     </div>
   );

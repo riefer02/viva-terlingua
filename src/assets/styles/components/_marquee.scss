@@ -78,6 +78,7 @@
   font-style: italic;
   font-size: 1.5rem;
   padding-bottom: 15px;
+
   @include respond(tab-port) {
     font-size: 1.9rem;
     padding-bottom: 8px;
@@ -94,5 +95,29 @@
   @include respond(desktop) {
     bottom: 6%;
     width: 280px;
+  }
+}
+
+.marquee__cookoff-dates {
+  padding: 0.5rem 0.6rem;
+  color: $color-white;
+  background-color: $color-primary-light;
+  @apply shadow-md;
+  font-size: 1.35rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  margin-right: 2rem;
+  transform: skew(-14deg, -0deg);
+
+  @include respond(desktop) {
+    font-size: 1.7rem;
+    bottom: 6%;
+    width: 280px;
+  }
+
+  .marquee__date-text {
+    transform: skew(14deg, 0deg);
   }
 }
