@@ -39,4 +39,4 @@ Please see `viva-terlingua-cms` repo for CMS mapped to this project and instruct
 npm run develop
 ```
 
-# Have Fun :hot_chili:
+# Have Fun :hot_pepper:
