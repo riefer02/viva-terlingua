@@ -20,10 +20,22 @@ const fetchTicketHolders = async () => {
 
 const TicketItem = ({ ticketHolder }) => {
   const { name, numberOfTickets, completedCheckIns, customerID } = ticketHolder;
-  const [updatedCheckIns, setUpdatedCheckIns] = useState(0);
+  const [count, setCount] = useState(0);
   const [inactive, setInactive] = useState(true);
 
-  useEffect(() => {}, []);
+  const modifyValue = (mod) => {
+    if (mod) {
+      if (count === numberOfTickets) return;
+      setCount(count + 1);
+    } else {
+      if (count === 0) return;
+      setCount(count - 1);
+    }
+  };
+
+  useEffect(() => {
+    count !== completedCheckIns ? setInactive(false) : setInactive(true);
+  }, [count]);
 
   return (
     <li className="ticket-item" key={customerID}>
@@ -38,11 +50,17 @@ const TicketItem = ({ ticketHolder }) => {
       <div className="ticket-item__column">
         <div className="ticket-item__header">Check Ins</div>
         <div className="ticket-item__number flex items-center">
-          <div className="ticket-item__minus mr-5" onClick={() => {}}>
+          <div
+            className="ticket-item__minus mr-5"
+            onClick={() => modifyValue(0)}
+          >
             -
           </div>
-          {updatedCheckIns}
-          <div className="ticket-item__plus ml-5" onClick={() => {}}>
+          {count}
+          <div
+            className="ticket-item__plus ml-5"
+            onClick={() => modifyValue(1)}
+          >
             +
           </div>
         </div>
@@ -51,7 +69,7 @@ const TicketItem = ({ ticketHolder }) => {
         <div className="ticket-item__header">Update</div>
         <FontAwesomeIcon
           icon={`pen-square`}
-          className={inactive ? "inactive" : ""}
+          className={`ticket-item__update-btn ${inactive ? "inactive" : ""}`}
         />
       </div>
     </li>

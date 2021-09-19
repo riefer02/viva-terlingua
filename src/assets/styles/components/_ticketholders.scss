@@ -94,15 +94,33 @@
 
 .ticket-item__name {
   font-size: 1.4rem;
+  user-select: none;
 }
 
 .ticket-item__number {
   font-size: 2rem;
+  user-select: none;
 }
 
 .ticket-item__button {
   height: 100%;
-  .inactive {
+}
+
+.ticket-item__update-btn {
+  cursor: pointer;
+
+  &.inactive {
+    cursor: initial;
+    user-select: none;
+    color: $color-tertiary;
+
+    &:hover {
+      color: $color-tertiary;
+    }
+  }
+
+  &:hover {
+    color: $color-secondary;
   }
 }
 
@@ -117,6 +135,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: $color-primary;
