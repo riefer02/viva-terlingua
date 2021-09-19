@@ -24,6 +24,7 @@ module.exports = {
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -51,7 +52,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ["STRIPE_API_KEY", "NODE_ENV", "DOMAIN_URL", "TICKET_PRICE"],
+        allowList: [
+          "STRIPE_API_KEY",
+          "NODE_ENV",
+          "DOMAIN_URL",
+          "TICKET_PRICE",
+          "PORTAL_USERNAME",
+          "PORTAL_PASSWORD",
+        ],
       },
     },
     {

@@ -1,0 +1,31 @@
+.login-form {
+  @extend .tickets-form;
+  margin: 0 auto;
+
+  @include respond(tab-port) {
+  }
+
+  @include respond(tab-land) {
+  }
+}
+
+.login-form__content {
+  @extend .tickets-form__content;
+}
+
+.login-form__header {
+  @extend .tickets-form__header;
+}
+
+.login-form__label {
+  @extend .tickets-form__label;
+}
+
+.login-form__input {
+  @extend .tickets-form__input;
+}
+
+.login-form__submit {
+  @extend .tickets-form__submit-btn;
+  cursor: pointer;
+}

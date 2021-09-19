@@ -27,3 +27,19 @@ footer {
     align-items: center;
   }
 }
+
+.footer__portal {
+  font-family: $primary-font-family;
+  margin-left: auto;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.1rem;
+
+  &:hover {
+    background-color: $color-secondary-light;
+  }
+}

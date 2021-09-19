@@ -307,7 +307,7 @@ const TicketsPage = ({ data }) => {
               </button>
               <sub className="mt-5 text-sm">
                 *All information is handled through{" "}
-                <a class="text-indigo-600" href="https://stripe.com/">
+                <a className="text-indigo-600" href="https://stripe.com/">
                   Stripe
                 </a>{" "}
                 payment integration systems.

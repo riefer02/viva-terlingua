@@ -1,0 +1,14 @@
+.portal {
+  @apply container;
+  margin-top: 56px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond(tab-port) {
+    margin-top: 105px;
+  }
+
+  @include respond(desktop) {
+    margin-top: 0;
+  }
+}
