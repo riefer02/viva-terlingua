@@ -4,5 +4,6 @@ import {
   faArrowRight,
   faPenSquare,
   faFilter,
+  faSync,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faPepperHot, faArrowRight, faPenSquare, faFilter);
+library.add(faPepperHot, faArrowRight, faPenSquare, faFilter, faSync);

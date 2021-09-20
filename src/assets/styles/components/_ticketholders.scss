@@ -27,6 +27,11 @@
   }
 }
 
+.search__input {
+  @extend .tickets-form__input;
+  margin-bottom: 0 !important;
+}
+
 .ticket-list__filter-button {
   color: $color-primary;
   height: 100%;
@@ -35,8 +40,8 @@
   transition: all 0.2s;
   font-size: 2rem;
 
-  &:hover {
-    color: $color-secondary;
+  &.on {
+    color: $color-tertiary;
   }
 }
 
@@ -47,9 +52,17 @@
   border-radius: 1rem;
   transition: all 0.2s;
   margin: 0 0 0 1rem;
+  font-size: 1.5rem;
 
   &:hover {
     background-color: $color-secondary-light;
+  }
+}
+
+.ticket-list__headers {
+  .ticket-item {
+    background-color: $color-secondary;
+    color: $color-white;
   }
 }
 
@@ -62,11 +75,15 @@
   border: 1px solid $color-grey-dark-2;
   margin-bottom: 0.5rem;
   border-radius: 1rem;
+
+  &.checked-in {
+    opacity: 0.7;
+    background-color: $color-tertiary;
+  }
 }
 
 .ticket-item__header {
   padding-top: 0.3rem;
-  display: none;
 }
 
 .ticket-item__column {
@@ -87,8 +104,14 @@
     width: 50%;
   }
 
-  &:nth-of-type(3) {
+  &:nth-of-type(4) {
     width: 100%;
+  }
+
+  &.column-header {
+    min-height: auto;
+    height: 3.3rem;
+    font-size: 1.9rem;
   }
 }
 
@@ -140,5 +163,18 @@
   &:hover {
     color: $color-primary;
     transform: scale(1.1);
+  }
+}
+
+.ticket-item__sync-icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
