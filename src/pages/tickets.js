@@ -53,7 +53,8 @@ const TicketsPage = ({ data }) => {
         break;
       case "phone":
         setForm((state) => {
-          return { ...state, phone: e.target.value };
+          const formattedPhone = e.target.value.replace(/-|\s/g, "");
+          return { ...state, phone: formattedPhone };
         });
         break;
       case "ticketCount":
