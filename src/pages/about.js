@@ -6,7 +6,7 @@ import Container from "components/Container";
 import SEO from "components/SEO";
 import Marquee from "components/Marquee";
 import Quote from "components/Quote";
-import TextDisplay from "components/TextDisplay.js";
+import TextDisplay from "components/TextDisplay";
 import PanelImage from "components/PanelImage";
 
 const AboutPage = ({ data }) => {

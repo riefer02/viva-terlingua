@@ -9,6 +9,7 @@ import TextDisplay from "components/TextDisplay";
 import PanelImage from "components/PanelImage";
 
 const EventTemplate = ({ data }) => {
+  console.log(data);
   const {
     strapiEvents: {
       title,
@@ -40,7 +41,7 @@ const EventTemplate = ({ data }) => {
   return (
     <Layout pageName="event">
       <SEO
-        title="Home"
+        title={meta.title}
         keywords={[`${title}`, `event`, `beer`, `terlingua`, `chili`, `cook`]}
         description={meta.description}
       />
@@ -60,6 +61,7 @@ export const pageQuery = graphql`
     strapiEvents(id: { eq: $id }) {
       meta {
         description
+        title
       }
       created_at
       description
