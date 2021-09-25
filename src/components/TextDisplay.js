@@ -33,10 +33,10 @@ export default function TextDisplay({ texts }) {
         <div className="text-display__content-wrapper">
           <div className="text-display__author">{author}</div>
           {postDate && <div className="text-display__date">{postDate}</div>}
-          <p
+          <div
             className="text-display__text-area"
             dangerouslySetInnerHTML={{ __html: primaryText }}
-          ></p>
+          ></div>
           <div className="text-display__actions">
             <button className="text-display__action-btn">
               <Link to="/tickets">
