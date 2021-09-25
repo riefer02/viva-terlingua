@@ -9,7 +9,6 @@ import TextDisplay from "components/TextDisplay";
 import PanelImage from "components/PanelImage";
 
 const EventTemplate = ({ data }) => {
-  console.log(data);
   const {
     strapiEvents: {
       title,
