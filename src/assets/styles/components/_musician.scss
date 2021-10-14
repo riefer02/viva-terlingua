@@ -103,7 +103,6 @@
   justify-content: space-between;
   flex: 1;
   margin: 1.5rem;
-  //   background-color: $color-primary;
 
   & > * {
     margin-right: 1.5rem;
@@ -176,13 +175,12 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: inline-block;
     top: 90%;
     right: 0;
     background-color: $color-secondary-light;
-    // transform: skew(-14deg, 0deg);
     opacity: 0.4;
     height: 35px;
     width: 97%;
@@ -198,7 +196,7 @@
 
 .musician__website {
   font-family: $primary-font-family;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   color: $color-white;
   display: block;
   position: relative;
@@ -224,7 +222,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: inline-block;
     top: 0%;

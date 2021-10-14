@@ -103,13 +103,16 @@
   color: $color-white;
   background-color: $color-primary-light;
   @apply shadow-md;
-  font-size: 1.35rem;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 150px;
   margin-right: 2rem;
   transform: skew(-14deg, -0deg);
+  width: 120px;
+
+  @include respond(tab-port) {
+    width: 150px;
+  }
 
   @include respond(desktop) {
     font-size: 1.7rem;
@@ -119,5 +122,10 @@
 
   .marquee__date-text {
     transform: skew(14deg, 0deg);
+    font-size: 1rem;
+
+    @include respond(tab-port) {
+      font-size: 1.35rem;
+    }
   }
 }
