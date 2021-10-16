@@ -33,7 +33,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       display: none;
       top: 60%;
@@ -82,6 +82,7 @@
     margin: 0 auto;
     line-height: 5rem;
     font-size: 1.7rem;
+    font-family: $secondary-font-family;
 
     p {
       margin-bottom: 2rem;
