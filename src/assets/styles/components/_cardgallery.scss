@@ -14,10 +14,12 @@
 
   @include respond(tab-port) {
     height: 340px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    padding: 1rem;
   }
 
   @include respond(tab-land) {
+    padding: 0;
     margin-bottom: 0;
     height: 237px;
   }

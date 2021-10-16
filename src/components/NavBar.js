@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import React, { useState } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 export default function NavBar() {
   const [isOpen, setOpen] = useState(false);
 
   const MobileNav = () => {
     return (
-      <div className={`mobile-nav ${isOpen ? "nav--open" : ""}`}>
+      <div className={`mobile-nav ${isOpen ? 'nav--open' : ''}`}>
         <div className="mobile-nav__list">
           <Link to="/" className="mobile-nav__item">
             Home
@@ -38,7 +38,7 @@ export default function NavBar() {
           setOpen(!isOpen);
         }}
         id="hamburger"
-        className={isOpen ? "open" : ""}
+        className={isOpen ? 'open' : ''}
       >
         <span></span>
         <span></span>

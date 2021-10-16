@@ -106,9 +106,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-right: 2rem;
+  margin-right: 1rem;
   transform: skew(-14deg, -0deg);
-  width: 120px;
+  width: 137px;
 
   @include respond(tab-port) {
     width: 150px;
@@ -122,7 +122,7 @@
 
   .marquee__date-text {
     transform: skew(14deg, 0deg);
-    font-size: 1rem;
+    font-size: 1.25rem;
 
     @include respond(tab-port) {
       font-size: 1.35rem;
