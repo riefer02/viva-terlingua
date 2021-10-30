@@ -1,25 +1,25 @@
-import React, { useState, useRef } from "react";
-import { graphql } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getImage } from "gatsby-plugin-image";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import Marquee from "components/Marquee";
-import SEO from "components/SEO";
-import getStripe from "../utils/stripe";
-import "../utils/fontawesome";
-import validator from "validator";
-import PanelImage from "components/PanelImage";
+import React, { useState, useRef } from 'react';
+import { graphql } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getImage } from 'gatsby-plugin-image';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import Marquee from 'components/Marquee';
+import SEO from 'components/SEO';
+import getStripe from '../utils/stripe';
+import '../utils/fontawesome';
+import validator from 'validator';
+import PanelImage from 'components/PanelImage';
 
 const TicketsPage = ({ data }) => {
   const formRef = useRef(null);
   const [message, setMessage] = useState(null);
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    emailConfirm: "",
-    phone: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    emailConfirm: '',
+    phone: '',
     ticketCount: null,
   });
 
@@ -31,33 +31,37 @@ const TicketsPage = ({ data }) => {
 
   const handleInput = (e, fieldName) => {
     switch (fieldName) {
-      case "firstName":
+      case 'firstName':
         setForm((state) => {
           return { ...state, firstName: e.target.value };
         });
         break;
-      case "lastName":
+      case 'lastName':
         setForm((state) => {
           return { ...state, lastName: e.target.value };
         });
         break;
-      case "email":
+      case 'email':
         setForm((state) => {
           return { ...state, email: e.target.value };
         });
         break;
-      case "emailConfirm":
+      case 'emailConfirm':
         setForm((state) => {
           return { ...state, emailConfirm: e.target.value };
         });
         break;
-      case "phone":
+      case 'phone':
         setForm((state) => {
-          const formattedPhone = e.target.value.replace(/-|\s/g, "");
+          let formattedPhone = e.target.value.replace(/-|\s/g, '');
+          formattedPhone = formattedPhone
+            .replace(/"/g, '')
+            .replace(/'/g, '')
+            .replace(/\(|\)/g, '');
           return { ...state, phone: formattedPhone };
         });
         break;
-      case "ticketCount":
+      case 'ticketCount':
         setForm((state) => {
           return { ...state, ticketCount: parseInt(e.target.value) };
         });
@@ -68,7 +72,7 @@ const TicketsPage = ({ data }) => {
   };
 
   const handleValidation = () => {
-    formRef.current.scrollIntoView({ behavior: "smooth" });
+    formRef.current.scrollIntoView({ behavior: 'smooth' });
     const { firstName, lastName, email, emailConfirm, phone, ticketCount } =
       form;
 
@@ -110,11 +114,11 @@ const TicketsPage = ({ data }) => {
   // Checkout Logic
   const redirectToCheckout = async (event) => {
     event.preventDefault();
-    setMessage("Processing...");
+    setMessage('Processing...');
 
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout({
-      mode: "payment",
+      mode: 'payment',
       lineItems: [
         { price: process.env.TICKET_PRICE, quantity: form.ticketCount },
       ],
@@ -127,8 +131,8 @@ const TicketsPage = ({ data }) => {
     });
 
     if (error) {
-      console.warn("Error:", error);
-      setMessage("Something went wrong. Try again soon.");
+      console.warn('Error:', error);
+      setMessage('Something went wrong. Try again soon.');
     }
   };
 
@@ -136,7 +140,7 @@ const TicketsPage = ({ data }) => {
     <Layout pageName="tickets">
       <SEO
         title="Tickets"
-        keywords={[`terlingua`, `chili`, `cook`, "off", "tickets"]}
+        keywords={[`terlingua`, `chili`, `cook`, 'off', 'tickets']}
         description={meta.description}
       />
       <Marquee marquee={marqueeData} />
@@ -195,7 +199,7 @@ const TicketsPage = ({ data }) => {
                     icon="pepper-hot"
                     className="tickets-details__item-caret"
                   />
-                  For logistics and physical address{" "}
+                  For logistics and physical address{' '}
                   <a
                     className="tickets-details__link"
                     href="http://abowlofred.com/home/local_restaurants_rv_parks__more"
@@ -215,7 +219,7 @@ const TicketsPage = ({ data }) => {
           <div ref={formRef} className="tickets-form">
             <h2 className="tickets-form__header">Ticket Order Form</h2>
             <div className="tickets-form__message">
-              {message ? message : ""}
+              {message ? message : ''}
             </div>
             <form className="tickets-form__content">
               <label className="tickets-form__label" for="firstName">
@@ -228,7 +232,7 @@ const TicketsPage = ({ data }) => {
                 name="firstName"
                 placeholder="First Name"
                 onChange={(e) => {
-                  handleInput(e, "firstName");
+                  handleInput(e, 'firstName');
                 }}
               ></input>
               <label className="tickets-form__label" for="lastName">
@@ -241,7 +245,7 @@ const TicketsPage = ({ data }) => {
                 name="lastName"
                 placeholder="Last Name"
                 onChange={(e) => {
-                  handleInput(e, "lastName");
+                  handleInput(e, 'lastName');
                 }}
               ></input>
               <label className="tickets-form__label" for="email">
@@ -254,7 +258,7 @@ const TicketsPage = ({ data }) => {
                 name="email"
                 placeholder="Email"
                 onChange={(e) => {
-                  handleInput(e, "email");
+                  handleInput(e, 'email');
                 }}
               ></input>
               <label className="tickets-form__label" for="emailConfirm">
@@ -267,7 +271,7 @@ const TicketsPage = ({ data }) => {
                 name="emailConfirm"
                 placeholder="Email Confirmation"
                 onChange={(e) => {
-                  handleInput(e, "emailConfirm");
+                  handleInput(e, 'emailConfirm');
                 }}
               ></input>
               <label className="tickets-form__label" for="phone">
@@ -280,7 +284,7 @@ const TicketsPage = ({ data }) => {
                 name="phone"
                 placeholder="Phone number"
                 onChange={(e) => {
-                  handleInput(e, "phone");
+                  handleInput(e, 'phone');
                 }}
               ></input>
               <label className="tickets-form__label" for="numTickets">
@@ -294,7 +298,7 @@ const TicketsPage = ({ data }) => {
                 name="numTickets"
                 placeholder="#"
                 onChange={(e) => {
-                  handleInput(e, "ticketCount");
+                  handleInput(e, 'ticketCount');
                 }}
               ></input>
               <button
@@ -307,10 +311,10 @@ const TicketsPage = ({ data }) => {
                 Review Order
               </button>
               <sub className="mt-5 text-sm">
-                *All information is handled through{" "}
-                <a class="text-indigo-600" href="https://stripe.com/">
+                *All information is handled through{' '}
+                <a className="text-indigo-600" href="https://stripe.com/">
                   Stripe
-                </a>{" "}
+                </a>{' '}
                 payment integration systems.
               </sub>
             </form>
