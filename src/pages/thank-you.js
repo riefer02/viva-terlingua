@@ -43,7 +43,7 @@ const ThankYouPage = ({ data }) => {
           }
           return 0;
         });
-        // console.log(ticketHolders);
+        // console.log(ticketHolders.length);
 
         // console.log(JSON.stringify(ticketHolders));
       });
