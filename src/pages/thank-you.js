@@ -1,12 +1,12 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import Marquee from "components/Marquee";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import PanelImage from "components/PanelImage";
-import QuickNav from "components/QuickNav";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import Marquee from 'components/Marquee';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import PanelImage from 'components/PanelImage';
+import QuickNav from 'components/QuickNav';
 
 const ThankYouPage = ({ data }) => {
   const {

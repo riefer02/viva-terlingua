@@ -13,6 +13,9 @@ $color-tertiary-dark: scale-color($color-tertiary, $lightness: -20%);
 
 $color-brown: #946258;
 
+$color-gold: #ffdf00;
+$color-money: #118c4f;
+
 $color-purple-light: #c5b8cd;
 
 $color-grey-light-1: #f7f7f7;
@@ -28,6 +31,6 @@ $color-black: #000;
 // FONT
 $default-font-size: 1.6rem;
 
-$primary-font-family: "Lato", sans-serif;
-$secondary-font-family: "Merriweather", serif;
-$tertiary-font-family: "Bilbo", cursive;
+$primary-font-family: 'Lato', sans-serif;
+$secondary-font-family: 'Merriweather', serif;
+$tertiary-font-family: 'Bilbo', cursive;

@@ -149,10 +149,16 @@ const TicketsPage = ({ data }) => {
           {/* Description */}
           <div className="tickets-details">
             <div className="tickets-details__content">
-              <p>
+              <p className="tickets-details__disclaimer notice">
+                <span>Notice:</span> Online ticket sales are now closed as we
+                approach the beginning of the OTICCC. You can still purchase
+                your ticket at the gate with <span className="cash">CASH</span>{' '}
+                just like we used to before computers and the internet.
+              </p>
+              {/* <p>
                 Buy your ticket for the 2021 Tolbert's Chili Cook Off today.
                 Each ticket is priced at $40 per person and includes:
-              </p>
+              </p> */}
               <div className="relative">
                 <h2 className="tickets-details__header">What's Included</h2>
               </div>
@@ -234,6 +240,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'firstName');
                 }}
+                readOnly
               ></input>
               <label className="tickets-form__label" for="lastName">
                 Last Name
@@ -247,6 +254,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'lastName');
                 }}
+                readOnly
               ></input>
               <label className="tickets-form__label" for="email">
                 Email
@@ -260,6 +268,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'email');
                 }}
+                readOnly
               ></input>
               <label className="tickets-form__label" for="emailConfirm">
                 Confirm Email
@@ -273,6 +282,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'emailConfirm');
                 }}
+                readOnly
               ></input>
               <label className="tickets-form__label" for="phone">
                 Phone Number
@@ -286,6 +296,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'phone');
                 }}
+                readOnly
               ></input>
               <label className="tickets-form__label" for="numTickets">
                 Number of Tickets
@@ -300,6 +311,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'ticketCount');
                 }}
+                readOnly
               ></input>
               <button
                 className="tickets-form__submit-btn"
@@ -307,8 +319,10 @@ const TicketsPage = ({ data }) => {
                 onClick={(e) => {
                   handleSubmit(e);
                 }}
+                readOnly
               >
-                Review Order
+                {/* Review Order */}
+                Disabled
               </button>
               <sub className="mt-5 text-sm">
                 *All information is handled through{' '}
