@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import SEO from "components/SEO";
-import Marquee from "components/Marquee";
-import Quote from "components/Quote";
-import Feature from "components/Feature";
-import PanelImage from "components/PanelImage";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import SEO from 'components/SEO';
+import Marquee from 'components/Marquee';
+import Quote from 'components/Quote';
+import Feature from 'components/Feature';
+import PanelImage from 'components/PanelImage';
 
 const IndexPage = ({ data }) => {
   const {
@@ -29,7 +29,15 @@ const IndexPage = ({ data }) => {
       <SEO
         title={title}
         description={meta.description}
-        keywords={[`terlingua`, `chili`, `cook off`, `tolbert`, `wick fowler`]}
+        keywords={[
+          `terlingua`,
+          `chili`,
+          `cook off`,
+          `tolbert`,
+          `wick fowler`,
+          `original`,
+          'international',
+        ]}
       />
       <Marquee marquee={marqueeData} />
       <Container>
