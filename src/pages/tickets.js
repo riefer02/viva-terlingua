@@ -152,7 +152,7 @@ const TicketsPage = ({ data }) => {
               <p className="tickets-details__disclaimer notice">
                 <span>Notice:</span> Thank you everyone for attending the 2021
                 Original Terlingua International Championship Chili Cookoff. We
-                look forward to seeing all next year. The ticket portal will
+                look forward to seeing you all next year. The ticket portal will
                 reopen soon. Viva Terlingua!
               </p>
               {/* <p>
