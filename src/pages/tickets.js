@@ -150,10 +150,10 @@ const TicketsPage = ({ data }) => {
           <div className="tickets-details">
             <div className="tickets-details__content">
               <p className="tickets-details__disclaimer notice">
-                <span>Notice:</span> Online ticket sales are now closed as we
-                approach the beginning of the OTICCC. You can still purchase
-                your ticket at the gate with <span className="cash">CASH</span>{' '}
-                just like we used to before computers and the internet.
+                <span>Notice:</span> Thank you everyone for attending the 2021
+                Original Terlingua International Championship Chili Cookoff. We
+                look forward to seeing all next year. The ticket portal will
+                reopen soon. Viva Terlingua!
               </p>
               {/* <p>
                 Buy your ticket for the 2021 Tolbert's Chili Cook Off today.
