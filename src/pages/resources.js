@@ -32,11 +32,14 @@ const ResourcesPage = ({ data }) => {
               {resources.map((resource, index) => {
                 const { name, file } = resource.node;
                 return (
-                  <a key={index} href={file.publicURL} download>
-                    <li className="resources__item">
-                      <h4>{name}</h4>
-                      <FontAwesomeIcon icon="download"></FontAwesomeIcon>
-                    </li>
+                  <a
+                    className="resources__item"
+                    key={index}
+                    href={file.publicURL}
+                    download
+                  >
+                    <h4>{name}</h4>
+                    <FontAwesomeIcon icon="download"></FontAwesomeIcon>
                   </a>
                 );
               })}
