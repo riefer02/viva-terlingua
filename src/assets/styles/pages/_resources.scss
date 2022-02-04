@@ -1,0 +1,43 @@
+.resources {
+  width: 100%;
+  min-height: 260px;
+}
+
+.resources__content {
+  @apply shadow-md;
+  margin: 0 auto;
+  background-color: $color-grey-light-1;
+  min-width: 340px;
+  max-width: 470px;
+}
+
+.resources__page-header {
+  margin-bottom: 0;
+}
+
+.resources__list {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.resources__item {
+  background-color: $color-tertiary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  padding: 0.5rem 1rem;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-grey-light-2;
+    color: $color-grey-dark-3;
+  }
+
+  .fa-download {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+  }
+}
