@@ -12,7 +12,7 @@ const CookOffsPage = ({ data }) => {
   const { allStrapiCookOffs, strapiGalleryImages } = data;
   const cookoffs = allStrapiCookOffs.edges;
   const marqueeData = {
-    title: 'Upcoming Cookoffs',
+    title: 'Upcoming Cook Offs',
     marqueeImage: strapiGalleryImages.image,
   };
 
