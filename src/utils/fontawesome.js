@@ -3,5 +3,6 @@ import {
   faPepperHot,
   faArrowRight,
   faDownload,
+  faArrowCircleDown,
 } from '@fortawesome/free-solid-svg-icons';
-library.add(faPepperHot, faArrowRight, faDownload);
+library.add(faPepperHot, faArrowRight, faDownload, faArrowCircleDown);

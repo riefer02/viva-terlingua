@@ -14,14 +14,15 @@ const ResourcesPage = ({ data }) => {
     title: 'Rules and Events',
     marqueeImage: strapiGalleryImages.image,
   };
-  console.log(resources);
 
   return (
     <Layout pageName="resources">
       <SEO
         title="Resources"
         keywords={[`resources`, `cookoff schedule`, `events`, `chili`]}
-        description={''}
+        description={
+          'Download information regarding upcoming chili cook offs and rules and regulations for participation.'
+        }
       />
       <Marquee marquee={marqueeData} />
       <Container>
