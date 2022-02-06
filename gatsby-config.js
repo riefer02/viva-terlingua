@@ -1,4 +1,4 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
@@ -9,7 +9,7 @@ module.exports = {
     description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
     siteUrl: `https://terlinguachilicookoff.org`,
     url: `${
-      process.env.NODE_ENV === "development"
+      process.env.NODE_ENV === 'development'
         ? `http://localhost:8000`
         : `https://terlinguachilicookoff.org`
     }`,
@@ -21,12 +21,12 @@ module.exports = {
     DEV_SSR: false,
   },
   plugins: [
-    "gatsby-plugin-resolve-src",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-resolve-src',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
     `gatsby-plugin-image`,
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -51,7 +51,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ["STRIPE_API_KEY", "NODE_ENV", "DOMAIN_URL", "TICKET_PRICE"],
+        allowList: ['STRIPE_API_KEY', 'NODE_ENV', 'DOMAIN_URL', 'TICKET_PRICE'],
       },
     },
     {
@@ -60,24 +60,26 @@ module.exports = {
         apiURL: process.env.STRAPI_URL,
         queryLimit: 1000, // Default to 100
         contentTypes: [
-          `sponsors`,
-          `users`,
-          `ticket-holders`,
-          `events`,
-          `musicians`,
-          `local-attractions`,
-          `gallery-images`,
+          'sponsors',
+          'users',
+          'ticket-holders',
+          'events',
+          'musicians',
+          'local-attractions',
+          'gallery-images',
+          'resources',
+          'cook-offs',
         ],
-        singleTypes: [`home-page`, `tickets`, "thank-you", "about-page"],
+        singleTypes: ['home-page', 'tickets', 'thank-you', 'about-page'],
       },
     },
     {
-      resolve: "gatsby-background-image-es5",
+      resolve: 'gatsby-background-image-es5',
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: "/:",
+        specialChars: '/:',
       },
     },
-    "gatsby-plugin-postcss",
+    'gatsby-plugin-postcss',
   ],
 };

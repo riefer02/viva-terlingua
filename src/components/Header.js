@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import NavBar from "components/NavBar";
-import Banner from "components/Banner";
-import logo from "../assets/images/oticcc-logo-white.png";
+import React from 'react';
+import { Link } from 'gatsby';
+import NavBar from 'components/NavBar';
+import Banner from 'components/Banner';
+import logo from '../assets/images/oticcc-logo-white.png';
 
 const Header = () => {
   return (
@@ -17,7 +17,7 @@ const Header = () => {
               alt="Tolbert's International Wick Fowler Chili Cook Off"
             />
             <p className="header__site-title">
-              Tolbert's Terlingua Chili Cook Off
+              The Tolbert Chili Cookoff Group
             </p>
           </div>
         </Link>

@@ -1,7 +1,7 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Sponsors from "components/Sponsors";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Sponsors from 'components/Sponsors';
 
 export default function Marquee({ marquee }) {
   const image = getImage(marquee.marqueeImage.childImageSharp);
@@ -44,7 +44,7 @@ export default function Marquee({ marquee }) {
           ></GatsbyImage>
         </div>
         <div className="marquee__cookoff-dates">
-            <div className="marquee__date-text">November 3rd - 6th, 2021</div>
+          <div className="marquee__date-text">Viva Terlingua! 2022</div>
         </div>
       </div>
     </div>
