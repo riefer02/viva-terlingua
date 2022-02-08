@@ -1,5 +1,5 @@
-import React from "react";
-import BackgroundImage from "gatsby-background-image";
+import React from 'react';
+import BackgroundImage from 'gatsby-background-image';
 
 export default function Musician({ artist }) {
   const {
@@ -24,7 +24,7 @@ export default function Musician({ artist }) {
           className="musician__full"
           alt="placeholder"
           fluid={adaptiveImage}
-          imgStyle={{ objectFit: "contain" }}
+          imgStyle={{ objectFit: 'contain' }}
         ></BackgroundImage>
 
         {/* Artist Description */}
@@ -60,7 +60,7 @@ export default function Musician({ artist }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           style={{
-            position: "absolute",
+            position: 'absolute',
             top: 0,
             left: 0,
             width: `100%`,

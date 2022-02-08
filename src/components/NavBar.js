@@ -14,14 +14,14 @@ export default function NavBar() {
           <Link to="/about" className="mobile-nav__item">
             About
           </Link>
-          <Link to="/tickets" className="mobile-nav__item">
-            Tickets
+          <Link to="/resources" className="mobile-nav__item">
+            Resources
           </Link>
-          <Link to="/music" className="mobile-nav__item">
-            Music
+          <Link to="/cook-offs" className="mobile-nav__item">
+            Cook Offs
           </Link>
           <Link to="/events" className="mobile-nav__item">
-            Events/News
+            Stories
           </Link>
           <Link to="/local-attractions" className="mobile-nav__item">
             Local Attractions
@@ -89,11 +89,11 @@ export default function NavBar() {
       <Link to="/about" className="navbar__item nav--desktop">
         About
       </Link>
-      <Link to="/music" className="navbar__item nav--desktop">
-        Music
+      <Link to="/resources" className="navbar__item nav--desktop">
+        Resources
       </Link>
-      <Link to="/tickets" className="navbar__item nav--desktop">
-        Tickets
+      <Link to="/cook-offs" className="navbar__item nav--desktop">
+        Cook Offs
       </Link>
       <div className="navbar__dropdown">
         <div className="dropbtn navbar__item">
