@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { useLocation } from "@reach/router";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useLocation } from '@reach/router';
+import { useStaticQuery, graphql } from 'gatsby';
+import defaultImage from '../static/oticcc-logo-black.png';
 
 function SEO({ description, lang, keywords, title, image, author, article }) {
   const { pathname } = useLocation();
@@ -13,7 +14,6 @@ function SEO({ description, lang, keywords, title, image, author, article }) {
     titleTemplate,
     defaultDescription,
     siteUrl,
-    defaultImage,
     twitterUsername,
   } = site.siteMetadata;
 
