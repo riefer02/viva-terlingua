@@ -12,7 +12,7 @@
     "@stripe/stripe-js": "^1.22.0",
     "autoprefixer": "^10.4.2",
     "gatsby": "^3.10.2",
-    "gatsby-background-image": "^1.5.3",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-background-image-es5": "^1.6.0",
     "gatsby-plugin-env-variables": "^2.2.0",
     "gatsby-plugin-fontawesome-css": "^1.1.0",
@@ -38,7 +38,8 @@
   },
   "devDependencies": {
     "@netlify/plugin-sitemap": "^0.8.1",
-    "netlify-cli": "^5.4.16"
+    "netlify-cli": "^5.4.16",
+    "sass": "^1.49.7"
   },
   "keywords": [
     "gatsby",
