@@ -1,10 +1,10 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import SEO from "components/SEO";
-import Marquee from "components/Marquee";
-import Musician from "components/Musician";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import SEO from 'components/SEO';
+import Marquee from 'components/Marquee';
+import Musician from 'components/Musician';
 
 const MusicianTemplate = ({ data }) => {
   const { strapiMusicians } = data;
@@ -15,7 +15,7 @@ const MusicianTemplate = ({ data }) => {
     <Layout pageName="musician">
       <SEO
         title={artist.name}
-        keywords={[`${artist.name}`, `terlingua`, `chili`, `cook`, "off"]}
+        keywords={[`${artist.name}`, `terlingua`, `chili`, `cook`, 'off']}
         description={artist.meta.description}
       />
       <Marquee marquee={marqueeData} />
@@ -43,25 +43,16 @@ export const pageQuery = graphql`
       marqueeImage: image {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 500) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
       artistImage: image {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 600, maxHeight: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
       squareImage {
         childImageSharp {
           gatsbyImageData
-          fluid(quality: 90, maxWidth: 600, maxHeight: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
     }

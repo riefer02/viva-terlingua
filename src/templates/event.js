@@ -1,12 +1,12 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import SEO from "components/SEO";
-import Marquee from "components/Marquee";
-import TextDisplay from "components/TextDisplay";
-import PanelImage from "components/PanelImage";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import SEO from 'components/SEO';
+import Marquee from 'components/Marquee';
+import TextDisplay from 'components/TextDisplay';
+import PanelImage from 'components/PanelImage';
 
 const EventTemplate = ({ data }) => {
   const {
@@ -29,9 +29,9 @@ const EventTemplate = ({ data }) => {
   const pageContent = {
     primaryText: description,
     Links: [
-      { type: "internal", url: "/", label: "Home" },
-      { type: "internal", url: "/music", label: "Music" },
-      { type: "internal", url: "/local-attractions", label: "Explore" },
+      { type: 'internal', url: '/', label: 'Home' },
+      { type: 'internal', url: '/music', label: 'Music' },
+      { type: 'internal', url: '/local-attractions', label: 'Explore' },
     ],
     author: title,
     postDate: eventTime,
@@ -71,9 +71,6 @@ export const pageQuery = graphql`
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
       panelImage {

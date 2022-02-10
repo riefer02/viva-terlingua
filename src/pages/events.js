@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import SEO from "components/SEO";
-import Marquee from "components/Marquee";
-import CardGallery from "components/CardGallery";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import SEO from 'components/SEO';
+import Marquee from 'components/Marquee';
+import CardGallery from 'components/CardGallery';
 
 const EventsPage = ({ data }) => {
   const {
@@ -45,9 +45,6 @@ export const pageQuery = graphql`
       marqueeImage: image {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
     }
@@ -61,17 +58,11 @@ export const pageQuery = graphql`
             id
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-              fluid(quality: 90, maxWidth: 400, maxHeight: 400) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
             }
           }
           squareImage {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-              fluid(quality: 90, maxWidth: 400, maxHeight: 400) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
             }
           }
         }

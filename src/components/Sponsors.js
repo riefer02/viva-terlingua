@@ -1,6 +1,6 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Sponsors() {
   return (
@@ -16,14 +16,6 @@ export default function Sponsors() {
                       placeholder: BLURRED
                       formats: [AUTO, WEBP, AVIF]
                     )
-                    fluid(
-                      quality: 90
-                      maxWidth: 384
-                      maxHeight: 216
-                      grayscale: true
-                    ) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
                   }
                 }
               }

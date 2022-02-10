@@ -85,17 +85,11 @@ export const pageQuery = graphql`
       marqueeImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
       panelImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
         }
       }
     }

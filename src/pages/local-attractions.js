@@ -1,13 +1,13 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import SEO from "components/SEO";
-import Marquee from "components/Marquee";
-import CardGallery from "components/CardGallery";
-import PanelImage from "components/PanelImage";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import SEO from 'components/SEO';
+import Marquee from 'components/Marquee';
+import CardGallery from 'components/CardGallery';
+import PanelImage from 'components/PanelImage';
 
 const EventsPage = ({ data }) => {
   const { allStrapiLocalAttractions, primaryImage, panel } = data;
@@ -66,9 +66,6 @@ export const pageQuery = graphql`
             id
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-              fluid(quality: 90, maxWidth: 400, maxHeight: 400) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
             }
           }
           name
