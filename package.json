@@ -26,8 +26,7 @@
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-source-strapi": "^0.0.12",
     "gatsby-transformer-sharp": "^3.10.0",
-    "gbimage-bridge": "^0.1.4",
-    "node-sass": "^6.0.1",
+    "gbimage-bridge": "^0.2.1",
     "postcss": "^8.4.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -35,11 +34,11 @@
     "react-helmet": "^6.1.0",
     "stripe": "^8.202.0",
     "tailwindcss": "^3.0.19",
-    "validator": "^13.6.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@netlify/plugin-sitemap": "^0.8.1",
-    "netlify-cli": "^5.4.7"
+    "netlify-cli": "^5.4.16"
   },
   "keywords": [
     "gatsby",
