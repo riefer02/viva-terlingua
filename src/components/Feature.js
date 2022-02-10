@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import BackgroundImage from "gatsby-background-image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../utils/fontawesome";
+import React from 'react';
+import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import BackgroundImage from 'gatsby-background-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../utils/fontawesome';
 
 export default function Feature({ items }) {
   const features = [...items];
@@ -45,7 +45,7 @@ export default function Feature({ items }) {
                 <GatsbyImage
                   image={getImage(image)}
                   placeholder="blurred"
-                  alt={title + " link"}
+                  alt={title + ' link'}
                   className="feature__item-image"
                   objectPosition="center"
                 />
@@ -56,7 +56,7 @@ export default function Feature({ items }) {
                   </div>
                   <div className="w-full xl:w-1/3 feature__item-action">
                     <button className="feature__item-btn">
-                      {calloutText}{" "}
+                      {calloutText}{' '}
                       <FontAwesomeIcon
                         size="xs"
                         icon="arrow-right"

@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import Layout from "components/Layout";
-import Container from "components/Container";
-import SEO from "components/SEO";
-import Marquee from "components/Marquee";
-import CardGallery from "components/CardGallery";
-import PanelImage from "components/PanelImage";
-import Itinerary from "components/Itinerary";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import Layout from 'components/Layout';
+import Container from 'components/Container';
+import SEO from 'components/SEO';
+import Marquee from 'components/Marquee';
+import CardGallery from 'components/CardGallery';
+import PanelImage from 'components/PanelImage';
+import Itinerary from 'components/Itinerary';
 
 const MusicPage = ({ data }) => {
   const { allStrapiMusicians, primaryImage, panelImage } = data;
@@ -20,7 +20,7 @@ const MusicPage = ({ data }) => {
     <Layout pageName="music">
       <SEO
         title="Music"
-        keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, "off"]}
+        keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, 'off']}
         description={seo.description}
       />
       <Marquee marquee={marqueeData} />
