@@ -11,7 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "@stripe/stripe-js": "^1.22.0",
     "autoprefixer": "^10.4.2",
-    "gatsby": "^3.10.2",
+    "gatsby": "^4.7.1",
     "gatsby-background-image": "^1.6.0",
     "gatsby-background-image-es5": "^1.6.0",
     "gatsby-plugin-env-variables": "^2.2.0",
