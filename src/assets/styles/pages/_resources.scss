@@ -30,10 +30,11 @@
   padding: 0.5rem 1rem;
   transition: 0.2s all ease-in;
   cursor: pointer;
+  color: $color-grey-dark-3;
 
   &:hover {
     background-color: $color-grey-light-2;
-    color: $color-grey-dark-3;
+    color: $color-tertiary-dark;
   }
 
   .fa-download {

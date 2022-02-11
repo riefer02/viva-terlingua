@@ -247,6 +247,10 @@
       font-size: 2.2rem;
     }
 
+    @include respond(desktop) {
+      font-size: 2rem;
+    }
+
     & svg {
       margin-left: 5px;
     }
