@@ -25,7 +25,7 @@
     "gatsby-plugin-sharp": "^4.7.0",
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-source-strapi": "^0.0.12",
-    "gatsby-transformer-sharp": "^3.10.0",
+    "gatsby-transformer-sharp": "^4.7.0",
     "gbimage-bridge": "^0.2.1",
     "postcss": "^8.4.6",
     "prop-types": "^15.7.2",
@@ -33,7 +33,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "stripe": "^8.202.0",
-    "tailwindcss": "^3.0.19",
+    "tailwindcss": "^3.0.21",
     "validator": "^13.7.0"
   },
   "devDependencies": {
