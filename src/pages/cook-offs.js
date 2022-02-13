@@ -102,27 +102,31 @@ function CookOffItem({ cookoff }) {
         <h4>{name}</h4>
         <div className="cook-offs__summary">
           <p>
-            {formatDate(startDate)} {endDate && `- ${formatDate(endDate)}`}
+            {startDate && formatDate(startDate)}{' '}
+            {endDate && `- ${formatDate(endDate)}`}
           </p>
           <span>||</span>
           <p>
-            {location}, {streetAddress}, {city}, {state}
+            {location && location}, {streetAddress && streetAddress},{' '}
+            {city && city}, {state && state}
           </p>
         </div>
       </div>
       {isOpen && (
         <div className="cook-offs__details">
           <h4>Information</h4>
-          <div className="cook-offs__description">
-            <div dangerouslySetInnerHTML={{ __html: description }}></div>
-          </div>
+          {description && (
+            <div className="cook-offs__description">
+              <div dangerouslySetInnerHTML={{ __html: description }}></div>
+            </div>
+          )}
           <div className="cook-offs__events-list">
             <h4>Events</h4>
             {events.length > 0 &&
               events.map((event, index) => (
                 <div className="cook-offs__events-item" key={index}>
-                  <span>{event.eventName}</span>
-                  <span>{formatTime(event.startTime)}</span>
+                  <span>{event.eventName && event.eventName}</span>
+                  <span>{event.startTime && formatTime(event.startTime)}</span>
                 </div>
               ))}
           </div>
