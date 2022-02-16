@@ -4,28 +4,28 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 export default function NavBar() {
   const [isOpen, setOpen] = useState(false);
 
+  const mobileNavLinks = [
+    { label: 'Home', slug: '' },
+    { label: 'About', slug: 'about' },
+    { label: 'Resources', slug: 'resources' },
+    { label: 'Cook Offs', slug: 'cook-offs' },
+    { label: 'Stories', slug: 'events' },
+    { label: 'Local Attractions', slug: 'local-attractions' },
+  ];
+
   const MobileNav = () => {
     return (
       <div className={`mobile-nav ${isOpen ? 'nav--open' : ''}`}>
         <div className="mobile-nav__list">
-          <Link to="/" className="mobile-nav__item">
-            Home
-          </Link>
-          <Link to="/about" className="mobile-nav__item">
-            About
-          </Link>
-          <Link to="/resources" className="mobile-nav__item">
-            Resources
-          </Link>
-          <Link to="/cook-offs" className="mobile-nav__item">
-            Cook Offs
-          </Link>
-          <Link to="/events" className="mobile-nav__item">
-            Stories
-          </Link>
-          <Link to="/local-attractions" className="mobile-nav__item">
-            Local Attractions
-          </Link>
+          {mobileNavLinks.map((navLink, index) => (
+            <Link
+              key={index}
+              to={`/${navLink.slug}`}
+              className="mobile-nav__item"
+            >
+              {navLink.label}
+            </Link>
+          ))}
         </div>
       </div>
     );
@@ -81,20 +81,24 @@ export default function NavBar() {
   const musicians = [...data.allStrapiMusicians.nodes];
   const sponsors = [...data.allStrapiSponsors.nodes];
 
+  const desktopNavLinks = [
+    { label: 'Home', slug: '' },
+    { label: 'About', slug: 'about' },
+    { label: 'Resources', slug: 'resources' },
+    { label: 'Cook Offs', slug: 'cook-offs' },
+  ];
+
   return (
     <nav className="navbar flex justify-center items-center">
-      <Link to="/" className="navbar__item nav--desktop">
-        Home
-      </Link>
-      <Link to="/about" className="navbar__item nav--desktop">
-        About
-      </Link>
-      <Link to="/resources" className="navbar__item nav--desktop">
-        Resources
-      </Link>
-      <Link to="/cook-offs" className="navbar__item nav--desktop">
-        Cook Offs
-      </Link>
+      {desktopNavLinks.map((navLink, index) => (
+        <Link
+          key={index}
+          to={`/${navLink.slug}`}
+          className="navbar__item nav--desktop"
+        >
+          {navLink.label}
+        </Link>
+      ))}
       <div className="navbar__dropdown">
         <div className="dropbtn navbar__item">
           <div className="dropbtn--text">Explore</div>

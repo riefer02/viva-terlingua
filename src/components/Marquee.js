@@ -37,7 +37,6 @@ export default function Marquee({ marquee }) {
         </div>
         <div className="marquee__premiere-sponsor">
           <GatsbyImage
-            className=""
             image={getImage(data.strapiSponsors.logo)}
             alt="Liftmasters Logo"
             placeholder="blurred"
