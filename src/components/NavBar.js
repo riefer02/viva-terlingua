@@ -8,7 +8,7 @@ export default function NavBar() {
     { label: 'Home', slug: '' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
-    { label: 'Cook Offs', slug: 'cook-offs' },
+    // { label: 'Cook Offs', slug: 'cook-offs' },
     { label: 'Stories', slug: 'events' },
     { label: 'Local Attractions', slug: 'local-attractions' },
   ];
@@ -85,7 +85,7 @@ export default function NavBar() {
     { label: 'Home', slug: '' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
-    { label: 'Cook Offs', slug: 'cook-offs' },
+    // { label: 'Cook Offs', slug: 'cook-offs' },
   ];
 
   return (
