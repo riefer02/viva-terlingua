@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
-import defaultImage from '../static/oticcc-logo-black.png';
+import { getImage } from 'gatsby-plugin-image';
 
-function SEO({ description, lang, keywords, title, image, author, article }) {
+function SEO({ description, lang, keywords, title, article }) {
   const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
+  const { site, ogImage } = useStaticQuery(query);
 
   const {
     defaultTitle,
@@ -17,10 +17,12 @@ function SEO({ description, lang, keywords, title, image, author, article }) {
     twitterUsername,
   } = site.siteMetadata;
 
+  const seoImage = getImage(ogImage);
+
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
+    image: seoImage.images.fallback.src,
     url: `${siteUrl}${pathname}`,
   };
 
@@ -82,6 +84,11 @@ const query = graphql`
         siteUrl: url
         defaultImage: image
         twitterUsername: twitter
+      }
+    }
+    ogImage: file(relativePath: { eq: "oticcc-logo-white.png" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, pngOptions: { quality: 50 })
       }
     }
   }
