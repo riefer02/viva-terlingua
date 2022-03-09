@@ -9,6 +9,10 @@
   background-color: $color-grey-light-1;
   min-width: 340px;
   max-width: 470px;
+
+  @include respond(tab-land) {
+    max-width: 660px;
+  }
 }
 
 .resources__page-header {
