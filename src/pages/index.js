@@ -8,6 +8,7 @@ import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
 import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
+import ImageGallery from 'components/ImageGallery';
 
 const IndexPage = ({ data }) => {
   const {
@@ -20,6 +21,7 @@ const IndexPage = ({ data }) => {
       panelImage,
       secondaryText,
     },
+    posters
   } = data;
   const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -42,6 +44,7 @@ const IndexPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <Feature items={featured.featuresList} />
+        <ImageGallery images={posters} />
         <Quote quote={content}></Quote>
         <PanelImage image={panel} />
       </Container>
@@ -90,6 +93,22 @@ export const pageQuery = graphql`
       panelImage {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        }
+      }
+    }
+    posters: allStrapiGalleryImages(filter: { role: { eq: "poster" } }) {
+      edges {
+        node {
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                webpOptions: { quality: 50 }
+                placeholder: BLURRED
+                formats: [WEBP]
+              )
+            }
+            publicURL
+          }
         }
       }
     }

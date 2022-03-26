@@ -1,0 +1,14 @@
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem !important;
+}
+.image-gallery__item {
+  padding: 0 20px 20px;
+  width: 400px;
+  aspect-ratio: 9 / 11;
+  cursor:pointer;
+}
