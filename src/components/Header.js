@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import NavBar from 'components/NavBar';
 import Banner from 'components/Banner';
-import logo from '../assets/images/oticcc-logo-white.png';
+import logo from '../assets/images/oticcc-logo-white-sm.png';
 
 const Header = () => {
   return (
