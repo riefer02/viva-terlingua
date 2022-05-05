@@ -6,9 +6,14 @@
   justify-content: center;
   margin-top: 8rem !important;
 }
+
 .image-gallery__item {
   padding: 0 20px 20px;
-  width: 400px;
+  width: 340px;
   aspect-ratio: 9 / 11;
-  cursor:pointer;
+  cursor: pointer;
+
+  @include respond(tab-port) {
+   width: 400px;
+  }
 }
