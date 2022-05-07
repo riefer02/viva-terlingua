@@ -82,9 +82,6 @@ header {
   width: 38px;
   position: relative;
   z-index: 2;
-  // margin-left: 6px;
-  // margin-bottom: 5px;
-  // margin-right: 11px;
 
   @include respond(tab-port) {
     height: 35px;
@@ -99,5 +96,6 @@ header {
   @include respond(desktop) {
     height: 40px;
     width: 40px;
+    margin-right: 11px;
   }
 }
