@@ -35,9 +35,10 @@
   @include respond(desktop) {
     font-size: 1.8rem;
   }
+
   & .banner__message-link {
     color: $color-grey-dark;
-    margin-right: 3px;
+    margin-right: 10px;
     text-decoration: underline;
     font-style: italic;
     text-transform: uppercase;

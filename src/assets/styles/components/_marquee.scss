@@ -72,6 +72,7 @@
   font-size: 3rem;
   position: relative;
   bottom: 0.2rem;
+  margin: 0 auto;
 
   @include respond(tab-port) {
     font-size: 3.2rem;
@@ -92,9 +93,9 @@
 .marquee__premiere-sponsor {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 20px;
   width: 150px;
-  margin-left: 2rem;
+  // margin-left: 2rem;
 
   @include respond(desktop) {
     bottom: 6%;
@@ -109,13 +110,15 @@
   background-color: $color-primary-light;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 20px;
   margin-right: 1rem;
   transform: skew(-14deg, -0deg);
   width: 137px;
+  display: none;
 
   @include respond(tab-port) {
     width: 150px;
+    display: block;
   }
 
   @include respond(desktop) {
