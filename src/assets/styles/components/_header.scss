@@ -51,10 +51,12 @@ header {
   font-family: $secondary-font-family;
   z-index: 12;
   background-color: $color-primary;
+  padding: 0 20px;
 
   @include respond(desktop) {
     height: 5rem;
     position: static;
+    padding: unset;
   }
 }
 
@@ -80,9 +82,9 @@ header {
   width: 38px;
   position: relative;
   z-index: 2;
-  margin-left: 6px;
-  margin-bottom: 5px;
-  margin-right: 11px;
+  // margin-left: 6px;
+  // margin-bottom: 5px;
+  // margin-right: 11px;
 
   @include respond(tab-port) {
     height: 35px;

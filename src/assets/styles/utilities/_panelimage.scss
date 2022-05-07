@@ -3,6 +3,10 @@
   @apply lg:mx-20;
 
   @include respond(tab-port) {
+    height: 180px;
+  }
+
+  @include respond(desktop) {
     height: 411px;
   }
 }

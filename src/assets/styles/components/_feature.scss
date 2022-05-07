@@ -4,6 +4,9 @@
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
   margin-top: 2rem !important;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 600px;
 
   @include respond(tab-land) {
     width: 80%;
@@ -14,6 +17,7 @@
     flex-direction: row;
     width: auto;
     margin: unset;
+    max-width: unset;
   }
 }
 

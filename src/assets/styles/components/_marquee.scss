@@ -36,6 +36,10 @@
 
   @include respond(tab-port) {
     margin-bottom: 0px;
+    height: 200px;
+  }
+
+  @include respond(tab-land) {
     height: 411px;
   }
 }
@@ -99,10 +103,10 @@
 }
 
 .marquee__cookoff-dates {
+  @apply shadow-md;
   padding: 0.5rem 0.6rem;
   color: $color-white;
   background-color: $color-primary-light;
-  @apply shadow-md;
   position: absolute;
   bottom: 0;
   right: 0;
