@@ -17,11 +17,14 @@
     &-wrapper {
       @apply shadow-md;
       background-color: $color-white;
-      padding: 20px;
+      padding: 20px 15px;
+
+      @include respond(tab-port) {
+        padding: 20px;
+      }
 
       @include respond(tab-land) {
         padding: 2rem 3.5rem 3.5rem;
-
       }
     }
   }
@@ -29,9 +32,14 @@
   &__author {
     font-family: $secondary-font-family;
     position: relative;
-    font-size: 2.7rem;
+    font-size: 2.4rem;
     z-index: 0;
     display: inline-block;
+
+    @include respond(tab-port) {
+    font-size: 2.7rem;
+
+    }
 
     @include respond(tab-land) {
       font-size: 3.3rem;
@@ -89,14 +97,20 @@
     font-size: 1.7rem;
     font-family: $secondary-font-family;
 
-    p {
+    p, li {
       margin-bottom: 2rem;
       text-align: left;
       text-indent: 2ch;
       font-size: 1.7rem;
+      line-height: 28px;
 
       @include respond(tab-port) {
         font-size: 2rem;
+        line-height: 35px;
+      }
+
+      @include respond(desktop) {
+        line-height: 55px;
       }
     }
 

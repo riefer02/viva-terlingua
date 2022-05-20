@@ -150,10 +150,10 @@ const TicketsPage = ({ data }) => {
           <div className="tickets-details">
             <div className="tickets-details__content">
               <p className="tickets-details__disclaimer notice">
-                <span>Notice:</span> Thank you everyone for attending the 2021
-                Original Terlingua International Championship Chili Cookoff. We
-                look forward to seeing you all next year. The ticket portal will
-                reopen soon. Viva Terlingua!
+                Thank you everyone for attending the 2021 Original Terlingua
+                International Championship Chili Cookoff. We look forward to
+                seeing you all next year. The ticket portal will reopen soon.
+                Viva Terlingua!
               </p>
               {/* <p>
                 Buy your ticket for the 2021 Tolbert's Chili Cook Off today.
@@ -200,7 +200,7 @@ const TicketsPage = ({ data }) => {
                   />
                   Proceeds go towards fighting ALS, and local charities.
                 </li>
-                <li className="tickets-details__item">
+                {/* <li className="tickets-details__item">
                   <FontAwesomeIcon
                     icon="pepper-hot"
                     className="tickets-details__item-caret"
@@ -213,7 +213,7 @@ const TicketsPage = ({ data }) => {
                     click here
                   </a>
                   .
-                </li>
+                </li> */}
               </ul>
               <p className="tickets-details__disclaimer">
                 <span>Disclaimer:</span> Consumption of too much chili might
@@ -228,7 +228,8 @@ const TicketsPage = ({ data }) => {
               {message ? message : ''}
             </div>
             <form className="tickets-form__content">
-              <label className="tickets-form__label" for="firstName">
+              <label className="tickets-form__label" htmlFor="firstName">
+                {/* // changed for= to htmlFor= */}
                 First Name
               </label>
               <input
@@ -242,7 +243,7 @@ const TicketsPage = ({ data }) => {
                 }}
                 readOnly
               ></input>
-              <label className="tickets-form__label" for="lastName">
+              <label className="tickets-form__label" htmlFor="lastName">
                 Last Name
               </label>
               <input
@@ -256,7 +257,7 @@ const TicketsPage = ({ data }) => {
                 }}
                 readOnly
               ></input>
-              <label className="tickets-form__label" for="email">
+              <label className="tickets-form__label" htmlFor="email">
                 Email
               </label>
               <input
@@ -270,7 +271,7 @@ const TicketsPage = ({ data }) => {
                 }}
                 readOnly
               ></input>
-              <label className="tickets-form__label" for="emailConfirm">
+              <label className="tickets-form__label" htmlFor="emailConfirm">
                 Confirm Email
               </label>
               <input
@@ -284,7 +285,7 @@ const TicketsPage = ({ data }) => {
                 }}
                 readOnly
               ></input>
-              <label className="tickets-form__label" for="phone">
+              <label className="tickets-form__label" htmlFor="phone">
                 Phone Number
               </label>
               <input
@@ -298,7 +299,7 @@ const TicketsPage = ({ data }) => {
                 }}
                 readOnly
               ></input>
-              <label className="tickets-form__label" for="numTickets">
+              <label className="tickets-form__label" htmlFor="numTickets">
                 Number of Tickets
               </label>
               <input
@@ -325,10 +326,10 @@ const TicketsPage = ({ data }) => {
                 Disabled
               </button>
               <sub className="mt-5 text-sm">
-                *All information is handled through{' '}
+                *All information is handled through
                 <a className="text-indigo-600" href="https://stripe.com/">
                   Stripe
-                </a>{' '}
+                </a>
                 payment integration systems.
               </sub>
             </form>

@@ -12,100 +12,6 @@
     margin-bottom: 0;
   }
 
-  &__content {
-    padding: 1rem 1rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-
-    @include respond(tab-land) {
-      padding: 2rem 2.5rem;
-    }
-
-    p {
-      font-size: 2rem;
-      line-height: 2;
-      margin-bottom: 1.6rem;
-      padding: 0.5rem 1rem 2rem;
-      font-weight: 600;
-
-      @include respond(tab-port) {
-        font-size: 2.2rem;
-      }
-
-      @include respond(desktop) {
-        font-weight: 400;
-      }
-    }
-  }
-
-  &__header {
-    font-size: 3rem;
-    font-family: $secondary-font-family;
-    margin-bottom: 2rem;
-    display: inline-block;
-    position: relative;
-
-    @include respond(tab-port) {
-      font-size: 4rem;
-    }
-
-    @include respond(tab-land) {
-      font-size: 2.3rem;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      display: inline-block;
-      top: 90%;
-      left: 50%;
-      background-color: $color-secondary-light;
-      transform: translate(-50%, -50%) skew(-14deg, 0deg);
-      opacity: 0.8;
-      height: 6px;
-      width: 120%;
-      z-index: -1;
-      @apply shadow-md;
-    }
-  }
-
-  &__list {
-    height: 100%;
-    margin-bottom: 10px;
-    padding: 0 1rem;
-
-    @include respond(tab-port) {
-      margin-bottom: 40px;
-    }
-
-    @include respond(tab-land) {
-      margin-bottom: 0;
-      padding: 0 1rem;
-      padding: 0;
-    }
-  }
-
-  &__item {
-    font-family: $primary-font-family;
-    list-style-type: none;
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    text-align: left;
-    line-height: 2;
-
-    @include respond(tab-port) {
-      font-size: 2.4rem;
-    }
-
-    &-caret {
-      margin-right: 1.6rem;
-    }
-  }
-
   & .tickets-details__disclaimer {
     font-size: 2.5rem;
     color: $color-grey-dark-3;
@@ -125,16 +31,19 @@
 
     &.notice {
       font-style: normal;
-      font-weight: 400;
+      line-height: 36px;
+      padding: 0 0 20px;
 
-      span {
-        margin: 0;
+      @include respond(tab-land) {
+        line-height: 48px;
+
+        span {
+          margin: 0;
+        }
       }
 
-      .cash {
-        color: lighten($color-money, 20%);
-        text-shadow: 0 0 3px $color-money;
-        background-color: darken($color-money, 16%);
+      span {
+        margin: 0 0 20px;
       }
     }
   }
@@ -157,10 +66,109 @@
   }
 }
 
-.tickets-form {
+.tickets-details__item {
+  font-family: $primary-font-family;
+  list-style-type: none;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  line-height: 2;
+
+  @include respond(tab-port) {
+    font-size: 2.4rem;
+  }
+
+  &-caret {
+    margin-right: 1.6rem;
+  }
+}
+
+.tickets-details__list {
+  height: 100%;
+  margin-bottom: 10px;
+  padding: 0 1rem;
+
+  @include respond(tab-port) {
+    margin-bottom: 40px;
+  }
+
+  @include respond(tab-land) {
+    margin-bottom: 20px;
+    padding: 0 1rem;
+    padding: 0;
+  }
+
+  @include respond(desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.tickets-details__header {
+  font-size: 3rem;
+  font-family: $secondary-font-family;
+  margin-bottom: 2rem;
+  display: inline-block;
+  position: relative;
+
+  @include respond(tab-port) {
+    font-size: 4rem;
+  }
+
+  @include respond(tab-land) {
+    font-size: 2.3rem;
+  }
+
+  &::before {
+    @apply shadow-md;
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 90%;
+    left: 50%;
+    background-color: $color-secondary-light;
+    transform: translate(-50%, -50%) skew(-14deg, 0deg);
+    opacity: 0.8;
+    height: 6px;
+    width: 120%;
+    z-index: -1;
+  }
+}
+
+.tickets-details__content {
+  padding: 1rem 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
   width: 100%;
-  padding: 2rem 2rem 4rem;
+
+  @include respond(tab-land) {
+    padding: 2rem 2.5rem;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 2;
+    margin-bottom: 1.6rem;
+    padding: 0.5rem 1rem 2rem;
+    font-weight: 600;
+
+    @include respond(tab-port) {
+      font-size: 2.2rem;
+    }
+
+    @include respond(desktop) {
+      font-weight: 400;
+    }
+  }
+}
+
+.tickets-form {
   @apply shadow-md;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 2rem 4rem;
   background-color: $color-white;
   color: $color-grey-dark-3;
   border-radius: 1rem;
