@@ -1,4 +1,4 @@
-const { data } = require("autoprefixer");
+const { data } = require('autoprefixer');
 const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import BackgroundImage from 'gatsby-background-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Musician({ artist }) {
   const {
@@ -13,20 +13,18 @@ export default function Musician({ artist }) {
   } = artist;
 
   const adaptiveImage = squareImage
-    ? squareImage.childImageSharp.fluid
-    : artistImage.childImageSharp.fluid;
+    ? getImage(squareImage)
+    : getImage(artistImage);
 
   return (
     <div className="musician__wrapper">
       <div className="musician__container-top shadow-md">
-        {/* Musician Image */}
-        <BackgroundImage
+        <GatsbyImage
           className="musician__full"
-          alt="placeholder"
-          fluid={adaptiveImage}
-          imgStyle={{ objectFit: 'contain' }}
-        ></BackgroundImage>
-
+          image={adaptiveImage}
+          alt="Fun exciting scene from Terlingua"
+          placeholder="blurred"
+        ></GatsbyImage>
         {/* Artist Description */}
         <div className="musician__description">
           <div className="relative">
@@ -45,7 +43,7 @@ export default function Musician({ artist }) {
             src={`https://open.spotify.com/embed/artist/${spotifyID}`}
             width="100%"
             height="100%"
-            frameborder="0"
+            frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
           ></iframe>
@@ -56,7 +54,7 @@ export default function Musician({ artist }) {
         <iframe
           src={`https://www.youtube.com/embed/${musicVideoID}`}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           style={{
