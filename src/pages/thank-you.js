@@ -15,7 +15,7 @@ const ThankYouPage = ({ data }) => {
   const marqueeData = { title, marqueeImage };
 
   return (
-    <Layout pageName="two">
+    <Layout>
       <Helmet>
         <title>Thank you</title>
       </Helmet>

@@ -5,7 +5,7 @@ import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import Marquee from 'components/Marquee';
-import SEO from 'components/SEO';
+import Seo from 'components/SEO';
 import getStripe from '../utils/stripe';
 import '../utils/fontawesome';
 import validator from 'validator';
@@ -137,8 +137,8 @@ const TicketsPage = ({ data }) => {
   };
 
   return (
-    <Layout pageName="tickets">
-      <SEO
+    <Layout>
+      <Seo
         title="Tickets"
         keywords={[`terlingua`, `chili`, `cook`, 'off', 'tickets']}
         description={meta.description}

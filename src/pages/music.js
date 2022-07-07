@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
-import SEO from 'components/SEO';
+import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
@@ -17,8 +17,8 @@ const MusicPage = ({ data }) => {
   const marqueeData = { title, marqueeImage };
 
   return (
-    <Layout pageName="music">
-      <SEO
+    <Layout>
+      <Seo
         title="Music"
         keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, 'off']}
         description={seo.description}

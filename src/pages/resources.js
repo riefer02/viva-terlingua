@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
-import SEO from 'components/SEO';
+import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
@@ -16,8 +16,8 @@ const ResourcesPage = ({ data }) => {
   };
 
   return (
-    <Layout pageName="resources">
-      <SEO
+    <Layout>
+      <Seo
         title="Resources"
         keywords={[`resources`, `cookoff schedule`, `events`, `chili`]}
         description={

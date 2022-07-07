@@ -37,6 +37,7 @@ export default function NavBar() {
           setOpen(!isOpen);
         }}
         id="hamburger"
+        role="navigation button"
         className={isOpen ? 'open' : ''}
       >
         <span></span>

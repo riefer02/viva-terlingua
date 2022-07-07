@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
-import SEO from 'components/SEO';
+import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
@@ -38,8 +38,8 @@ const EventTemplate = ({ data }) => {
   };
 
   return (
-    <Layout pageName="event">
-      <SEO
+    <Layout>
+      <Seo
         title={meta.title}
         keywords={[`${title}`, `event`, `beer`, `terlingua`, `chili`, `cook`]}
         description={meta.description}
