@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
-import SEO from 'components/SEO';
+import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Musician from 'components/Musician';
 
@@ -12,8 +12,8 @@ const MusicianTemplate = ({ data }) => {
   const marqueeData = { title: artist.name, marqueeImage: artist.marqueeImage };
 
   return (
-    <Layout pageName="musician">
-      <SEO
+    <Layout>
+      <Seo
         title={artist.name}
         keywords={[`${artist.name}`, `terlingua`, `chili`, `cook`, 'off']}
         description={artist.meta.description}

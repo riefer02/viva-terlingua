@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
 export default function Banner() {
-  const [sellTickets, setSellTickets] = useState(false);
+  const [sellTickets] = useState(false);
 
   return (
     <div className="banner">

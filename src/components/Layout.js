@@ -5,13 +5,7 @@ import 'assets/styles/index.scss';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-const Layout = ({ children, pageName }) => {
-  let className = '';
-
-  if (pageName) {
-    className = `${className} page-${pageName}`;
-  }
-
+const Layout = ({ children }) => {
   return (
     <div className="wrapper">
       <Header />

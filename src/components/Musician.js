@@ -46,6 +46,7 @@ export default function Musician({ artist }) {
             frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            title="artist spotify"
           ></iframe>
         </div>
       </div>
@@ -53,7 +54,7 @@ export default function Musician({ artist }) {
       <div className="musician__music-video">
         <iframe
           src={`https://www.youtube.com/embed/${musicVideoID}`}
-          title="YouTube video player"
+          title="artist video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

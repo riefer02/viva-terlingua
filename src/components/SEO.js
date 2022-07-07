@@ -5,7 +5,7 @@ import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-function SEO({ description, lang, keywords, title, article }) {
+function Seo({ description, lang, keywords, title, article }) {
   const { pathname } = useLocation();
   const { site, ogImage } = useStaticQuery(query);
 
@@ -57,7 +57,7 @@ function SEO({ description, lang, keywords, title, article }) {
   );
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
@@ -65,14 +65,14 @@ SEO.defaultProps = {
   author: `riefer02`,
 };
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };
 
-export default SEO;
+export default Seo;
 
 const query = graphql`
   query SEOQuery {
