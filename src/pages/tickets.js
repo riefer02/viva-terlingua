@@ -149,16 +149,16 @@ const TicketsPage = ({ data }) => {
           {/* Description */}
           <div className="tickets-details">
             <div className="tickets-details__content">
-              <p className="tickets-details__disclaimer notice">
+              {/* <p className="tickets-details__disclaimer notice">
                 Thank you everyone for attending the 2021 Original Terlingua
                 International Championship Chili Cookoff. We look forward to
                 seeing you all next year. The ticket portal will reopen soon.
                 Viva Terlingua!
-              </p>
-              {/* <p>
-                Buy your ticket for the 2021 Tolbert's Chili Cook Off today.
-                Each ticket is priced at $40 per person and includes:
               </p> */}
+              <p>
+                Buy your ticket for the 2022 Tolbert's Chili Cook Off today.
+                Each ticket is priced at $45 per person and includes:
+              </p>
               <div className="relative">
                 <h2 className="tickets-details__header">What's Included</h2>
               </div>
@@ -241,7 +241,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'firstName');
                 }}
-                readOnly
+                // readOnly
               ></input>
               <label className="tickets-form__label" htmlFor="lastName">
                 Last Name
@@ -255,7 +255,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'lastName');
                 }}
-                readOnly
+                // readOnly
               ></input>
               <label className="tickets-form__label" htmlFor="email">
                 Email
@@ -269,7 +269,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'email');
                 }}
-                readOnly
+                // readOnly
               ></input>
               <label className="tickets-form__label" htmlFor="emailConfirm">
                 Confirm Email
@@ -283,7 +283,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'emailConfirm');
                 }}
-                readOnly
+                // readOnly
               ></input>
               <label className="tickets-form__label" htmlFor="phone">
                 Phone Number
@@ -297,7 +297,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'phone');
                 }}
-                readOnly
+                // readOnly
               ></input>
               <label className="tickets-form__label" htmlFor="numTickets">
                 Number of Tickets
@@ -312,7 +312,7 @@ const TicketsPage = ({ data }) => {
                 onChange={(e) => {
                   handleInput(e, 'ticketCount');
                 }}
-                readOnly
+                // readOnly
               ></input>
               <button
                 className="tickets-form__submit-btn"
@@ -320,14 +320,14 @@ const TicketsPage = ({ data }) => {
                 onClick={(e) => {
                   handleSubmit(e);
                 }}
-                readOnly
+                // readOnly
               >
-                {/* Review Order */}
-                Disabled
+                Review Order
+                {/* Disabled */}
               </button>
               <sub className="mt-5 text-sm">
                 *All information is handled through
-                <a className="text-indigo-600" href="https://stripe.com/">
+                <a className="text-indigo-600 mx-1" href="https://stripe.com/">
                   Stripe
                 </a>
                 payment integration systems.
