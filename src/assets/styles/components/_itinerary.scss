@@ -1,4 +1,10 @@
 .itinerary {
+  @apply shadow-lg;
+  width: 340px;
+  width: max-content;
+  background-color: $color-tertiary-light;
+  padding: 3rem 4rem;
+  border-radius: 5px;
   margin-bottom: 2.5rem !important; //override container
 
   @include respond(tab-port) {
@@ -21,8 +27,12 @@
 
   h3 {
     display: inline-block;
+    position: relative;
+    margin-bottom: 2rem;
 
     &::before {
+      position: absolute;
+      bottom: 0;
       content: '';
       display: inline-block;
       width: 100%;
@@ -32,6 +42,20 @@
   }
 }
 
-.itinerary__event-time {
+.itinerary__item {
+  font-family: $primary-font-family;
   font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.itinerary__event-time {
+  margin-left: 1.5rem;
+}
+
+.itinerary__event-name {
+  width: 100%;
+  margin-left: 1rem;
 }

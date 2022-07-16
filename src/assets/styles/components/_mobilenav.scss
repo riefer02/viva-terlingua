@@ -1,7 +1,7 @@
 .mobile-nav {
   position: fixed;
   height: 0%;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   transition: all 0.2s ease-out;
   background-color: rgba($color-secondary-light, 0.5);
