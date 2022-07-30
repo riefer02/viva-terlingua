@@ -39,6 +39,7 @@
   "devDependencies": {
     "@netlify/plugin-sitemap": "^0.8.1",
     "netlify-cli": "^5.4.16",
+    "netlify-lambda": "^2.0.15",
     "sass": "^1.49.7"
   },
   "keywords": [
@@ -53,7 +54,8 @@
     "build": "gatsby clean && gatsby build --log-pages",
     "develop": "gatsby clean && gatsby develop",
     "serve": "gatsby serve",
-    "debug": "netlify dev --inspect"
+    "debug": "netlify dev --inspect",
+    "lambda": "netlify-lambda build .netlify/functions"
   },
   "repository": {
     "type": "git",
