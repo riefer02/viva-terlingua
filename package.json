@@ -55,7 +55,7 @@
     "develop": "gatsby clean && gatsby develop",
     "serve": "gatsby serve",
     "debug": "netlify dev --inspect",
-    "lambda": "netlify-lambda build .netlify/functions"
+    "lambda": "netlify-lambda build public/functions"
   },
   "repository": {
     "type": "git",
