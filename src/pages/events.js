@@ -12,14 +12,14 @@ const EventsPage = ({ data }) => {
     allStrapiEvents,
     strapiGalleryImages: { marqueeImage },
   } = data;
-  const title = `Events`;
+  const title = `News & Events`;
   const image = getImage(marqueeImage);
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout>
       <Seo
-        title="Events"
+        title={`News & Events`}
         keywords={[`events`, `music`, `artists`, `terlingua`, `chili`, `cook`]}
         description={seo.description}
       />

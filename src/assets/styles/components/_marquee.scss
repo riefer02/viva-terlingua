@@ -77,6 +77,10 @@
   @include respond(tab-port) {
     font-size: 3.2rem;
   }
+
+  @include respond(tab-land) {
+    font-size: 3rem;
+  }
 }
 
 .marquee__header-secondary {

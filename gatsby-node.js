@@ -39,7 +39,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // Create Individual Event Page
   data.allStrapiEvents.edges.forEach((edge) => {
     const { slug, id } = edge.node;
-    actions.createPage({
+    actions.createPage({ 
       path: slug,
       component: path.resolve(`./src/templates/event.js`),
       context: {

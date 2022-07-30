@@ -6,9 +6,11 @@ export default function NavBar() {
 
   const mobileNavLinks = [
     { label: 'Home', slug: '' },
+    { label: 'Tickets', slug: 'tickets' },
+    { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
-    { label: 'Stories', slug: 'events' },
+    { label: `News & Events`, slug: 'events' },
     { label: 'Local Attractions', slug: 'local-attractions' },
   ];
 
@@ -67,7 +69,7 @@ export default function NavBar() {
           name
         }
       }
-      allStrapiSponsors {
+      allStrapiSponsors(filter: { priority: { eq: 1 } }) {
         nodes {
           website
           name
@@ -83,9 +85,10 @@ export default function NavBar() {
 
   const desktopNavLinks = [
     { label: 'Home', slug: '' },
+    { label: 'Tickets', slug: 'tickets' },
+    { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
-    // { label: 'Cook Offs', slug: 'cook-offs' },
   ];
 
   return (

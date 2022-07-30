@@ -1,7 +1,7 @@
 {
   "name": "viva-terlingua",
   "description": "Tolbert's Chili Cook Off website",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Andrew Riefenstahl",
   "dependencies": {
     "@fontsource/lato": "^4.5.1",
@@ -50,8 +50,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --log-pages",
-    "develop": "gatsby develop",
+    "build": "gatsby clean && gatsby build --log-pages",
+    "develop": "gatsby clean && gatsby develop",
     "serve": "gatsby serve",
     "debug": "netlify dev --inspect"
   },

@@ -30,9 +30,9 @@ export default function Marquee({ marquee }) {
           placeholder="blurred"
         ></GatsbyImage>
         <div className="marquee__text-area shadow-lg">
-          <div className="marquee__header-primary">{marquee.title}</div>
+          <h1 className="marquee__header-primary">{marquee.title}</h1>
           {activeSub && (
-            <div className="marquee__header-secondary">{marquee.subhead}</div>
+            <h2 className="marquee__header-secondary">{marquee.subhead}</h2>
           )}
         </div>
         <div className="marquee__premiere-sponsor">

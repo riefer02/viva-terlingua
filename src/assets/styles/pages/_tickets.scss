@@ -1,81 +1,18 @@
 .tickets-details {
   color: $color-grey-dark-3;
-  width: 100%;
-  margin-bottom: 0px;
-
-  @include respond(tab-port) {
-    margin-bottom: 50px;
-  }
-
-  @include respond(tab-land) {
-    width: 66.6%;
-    margin-bottom: 0;
-  }
-
-  & .tickets-details__disclaimer {
-    font-size: 2.5rem;
-    color: $color-grey-dark-3;
-    justify-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    font-style: italic;
-
-    @include respond(tab-land) {
-      display: block;
-      font-size: 1.5rem;
-    }
-
-    @include respond(desktop) {
-      font-size: 1.8rem;
-    }
-
-    &.notice {
-      font-style: normal;
-      line-height: 36px;
-      padding: 0 0 20px;
-
-      @include respond(tab-land) {
-        line-height: 48px;
-
-        span {
-          margin: 0;
-        }
-      }
-
-      span {
-        margin: 0 0 20px;
-      }
-    }
-  }
-
-  & span {
-    background-color: $color-primary;
-    color: $color-white;
-    padding: 0.3rem 0.6rem;
-    @apply shadow-md;
-    @apply rounded-lg;
-    font-size: 2rem;
-    display: inline-block;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-
-    @include respond(tab-land) {
-      font-size: 1.4rem;
-      margin-bottom: 0;
-    }
-  }
 }
 
 .tickets-details__item {
   font-family: $primary-font-family;
   list-style-type: none;
   font-size: 2.2rem;
-  margin-bottom: 0.5rem;
   text-align: left;
   line-height: 2;
+  margin-bottom: 10px;
 
   @include respond(tab-port) {
     font-size: 2.4rem;
+    margin-bottom: 25px;
   }
 
   &-caret {
@@ -150,9 +87,6 @@
   p {
     font-size: 2rem;
     line-height: 2;
-    margin-bottom: 1.6rem;
-    padding: 0.5rem 1rem 2rem;
-    font-weight: 600;
 
     @include respond(tab-port) {
       font-size: 2.2rem;
@@ -162,12 +96,26 @@
       font-weight: 400;
     }
   }
+
+  span {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 0.3rem 0.6rem;
+    @apply shadow-md;
+    @apply rounded-lg;
+    font-size: 2rem;
+    display: inline-block;
+
+    @include respond(tab-land) {
+      font-size: 1.4rem;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .tickets-form {
   @apply shadow-md;
   width: 100%;
-  height: 100%;
   padding: 2rem 2rem 4rem;
   background-color: $color-white;
   color: $color-grey-dark-3;
@@ -183,11 +131,6 @@
 
   & * {
     box-sizing: border-box;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
   }
 
   &__header {
@@ -237,10 +180,9 @@
     }
 
     &:focus {
+      @apply shadow-inner;
       border: 1px solid rgba($color-tertiary-light, 0.5);
       outline: none;
-      // outline: 1px solid rgba($color-secondary-light, 0.5);
-      @apply shadow-inner;
     }
 
     &[readonly] {
@@ -251,24 +193,27 @@
       }
     }
 
-    &:invalid {
-    }
-
     &:focus:invalid {
+      @apply shadow-inner;
       border: 1px solid rgba($color-secondary-light, 0.5);
       outline: none;
-      @apply shadow-inner;
+    }
+
+    &.tickets-form__input--checkbox {
+      height: 20px;
+      width: 20px;
+      margin: 0 5px 0 auto;
     }
   }
 
   &__submit-btn {
+    @apply shadow-md;
     display: block;
     margin: 20px auto 0;
     border-radius: 25px;
     border: none;
     color: $color-white;
     font-weight: 700;
-    @apply shadow-md;
     background-color: $color-primary;
     padding: 1rem 1.6rem;
     font-size: 2rem;
@@ -303,6 +248,11 @@
       pointer-events: none;
     }
   }
+}
+
+.tickets-form__content {
+  display: flex;
+  flex-direction: column;
 }
 
 .tickets-details__link {

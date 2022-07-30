@@ -9,6 +9,37 @@ import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
 import Itinerary from 'components/Itinerary';
 
+const itinerary = [
+  {
+    date: 'Wednesday, November 2nd',
+    events: [
+      { time: '7:15pm', event: 'Kathryn Legendre' },
+      { time: '9:30pm', event: 'Ray Wylie Hubbard' },
+    ],
+  },
+  {
+    date: 'Thursday, November 3rd',
+    events: [
+      { time: '7:15pm', event: 'Thomas Michael Riley' },
+      { time: '9:30pm', event: 'Nikki Lane' },
+    ],
+  },
+  {
+    date: 'Friday, November 4th',
+    events: [
+      { time: '7:15pm', event: 'Nathan Colt Young' },
+      { time: '9:30pm', event: 'Matt Castillo' },
+    ],
+  },
+  {
+    date: 'Saturday, November 5th',
+    events: [
+      { time: '7:15pm', event: 'Mark David Manders' },
+      { time: '9:30pm', event: 'Gary P. Nunn' },
+    ],
+  },
+];
+
 const MusicPage = ({ data }) => {
   const { allStrapiMusicians, primaryImage, panelImage } = data;
   const marqueeImage = primaryImage.image;
@@ -25,7 +56,7 @@ const MusicPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <Itinerary />
+        <Itinerary itinerary={itinerary} />
         <CardGallery items={allStrapiMusicians.edges} />
         <PanelImage image={panel} />
       </Container>

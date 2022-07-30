@@ -14,6 +14,10 @@
   cursor: pointer;
 
   @include respond(tab-port) {
-   width: 400px;
+    width: 370px;
+  }
+
+  @include respond(tab-land) {
+    width: 400px;
   }
 }

@@ -4,12 +4,11 @@ import { Link } from 'gatsby';
 const quickNavLinks = [
   { label: 'Home', slug: '' },
   { label: 'About', slug: 'about' },
+  { label: 'Music', slug: 'music' },
   { label: 'Resources', slug: 'resources' },
-  { label: 'Cook Offs', slug: 'cook-offs' },
-  // { label: 'Stories', slug: 'events' },
+  // { label: `Stories & Events`, slug: 'events' },
   // { label: 'Local Attractions', slug: 'local-attractions' },
-  // { label: 'Tickets', slug: 'tickets' },
-  // { label: 'Music', slug: 'music' },
+  { label: 'Tickets', slug: 'tickets' },
 ];
 
 export default function QuickNav() {
