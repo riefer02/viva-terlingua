@@ -13,6 +13,10 @@
   @include respond(tab-land) {
     margin-bottom: 6rem !important;
   }
+
+  @include respond(big-desktop) {
+    width: 500px;
+  }
 }
 
 .itinerary__date {
