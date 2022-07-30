@@ -23,12 +23,12 @@ export default function TicketsForm() {
     switch (fieldName) {
       case 'firstName':
         setForm((state) => {
-          return { ...state, firstName: value };
+          return { ...state, firstName: value.replace(' ', '').trim() };
         });
         break;
       case 'lastName':
         setForm((state) => {
-          return { ...state, lastName: value };
+          return { ...state, lastName: value.replace(' ', '').trim() };
         });
         break;
       case 'email':
@@ -58,12 +58,15 @@ export default function TicketsForm() {
         break;
       case 'recipientFirstName':
         setForm((state) => {
-          return { ...state, recipientFirstName: value.trim() };
+          return {
+            ...state,
+            recipientFirstName: value.replace(' ', '').trim(),
+          };
         });
         break;
       case 'recipientLastName':
         setForm((state) => {
-          return { ...state, recipientLastName: value.trim() };
+          return { ...state, recipientLastName: value.replace(' ', '').trim() };
         });
         break;
       default:
