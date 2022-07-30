@@ -7,11 +7,11 @@ module.exports = {
     title: `Terlingua International Chili Cook Off`,
     titleTemplate: `Terlingua International Chili Cook Off`,
     description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
-    siteUrl: `https://terlinguachilicookoff.org`,
+    siteUrl: `https://abowlofred.com`,
     url: `${
       process.env.NODE_ENV === 'development'
         ? `http://localhost:8000`
-        : `https://terlinguachilicookoff.org`
+        : `https://abowlofred.com`
     }`,
     image: `/static/oticcc-logo-black.png`,
     author: `@riefer02 - Andrew Riefenstahl`,
