@@ -6,6 +6,8 @@ export default function NavBar() {
 
   const mobileNavLinks = [
     { label: 'Home', slug: '' },
+    { label: 'Tickets', slug: 'tickets' },
+    { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
     { label: 'Stories', slug: 'events' },
@@ -83,9 +85,10 @@ export default function NavBar() {
 
   const desktopNavLinks = [
     { label: 'Home', slug: '' },
+    { label: 'Tickets', slug: 'tickets' },
+    { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
-    // { label: 'Cook Offs', slug: 'cook-offs' },
   ];
 
   return (
