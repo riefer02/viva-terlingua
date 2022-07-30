@@ -6,12 +6,13 @@
   font-family: $primary-font-family;
   list-style-type: none;
   font-size: 2.2rem;
-  margin-bottom: 25px;
   text-align: left;
   line-height: 2;
+  margin-bottom: 10px;
 
   @include respond(tab-port) {
     font-size: 2.4rem;
+    margin-bottom: 25px;
   }
 
   &-caret {
@@ -199,9 +200,9 @@
     }
 
     &.tickets-form__input--checkbox {
-      width: 100%;
       height: 20px;
-      margin-right: auto;
+      width: 20px;
+      margin: 0 5px 0 auto;
     }
   }
 

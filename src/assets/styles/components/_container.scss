@@ -1,6 +1,5 @@
 .container.section {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 5px;
   margin-top: 20px;
 
   @include respond(tab-land) {

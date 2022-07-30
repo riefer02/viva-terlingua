@@ -14,12 +14,11 @@ export default function TicketsDetails() {
               Viva Terlingua!
             </p> */}
           <div className="mb-10 lg:mb-20">
-            <h2 className="font-bold">Terlingua Chili Cook Off Tickets</h2>
-            <h4>
-              Get your ticket for the 2022 Tolbert's Chili Cook Off today
+            <p>
+              Get your tickets for the 2022 Tolbert's Chili Cook Off today
               <br></br>
               Each ticket is priced at $45 per person
-            </h4>
+            </p>
           </div>
           <div className="relative">
             <h2 className="tickets-details__header">What's Included</h2>
@@ -35,7 +34,7 @@ export default function TicketsDetails() {
               </li>
             ))}
           </ul>
-          <p className="tickets-details__disclaimer flex items-center">
+          <p className="tickets-details__disclaimer flex flex-col lg:flex-row items-center">
             <span className="mr-2">Disclaimer:</span> Consumption of too much chili might result
             in a good time!
           </p>

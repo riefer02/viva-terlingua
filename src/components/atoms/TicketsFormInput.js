@@ -12,6 +12,7 @@ export default function TicketsFormInput({
         <label className="tickets-form__label" htmlFor={input.name}>
           {input.label}
         </label>
+
         <input
           {...input}
           className="tickets-form__input"
@@ -37,15 +38,17 @@ export default function TicketsFormInput({
 
   if (input.type === 'checkbox')
     return (
-      <div className="flex justify-between">
+      <div className="flex justify-between my-5">
         <label className="tickets-form__label w-full" htmlFor="firstName">
           {input.label}
         </label>
-        <input
-          {...input}
-          className="tickets-form__input tickets-form__input--checkbox w-full"
-          onChange={() => customHandler((prevState) => !prevState)}
-        ></input>
+        <div className="w-full flex justify-end">
+          <input
+            {...input}
+            className="tickets-form__input tickets-form__input--checkbox"
+            onChange={() => customHandler((prevState) => !prevState)}
+          ></input>
+        </div>
       </div>
     );
 

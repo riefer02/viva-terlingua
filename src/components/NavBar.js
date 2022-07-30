@@ -10,7 +10,7 @@ export default function NavBar() {
     { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
-    { label: 'Stories', slug: 'events' },
+    { label: `News & Events`, slug: 'events' },
     { label: 'Local Attractions', slug: 'local-attractions' },
   ];
 
