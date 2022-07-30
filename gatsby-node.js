@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const { zipFunctions } = require('@netlify/zip-it-and-ship-it');
 exports.onPostBuild = () => {
-  const srcLocation = path.join(__dirname, `./.netlify/functions`);
+  const srcLocation = path.join(__dirname, `./netlify/functions`);
   const outputLocation = path.join(__dirname, `./public/functions`);
   if (!fs.existsSync(outputLocation)) {
     fs.mkdirSync(outputLocation);
