@@ -3,6 +3,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-sitemap"
-
-[build]
-  functions="public/functions"
