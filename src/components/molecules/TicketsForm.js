@@ -58,12 +58,12 @@ export default function TicketsForm() {
         break;
       case 'recipientFirstName':
         setForm((state) => {
-          return { ...state, recipientFirstName: value };
+          return { ...state, recipientFirstName: value.trim() };
         });
         break;
       case 'recipientLastName':
         setForm((state) => {
-          return { ...state, recipientLastName: value };
+          return { ...state, recipientLastName: value.trim() };
         });
         break;
       default:
@@ -73,8 +73,16 @@ export default function TicketsForm() {
 
   const handleValidation = () => {
     formRef.current.scrollIntoView({ behavior: 'smooth' });
-    const { firstName, lastName, email, emailConfirm, phone, ticketCount } =
-      form;
+    const {
+      firstName,
+      lastName,
+      email,
+      emailConfirm,
+      phone,
+      ticketCount,
+      recipientFirstName,
+      recipientLastName,
+    } = form;
 
     if (validator.isEmpty(firstName)) {
       setMessage(`What's your first name?`);
@@ -100,24 +108,34 @@ export default function TicketsForm() {
       setMessage(`How many tickets is that?`);
       return false;
     }
+    if (
+      forAlternativeRecipient &&
+      (validator.isEmpty(recipientFirstName) ||
+        validator.isEmpty(recipientLastName))
+    ) {
+      setMessage(`We need details about your ticket recipient.`);
+      return false;
+    }
     return true;
   };
 
   const handleSubmit = (e) => {
-    console.log(form);
     e.preventDefault();
-    return;
 
-    const valid = handleValidation();
-    valid
-      ? redirectToCheckout(e)
-      : setMessage("We're missing some details partner!");
+    if (handleValidation()) redirectToCheckout(e);
   };
 
   // Checkout Logic
   const redirectToCheckout = async (event) => {
     event.preventDefault();
     setMessage('Processing...');
+
+    let clientReferenceId = `${form.firstName}—${form.lastName}—${
+      form.ticketCount
+    }—${form.phone}—${Date.now()}`;
+
+    if (forAlternativeRecipient)
+      clientReferenceId += `—${form.recipientFirstName}—${form.recipientLastName}`;
 
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout({
@@ -128,9 +146,7 @@ export default function TicketsForm() {
       customerEmail: form.email,
       successUrl: `${process.env.DOMAIN_URL}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
       cancelUrl: `${process.env.DOMAIN_URL}/tickets`,
-      clientReferenceId: `${form.firstName}—${form.lastName}—${
-        form.ticketCount
-      }—${form.phone}—${Date.now()}`,
+      clientReferenceId,
     });
 
     if (error) {
