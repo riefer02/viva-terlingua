@@ -38,17 +38,21 @@ export default function Musician({ artist }) {
           </div>
         </div>
         {/* Spotify Player */}
-        <div className="musician__spotify-player">
-          <iframe
-            src={`https://open.spotify.com/embed/artist/${spotifyID}`}
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-            title="artist spotify"
-          ></iframe>
-        </div>
+        {spotifyID ? (
+          <div className="musician__spotify-player">
+            <iframe
+              src={`https://open.spotify.com/embed/artist/${spotifyID}`}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+              title="artist spotify"
+            ></iframe>
+          </div>
+        ) : (
+          <div className="order-2 w-1/3"></div>
+        )}
       </div>
       {/* Music Video */}
       <div className="musician__music-video">
