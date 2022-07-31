@@ -61,9 +61,13 @@ exports.handler = async function ({ body, headers }, context) {
       }),
     };
   } catch (err) {
+    let axiosExists = axios ? true : false;
+
     return {
       statusCode: 400,
-      body: `Webhook Error: ${err.message}`,
+      body: `Webhook Error: ${err.message}, axios is ${
+        axiosExists ? 'installed' : 'not found'
+      }`,
     };
   }
 };
