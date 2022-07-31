@@ -1,5 +1,4 @@
 exports.handler = async function (event, context) {
-  // your server-side functionality
   return {
     statusCode: 200,
     headers: {
@@ -7,7 +6,7 @@ exports.handler = async function (event, context) {
     },
     body: JSON.stringify({
       gibberish: 'Gibberish',
-      envTest: `${process.env.NODE_ENV} hey~!`,
+      envTest: `${process.env.STRIPE_API_KEY} hey~!`,
     }),
   };
 };
