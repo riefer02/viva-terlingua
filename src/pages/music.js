@@ -56,8 +56,8 @@ const MusicPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <Itinerary itinerary={itinerary} />
         <CardGallery items={allStrapiMusicians.edges} />
+        <Itinerary itinerary={itinerary} />
         <PanelImage image={panel} />
       </Container>
     </Layout>
