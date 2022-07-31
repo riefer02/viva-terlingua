@@ -10,6 +10,7 @@ exports.onPostBuild = () => {
   if (!fs.existsSync(outputLocation)) {
     fs.mkdirSync(outputLocation);
   }
+  console.log('Building a better tomorrow.')
   return zipFunctions(srcLocation, outputLocation);
 };
 

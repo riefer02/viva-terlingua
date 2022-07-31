@@ -2,10 +2,10 @@ exports.handler = async function (event, context) {
   return {
     statusCode: 200,
     headers: {
-      Test: 'Test',
+      ['Env-Test']: process.env.MY_DOG,
     },
     body: JSON.stringify({
-      gibberish: 'Gibberish',
+      message: 'Hello There',
     }),
   };
 };
