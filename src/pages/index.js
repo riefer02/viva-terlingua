@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo
-        title={title}
+        title={"Home"}
         description={meta.description}
         keywords={[
           `terlingua`,
