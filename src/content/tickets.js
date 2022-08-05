@@ -78,7 +78,7 @@ export const ticketDetails = [
     </Link>
     .
   </>,
-  'Opportunity to sign up to judge in the competition. Chili judging on Saturday is full.',
+  'Opportunity to sign up to judge in the competition.',
   "Interact with over forty unique vendors from across the nation and meet Texas' finest authors and artists.",
   'Proceeds go towards fighting ALS, and local charities.',
 ];

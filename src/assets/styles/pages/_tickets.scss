@@ -2,16 +2,29 @@
   color: $color-grey-dark-3;
 }
 
+.tickets-details__banner {
+  @apply shadow-lg;
+  font-family: $secondary-font-family;
+  background: rgba($color-grey-light-2, 0.6);
+  padding: 10px 20px 15px;
+  border: 2px $color-primary-light solid;
+  border-radius: 10px;
+
+  @include respond(tab-land) {
+    padding: 20px 10px;
+  }
+}
+
 .tickets-details__item {
   font-family: $primary-font-family;
   list-style-type: none;
   font-size: 2.2rem;
-  text-align: left;
   line-height: 2;
   margin-bottom: 10px;
+  text-align: center;
 
   @include respond(tab-port) {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     margin-bottom: 25px;
   }
 
@@ -21,18 +34,17 @@
 }
 
 .tickets-details__list {
+  @apply shadow-lg;
   height: 100%;
-  margin-bottom: 10px;
-  padding: 0 1rem;
-
-  @include respond(tab-port) {
-    margin-bottom: 40px;
-  }
+  font-family: $secondary-font-family;
+  background: rgba($color-grey-light-2, 0.6);
+  padding: 20px 20px;
+  border: 2px $color-primary-light solid;
+  border-radius: 10px;
+  margin-bottom: 40px;
 
   @include respond(tab-land) {
     margin-bottom: 20px;
-    padding: 0 1rem;
-    padding: 0;
   }
 
   @include respond(desktop) {
@@ -43,16 +55,17 @@
 .tickets-details__header {
   font-size: 3rem;
   font-family: $secondary-font-family;
-  margin-bottom: 2rem;
   display: inline-block;
   position: relative;
+  margin-bottom: 2rem;
 
   @include respond(tab-port) {
     font-size: 4rem;
   }
 
   @include respond(tab-land) {
-    font-size: 2.3rem;
+    font-size: 2.6rem;
+    margin-bottom: 4rem;
   }
 
   &::before {
@@ -111,6 +124,10 @@
       margin-bottom: 0;
     }
   }
+}
+
+.tickets-details__disclaimer {
+  font-size: 2rem !important;
 }
 
 .tickets-form {

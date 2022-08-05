@@ -4,7 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function TicketsDetails() {
   return (
-    <div className="flex lg:flex-row flex-col mx-auto w-full">
+    <div
+      className="flex lg:flex-row flex-col mx-auto w-full"
+      style={{ marginBottom: '25px' }}
+    >
       <div className="tickets-details mx-auto">
         <div className="tickets-details__content">
           {/* <p className="tickets-details__disclaimer notice">
@@ -13,11 +16,10 @@ export default function TicketsDetails() {
               seeing you all next year. The ticket portal will reopen soon.
               Viva Terlingua!
             </p> */}
-          <div className="mb-10 lg:mb-20">
+          <div className="tickets-details__banner mb-10 lg:mb-12">
             <p>
-              Get your tickets for the 2022 Tolbert's Chili Cook Off today
-              <br></br>
-              Each ticket is priced at $45 per person
+              Get your tickets for the 2022 Terlingua Chili Cook Off <br></br>{' '}
+              Tickets are priced at $45 per person
             </p>
           </div>
           <div className="relative">
@@ -35,8 +37,8 @@ export default function TicketsDetails() {
             ))}
           </ul>
           <p className="tickets-details__disclaimer flex flex-col lg:flex-row items-center">
-            <span className="mr-2">Disclaimer:</span> Consumption of too much chili might result
-            in a good time!
+            <span className="mb-5 lg:mb-0 lg:mr-5">Disclaimer:</span>{' '}
+            Consumption of too much chili might result in a good time!
           </p>
         </div>
       </div>
