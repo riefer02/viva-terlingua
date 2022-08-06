@@ -13,6 +13,7 @@ const itinerary = [
   {
     date: 'Wednesday, November 2nd',
     events: [
+      { time: '5:00pm', event: 'Los Pinche Gringos' },
       { time: '7:15pm', event: 'Kathryn Legendre' },
       { time: '9:30pm', event: 'Ray Wylie Hubbard' },
     ],
