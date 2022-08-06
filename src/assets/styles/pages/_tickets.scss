@@ -2,27 +2,19 @@
   color: $color-grey-dark-3;
 }
 
-.tickets-details__banner {
-  @apply shadow-lg;
-  background: rgba($color-grey-light-2, 0.8);
-  padding: 10px 20px 15px;
-  border: 1px $color-primary-light solid;
-  border-radius: 10px;
-
-  @include respond(tab-land) {
-    padding: 20px 10px;
-  }
-}
-
 .tickets-details__item {
   font-family: $primary-font-family;
   list-style-type: none;
-  font-size: 2.1rem;
+  font-size: 2rem;
   line-height: 2;
   margin-bottom: 10px;
-  text-align: center;
 
   @include respond(tab-port) {
+    font-size: 2.4rem;
+  }
+
+  @include respond(desktop) {
+    font-size: 2.1rem;
     margin-bottom: 25px;
   }
 
@@ -31,27 +23,8 @@
   }
 }
 
-.tickets-details__list {
-  @apply shadow-lg;
-  height: 100%;
-  background: rgba($color-grey-light-2, 0.8);
-  padding: 20px 20px;
-  border: 1px $color-primary-light solid;
-  border-radius: 10px;
-  margin-bottom: 40px;
-
-  @include respond(tab-land) {
-    margin-bottom: 20px;
-  }
-
-  @include respond(desktop) {
-    margin-bottom: 40px;
-  }
-}
-
 .tickets-details__header {
   font-size: 3rem;
-  font-family: $secondary-font-family;
   display: inline-block;
   position: relative;
   margin-bottom: 2rem;
@@ -93,19 +66,10 @@
   @include respond(tab-land) {
     padding: 2rem 2.5rem;
   }
+}
 
-  p {
-    font-size: 2rem;
-    line-height: 2;
-
-    @include respond(tab-port) {
-      font-size: 2.1rem;
-    }
-
-    @include respond(desktop) {
-      font-weight: 400;
-    }
-  }
+.tickets-details__disclaimer {
+  font-size: 1.7rem !important;
 
   span {
     background-color: $color-primary;
@@ -118,13 +82,8 @@
 
     @include respond(tab-land) {
       font-size: 1.4rem;
-      margin-bottom: 0;
     }
   }
-}
-
-.tickets-details__disclaimer {
-  font-size: 1.9rem !important;
 }
 
 .tickets-form {
@@ -135,7 +94,7 @@
   background-color: $color-white;
   color: $color-grey-dark-3;
   border-radius: 1rem;
-  border: 1px $color-primary-light solid;
+  border: 1px $color-grey-light-2 solid;
 
   @include respond(tab-port) {
     padding: 2rem 5rem 4rem;

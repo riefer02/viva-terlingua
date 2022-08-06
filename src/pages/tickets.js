@@ -27,8 +27,10 @@ const TicketsPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <TicketsDetails />
-        <TicketsForm />
+        <div className="flex flex-col lg:flex-row">
+          <TicketsDetails />
+          <TicketsForm />
+        </div>
         <PanelImage image={image} />
       </Container>
     </Layout>

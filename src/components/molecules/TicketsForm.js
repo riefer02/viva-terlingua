@@ -158,7 +158,7 @@ export default function TicketsForm() {
     }
   };
   return (
-    <div ref={formRef} className="tickets-form">
+    <div ref={formRef} className="tickets-form mx-auto">
       <h2 className="tickets-form__header">Ticket Order Form</h2>
       <div className="tickets-form__message">{message ? message : ''}</div>
       <form className="tickets-form__content">
