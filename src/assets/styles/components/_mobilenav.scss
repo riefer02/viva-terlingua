@@ -6,7 +6,6 @@
   transition: all 0.2s ease-out;
   background-color: rgba($color-secondary-light, 0.5);
   z-index: 12;
-  @apply shadow-inner;
 
   &.nav--open {
     height: 100%;
@@ -27,16 +26,13 @@
 }
 
 .mobile-nav__item {
-  display: flex;
   align-items: center;
-  height: 100%;
   font-size: 1.8rem;
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease-out;
   font-size: 3rem;
   line-height: 1;
-  height: auto;
   position: relative;
   display: block;
   text-align: left;

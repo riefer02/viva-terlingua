@@ -21,7 +21,6 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  position: relative;
 
   @include respond(desktop) {
     height: 43rem;
@@ -51,8 +50,7 @@
   left: 0%;
   top: -12%;
   width: 100%;
-  margin: 0 auto;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem;
   background-color: $color-secondary;
   color: $color-white;
   padding: 1rem 3rem;
@@ -99,7 +97,6 @@
   bottom: 0;
   left: 20px;
   width: 150px;
-  // margin-left: 2rem;
 
   @include respond(desktop) {
     bottom: 6%;

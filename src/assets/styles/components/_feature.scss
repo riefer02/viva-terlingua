@@ -54,6 +54,7 @@
   }
 
   &-banner {
+    @apply shadow-md;
     background-color: $color-primary-light;
     position: relative;
     margin: 0 auto;
@@ -62,7 +63,6 @@
     transform: skew(-14deg, -0deg);
     width: 75%;
     transition: all 0.2s ease-out;
-    @apply shadow-md;
 
     @include respond(tab-port) {
       bottom: 24px;

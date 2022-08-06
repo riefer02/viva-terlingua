@@ -1,4 +1,5 @@
 blockquote {
+  @apply shadow-md;
   font-size: 1.4em;
   width: 100%;
   margin: 0px auto;
@@ -7,7 +8,6 @@ blockquote {
   line-height: 1.8;
   position: relative;
   background: $color-grey-light-2;
-  @apply shadow-md;
 
   @include respond(tab-land) {
     margin: 20px auto;
@@ -18,32 +18,27 @@ blockquote {
   }
 }
 
-blockquote::before {
-  font-family: Arial;
+blockquote::before,
+blockquote::after {
   content: none;
+  font-family: Arial;
   color: $color-primary-light;
   font-size: 4em;
   position: absolute;
-  left: 10px;
-  top: -10px;
 
   @include respond(tab-port) {
-    content: "\201C";
+    content: '\201C';
   }
 }
 
+blockquote::before {
+  left: 10px;
+  top: -10px;
+}
+
 blockquote::after {
-  font-family: Arial;
-  content: none;
-  color: $color-primary-light;
-  font-size: 4em;
-  position: absolute;
   right: 10px;
   top: -10px;
-
-  @include respond(tab-port) {
-    content: "\201C";
-  }
 }
 
 blockquote span {

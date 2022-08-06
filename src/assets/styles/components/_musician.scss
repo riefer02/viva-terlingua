@@ -4,19 +4,15 @@
 
 .musician__container-top {
   display: flex;
+  flex-direction: column;
   background-color: $color-tertiary-light;
   font-family: $secondary-font-family;
-  height: auto;
-  flex-direction: column;
   border-bottom: 5px solid $color-primary-light;
   border-top: 5px solid $color-primary-light;
 
   @include respond(tab-land) {
     flex-direction: row;
     border: none;
-  }
-
-  @include respond(desktop) {
   }
 }
 
@@ -53,13 +49,13 @@
   }
 
   &-banner {
+    @apply shadow-md;
     background-color: $color-primary-light;
     position: relative;
     right: 12%;
     top: 8%;
     transform: skew(-14deg, -0deg);
     width: 75%;
-    @apply shadow-md;
     transition: all 0.2s ease-out;
 
     &-text {
@@ -97,7 +93,6 @@
   }
 }
 
-// musician List and Items
 .musician__list {
   display: flex;
   justify-content: space-between;
