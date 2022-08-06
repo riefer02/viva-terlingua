@@ -4,10 +4,9 @@
 
 .tickets-details__banner {
   @apply shadow-lg;
-  font-family: $secondary-font-family;
-  background: rgba($color-grey-light-2, 0.6);
+  background: rgba($color-grey-light-2, 0.8);
   padding: 10px 20px 15px;
-  border: 2px $color-primary-light solid;
+  border: 1px $color-primary-light solid;
   border-radius: 10px;
 
   @include respond(tab-land) {
@@ -18,13 +17,12 @@
 .tickets-details__item {
   font-family: $primary-font-family;
   list-style-type: none;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   line-height: 2;
   margin-bottom: 10px;
   text-align: center;
 
   @include respond(tab-port) {
-    font-size: 2.1rem;
     margin-bottom: 25px;
   }
 
@@ -36,10 +34,9 @@
 .tickets-details__list {
   @apply shadow-lg;
   height: 100%;
-  font-family: $secondary-font-family;
-  background: rgba($color-grey-light-2, 0.6);
+  background: rgba($color-grey-light-2, 0.8);
   padding: 20px 20px;
-  border: 2px $color-primary-light solid;
+  border: 1px $color-primary-light solid;
   border-radius: 10px;
   margin-bottom: 40px;
 
@@ -102,7 +99,7 @@
     line-height: 2;
 
     @include respond(tab-port) {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
     }
 
     @include respond(desktop) {
@@ -113,7 +110,7 @@
   span {
     background-color: $color-primary;
     color: $color-white;
-    padding: 0.3rem 0.6rem;
+    padding: 0.1rem 0.6rem;
     @apply shadow-md;
     @apply rounded-lg;
     font-size: 2rem;
@@ -127,16 +124,18 @@
 }
 
 .tickets-details__disclaimer {
-  font-size: 2rem !important;
+  font-size: 1.9rem !important;
 }
 
 .tickets-form {
+  @apply max-w-6xl;
   @apply shadow-md;
   width: 100%;
   padding: 2rem 2rem 4rem;
   background-color: $color-white;
   color: $color-grey-dark-3;
   border-radius: 1rem;
+  border: 1px $color-primary-light solid;
 
   @include respond(tab-port) {
     padding: 2rem 5rem 4rem;

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function TicketsDetails() {
   return (
     <div
-      className="flex lg:flex-row flex-col mx-auto w-full"
+      className="flex lg:flex-row flex-col mx-auto max-w-6xl w-full"
       style={{ marginBottom: '25px' }}
     >
       <div className="tickets-details mx-auto">
@@ -25,7 +25,7 @@ export default function TicketsDetails() {
           <div className="relative">
             <h2 className="tickets-details__header">What's Included</h2>
           </div>
-          <ul className="tickets-details__list max-w-5xl mx-auto">
+          <ul className="tickets-details__list mx-auto">
             {ticketDetails.map((detail, index) => (
               <li key={index} className="tickets-details__item">
                 <FontAwesomeIcon

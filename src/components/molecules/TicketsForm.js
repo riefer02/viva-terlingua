@@ -158,36 +158,34 @@ export default function TicketsForm() {
     }
   };
   return (
-    <>
-      <div ref={formRef} className="tickets-form">
-        <h2 className="tickets-form__header">Ticket Order Form</h2>
-        <div className="tickets-form__message">{message ? message : ''}</div>
-        <form className="tickets-form__content">
-          {ticketFormInputs.map((input, index) => (
-            <TicketsFormInput
-              key={index}
-              input={input}
-              handler={handleInput}
-              customHandler={setForAlternativeRecipient}
-              showAlternativeInputs={forAlternativeRecipient}
-            />
-          ))}
-          <button
-            className="tickets-form__submit-btn"
-            type="submit"
-            onClick={(e) => handleSubmit(e)}
-          >
-            Review Order
-          </button>
-          <sub className="mt-5 text-sm">
-            *All information is handled through
-            <a className="text-indigo-600 mx-1" href="https://stripe.com/">
-              Stripe
-            </a>
-            payment integration systems.
-          </sub>
-        </form>
-      </div>
-    </>
+    <div ref={formRef} className="tickets-form">
+      <h2 className="tickets-form__header">Ticket Order Form</h2>
+      <div className="tickets-form__message">{message ? message : ''}</div>
+      <form className="tickets-form__content">
+        {ticketFormInputs.map((input, index) => (
+          <TicketsFormInput
+            key={index}
+            input={input}
+            handler={handleInput}
+            customHandler={setForAlternativeRecipient}
+            showAlternativeInputs={forAlternativeRecipient}
+          />
+        ))}
+        <button
+          className="tickets-form__submit-btn"
+          type="submit"
+          onClick={(e) => handleSubmit(e)}
+        >
+          Review Order
+        </button>
+        <sub className="mt-5 text-sm">
+          *All information is handled through
+          <a className="text-indigo-600 mx-1" href="https://stripe.com/">
+            Stripe
+          </a>
+          payment integration systems.
+        </sub>
+      </form>
+    </div>
   );
 }
