@@ -4,12 +4,8 @@
   width: 100%;
   display: none;
   overflow: visible;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5041726163121498) 0%,
-    rgba(255, 255, 255, 0) 80%
-  );
+  background: linear-gradient(180deg, rgba(black, 1) 0%, rgba(black, 0) 100%);
+
   @include respond(tab-port) {
     display: block;
   }
@@ -35,6 +31,7 @@
       padding-top: 0.5rem;
     }
   }
+
   &__item {
     width: auto;
     margin: 0 2.5rem;
@@ -50,7 +47,5 @@
     @include respond(desktop) {
       width: 100px;
     }
-  }
-  &__logo {
   }
 }

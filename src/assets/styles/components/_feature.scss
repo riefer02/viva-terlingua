@@ -138,7 +138,6 @@
   }
 }
 
-// Feature List and Items
 .feature__list {
   display: flex;
   flex-direction: column;
@@ -157,12 +156,12 @@
 }
 
 .feature__item {
+  @apply shadow-md;
   pointer-events: none;
   display: flex;
   flex: 1;
   justify-content: space-between;
   margin: 0.9rem;
-  @apply shadow-md;
   background-color: $color-white;
   transition: all 0.2s;
   color: $color-grey-dark-3;
@@ -222,13 +221,13 @@
   }
 
   &-action {
+    @apply shadow-md;
     font-size: 3rem;
     background-color: $color-primary-light;
     position: relative;
     height: min-content;
     color: $color-white;
     transform: skew(-14deg, -0deg);
-    @apply shadow-md;
     transition: all 0.2s;
 
     @include respond(tab-port) {
@@ -237,7 +236,6 @@
     @include respond(desktop) {
       font-size: 2rem;
       width: 30%;
-
       left: 8%;
       top: 7%;
     }
@@ -264,8 +262,8 @@
 .feature__item-group {
   display: flex;
   flex: 1;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2rem;
 
   @include respond(tab-port) {
