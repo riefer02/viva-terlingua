@@ -68,14 +68,14 @@
 .card-gallery__card-title {
   transform: skew(14deg, 0deg);
   color: $color-white;
-  font-size: 2.5rem;
+  font-size: 2rem;
 
   @include respond(tab-port) {
-    font-size: 3rem;
+    font-size: 1.7rem;
   }
 
   @include respond(tab-land) {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
 }
 
