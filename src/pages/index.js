@@ -9,6 +9,8 @@ import Quote from 'components/Quote';
 import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
+import SponsorsCarousel from 'components/molecules/SponsorsCarousel';
+import Spacer from '../components/atoms/Spacer';
 
 const IndexPage = ({ data }) => {
   const {
@@ -21,15 +23,21 @@ const IndexPage = ({ data }) => {
       panelImage,
       secondaryText,
     },
-    posters
+    posters,
+    sponsorLogos
   } = data;
   const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
+  const carouselContent = {
+    header: 'We Love Our Sponsors',
+    text: 'The Original Terlingua International Championship Chili Cook Off is happy to have such wonderful organizations backing this years event!',
+    images: sponsorLogos.edges,
+  };
 
   return (
     <Layout>
       <Seo
-        title={"Home"}
+        title={'Home'}
         description={meta.description}
         keywords={[
           `terlingua`,
@@ -44,6 +52,7 @@ const IndexPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <Feature items={featured.featuresList} />
+        <SponsorsCarousel content={carouselContent} />
         <ImageGallery images={posters} />
         <Quote quote={content}></Quote>
         <PanelImage image={panel} />
@@ -108,6 +117,17 @@ export const pageQuery = graphql`
               )
             }
             publicURL
+          }
+        }
+      }
+    }
+    sponsorLogos: allStrapiSponsors {
+      edges {
+        node {
+          logo {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
       }

@@ -10,7 +10,6 @@
 
   @include respond(tab-land) {
     width: 80%;
-    margin: 0 auto !important; //override container scss
   }
 
   @include respond(desktop) {
