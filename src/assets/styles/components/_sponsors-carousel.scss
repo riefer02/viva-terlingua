@@ -1,11 +1,5 @@
 .slick-slide {
-  height: 200px;
+  > * {
+    height: 100%;
+  }
 }
-
-.slick-slide img {
-  width: 100%;
-}
-
-// .sponsor-slide {
-//     display: inline-flex !important;
-// }

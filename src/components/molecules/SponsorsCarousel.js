@@ -3,15 +3,9 @@ import { Helmet } from 'react-helmet';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 
-/* Partners Carousel */
-// .partner-slide {
-//     display: inline-flex !important;
-// }
-
 export default function SponsorsCarousel({
   content: { header, text, images },
 }) {
-  console.log(images);
   const sliderSettings = {
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -19,7 +13,6 @@ export default function SponsorsCarousel({
     autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
-    dots: false,
     responsive: [
       {
         breakpoint: 640,
@@ -58,11 +51,10 @@ export default function SponsorsCarousel({
         </div>
         <Slider {...sliderSettings}>
           {images.map((image, index) => (
-            <div
-              key={index}
-              className="sponsor-slide justify-center items-center p-5 md:p-10 mx-auto"
-            >
+            <div className="">
               <GatsbyImage
+                style={{ height: '200px', width: 'auto' }}
+                imgStyle={{ objectFit: 'cover' }}
                 placeholder="blurred"
                 formats="[AVIF,WEBP]"
                 image={getImage(image.node.logo)}
