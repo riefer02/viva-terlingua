@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 export default function SponsorsGrid({ sponsorLogos } ) {
   return (
     <div className="">
-      <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-primary-light mb-8">
+      <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-secondary mb-8">
         <h3 className="skew-x-12 font-primary p-2 text-white drop-shadow-lg capitalize text-5xl">
           We Love Our Sponsors
         </h3>
