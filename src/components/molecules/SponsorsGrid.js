@@ -10,9 +10,9 @@ export default function SponsorsGrid({ sponsorLogos } ) {
         </h3>
       </div>
       <div className="text-white border border-tertiary-light bg-white p-8 shadow-lg mx-auto">
-        <div className="flex flex-wrap items-center gap-10 justify-between p-8 bg-primary-light shadow-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-8 bg-primary shadow-md">
           {sponsorLogos.map((image, index) => (
-            <div className="w-full md:w-1/4 lg:w-[15%] h-[200px] overflow-hidden flex items-center justify-center p-4">
+            <div className="w-full h-[200px] overflow-hidden flex items-center justify-center p-4 bg-primary-light  border border-white border-opacity-20 shadow-md rounded-xl">
               <GatsbyImage
                 placeholder="blurred"
                 formats="[AVIF,WEBP]"
