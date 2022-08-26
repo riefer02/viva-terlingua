@@ -1,17 +1,17 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-export default function SponsorsCarousel({ content: { header, images } }) {
+export default function SponsorsGrid({ sponsorLogos } ) {
   return (
     <div className="">
       <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-primary-light mb-8">
         <h3 className="skew-x-12 font-primary p-2 text-white drop-shadow-lg capitalize text-5xl">
-          {header}
+          We Love Our Sponsors
         </h3>
       </div>
       <div className="text-white border border-tertiary-light bg-white p-8 shadow-lg max-w-[880px] mx-auto">
         <div className="flex flex-wrap items-center gap-10 justify-between p-8 bg-primary-light shadow-md">
-          {images.map((image, index) => (
+          {sponsorLogos.map((image, index) => (
             <div className="w-full md:w-1/4 h-[200px] overflow-hidden flex items-center justify-center p-4">
               <GatsbyImage
                 placeholder="blurred"

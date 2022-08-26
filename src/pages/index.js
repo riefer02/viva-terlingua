@@ -9,8 +9,7 @@ import Quote from 'components/Quote';
 import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
-import SponsorsCarousel from 'components/molecules/SponsorsCarousel';
-import Spacer from '../components/atoms/Spacer';
+import SponsorsGrid from 'components/molecules/SponsorsGrid';
 
 const IndexPage = ({ data }) => {
   const {
@@ -24,15 +23,10 @@ const IndexPage = ({ data }) => {
       secondaryText,
     },
     posters,
-    sponsorLogos
+    sponsorLogos,
   } = data;
   const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
-  const carouselContent = {
-    header: 'We Love Our Sponsors',
-    text: 'The Original Terlingua International Championship Chili Cook Off is happy to have such wonderful organizations backing this years event!',
-    images: sponsorLogos.edges,
-  };
 
   return (
     <Layout>
@@ -52,7 +46,7 @@ const IndexPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <Feature items={featured.featuresList} />
-        <SponsorsCarousel content={carouselContent} />
+        <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
         <ImageGallery images={posters} />
         <Quote quote={content}></Quote>
         <PanelImage image={panel} />
