@@ -69,7 +69,7 @@ export default function NavBar() {
           name
         }
       }
-      allStrapiSponsors(filter: { priority: { eq: 1 } }) {
+      allStrapiSponsors(sort: { fields: priority, order: ASC }, limit: 8) {
         nodes {
           website
           name

@@ -115,7 +115,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    sponsorLogos: allStrapiSponsors {
+    sponsorLogos: allStrapiSponsors(sort: {fields: priority, order: ASC}) {
       edges {
         node {
           logo {

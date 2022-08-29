@@ -1,18 +1,22 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-export default function SponsorsGrid({ sponsorLogos } ) {
+export default function SponsorsGrid({ sponsorLogos }) {
+  console.log(sponsorLogos);
   return (
     <div className="">
-      <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-secondary mb-8">
+      <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-primary-light mb-8">
         <h3 className="skew-x-12 font-primary p-2 text-white drop-shadow-lg capitalize text-5xl">
           We Love Our Sponsors
         </h3>
       </div>
-      <div className="text-white border border-tertiary-light bg-white p-8 shadow-lg mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-8 bg-primary shadow-md">
+      <div className="text-white border border-tertiary-light bg-tertiary p-8 shadow-lg mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-8 bg-white shadow-md">
           {sponsorLogos.map((image, index) => (
-            <div className="w-full h-[200px] overflow-hidden flex items-center justify-center p-4 bg-primary-light  border border-white border-opacity-20 shadow-md rounded-xl">
+            <div
+              key={index}
+              className="w-full h-[200px] overflow-hidden flex items-center justify-center p-4 bg-secondary bg-opacity-80  border border-white border-opacity-20 shadow-md rounded-xl"
+            >
               <GatsbyImage
                 placeholder="blurred"
                 formats="[AVIF,WEBP]"
