@@ -7,7 +7,7 @@ export default function Sponsors() {
     <StaticQuery
       query={graphql`
         query MyQuery {
-          allStrapiSponsors(filter: { priority: { eq: 1 } }, limit: 8) {
+          allStrapiSponsors(sort: { fields: priority, order: ASC }, limit: 8) {
             edges {
               node {
                 logo {
