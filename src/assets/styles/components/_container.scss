@@ -1,6 +1,6 @@
 .container.section {
   padding: 0 5px;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   @include respond(tab-land) {
     margin-top: unset;
