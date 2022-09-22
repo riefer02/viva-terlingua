@@ -43,7 +43,7 @@ export default function Marquee({ marquee }) {
           ></GatsbyImage>
         </div>
         <div className="marquee__cookoff-dates">
-          <div className="marquee__date-text">Viva Terlingua! 2022</div>
+          <div className="marquee__date-text">Nov 2nd-5th 2022</div>
         </div>
       </div>
     </div>

@@ -17,10 +17,11 @@ export default function TicketsDetails() {
               seeing you all next year. The ticket portal will reopen soon.
               Viva Terlingua!
             </p> */}
-            <p className="text-3xl leading-10 mb-10 lg:mb-12">
+            <p className="text-3xl mb-10 lg:mb-8">
               Get your tickets to the 2022 Terlingua Chili Cook Off:
             </p>
-            <p className="text-4xl leading-10 mb-10 lg:mb-12 text-gray-800">
+            <p className="text-4xl mb-10 lg:mb-8">November 2nd - 5th, 2022</p>
+            <p className="text-4xl mb-10 lg:mb-12 text-gray-800">
               Tickets are $<span className="text-primary">45</span>/person
             </p>
             <div className="relative">
@@ -37,7 +38,10 @@ export default function TicketsDetails() {
                 </li>
               ))}
             </ul>
-            <p className="tickets-details__disclaimer flex flex-col items-center justify-center">
+            <p className="text-3xl mb-14 -mt-6 text-secondary">
+              22970 FM 170 Terlingua, TX 79852
+            </p>
+            <p className="tickets-details__disclaimer flex flex-col items-center justify-center ">
               <span className="mb-5">Disclaimer:</span>
               Consumption of too much chili might result in a good time!
             </p>
