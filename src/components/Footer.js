@@ -8,14 +8,12 @@ const Footer = () => {
       <Container>
         <div className="flex flex-col items-center gap-2 h-full">
           <div className="flex gap-8">
-            <div className="text-2xl text-gray-700">
+            <div className="text-2xl">
               &copy; {new Date().getFullYear()}, Viva Terlingua! | Contact Us:{' '}
               <span className="text-primary">abowlofred@gmail.com</span>
             </div>
           </div>
-          <div className="text-gray-700 text-lg">
-            Website by Rief Productions LLC
-          </div>
+          <div className="text-lg">Website by Rief Productions LLC</div>
         </div>
       </Container>
     </footer>
