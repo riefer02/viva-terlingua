@@ -2,7 +2,6 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function SponsorsGrid({ sponsorLogos }) {
-  console.log(sponsorLogos);
   return (
     <div className="">
       <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-primary-light mb-8">

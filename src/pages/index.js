@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import Seo from 'components/SEO';
@@ -10,6 +10,7 @@ import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/molecules/SponsorsGrid';
+import OfficialCookOffPoster from '../components/atoms/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
   const {
@@ -24,6 +25,7 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
+    officialCookOffPoster,
   } = data;
   const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -45,7 +47,9 @@ const IndexPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
+        <OfficialCookOffPoster className="lg:hidden" />
         <Feature items={featured.featuresList} />
+        <OfficialCookOffPoster className="hidden lg:block" />
         <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
         <ImageGallery images={posters} />
         <Quote quote={content}></Quote>
@@ -115,7 +119,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    sponsorLogos: allStrapiSponsors(sort: {fields: priority, order: ASC}) {
+    sponsorLogos: allStrapiSponsors(sort: { fields: priority, order: ASC }) {
       edges {
         node {
           logo {
