@@ -161,7 +161,7 @@ export default function TicketsForm() {
     <div ref={formRef} className="tickets-form mx-auto">
       <h2 className="tickets-form__header">Ticket Order Form</h2>
       <div className="tickets-form__message">{message ? message : ''}</div>
-      <form className="tickets-form__content">
+      <form className="tickets-form__conten pointer-events-none opacity-60">
         {ticketFormInputs.map((input, index) => (
           <TicketsFormInput
             key={index}
@@ -169,14 +169,16 @@ export default function TicketsForm() {
             handler={handleInput}
             customHandler={setForAlternativeRecipient}
             showAlternativeInputs={forAlternativeRecipient}
+            disabled
           />
         ))}
         <button
           className="tickets-form__submit-btn"
           type="submit"
           onClick={(e) => handleSubmit(e)}
+          disabled
         >
-          Review Order
+          Portal is Closed
         </button>
         <sub className="mt-5 text-sm">
           *All information is handled through
