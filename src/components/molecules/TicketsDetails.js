@@ -25,7 +25,7 @@ export default function TicketsDetails() {
             {/* <p className="text-3xl mb-10 lg:mb-8">
               Get your tickets to the 2022 Terlingua Chili Cook Off:
             </p> */}
-            <p className="text-4xl mb-10 lg:mb-8">November 2nd - 5th, 2022</p>
+            {/* <p className="text-4xl mb-10 lg:mb-8">November 2nd - 5th, 2022</p>
             <p className="text-4xl mb-10 lg:mb-12 text-gray-800">
               Tickets are $<span className="text-primary">45</span>/person
             </p>
@@ -49,7 +49,7 @@ export default function TicketsDetails() {
             <p className="tickets-details__disclaimer flex flex-col items-center justify-center ">
               <span className="mb-5">Disclaimer:</span>
               Consumption of too much chili might result in a good time!
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

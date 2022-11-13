@@ -72,8 +72,19 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.STRAPI_URL,
+        accessToken: process.env.STRAPI_API_TOKEN,
         queryLimit: 1000, // Default to 100
-        contentTypes: [
+        // contentTypes: [
+        //   'sponsors',
+        //   'users',
+        //   'ticket-holders',
+        //   'events',
+        //   'musicians',
+        //   'local-attractions',
+        //   'gallery-images',
+        //   'resources',
+        // ],
+        collectionTypes: [
           'sponsors',
           'users',
           'ticket-holders',
