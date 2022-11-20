@@ -42,7 +42,7 @@ const itinerary = [
 ];
 
 const MusicPage = ({ data }) => {
-  const { allStrapiMusicians, primaryImage, panelImage } = data;
+  const { allStrapiMusician, primaryImage, panelImage } = data;
   const marqueeImage = primaryImage.image;
   const panel = getImage(panelImage.image.childImageSharp);
   const title = `Music`;
@@ -57,7 +57,7 @@ const MusicPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <CardGallery items={allStrapiMusicians.edges} />
+        <CardGallery items={allStrapiMusician.edges} />
         <Itinerary itinerary={itinerary} />
         <PanelImage image={panel} />
       </Container>
@@ -69,7 +69,7 @@ export default MusicPage;
 
 export const pageQuery = graphql`
   query MusicQuery {
-    panelImage: strapiGalleryImages(
+    panelImage: strapiGalleryImage(
       role: { eq: "panel" }
       page: { eq: "music" }
     ) {
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    primaryImage: strapiGalleryImages(
+    primaryImage: strapiGalleryImage(
       role: { eq: "marquee" }
       page: { eq: "music" }
     ) {
@@ -93,7 +93,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allStrapiMusicians(sort: { fields: [order], order: ASC }) {
+    allStrapiMusician(sort: { fields: [order], order: ASC }) {
       edges {
         node {
           name

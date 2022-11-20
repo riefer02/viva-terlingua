@@ -8,11 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
 
 const ResourcesPage = ({ data }) => {
-  const { allStrapiResources, strapiGalleryImages } = data;
-  const resources = allStrapiResources.edges;
+  const { allStrapiResource, strapiGalleryImage } = data;
+  const resources = allStrapiResource.edges;
   const marqueeData = {
     title: 'Rules and Events',
-    marqueeImage: strapiGalleryImages.image,
+    marqueeImage: strapiGalleryImage.image,
   };
 
   return (
@@ -56,7 +56,7 @@ export default ResourcesPage;
 
 export const pageQuery = graphql`
   query ResourcesPage {
-    allStrapiResources {
+    allStrapiResource {
       edges {
         node {
           name
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    strapiGalleryImages(title: { eq: "Camp and Sky" }) {
+    strapiGalleryImage(title: { eq: "Camp and Sky" }) {
       image {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])

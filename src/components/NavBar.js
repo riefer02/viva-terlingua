@@ -51,25 +51,25 @@ export default function NavBar() {
 
   const data = useStaticQuery(graphql`
     query NavBarQuery {
-      allStrapiEvents {
+      allStrapiEvent {
         nodes {
           slug
           title
         }
       }
-      allStrapiLocalAttractions {
+      allStrapiLocalAttraction {
         nodes {
           name
           url
         }
       }
-      allStrapiMusicians {
+      allStrapiMusician {
         nodes {
           slug
           name
         }
       }
-      allStrapiSponsors(sort: { fields: priority, order: ASC }, limit: 8) {
+      allStrapiSponsor(sort: { fields: priority, order: ASC }, limit: 8) {
         nodes {
           website
           name
@@ -78,10 +78,10 @@ export default function NavBar() {
     }
   `);
 
-  const events = [...data.allStrapiEvents.nodes];
-  const localAttractions = [...data.allStrapiLocalAttractions.nodes];
-  const musicians = [...data.allStrapiMusicians.nodes];
-  const sponsors = [...data.allStrapiSponsors.nodes];
+  const events = [...data.allStrapiEvent.nodes];
+  const localAttractions = [...data.allStrapiLocalAttraction.nodes];
+  const musicians = [...data.allStrapiMusician.nodes];
+  const sponsors = [...data.allStrapiSponsor.nodes];
 
   const desktopNavLinks = [
     { label: 'Home', slug: '' },

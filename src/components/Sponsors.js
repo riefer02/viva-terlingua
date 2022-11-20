@@ -7,7 +7,7 @@ export default function Sponsors() {
     <StaticQuery
       query={graphql`
         query MyQuery {
-          allStrapiSponsors(sort: { fields: priority, order: ASC }, limit: 8) {
+          allStrapiSponsor(sort: { fields: priority, order: ASC }, limit: 8) {
             edges {
               node {
                 logo {
@@ -26,7 +26,7 @@ export default function Sponsors() {
       render={(data) => (
         <div className="sponsors">
           <div className="sponsors__list">
-            {data.allStrapiSponsors.edges.map((edge, index) => {
+            {data.allStrapiSponsor.edges.map((edge, index) => {
               return (
                 <div key={index} className="sponsors__item">
                   <GatsbyImage

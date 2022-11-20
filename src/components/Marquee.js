@@ -9,7 +9,7 @@ export default function Marquee({ marquee }) {
 
   const data = useStaticQuery(graphql`
     query LiftmasterLogoQuery {
-      strapiSponsors(name: { eq: "Liftmaster" }) {
+      strapiSponsor(name: { eq: "Liftmaster" }) {
         logo {
           childImageSharp {
             gatsbyImageData
@@ -37,7 +37,7 @@ export default function Marquee({ marquee }) {
         </div>
         <div className="marquee__premiere-sponsor">
           <GatsbyImage
-            image={getImage(data.strapiSponsors.logo)}
+            image={getImage(data.strapiSponsor.logo)}
             alt="Liftmasters Logo"
             placeholder="blurred"
           ></GatsbyImage>

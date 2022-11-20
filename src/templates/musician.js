@@ -7,8 +7,8 @@ import Marquee from 'components/Marquee';
 import Musician from 'components/Musician';
 
 const MusicianTemplate = ({ data }) => {
-  const { strapiMusicians } = data;
-  const artist = { ...strapiMusicians };
+  const { strapiMusician } = data;
+  const artist = { ...strapiMusician };
   const marqueeData = { title: artist.name, marqueeImage: artist.marqueeImage };
 
   return (
@@ -30,7 +30,7 @@ export default MusicianTemplate;
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    strapiMusicians(id: { eq: $id }) {
+    strapiMusician(id: { eq: $id }) {
       meta {
         description
       }

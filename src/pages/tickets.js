@@ -11,16 +11,16 @@ import TicketsForm from '../components/molecules/TicketsForm';
 import '../utils/fontawesome';
 import TicketsDetails from '../components/molecules/TicketsDetails';
 
-const TicketsPage = ({ data }) => {
-  const {
-    strapiTickets: { title, marqueeImage, panelImage, meta },
-  } = data;
-  const image = getImage(panelImage);
-  const marqueeData = { title, marqueeImage };
+const TicketsPage = ({}) => {
+  // const {
+  //   strapiTicket: { title, marqueeImage, panelImage, meta },
+  // } = data;
+  // const image = getImage(panelImage);
+  // const marqueeData = { title, marqueeImage };
 
   return (
     <Layout>
-      <Seo
+      {/* <Seo
         title="Tickets"
         keywords={[`terlingua`, `chili`, `cook`, 'off', 'tickets']}
         description={meta.description}
@@ -32,31 +32,31 @@ const TicketsPage = ({ data }) => {
           <TicketsForm />
         </div>
         <PanelImage image={image} />
-      </Container>
+      </Container> */}
     </Layout>
   );
 };
 
 export default TicketsPage;
 
-export const pageQuery = graphql`
-  query TicketsQuery {
-    strapiTickets {
-      meta {
-        description
-      }
-      title
-      id
-      marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-        }
-      }
-      panelImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query TicketsQuery {
+//     strapiTicket {
+//       meta {
+//         description
+//       }
+//       title
+//       id
+//       marqueeImage {
+//         childImageSharp {
+//           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+//         }
+//       }
+//       panelImage {
+//         childImageSharp {
+//           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+//         }
+//       }
+//     }
+//   }
+// `;

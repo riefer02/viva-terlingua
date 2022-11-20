@@ -10,7 +10,7 @@ import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
 
 const EventsPage = ({ data }) => {
-  const { allStrapiLocalAttractions, primaryImage, panel } = data;
+  const { allStrapiLocalAttraction, primaryImage, panel } = data;
 
   const title = `Local Attractions`;
   const marqueeImage = primaryImage.image;
@@ -29,7 +29,7 @@ const EventsPage = ({ data }) => {
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <CardGallery items={allStrapiLocalAttractions.edges} />
+        <CardGallery items={allStrapiLocalAttraction.edges} />
         <PanelImage image={panelImage} />
       </Container>
     </Layout>
@@ -40,7 +40,7 @@ export default EventsPage;
 
 export const pageQuery = graphql`
   query LocalAttractionsQuery {
-    primaryImage: strapiGalleryImages(title: { eq: "2-Alarm Chili" }) {
+    primaryImage: strapiGalleryImage(title: { eq: "2-Alarm Chili" }) {
       image {
         childImageSharp {
           gatsbyImageData
@@ -49,7 +49,7 @@ export const pageQuery = graphql`
       title
       description
     }
-    panel: strapiGalleryImages(title: { eq: "Watching the Show" }) {
+    panel: strapiGalleryImage(title: { eq: "Watching the Show" }) {
       title
       description
       image {
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allStrapiLocalAttractions {
+    allStrapiLocalAttraction {
       edges {
         node {
           description

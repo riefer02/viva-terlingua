@@ -17,7 +17,7 @@ exports.onPostBuild = () => {
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
     query MyQuery {
-      allStrapiEvents {
+      allStrapiEvent {
         edges {
           node {
             slug
@@ -25,7 +25,7 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      allStrapiMusicians {
+      allStrapiMusician {
         edges {
           node {
             id
@@ -37,7 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   // Create Individual Musician Page
-  data.allStrapiMusicians.edges.forEach((edge) => {
+  data.allStrapiMusician.edges.forEach((edge) => {
     const { slug, id } = edge.node;
     actions.createPage({
       path: slug,
@@ -50,7 +50,7 @@ exports.createPages = async ({ actions, graphql }) => {
   });
 
   // Create Individual Event Page
-  data.allStrapiEvents.edges.forEach((edge) => {
+  data.allStrapiEvent.edges.forEach((edge) => {
     const { slug, id } = edge.node;
     actions.createPage({
       path: slug,

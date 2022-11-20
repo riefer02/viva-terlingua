@@ -103,7 +103,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    posters: allStrapiGalleryImages(filter: { role: { eq: "poster" } }) {
+    posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
       edges {
         node {
           image {
@@ -119,7 +119,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    sponsorLogos: allStrapiSponsors(sort: { fields: priority, order: ASC }) {
+    sponsorLogos: allStrapiSponsor(sort: { fields: priority, order: ASC }) {
       edges {
         node {
           logo {

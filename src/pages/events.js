@@ -9,8 +9,8 @@ import CardGallery from 'components/CardGallery';
 
 const EventsPage = ({ data }) => {
   const {
-    allStrapiEvents,
-    strapiGalleryImages: { marqueeImage },
+    allStrapiEvent,
+    strapiGalleryImage: { marqueeImage },
   } = data;
   const title = `News & Events`;
   const image = getImage(marqueeImage);
@@ -25,7 +25,7 @@ const EventsPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <CardGallery items={allStrapiEvents.edges} />
+        <CardGallery items={allStrapiEvent.edges} />
         <GatsbyImage
           image={image}
           alt="Hillside Journey!"
@@ -40,7 +40,7 @@ export default EventsPage;
 
 export const pageQuery = graphql`
   query EventQuery {
-    strapiGalleryImages {
+    strapiGalleryImage {
       title
       marqueeImage: image {
         childImageSharp {
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allStrapiEvents {
+    allStrapiEvent {
       edges {
         node {
           slug

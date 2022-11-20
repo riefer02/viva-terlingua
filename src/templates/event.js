@@ -10,7 +10,7 @@ import PanelImage from 'components/PanelImage';
 
 const EventTemplate = ({ data }) => {
   const {
-    strapiEvents: {
+    strapiEvent: {
       title,
       description,
       startDateTime,
@@ -57,7 +57,7 @@ export default EventTemplate;
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    strapiEvents(id: { eq: $id }) {
+    strapiEvent(id: { eq: $id }) {
       meta {
         description
         title
