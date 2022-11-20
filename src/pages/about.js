@@ -55,7 +55,9 @@ export const pageQuery = graphql`
         }
         author
         postDate
-        primaryText
+        primaryText {
+          raw
+        }
       }
       quoteContent {
         text

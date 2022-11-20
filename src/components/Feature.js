@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import BackgroundImage from 'gatsby-background-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
 
@@ -15,10 +14,10 @@ export default function Feature({ items }) {
     <div className="feature__container shadow-md">
       {/* Featured Full */}
       <Link to={mainFeature.slug} className="flex w-full xl:w-1/3">
-        <BackgroundImage
+        <GatsbyImage
           className="feature__full w-1/3"
-          alt="placeholder"
-          fluid={mainFeature.image.childImageSharp.fluid}
+          alt="The main feature for the Terlingua Cook Off website."
+          image={getImage(mainFeature.image)}
         >
           <div className="feature__full-banner">
             <h2 className="feature__full-banner-text">
@@ -32,7 +31,7 @@ export default function Feature({ items }) {
               {mainFeature.description}
             </p>
           </div>
-        </BackgroundImage>
+        </GatsbyImage>
       </Link>
       {/* Featured List */}
       <div className="feature__list w-full xl:w-1/3">
