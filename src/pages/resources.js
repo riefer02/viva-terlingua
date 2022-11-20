@@ -8,12 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
 
 const ResourcesPage = ({ data }) => {
-  const { allStrapiResource, strapiGalleryImage } = data;
+  const {
+    allStrapiResource,
+    // strapiGalleryImage
+  } = data;
   const resources = allStrapiResource.edges;
-  const marqueeData = {
-    title: 'Rules and Events',
-    marqueeImage: strapiGalleryImage.image,
-  };
+  // const marqueeData = {
+  //   title: 'Rules and Events',
+  //   marqueeImage: strapiGalleryImage.image,
+  // };
 
   return (
     <Layout>
@@ -24,7 +27,7 @@ const ResourcesPage = ({ data }) => {
           'Download information regarding upcoming chili cook offs and rules and regulations for participation.'
         }
       />
-      <Marquee marquee={marqueeData} />
+      {/* <Marquee marquee={marqueeData} /> */}
       <Container>
         <div className="resources">
           <div className="resources__content">
@@ -61,19 +64,36 @@ export const pageQuery = graphql`
         node {
           name
           file {
-            publicURL
-          }
-        }
-      }
-    }
-    strapiGalleryImage(title: { eq: "Camp and Sky" }) {
-      image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
+            localFile {
+              publicURL
+            }
           }
         }
       }
     }
   }
 `;
+
+// export const pageQuery = graphql`
+//   query ResourcesPage {
+//     allStrapiResource {
+//       edges {
+//         node {
+//           name
+//           file {
+//             publicURL
+//           }
+//         }
+//       }
+//     }
+//     strapiGalleryImage(title: { eq: "Camp and Sky" }) {
+//       image {
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

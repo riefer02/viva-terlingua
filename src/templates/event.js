@@ -15,13 +15,13 @@ const EventTemplate = ({ data }) => {
       description,
       startDateTime,
       endDateTime,
-      marqueeImage,
+      // marqueeImage,
       meta,
-      panelImage,
+      // panelImage,
     },
   } = data;
-  const marqueeData = { title, marqueeImage };
-  const panel = getImage(panelImage.childImageSharp);
+  // const marqueeData = { title, marqueeImage };
+  // const panel = getImage(panelImage.childImageSharp);
   let eventTime;
   if (startDateTime && endDateTime) {
     eventTime = `${startDateTime} — ${endDateTime}`;
@@ -44,10 +44,10 @@ const EventTemplate = ({ data }) => {
         keywords={[`${title}`, `event`, `beer`, `terlingua`, `chili`, `cook`]}
         description={meta.description}
       />
-      <Marquee marquee={marqueeData} />
+      {/* <Marquee marquee={marqueeData} /> */}
       <Container>
         <TextDisplay texts={pageContent} />
-        <PanelImage image={panel} />.
+        {/* <PanelImage image={panel} /> */}
       </Container>
     </Layout>
   );
@@ -62,26 +62,42 @@ export const pageQuery = graphql`
         description
         title
       }
-      created_at
       description
       endDateTime(formatString: "MMMM Do, YYYY")
       id
       title
       startDateTime(formatString: "MMMM Do, YYYY")
-      marqueeImage {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-      panelImage {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
     }
   }
 `;
+
+// export const pageQuery = graphql`
+//   query ($id: String!) {
+//     strapiEvent(id: { eq: $id }) {
+//       meta {
+//         description
+//         title
+//       }
+//       created_at
+//       description
+//       endDateTime(formatString: "MMMM Do, YYYY")
+//       id
+//       title
+//       startDateTime(formatString: "MMMM Do, YYYY")
+//       marqueeImage {
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//       panelImage {
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
