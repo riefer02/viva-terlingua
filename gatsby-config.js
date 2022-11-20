@@ -30,7 +30,18 @@ module.exports = {
       resolve: 'gatsby-plugin-sharp',
       options: {
         // Defaults used for gatsbyImageData and StaticImage
-        defaults: {},
+        defaults: {
+          formats: [`auto`, `avif`, `webp`],
+          placeholder: `blurred`,
+          quality: 100,
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
         // Set to false to allow builds to continue on image errors
         failOnError: true,
         // deprecated options and their defaults:

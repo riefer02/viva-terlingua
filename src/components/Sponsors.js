@@ -11,11 +11,13 @@ export default function Sponsors() {
             edges {
               node {
                 logo {
-                  childImageSharp {
-                    gatsbyImageData(
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        placeholder: BLURRED
+                        formats: [AUTO, WEBP, AVIF]
+                      )
+                    }
                   }
                 }
               }

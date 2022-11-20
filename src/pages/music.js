@@ -76,8 +76,10 @@ export const pageQuery = graphql`
       title
       description
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -88,8 +90,10 @@ export const pageQuery = graphql`
       title
       description
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -101,16 +105,20 @@ export const pageQuery = graphql`
           slug
           image {
             id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-              fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-                ...GatsbyImageSharpFluid_withWebp
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+                fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
               }
             }
           }
           squareImage {
-            childImageSharp {
-              gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
         }

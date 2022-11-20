@@ -69,13 +69,17 @@ export const pageQuery = graphql`
       title
       startDateTime(formatString: "MMMM Do, YYYY")
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       panelImage {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }

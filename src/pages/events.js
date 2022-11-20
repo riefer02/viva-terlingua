@@ -43,8 +43,10 @@ export const pageQuery = graphql`
     strapiGalleryImage {
       title
       marqueeImage: image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -56,13 +58,17 @@ export const pageQuery = graphql`
           name: title
           image: marqueeImage {
             id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
           squareImage {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
         }

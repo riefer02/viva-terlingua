@@ -9,8 +9,10 @@ export default function OfficialCookOffPoster({ className }) {
         title: { eq: "Official Cook Off Poster" }
       ) {
         image {
-          childImageSharp {
-            gatsbyImageData(width: 880)
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 880)
+            }
           }
         }
       }

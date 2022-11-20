@@ -68,8 +68,10 @@ export const pageQuery = graphql`
     }
     strapiGalleryImage(title: { eq: "Camp and Sky" }) {
       image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }

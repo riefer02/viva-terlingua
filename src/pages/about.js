@@ -42,8 +42,10 @@ export const pageQuery = graphql`
         description
       }
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+          }
         }
       }
       title
@@ -56,7 +58,9 @@ export const pageQuery = graphql`
         author
         postDate
         primaryText {
-          raw
+          data {
+            primaryText
+          }
         }
       }
       quoteContent {

@@ -11,8 +11,10 @@ export default function Marquee({ marquee }) {
     query LiftmasterLogoQuery {
       strapiSponsor(name: { eq: "Liftmaster" }) {
         logo {
-          childImageSharp {
-            gatsbyImageData
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
       }

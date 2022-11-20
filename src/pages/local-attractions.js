@@ -42,8 +42,10 @@ export const pageQuery = graphql`
   query LocalAttractionsQuery {
     primaryImage: strapiGalleryImage(title: { eq: "2-Alarm Chili" }) {
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       title
@@ -53,8 +55,10 @@ export const pageQuery = graphql`
       title
       description
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -64,8 +68,10 @@ export const pageQuery = graphql`
           description
           image: marqueeImage {
             id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
           name

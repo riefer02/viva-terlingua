@@ -38,13 +38,17 @@ export const pageQuery = graphql`
       id
       message
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       panelImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }

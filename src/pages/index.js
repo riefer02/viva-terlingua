@@ -93,13 +93,17 @@ export const pageQuery = graphql`
         }
       }
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       panelImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -108,11 +112,11 @@ export const pageQuery = graphql`
         node {
           image {
             childImageSharp {
-              gatsbyImageData(
-                webpOptions: { quality: 50 }
-                placeholder: BLURRED
-                formats: [WEBP]
-              )
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             publicURL
           }
@@ -123,8 +127,10 @@ export const pageQuery = graphql`
       edges {
         node {
           logo {
-            childImageSharp {
-              gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
         }

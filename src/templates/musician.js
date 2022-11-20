@@ -41,18 +41,24 @@ export const pageQuery = graphql`
       description
       setTime
       marqueeImage: image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       artistImage: image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       squareImage {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
