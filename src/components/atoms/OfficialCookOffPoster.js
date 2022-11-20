@@ -22,6 +22,7 @@ export default function OfficialCookOffPoster({ className }) {
       <GatsbyImage
         image={getImage(officialCookOffPoster.image)}
         alt="The Official Cook Off Poster"
+        className="shadow-md"
       />
       <p className="text-3xl lg:text-2xl mt-16">
         Poster by: <span className="text-primary">Steve Gaconnier</span> from

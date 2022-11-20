@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
-    officialCookOffPoster,
+    cookoffStoreImg,
   } = data;
   const panel = getImage(panelImage);
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -49,6 +49,19 @@ const IndexPage = ({ data }) => {
       <Container>
         <OfficialCookOffPoster className="lg:hidden" />
         <Feature items={featured.featuresList} />
+        <a
+          href="https://shop.gandyink.com/oticcc22"
+          target="_"
+          className="block my-10 "
+        >
+          <div className="relative inline-block shadow-md group">
+            <div className="absolute h-full w-full z-10 bg-transparent bg-opacity-50 hover:bg-primary hover:bg-opacity-10 transition ease-linear"></div>
+            <div className="-skew-x-12 inline-block px-8 py-3 skew-x-10 shadow-md absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 text-5xl bg-primary-light group-hover:bg-secondary text-white transition ease-linear pointer-events-none">
+              <div className="skew-x-12">Visit Store</div>
+            </div>
+            <GatsbyImage image={getImage(cookoffStoreImg.image)} />
+          </div>
+        </a>
         <OfficialCookOffPoster className="hidden lg:block" />
         <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
         <ImageGallery images={posters} />
@@ -127,6 +140,13 @@ export const pageQuery = graphql`
               gatsbyImageData
             }
           }
+        }
+      }
+    }
+    cookoffStoreImg: strapiGalleryImages(title: { eq: "cookoff-store-flyer" }) {
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 880, quality: 100)
         }
       }
     }
