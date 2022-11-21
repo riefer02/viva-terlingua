@@ -1,7 +1,4 @@
 .container.section {
-  padding: 0 5px;
-  // margin-top: 20px;
-
   @include respond(tab-land) {
     margin-top: unset;
   }
@@ -14,8 +11,6 @@
 
 .container.section > * {
   margin: 0 auto 8rem;
-
-
 
   &:first-child {
     margin-top: 0;

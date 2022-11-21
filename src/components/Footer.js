@@ -4,7 +4,7 @@ import Container from 'components/Container';
 
 const Footer = () => {
   return (
-    <footer className="footer py-8 mt-3">
+    <footer className="footer py-8">
       <Container>
         <div className="flex flex-col items-center gap-2 h-full">
           <div className="flex gap-8">

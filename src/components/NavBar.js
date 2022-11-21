@@ -35,12 +35,10 @@ export default function NavBar() {
   const Hamburger = () => {
     return (
       <div
-        onClick={() => {
-          setOpen(!isOpen);
-        }}
+        onClick={() => setOpen((open) => !open)}
         id="hamburger"
         role="navigation button"
-        className={isOpen ? 'open' : ''}
+        className={`${isOpen ? 'open' : ''}`}
       >
         <span></span>
         <span></span>
@@ -103,7 +101,7 @@ export default function NavBar() {
         </Link>
       ))}
       <div className="navbar__dropdown">
-        <div className="dropbtn navbar__item">
+        <div className="dropbtn navbar__item px-6">
           <div className="dropbtn--text">Explore</div>
           <Hamburger />
         </div>
