@@ -11,24 +11,19 @@ export default function TicketsDetails() {
       >
         <div className="tickets-details">
           <div className="tickets-details__content">
-            <p className="text-4xl mb-10 lg:mb-8 leading-[40px]">
+            {/* <p className="text-3xl mb-10 lg:mb-8 leading-[40px]">
               Viva Terlingua! The ticket portal for the 2022 Terlingua Chili
               Cook Off is <span className="text-primary">closed</span>. You can
               still purchase your tickets at the front gate when you arrive.
-            </p>
-            {/* <p className="tickets-details__disclaimer notice">
+            </p> */}
+            <p className="text-3xl mb-10 lg:mb-8 leading-[40px]">
               Thank you everyone for attending the 2022 Original Terlingua
               International Championship Chili Cookoff. We look forward to
-              seeing you all next year. The ticket portal will reopen soon.
-              Viva Terlingua!
-            </p> */}
+              seeing you all next year.
+            </p>
             {/* <p className="text-3xl mb-10 lg:mb-8">
               Get your tickets to the 2022 Terlingua Chili Cook Off:
             </p> */}
-            <p className="text-4xl mb-10 lg:mb-8">November 2nd - 5th, 2022</p>
-            <p className="text-4xl mb-10 lg:mb-12 text-gray-800">
-              Tickets are $<span className="text-primary">45</span>/person
-            </p>
             <div className="relative">
               <h2 className="tickets-details__header">What's Included</h2>
             </div>

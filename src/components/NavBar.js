@@ -83,7 +83,7 @@ export default function NavBar() {
 
   const desktopNavLinks = [
     { label: 'Home', slug: '' },
-    { label: 'Tickets', slug: 'tickets' },
+    // { label: 'Tickets', slug: 'tickets' },
     { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },

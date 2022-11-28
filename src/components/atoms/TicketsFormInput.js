@@ -6,10 +6,12 @@ export default function TicketsFormInput({
   customHandler,
   showAlternativeInputs,
 }) {
+  const ticketsFormLabelStyles = `mb-2 text-xl inline mr-auto`
+
   if (showAlternativeInputs && input.name.includes('recipient')) {
     return (
       <>
-        <label className="tickets-form__label" htmlFor={input.name}>
+        <label className={ticketsFormLabelStyles} htmlFor={input.name}>
           {input.label}
         </label>
 
@@ -25,7 +27,7 @@ export default function TicketsFormInput({
   if (input.type !== 'checkbox' && !input.name.includes('recipient'))
     return (
       <>
-        <label className="tickets-form__label" htmlFor={input.name}>
+        <label className={ticketsFormLabelStyles} htmlFor={input.name}>
           {input.label}
         </label>
         <input
@@ -39,7 +41,7 @@ export default function TicketsFormInput({
   if (input.type === 'checkbox')
     return (
       <div className="flex justify-between my-5">
-        <label className="tickets-form__label w-full" htmlFor="firstName">
+        <label className={ticketsFormLabelStyles + ' w-full text-left'} htmlFor="firstName">
           {input.label}
         </label>
         <div className="w-full flex justify-end">
