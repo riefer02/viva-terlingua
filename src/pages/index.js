@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => {
         </a>
         <OfficialCookOffPoster className="hidden lg:block" />
         <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
-        {/* <ImageGallery images={posters} /> */}
+        <ImageGallery images={posters} />
         <Quote quote={content}></Quote>
         <PanelImage image={panel} />
       </Container>
