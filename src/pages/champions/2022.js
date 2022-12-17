@@ -1,27 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import { ordinalSuffixOf } from '../../utils/helpers';
 
-export default function Champions2022Page({ data: { saturdayChili } }) {
-  console.log(saturdayChili.edges);
+export default function Champions2022Page({
+  data: { saturdayChili, limitedShow, openShow },
+}) {
+  const [events, setEvents] = useState([
+    {
+      eventName: 'Saturday Chili',
+      champions: saturdayChili.edges,
+      showEvent: true,
+    },
+    {
+      eventName: 'Limited Show',
+      champions: limitedShow.edges,
+      showEvent: true,
+    },
+    {
+      eventName: 'Open Show',
+      champions: openShow.edges,
+      showEvent: true,
+    },
+  ]);
+
+  const handleFilterClick = (eventName) => {
+    setEvents((prevState) => {
+      let targetIndex;
+      const copyEvents = [...prevState];
+      copyEvents.forEach((event, index) => {
+        if (event.eventName === eventName) targetIndex = index;
+      });
+      copyEvents[targetIndex].showEvent = !copyEvents[targetIndex].showEvent;
+
+      return copyEvents;
+    });
+  };
+
   return (
     <div>
       <Header />
-      <main className="min-h-[80vh] mt-40 sm:mt-60 lg:mt-10">
+      <main className="min-h-[80vh] mt-[7rem] sm:mt-60 lg:mt-10 pb-10">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="bg-tertiary shadow-md rounded-sm">
-            <h1 className="">Cook Off Champions 2022</h1>
+          <div className="bg-tertiary shadow-md rounded-sm md:mb-10">
+            <h1 className="underline md:no-underline py-4 md:py-0">
+              Cook Off Champions 2022
+            </h1>
           </div>
-          <div className="py-10">
-            <h3 className="mb-10 bg-primary-light text-white shadow-md">Saturday Chili</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 lg:gap-10 w-full">
-              {saturdayChili.edges.map((node) => (
-                <ChampionCard winner={node} />
+          <div className="block md:hidden text-3xl py-4 bg-tertiary">
+            Filters Options:
+          </div>
+          <div className="grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary text-white shadow-md">
+            <div className="hidden md:block">Filters:</div>
+            {events &&
+              events.map((event, index) => (
+                <div
+                  key={index}
+                  className={`${
+                    event.showEvent
+                      ? 'bg-tertiary shadow-sm text-gray-dark border-tertiary'
+                      : 'bg-grey-dark'
+                  } py-2 px-4 transition ease-linear cursor-pointer -skew-x-12 border`}
+                  onClick={() => handleFilterClick(event.eventName)}
+                >
+                  <div className="skew-x-12">{event.eventName}</div>
+                </div>
               ))}
-            </ul>
+          </div>
+          <div className="lg:py-10">
+            {events.map((event, index) => (
+              <div
+                key={index}
+                className={`md:py-5 ${event.showEvent ? 'block' : 'hidden'}`}
+              >
+                <h3 className="md:mb-10 py-4 md:py-0 bg-primary text-white shadow-md">
+                  {event.eventName}
+                </h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 lg:gap-10 w-full">
+                  {event.champions.map((node) => (
+                    <ChampionCard winner={node} />
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </main>
@@ -53,6 +116,40 @@ export const pageQuery = graphql`
   query Champions2022Query {
     saturdayChili: allStrapiWinners(
       filter: { competition: { eq: "saturdaychili" }, year: { eq: 2022 } }
+    ) {
+      edges {
+        node {
+          rank
+          name
+          id
+          competition
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+    limitedShow: allStrapiWinners(
+      filter: { competition: { eq: "limitedshow" }, year: { eq: 2022 } }
+    ) {
+      edges {
+        node {
+          rank
+          name
+          id
+          competition
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+    openShow: allStrapiWinners(
+      filter: { competition: { eq: "openshow" }, year: { eq: 2022 } }
     ) {
       edges {
         node {
