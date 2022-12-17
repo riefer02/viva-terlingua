@@ -113,6 +113,7 @@ export const pageQuery = graphql`
   query Champions2022Query {
     saturdayChili: allStrapiWinners(
       filter: { competition: { eq: "saturdaychili" }, year: { eq: 2022 } }
+      sort: { fields: rank, order: ASC }
     ) {
       edges {
         node {
@@ -130,6 +131,7 @@ export const pageQuery = graphql`
     }
     limitedShow: allStrapiWinners(
       filter: { competition: { eq: "limitedshow" }, year: { eq: 2022 } }
+      sort: { fields: rank, order: ASC }
     ) {
       edges {
         node {
@@ -147,6 +149,7 @@ export const pageQuery = graphql`
     }
     openShow: allStrapiWinners(
       filter: { competition: { eq: "openshow" }, year: { eq: 2022 } }
+      sort: { fields: rank, order: ASC }
     ) {
       edges {
         node {
