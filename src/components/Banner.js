@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 export default function Banner() {
   return (
-    <div className="banner">
+    <div className="banner hidden sm:flex items-center justify-center bg-tertiary min-h-[50px]">
       <div className="banner__content container mx-auto">
         {/* <p className="banner__message">
           Buy Tickets

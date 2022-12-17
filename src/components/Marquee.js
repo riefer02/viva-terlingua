@@ -20,31 +20,29 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="marquee__section">
-      <div className="marquee__container container mx-auto">
-        <Sponsors />
+    <div className="marquee__container container mx-auto mb-10">
+      <Sponsors />
+      <GatsbyImage
+        className="marquee__body shadow-lg "
+        image={image}
+        alt="Fun exciting scene from Terlingua"
+        placeholder="blurred"
+      />
+      <div className="marquee__text-area shadow-lg">
+        <h1 className="marquee__header-primary">{marquee.title}</h1>
+        {activeSub && (
+          <h2 className="marquee__header-secondary">{marquee.subhead}</h2>
+        )}
+      </div>
+      <div className="marquee__premiere-sponsor">
         <GatsbyImage
-          className="marquee__body shadow-lg "
-          image={image}
-          alt="Fun exciting scene from Terlingua"
+          image={getImage(data.strapiSponsors.logo)}
+          alt="Liftmasters Logo"
           placeholder="blurred"
-        ></GatsbyImage>
-        <div className="marquee__text-area shadow-lg">
-          <h1 className="marquee__header-primary">{marquee.title}</h1>
-          {activeSub && (
-            <h2 className="marquee__header-secondary">{marquee.subhead}</h2>
-          )}
-        </div>
-        <div className="marquee__premiere-sponsor">
-          <GatsbyImage
-            image={getImage(data.strapiSponsors.logo)}
-            alt="Liftmasters Logo"
-            placeholder="blurred"
-          ></GatsbyImage>
-        </div>
-        <div className="marquee__cookoff-dates">
-          <div className="marquee__date-text">Nov 2nd-5th 2022</div>
-        </div>
+        />
+      </div>
+      <div className="marquee__cookoff-dates">
+        <div className="marquee__date-text">Nov 2nd-5th 2022</div>
       </div>
     </div>
   );

@@ -1,22 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import 'assets/styles/index.scss';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 const Layout = ({ children }) => {
-  return (
-    <div className="wrapper">
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
-  );
-};
+  const mainStyles =
+    'min-h-screen mt-[55px] md:mt-[120px] lg:mt-[2rem] mb-[1rem] md:mb-[5rem] lg:mb-0 text-center';
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  return (
+    <>
+      <Header />
+      <main className={mainStyles}>{children}</main>
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;

@@ -21,6 +21,9 @@ module.exports = {
         'primary-gradient':
           'radial-gradient(circle, rgba(236,109,117,1) 85%, rgba(231,72,83,1) 100%);',
       },
+      maxWidth: {
+        '8xl': '1440px'
+      }
     },
   },
   variants: {

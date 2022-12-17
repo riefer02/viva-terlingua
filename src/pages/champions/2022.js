@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Layout from 'components/Layout';
 import { ordinalSuffixOf } from '../../utils/helpers';
 
 export default function Champions2022Page({
@@ -41,19 +40,18 @@ export default function Champions2022Page({
 
   return (
     <div>
-      <Header />
-      <main className="min-h-[80vh] mt-[7rem] sm:mt-60 lg:mt-10 pb-10">
+      <Layout>
         <div className="max-w-7xl mx-auto w-full">
-          <div className="bg-tertiary shadow-md rounded-sm md:mb-10">
-            <h1 className="underline md:no-underline py-4 md:py-0">
+          <div className="bg-tertiary shadow-md rounded-sm md:mb-10 md:-skew-x-12">
+            <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12">
               Cook Off Champions 2022
             </h1>
           </div>
           <div className="block md:hidden text-3xl py-4 bg-tertiary">
             Filters Options:
           </div>
-          <div className="grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary text-white shadow-md">
-            <div className="hidden md:block">Filters:</div>
+          <div className="md:-skew-x-12 grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary text-white shadow-md">
+            <div className="hidden md:block md:skew-x-12">Filters:</div>
             {events &&
               events.map((event, index) => (
                 <div
@@ -62,7 +60,7 @@ export default function Champions2022Page({
                     event.showEvent
                       ? 'bg-tertiary shadow-sm text-gray-dark border-tertiary'
                       : 'bg-grey-dark'
-                  } py-2 px-4 transition ease-linear cursor-pointer -skew-x-12 border`}
+                  } py-2 px-4 transition ease-linear cursor-pointer border -skew-x-12 md:skew-x-0`}
                   onClick={() => handleFilterClick(event.eventName)}
                 >
                   <div className="skew-x-12">{event.eventName}</div>
@@ -75,8 +73,8 @@ export default function Champions2022Page({
                 key={index}
                 className={`md:py-5 ${event.showEvent ? 'block' : 'hidden'}`}
               >
-                <h3 className="md:mb-10 py-4 md:py-0 bg-primary text-white shadow-md">
-                  {event.eventName}
+                <h3 className="md:mb-10 py-4 md:py-0 bg-primary-light text-white shadow-md md:-skew-x-12">
+                  <div className="md:skew-x-12">{event.eventName}</div>
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 lg:gap-10 w-full">
                   {event.champions.map((node) => (
@@ -87,8 +85,7 @@ export default function Champions2022Page({
             ))}
           </div>
         </div>
-      </main>
-      <Footer />
+      </Layout>
     </div>
   );
 }

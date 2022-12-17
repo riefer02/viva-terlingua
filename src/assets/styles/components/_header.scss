@@ -5,7 +5,7 @@
   z-index: 12;
 
   @include respond(tab-land) {
-    position: static;
+    position: relative;
   }
 }
 
