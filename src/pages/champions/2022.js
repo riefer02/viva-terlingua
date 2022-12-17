@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
+import Seo from 'components/SEO';
 import { ordinalSuffixOf } from '../../utils/helpers';
 
 export default function Champions2022Page({
@@ -41,6 +42,24 @@ export default function Champions2022Page({
   return (
     <div>
       <Layout>
+        <Seo
+          title={
+            'Champions and Winners of the 2022 Terlingua Chili Cook Off'
+          }
+          description={`Come see the champions and winners of the 2022 Terlingua International Chili Cook Off, the greatest chili cook off in Texas! Discover the winning teams and meet the talented chefs who brought them to life. Join us for a celebration of all things chili and an unforgettable taste of the Southwest. Don't miss out on this annual culinary event in Terlingua, Texas.`}
+          keywords={[
+            `terlingua`,
+            `chili`,
+            `cook off`,
+            `tolbert`,
+            `wick fowler`,
+            `original`,
+            'international',
+            'winners',
+            'champions',
+            '2022',
+          ]}
+        />
         <div className="max-w-7xl mx-auto w-full">
           <div className="bg-tertiary shadow-md rounded-sm md:mb-10 md:-skew-x-12">
             <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12">
