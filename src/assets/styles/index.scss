@@ -6,8 +6,9 @@ body {
   font-family: $primary-font-family;
   padding: 0;
   margin: 0;
-  background-image: url(../images/paper-bg.jpeg);
-  background-size: contain;
+  background-image: url(../images/paper-bg.jpg);
+  background-size: 100%;
+  background-repeat: repeat;
   @apply text-gray-700;
 }
 

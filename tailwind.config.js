@@ -10,6 +10,8 @@ module.exports = {
         tertiary: '#ece5e3',
         'tertiary-light': '#f0eae9',
         'gray-dark': '#333',
+        'gray-light-1': '#f7f7f7',
+        'gray-light-2': '#eee',
       },
       fontFamily: {
         primary: ['Lato', 'sans-serif'],

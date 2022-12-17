@@ -82,6 +82,7 @@ module.exports = {
           'local-attractions',
           'gallery-images',
           'resources',
+          'winners',
         ],
         singleTypes: ['home-page', 'tickets', 'thank-you', 'about-page'],
       },
