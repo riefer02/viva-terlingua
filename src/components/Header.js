@@ -4,7 +4,7 @@ import NavBar from 'components/NavBar';
 import Banner from 'components/Banner';
 import logo from '../assets/images/oticcc-logo-white-sm.png';
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="header shadow-md">
       <Banner />
@@ -25,6 +25,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

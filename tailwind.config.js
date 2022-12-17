@@ -10,6 +10,8 @@ module.exports = {
         tertiary: '#ece5e3',
         'tertiary-light': '#f0eae9',
         'gray-dark': '#333',
+        'gray-light-1': '#f7f7f7',
+        'gray-light-2': '#eee',
       },
       fontFamily: {
         primary: ['Lato', 'sans-serif'],
@@ -19,6 +21,9 @@ module.exports = {
         'primary-gradient':
           'radial-gradient(circle, rgba(236,109,117,1) 85%, rgba(231,72,83,1) 100%);',
       },
+      maxWidth: {
+        '8xl': '1440px'
+      }
     },
   },
   variants: {

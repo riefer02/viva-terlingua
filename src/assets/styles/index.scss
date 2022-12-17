@@ -6,30 +6,10 @@ body {
   font-family: $primary-font-family;
   padding: 0;
   margin: 0;
-  background-image: url(../images/paper-bg.jpeg);
-  background-size: contain;
-  @apply text-gray-700;
-}
-
-.wrapper {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
-main {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-content: center;
-  padding: 0;
-
-  @include respond(tab-port) {
-    padding: 2em 0;
-  }
-
-  @include respond(desktop) {
-  }
+  background-image: url(../images/paper-bg.jpg);
+  background-size: 100%;
+  background-repeat: repeat;
+  @apply text-gray-dark;
 }
 
 // Keep Mobile Phone from zooming in on input fields

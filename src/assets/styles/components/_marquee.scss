@@ -1,21 +1,3 @@
-.marquee__section {
-  margin-top: 55px;
-  margin-bottom: 1rem;
-
-  @include respond(tab-port) {
-    margin-top: 90px;
-  }
-
-  @include respond(tab-land) {
-    margin-top: 0px;
-    margin-bottom: 5rem;
-  }
-
-  @include respond(desktop) {
-    margin-bottom: 0;
-  }
-}
-
 .marquee__container {
   display: flex;
   flex-direction: column;
