@@ -69,7 +69,7 @@ export default function Champions2022Page({
           <div className="block md:hidden text-3xl py-4 bg-tertiary">
             Filters Options:
           </div>
-          <div className="md:-skew-x-12 grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary text-white shadow-md">
+          <div className="md:-skew-x-12 grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary border-b-2 lg:border-0 border-b-tertiary text-white shadow-md">
             <div className="hidden md:block md:skew-x-12">Filters:</div>
             {events &&
               events.map((event, index) => (
@@ -79,7 +79,7 @@ export default function Champions2022Page({
                     event.showEvent
                       ? 'bg-tertiary shadow-sm text-gray-dark border-tertiary'
                       : 'bg-grey-dark'
-                  } py-2 px-4 transition ease-linear cursor-pointer border -skew-x-12 md:skew-x-0`}
+                  } py-2 px-4 mx-10 transition ease-linear cursor-pointer border -skew-x-12 md:skew-x-0`}
                   onClick={() => handleFilterClick(event.eventName)}
                 >
                   <div className="skew-x-12">{event.eventName}</div>
@@ -92,7 +92,7 @@ export default function Champions2022Page({
                 key={index}
                 className={`md:py-5 ${event.showEvent ? 'block' : 'hidden'}`}
               >
-                <h3 className="md:mb-10 py-4 md:py-0 bg-primary-light text-white shadow-md md:-skew-x-12">
+                <h3 className="md:mb-10 py-4 md:py-0 bg-primary-light text-white shadow-md md:-skew-x-12 my-10 lg:mt-0">
                   <div className="md:skew-x-12">{event.eventName}</div>
                 </h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 lg:gap-10 w-full">

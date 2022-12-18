@@ -26,7 +26,7 @@ const ResourcesPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <div className="resources">
+        <div className="resources px-8 lg:px-0">
           <div className="resources__content">
             <h1 className="resources__page-header">Resources</h1>
             <ul className="resources__list">

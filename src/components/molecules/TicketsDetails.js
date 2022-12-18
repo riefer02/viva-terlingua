@@ -38,7 +38,7 @@ export default function TicketsDetails() {
                 </li>
               ))}
             </ul>
-            <p className="text-3xl mb-14 -mt-6 text-secondary">
+            <p className="text-3xl mb-14 -mt-6">
               22970 FM 170 Terlingua, TX 79852
             </p>
             <p className="tickets-details__disclaimer flex flex-col items-center justify-center ">

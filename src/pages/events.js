@@ -6,6 +6,7 @@ import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
+import Spacer from 'components/atoms/Spacer';
 
 const EventsPage = ({ data }) => {
   const {
@@ -26,10 +27,11 @@ const EventsPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiEvents.edges} />
+        <Spacer/>
         <GatsbyImage
           image={image}
           alt="Hillside Journey!"
-          className="image__full-panel rounded-lg my-16 shadow-md"
+          className="image__full-panel"
         />
       </Container>
     </Layout>
