@@ -7,6 +7,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
+import Spacer from 'components/atoms/Spacer';
 
 const EventTemplate = ({ data }) => {
   const {
@@ -47,6 +48,7 @@ const EventTemplate = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <TextDisplay texts={pageContent} />
+        <Spacer />
         <PanelImage image={panel} />.
       </Container>
     </Layout>
