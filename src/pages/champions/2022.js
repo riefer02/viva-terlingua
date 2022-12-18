@@ -69,7 +69,7 @@ export default function Champions2022Page({
           <div className="block md:hidden text-3xl py-4 bg-tertiary">
             Filters Options:
           </div>
-          <div className="md:-skew-x-12 grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary border-b-2 lg:border-0 border-b-tertiary text-white shadow-md">
+          <div className="md:-skew-x-12 grid grid-cols-2 p-4 py-8 md:py-4 md:flex flex-col md:flex-row gap-10 items-center justify-center text-2xl bg-secondary border-b-2 md:border-0 border-b-tertiary text-white shadow-md">
             <div className="hidden md:block md:skew-x-12">Filters:</div>
             {events &&
               events.map((event, index) => (
@@ -122,8 +122,8 @@ function ChampionCard({ winner }) {
           imgStyle={{ borderRadius: '8px' }}
         />
       </div>
-      <div className="text-2xl lg:text-xl">{ranking} Place</div>
-      <h4 className="text-3xl lg:text-2xl">{name}</h4>
+      <div className="text-3xl lg:text-2xl mb-2">{ranking} Place</div>
+      <h4 className="text-4xl lg:text-3xl">{name}</h4>
     </li>
   );
 }
