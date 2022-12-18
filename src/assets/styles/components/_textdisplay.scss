@@ -42,7 +42,7 @@
     }
 
     @include respond(tab-land) {
-      font-size: 3.3rem;
+      font-size: 3rem;
     }
 
     &::before {
@@ -110,6 +110,7 @@
       }
 
       @include respond(desktop) {
+        font-size: 1.8rem;
         line-height: 55px;
       }
     }

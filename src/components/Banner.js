@@ -23,7 +23,6 @@ export default function Banner() {
           <Link to="/champions/2022" className="banner__message-link">
             Champions
           </Link>
-          Here
         </p>
       </div>
     </div>

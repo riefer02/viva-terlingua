@@ -12,7 +12,7 @@ export default function MainFeature({ mainFeature }) {
       className="flex w-full col-span-4 mb-10 lg:mb-0 py-4 md:py-0 shadow-md bg-white lg:bg-transparent group relative min-h-[510px] md:min-h-[540px]"
     >
       <div className="absolute top-0 left-0 z-20 h-full w-full">
-        <div className="lg:group-hover:bg-secondary hidden w-1/2 top-0 -left-[35%] transition ease-linear lg:block lg:group-hover:-translate-x-2 lg:group-hover:-skew-x-12 shadow-md bg-primary-light relative mx-auto m-[unset] lg:top-[2%] lg:right-[0%] -skew-x-12">
+        <div className="lg:group-hover:bg-secondary hidden w-[60%] top-0 xl:-left-[35%] transition ease-linear lg:block lg:group-hover:-translate-x-2 lg:group-hover:-skew-x-12 shadow-md bg-primary-light relative mx-auto m-[unset] lg:top-[2%] lg:right-[0%] -skew-x-12">
           <h2 className="skew-x-12 text-white text-3xl py-3">
             {mainFeature.calloutText}
             <FontAwesomeIcon size="xs" icon="arrow-right" className="ml-2"></FontAwesomeIcon>

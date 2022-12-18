@@ -2,32 +2,6 @@
   clip-path: polygon(100% 0, 100% 87%, 50% 100%, 0 86%, 0 0);
 }
 
-.marquee__header-primary {
-  font-size: 3rem;
-  position: relative;
-  bottom: 0.2rem;
-  margin: 0 auto;
-
-  @include respond(tab-port) {
-    font-size: 3.2rem;
-  }
-
-  @include respond(tab-land) {
-    font-size: 3rem;
-  }
-}
-
-.marquee__header-secondary {
-  font-style: italic;
-  font-size: 1.5rem;
-  padding-bottom: 15px;
-
-  @include respond(tab-port) {
-    font-size: 1.9rem;
-    padding-bottom: 8px;
-  }
-}
-
 .marquee__premiere-sponsor {
   position: absolute;
   bottom: 0;
