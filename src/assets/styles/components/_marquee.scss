@@ -1,51 +1,5 @@
-.marquee__container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-
-  @include respond(desktop) {
-    height: 43rem;
-  }
-}
-
-.marquee__body {
-  background-position: cover;
-  overflow: hidden;
-  height: 14vh;
-  margin-bottom: -1px;
-
-  @include respond(tab-port) {
-    margin-bottom: 0px;
-    height: 200px;
-  }
-
-  @include respond(tab-land) {
-    height: 411px;
-  }
-}
-
-.marquee__text-area {
-  font-family: $secondary-font-family;
-  display: inline-block;
-  position: relative;
-  left: 0%;
-  top: -12%;
-  width: 100%;
-  margin: 0 auto 4rem;
-  background-color: $color-secondary;
-  color: $color-white;
-  padding: 1rem 3rem;
+.clip-marquee {
   clip-path: polygon(100% 0, 100% 87%, 50% 100%, 0 86%, 0 0);
-
-  @include respond(tab-port) {
-    top: -12%;
-  }
-
-  @include respond(desktop) {
-    margin-bottom: 0;
-    width: 50%;
-  }
 }
 
 .marquee__header-primary {

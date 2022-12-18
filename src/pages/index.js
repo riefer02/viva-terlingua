@@ -47,7 +47,7 @@ const IndexPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Container>
-        <OfficialCookOffPoster className="lg:hidden" />
+        {/* <OfficialCookOffPoster className="lg:hidden" /> */}
         <Feature items={featured.featuresList} />
         <a
           href="https://shop.gandyink.com/oticcc22"
@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
             <GatsbyImage image={getImage(cookoffStoreImg.image)} alt="terlingua cook off store ad" />
           </div>
         </a>
-        <OfficialCookOffPoster className="hidden lg:block" />
+        {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
         <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
         <ImageGallery images={posters} />
         <Quote quote={content}></Quote>

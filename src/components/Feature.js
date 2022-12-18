@@ -14,7 +14,10 @@ export default function Feature({ items }) {
   return (
     <div className="feature__container shadow-md">
       {/* Featured Full */}
-      <Link to={mainFeature.slug} className="flex w-full xl:w-1/3 mb-20 lg:mb-0 py-4 md:py-0 shadow-md bg-white lg:bg-transparent group">
+      <Link
+        to={mainFeature.slug}
+        className="flex w-full xl:w-1/3 mb-20 lg:mb-0 py-4 md:py-0 shadow-md bg-white lg:bg-transparent group"
+      >
         <BackgroundImage
           className="feature__full w-1/3"
           style={{ minHeight: '400px' }}
@@ -28,7 +31,9 @@ export default function Feature({ items }) {
             </h2>
           </div>
           <div className="absolute bottom-0 bg-secondary bg-opacity-50 w-full lg:px-4 group-hover:bg-tertiary group-hover:bg-opacity-50 transition ease-linear">
-            <h3 className="text-5xl md:text-6xl lg:text-5xl pt-10 pb-2 text-white font-secondary">{mainFeature.title}</h3>
+            <h3 className="text-5xl md:text-6xl lg:text-5xl pt-10 pb-2 text-white font-secondary">
+              {mainFeature.title}
+            </h3>
             <p className="text-4xl lg:text-3xl leading-[35px] md:leading-[40px] xl:leading-[35px] py-6 px-4 text-white font-primary">
               {mainFeature.description}
             </p>

@@ -20,15 +20,15 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="marquee__container container mx-auto mb-10">
+    <div className="flex flex-col relative overflow-hidden lg:h-[43rem] container mx-auto mb-10">
       <Sponsors />
       <GatsbyImage
-        className="marquee__body shadow-lg "
+        className="h-[14vh] sm:h-[200px] md:h-[411px] mb-[-1px] sm:mb-0 overflow-hidden shadow-lg"
         image={image}
         alt="Fun exciting scene from Terlingua"
         placeholder="blurred"
       />
-      <div className="marquee__text-area shadow-lg">
+      <div className="bg-secondary-dark top-[-12%] left-0 inline-block relative shadow-lg mx-auto mb-[4rem] lg:mb-0 text-white py-[1rem] px-[3rem] w-full lg:w-1/2 clip-marquee">
         <h1 className="marquee__header-primary">{marquee.title}</h1>
         {activeSub && (
           <h2 className="marquee__header-secondary">{marquee.subhead}</h2>
