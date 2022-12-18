@@ -2,20 +2,11 @@ blockquote {
   @apply shadow-md;
   font-size: 1.4em;
   width: 100%;
-  margin: 0px auto;
   font-family: $secondary-font-family;
   color: $color-grey-dark-3;
   line-height: 1.8;
   position: relative;
   background: $color-tertiary;
-
-  @include respond(tab-land) {
-    margin: 20px auto;
-  }
-
-  @include respond(desktop) {
-    margin: 40px auto;
-  }
 }
 
 blockquote::before,

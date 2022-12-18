@@ -1,12 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
 
-const Container = ({ children }) => {
-  return <div className="container section mx-auto">{children}</div>;
-};
-
-Container.propTypes = {
-  children: PropTypes.node,
-};
-
-export default Container;
+export default function Container({ children }) {
+  return <div className="container mx-auto">{children}</div>;
+}

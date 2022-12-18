@@ -14,9 +14,7 @@ export default function Mural2022({
   return (
     <Layout>
       <Seo
-        title={
-          'Collages for the 2022 Terlingua International Chili Cook Off'
-        }
+        title={'Collages for the 2022 Terlingua International Chili Cook Off'}
         description={`Come witness the collages from different photographers for the 2022 Terlingua International Chili Cook Off, the greatest chili cook off in Texas! Discover the eyes and skills of the the talented photographers who brought them to life. Join us for a celebration of all things chili and an unforgettable views of Terlingua. Don't miss out on this beautiful event in Terlingua, Texas.`}
         keywords={[
           `terlingua`,
@@ -31,22 +29,24 @@ export default function Mural2022({
           '2022',
         ]}
       />
-      <div className="max-w-8xl w-full mx-auto">
+      <div className="max-w-8xl w-full mx-auto ">
         <div className="bg-tertiary max-w-7xl mx-auto shadow-md rounded-sm md:mb-10 md:-skew-x-12 mb-10">
-          <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12">
+          <h1 className="underline md:no-underline px-4 py-4 md:py-0 md:skew-x-12">
             2022 Terlingua Chili Cook Off Collages
           </h1>
         </div>
-        {edges.map((edge, index) => (
-          <CollageItem key={index} edge={edge} />
-        ))}
+        <div className="px-8">
+          {edges.map((edge, index) => (
+            <CollageItem key={index} edge={edge} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
 }
 
 function CollageItem({ edge }) {
-  const iconStyles = 'text-3xl cursor-pointer md:skew-x-12';
+  const iconStyles = 'text-4xl md:text-3xl cursor-pointer md:skew-x-12';
   const id = `${edge.node.photographer
     .replaceAll(' ', '-')
     .toLowerCase()}-collage`;
@@ -54,7 +54,7 @@ function CollageItem({ edge }) {
   const handleFullscreenImage = (id) => {
     const elem = document.getElementById(id);
     if (elem.requestFullscreen) {
-      elem.requestFullscreen();
+      elem.requestFullscreen({ navigationUI: 'show' });
     }
   };
 
@@ -64,7 +64,7 @@ function CollageItem({ edge }) {
         <div onClick={() => handleFullscreenImage(id)}>
           <FontAwesomeIcon
             icon="expand"
-            className={iconStyles}
+            className={`${iconStyles} hidden md:block`}
           ></FontAwesomeIcon>
         </div>
         <h3 className="md:skew-x-12">{edge.node.photographer}</h3>

@@ -1,57 +1,5 @@
-.feature__container {
-  display: flex;
-  flex-direction: column;
-  background-color: $color-tertiary-light;
-  font-family: $secondary-font-family;
-  margin-top: 2rem !important;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 600px;
-
-  @include respond(tab-land) {
-    width: 80%;
-  }
-
-  @include respond(desktop) {
-    flex-direction: row;
-    width: auto;
-    margin: unset;
-    max-width: unset;
-  }
-}
 
 .feature__full {
-  pointer-events: none;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 300px;
-
-  @include respond(tab-port) {
-    margin: 2.4rem;
-    height: 500px;
-  }
-
-  @include respond(desktop) {
-    pointer-events: auto;
-    height: auto;
-    margin-bottom: 1.6rem;
-    margin-top: 1.6rem;
-  }
-
-  &:hover {
-    & > .feature__full-description {
-      opacity: 1;
-      bottom: 0%;
-    }
-
-    & > .feature__full-banner {
-      background-color: $color-secondary-light;
-      transform: translate(-6px) skew(-14deg, -0deg);
-    }
-  }
-
   &-banner {
     @apply shadow-md;
     background-color: $color-primary-light;
@@ -84,11 +32,6 @@
     }
 
     &-text {
-      font-size: 2.7rem;
-      color: $color-white;
-      transform: skew(14deg, 0deg);
-      font-family: $secondary-font-family;
-
       @include respond(desktop) {
         font-size: 2.2rem;
       }
@@ -155,24 +98,6 @@
 }
 
 .feature__item {
-  @apply shadow-md;
-  pointer-events: none;
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  margin: 0.9rem;
-  background-color: $color-white;
-  transition: all 0.2s;
-  color: $color-grey-dark-3;
-  flex-direction: column;
-  margin-bottom: 4rem;
-
-  @include respond(desktop) {
-    pointer-events: auto;
-    flex-direction: row;
-    margin-bottom: 0;
-  }
-
   &:hover {
     & > .feature__item-group > .feature__item-action {
       background-color: $color-secondary-light;
@@ -240,27 +165,6 @@
 
   @include respond(desktop) {
     margin-bottom: 0rem;
-  }
-}
-
-.feature__item-group {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem;
-
-  @include respond(tab-port) {
-    padding: 4.2rem;
-  }
-
-  @include respond(desktop) {
-    flex-direction: row;
-    padding: 0.8rem;
-  }
-
-  &:hover {
-    color: $color-white;
   }
 }
 

@@ -6,7 +6,7 @@ import Footer from 'components/Footer';
 
 const Layout = ({ children }) => {
   const mainStyles =
-    'min-h-screen mt-[55px] md:mt-[120px] lg:mt-[2rem] mb-[1rem] md:mb-[5rem] lg:mb-0 text-center';
+    'min-h-screen mt-[55px] md:mt-10 lg:mt-[2rem] text-center max-w-8xl mx-auto';
 
   return (
     <>

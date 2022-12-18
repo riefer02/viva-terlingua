@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
@@ -10,6 +9,7 @@ import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/molecules/SponsorsGrid';
+import Spacer from 'components/atoms/Spacer';
 import OfficialCookOffPoster from '../components/atoms/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
@@ -46,27 +46,29 @@ const IndexPage = ({ data }) => {
         ]}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        {/* <OfficialCookOffPoster className="lg:hidden" /> */}
-        <Feature items={featured.featuresList} />
-        <a
-          href="https://shop.gandyink.com/oticcc22"
-          target="_"
-          className="block my-10 "
-        >
-          <div className="relative inline-block shadow-md group">
-            <div className="-skew-x-12 inline-block px-8 py-3 skew-x-10 shadow-md absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 text-5xl bg-primary-light group-hover:bg-secondary text-white transition ease-linear pointer-events-none">
-              <div className="skew-x-12">Visit Store</div>
-            </div>
-            <GatsbyImage image={getImage(cookoffStoreImg.image)} alt="terlingua cook off store ad" />
+      {/* <OfficialCookOffPoster className="lg:hidden" /> */}
+      <Feature items={featured.featuresList} />
+      <a
+        href="https://shop.gandyink.com/oticcc22"
+        target="_blank"
+        className="block my-10 px-8"
+      >
+        <div className="relative inline-block shadow-md group">
+          <div className="-skew-x-12 inline-block px-8 py-3 skew-x-10 shadow-md absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 text-5xl bg-primary-light group-hover:bg-secondary text-white transition ease-linear pointer-events-none">
+            <div className="skew-x-12">Visit Store</div>
           </div>
-        </a>
-        {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
-        <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
-        <ImageGallery images={posters} />
-        <Quote quote={content}></Quote>
-        <PanelImage image={panel} />
-      </Container>
+          <GatsbyImage
+            image={getImage(cookoffStoreImg.image)}
+            alt="terlingua cook off store ad"
+          />
+        </div>
+      </a>
+      {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
+      <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
+      <ImageGallery images={posters} />
+      <Quote quote={content}></Quote>
+      <Spacer />
+      <PanelImage image={panel} />
     </Layout>
   );
 };

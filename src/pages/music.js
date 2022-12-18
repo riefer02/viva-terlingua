@@ -8,6 +8,7 @@ import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
 import Itinerary from 'components/Itinerary';
+import Spacer from 'components/atoms/Spacer';
 
 const itinerary = [
   {
@@ -58,6 +59,7 @@ const MusicPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiMusicians.edges} />
+        <Spacer />
         <Itinerary itinerary={itinerary} />
         <PanelImage image={panel} />
       </Container>
