@@ -6,6 +6,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
+import Spacer from 'components/atoms/Spacer';
 
 const ResourcesPage = ({ data }) => {
   const { allStrapiResources, strapiGalleryImages } = data;
@@ -47,6 +48,7 @@ const ResourcesPage = ({ data }) => {
             </ul>
           </div>
         </div>
+        <Spacer />
       </Container>
     </Layout>
   );
