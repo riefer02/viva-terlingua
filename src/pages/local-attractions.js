@@ -8,6 +8,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
+import Spacer from 'components/atoms/Spacer';
 
 const EventsPage = ({ data }) => {
   const { allStrapiLocalAttractions, primaryImage, panel } = data;
@@ -30,6 +31,7 @@ const EventsPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <CardGallery items={allStrapiLocalAttractions.edges} />
+        <Spacer />
         <PanelImage image={panelImage} />
       </Container>
     </Layout>
