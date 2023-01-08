@@ -50,6 +50,7 @@ const IndexPage = ({ data }) => {
       <Feature items={featured.featuresList} />
       {/* <StoreCallout image={cookoffStoreImg.image} /> */}
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
+      <Spacer/>
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <ImageGallery images={posters} />
       <Quote quote={content}></Quote>
