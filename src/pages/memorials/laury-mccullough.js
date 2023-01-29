@@ -9,8 +9,8 @@ export default function LauryMcCulloughPage({ data: { memorialImg } }) {
     <div>
       <Layout>
         <Seo
-          title={'Champions and Winners of the 2022 Terlingua Chili Cook Off'}
-          description={`Come see the champions and winners of the 2022 Terlingua International Chili Cook Off, the greatest chili cook off in Texas! Discover the winning teams and meet the talented chefs who brought them to life. Join us for a celebration of all things chili and an unforgettable taste of the Southwest. Don't miss out on this annual culinary event in Terlingua, Texas.`}
+          title={'In Loving Memory of Laury McCullough - January 23, 2023'}
+          description={`A dedicated page in honor of Laury McCullough, a beloved member of the chili community who passed away on January 23, 2023. Read more about her life and contributions to the chili world. Condolences to all who knew her.`}
           keywords={[
             `terlingua`,
             `chili`,
@@ -19,9 +19,10 @@ export default function LauryMcCulloughPage({ data: { memorialImg } }) {
             `wick fowler`,
             `original`,
             'international',
-            'winners',
-            'champions',
             '2022',
+            'obituary',
+            'memorial',
+            'epitaph',
           ]}
         />
         <div className="max-w-7xl mx-auto w-full">
