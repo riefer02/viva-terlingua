@@ -73,7 +73,6 @@ module.exports = {
         contentTypes: [
           'sponsors',
           'users',
-          'ticket-holders',
           'events',
           'musicians',
           'local-attractions',
