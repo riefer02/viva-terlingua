@@ -7,6 +7,7 @@ import Marquee from 'components/Marquee';
 import Seo from 'components/SEO';
 import PanelImage from 'components/PanelImage';
 import TicketsForm from '../components/molecules/TicketsForm';
+import Spacer from '../components/atoms/Spacer';
 
 import '../utils/fontawesome';
 import TicketsDetails from '../components/molecules/TicketsDetails';
@@ -31,6 +32,7 @@ const TicketsPage = ({}) => {
           <TicketsDetails />
           <TicketsForm />
         </div>
+        <Spacer />
         <PanelImage image={image} />
       </Container> */}
     </Layout>

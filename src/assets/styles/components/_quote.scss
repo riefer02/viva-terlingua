@@ -2,20 +2,11 @@ blockquote {
   @apply shadow-md;
   font-size: 1.4em;
   width: 100%;
-  margin: 0px auto;
   font-family: $secondary-font-family;
-  color: #555555;
+  color: $color-grey-dark-3;
   line-height: 1.8;
   position: relative;
-  background: $color-grey-light-2;
-
-  @include respond(tab-land) {
-    margin: 20px auto;
-  }
-
-  @include respond(desktop) {
-    margin: 40px auto;
-  }
+  background: $color-tertiary;
 }
 
 blockquote::before,
@@ -43,7 +34,7 @@ blockquote::after {
 
 blockquote span {
   display: block;
-  color: #333333;
+  color: $color-grey-dark-3;
   font-style: normal;
   font-weight: bold;
   margin-top: 1em;
@@ -74,6 +65,3 @@ blockquote span {
   }
 }
 
-.quote__author {
-  @apply text-gray-700;
-}

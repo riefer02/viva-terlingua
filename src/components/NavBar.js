@@ -6,7 +6,7 @@ export default function NavBar() {
 
   const mobileNavLinks = [
     { label: 'Home', slug: '' },
-    { label: 'Tickets', slug: 'tickets' },
+    // { label: 'Tickets', slug: 'tickets' },
     { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
@@ -35,12 +35,10 @@ export default function NavBar() {
   const Hamburger = () => {
     return (
       <div
-        onClick={() => {
-          setOpen(!isOpen);
-        }}
+        onClick={() => setOpen((open) => !open)}
         id="hamburger"
         role="navigation button"
-        className={isOpen ? 'open' : ''}
+        className={`${isOpen ? 'open' : ''}`}
       >
         <span></span>
         <span></span>
@@ -85,7 +83,7 @@ export default function NavBar() {
 
   const desktopNavLinks = [
     { label: 'Home', slug: '' },
-    { label: 'Tickets', slug: 'tickets' },
+    // { label: 'Tickets', slug: 'tickets' },
     { label: 'Music', slug: 'music' },
     { label: 'About', slug: 'about' },
     { label: 'Resources', slug: 'resources' },
@@ -103,7 +101,7 @@ export default function NavBar() {
         </Link>
       ))}
       <div className="navbar__dropdown">
-        <div className="dropbtn navbar__item">
+        <div className="dropbtn navbar__item px-6">
           <div className="dropbtn--text">Explore</div>
           <Hamburger />
         </div>

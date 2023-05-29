@@ -161,7 +161,7 @@ export default function TicketsForm() {
     <div ref={formRef} className="tickets-form mx-auto">
       <h2 className="tickets-form__header">Ticket Order Form</h2>
       <div className="tickets-form__message">{message ? message : ''}</div>
-      <form className="tickets-form__conten pointer-events-none opacity-60">
+      <form className="tickets-form__content pointer-events-none opacity-60">
         {ticketFormInputs.map((input, index) => (
           <TicketsFormInput
             key={index}

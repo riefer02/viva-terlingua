@@ -1,95 +1,5 @@
-.marquee__section {
-  margin-top: 55px;
-  margin-bottom: 1rem;
-
-  @include respond(tab-port) {
-    margin-top: 90px;
-  }
-
-  @include respond(tab-land) {
-    margin-top: 0px;
-    margin-bottom: 5rem;
-  }
-
-  @include respond(desktop) {
-    margin-bottom: 0;
-  }
-}
-
-.marquee__container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-
-  @include respond(desktop) {
-    height: 43rem;
-  }
-}
-
-.marquee__body {
-  background-position: cover;
-  overflow: hidden;
-  height: 14vh;
-  margin-bottom: -1px;
-
-  @include respond(tab-port) {
-    margin-bottom: 0px;
-    height: 200px;
-  }
-
-  @include respond(tab-land) {
-    height: 411px;
-  }
-}
-
-.marquee__text-area {
-  font-family: $secondary-font-family;
-  display: inline-block;
-  position: relative;
-  left: 0%;
-  top: -12%;
-  width: 100%;
-  margin: 0 auto 4rem;
-  background-color: $color-secondary;
-  color: $color-white;
-  padding: 1rem 3rem;
+.clip-marquee {
   clip-path: polygon(100% 0, 100% 87%, 50% 100%, 0 86%, 0 0);
-
-  @include respond(tab-port) {
-    top: -12%;
-  }
-
-  @include respond(desktop) {
-    margin-bottom: 0;
-    width: 50%;
-  }
-}
-
-.marquee__header-primary {
-  font-size: 3rem;
-  position: relative;
-  bottom: 0.2rem;
-  margin: 0 auto;
-
-  @include respond(tab-port) {
-    font-size: 3.2rem;
-  }
-
-  @include respond(tab-land) {
-    font-size: 3rem;
-  }
-}
-
-.marquee__header-secondary {
-  font-style: italic;
-  font-size: 1.5rem;
-  padding-bottom: 15px;
-
-  @include respond(tab-port) {
-    font-size: 1.9rem;
-    padding-bottom: 8px;
-  }
 }
 
 .marquee__premiere-sponsor {
@@ -105,7 +15,6 @@
 }
 
 .marquee__cookoff-dates {
-  @apply shadow-md;
   padding: 0.5rem 0.6rem;
   color: $color-white;
   background-color: $color-primary-light;

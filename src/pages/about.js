@@ -8,6 +8,7 @@ import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
+import Spacer from 'components/atoms/Spacer';
 
 const AboutPage = ({ data }) => {
   const {
@@ -26,7 +27,9 @@ const AboutPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Container>
         <TextDisplay texts={pageContent} />
+        <Spacer />
         <Quote quote={quoteContent}></Quote>
+        <Spacer />
         <PanelImage image={image} />
       </Container>
     </Layout>

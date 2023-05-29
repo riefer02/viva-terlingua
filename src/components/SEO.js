@@ -86,9 +86,9 @@ const query = graphql`
         twitterUsername: twitter
       }
     }
-    ogImage: file(relativePath: { eq: "oticcc-logo-white.png" }) {
+    ogImage: file(relativePath: { eq: "open-graph-v2.jpg" }) {
       childImageSharp {
-        gatsbyImageData(placeholder: BLURRED, pngOptions: { quality: 50 })
+        gatsbyImageData(formats: JPG)
       }
     }
   }

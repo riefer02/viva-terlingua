@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
@@ -10,7 +8,9 @@ import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/molecules/SponsorsGrid';
+import Spacer from 'components/atoms/Spacer';
 import OfficialCookOffPoster from '../components/atoms/OfficialCookOffPoster';
+import StoreCallout from '../components/atoms/StoreCallout';
 
 const IndexPage = ({ data }) => {
   const {
@@ -25,9 +25,9 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
-    officialCookOffPoster,
+    cookoffStoreImg,
   } = data;
-  const panel = getImage(panelImage);
+
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
 
   return (
@@ -46,15 +46,16 @@ const IndexPage = ({ data }) => {
         ]}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <OfficialCookOffPoster className="lg:hidden" />
-        <Feature items={featured.featuresList} />
-        <OfficialCookOffPoster className="hidden lg:block" />
-        <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
-        <ImageGallery images={posters} />
-        <Quote quote={content}></Quote>
-        <PanelImage image={panel} />
-      </Container>
+      {/* <OfficialCookOffPoster className="lg:hidden" /> */}
+      <Feature items={featured.featuresList} />
+      {/* <StoreCallout image={cookoffStoreImg.image} /> */}
+      {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
+      <Spacer/>
+      <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
+      <ImageGallery images={posters} />
+      <Quote quote={content}></Quote>
+      <Spacer />
+      <PanelImage image={panelImage} />
     </Layout>
   );
 };
@@ -133,6 +134,13 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    cookoffStoreImg: strapiGalleryImages(title: { eq: "cookoff-store-flyer" }) {
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 880, quality: 100)
         }
       }
     }

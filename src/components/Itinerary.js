@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Itinerary({ itinerary }) {
   return (
-    <ul className="itinerary">
+    <ul className="itinerary mx-auto">
       {itinerary.map((day, index) => (
         <li key={index} className="itinerary__date">
           <h3>{day.date}</h3>

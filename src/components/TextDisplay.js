@@ -28,10 +28,10 @@ export default function TextDisplay({ texts }) {
   };
 
   return (
-    <div className="text-display__container">
+    <div className="text-display__container px-8 lg:px-0">
       <div className="text-display__content">
         <div className="text-display__content-wrapper">
-          <div className="text-display__author">{author}</div>
+          <div className="text-display__author underline">{author}</div>
           {postDate && <div className="text-display__date">{postDate}</div>}
           <div
             className="text-display__text-area"

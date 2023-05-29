@@ -22,29 +22,33 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="marquee__section">
-      <div className="marquee__container container mx-auto">
-        <Sponsors />
-        <GatsbyImage
-          className="marquee__body shadow-lg "
-          image={image}
-          alt="Fun exciting scene from Terlingua"
-          placeholder="blurred"
-        ></GatsbyImage>
-        <div className="marquee__text-area shadow-lg">
-          <h1 className="marquee__header-primary">{marquee.title}</h1>
-          {activeSub && (
-            <h2 className="marquee__header-secondary">{marquee.subhead}</h2>
-          )}
-        </div>
+    <div className="flex flex-col relative overflow-hidden md:h-[300px] lg:h-[43rem] container mx-auto mb-20 lg:mb-10">
+      <Sponsors />
+      <GatsbyImage
+        className="h-[14vh] sm:h-[200px] md:h-[411px] mb-[-1px] sm:mb-0 overflow-hidden shadow-lg"
+        image={image}
+        alt="Fun exciting scene from Terlingua"
+        placeholder="blurred"
+      />
+
+      <div className="bg-secondary-dark top-[-12%] left-0 justify-center items-center flex flex-col relative shadow-lg mx-auto mb-[4rem] md:mb-4 lg:mb-0 text-white py-[1rem] px-[3rem] w-full lg:w-1/2 clip-marquee">
+        <h1 className="text-5xl lg:text-4xl leading-[35px] mb-2 py-2">
+          {marquee.title}
+        </h1>
+        {activeSub && (
+          <h2 className="text-3xl lg:text-2xl pb-4">{marquee.subhead}</h2>
+        )}
+      </div>
+
+      <div className="p-2">
         <div className="marquee__premiere-sponsor">
           <GatsbyImage
             image={getImage(data.strapiSponsor.logo)}
             alt="Liftmasters Logo"
             placeholder="blurred"
-          ></GatsbyImage>
+          />
         </div>
-        <div className="marquee__cookoff-dates">
+        <div className="marquee__cookoff-dates shadow-lg">
           <div className="marquee__date-text">Nov 2nd-5th 2022</div>
         </div>
       </div>

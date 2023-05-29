@@ -6,6 +6,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
+import Spacer from 'components/atoms/Spacer';
 
 const ResourcesPage = ({ data }) => {
   const {
@@ -29,7 +30,7 @@ const ResourcesPage = ({ data }) => {
       />
       {/* <Marquee marquee={marqueeData} /> */}
       <Container>
-        <div className="resources">
+        <div className="resources px-8 lg:px-0">
           <div className="resources__content">
             <h1 className="resources__page-header">Resources</h1>
             <ul className="resources__list">
@@ -50,6 +51,7 @@ const ResourcesPage = ({ data }) => {
             </ul>
           </div>
         </div>
+        <Spacer />
       </Container>
     </Layout>
   );
