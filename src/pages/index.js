@@ -7,10 +7,9 @@ import Quote from 'components/Quote';
 import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
-import SponsorsGrid from 'components/molecules/SponsorsGrid';
-import Spacer from 'components/atoms/Spacer';
-import OfficialCookOffPoster from '../components/atoms/OfficialCookOffPoster';
-import StoreCallout from '../components/atoms/StoreCallout';
+import SponsorsGrid from 'components/SponsorsGrid';
+import Spacer from 'components/Spacer';
+// import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
   const {
@@ -25,8 +24,9 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
-    cookoffStoreImg,
   } = data;
+  console.log('HERE!')
+  console.log({ data });
 
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
 
@@ -48,9 +48,8 @@ const IndexPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       {/* <OfficialCookOffPoster className="lg:hidden" /> */}
       <Feature items={featured.featuresList} />
-      {/* <StoreCallout image={cookoffStoreImg.image} /> */}
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
-      <Spacer/>
+      <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <ImageGallery images={posters} />
       <Quote quote={content}></Quote>
@@ -63,35 +62,29 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query HomePageQuery {
     strapiHomePage {
       id
       title
-      content: quoteContent {
-        author
-        text
-      }
       secondaryText
-      meta {
-        description
-      }
       featured {
-        id
         featuresList {
-          id
-          slug
-          title
           image {
-            childImageSharp {
-              gatsbyImageData
-              fluid(quality: 90, maxWidth: 800, maxHeight: 800) {
-                ...GatsbyImageSharpFluid_withWebp
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 400)
               }
             }
           }
-          description
           calloutText
+          id
+          slug
+          title
+          description
         }
+      }
+      meta {
+        description
       }
       marqueeImage {
         localFile {
@@ -107,24 +100,26 @@ export const pageQuery = graphql`
           }
         }
       }
+      content: quoteContent {
+        author
+        text
+      }
     }
     posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
       edges {
         node {
           image {
-            childImageSharp {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
+            localFile {
+              childImageSharp {
+                gatsbyImageData
               }
+              publicURL
             }
-            publicURL
           }
         }
       }
     }
-    sponsorLogos: allStrapiSponsor(sort: { fields: priority, order: ASC }) {
+    sponsorLogos: allStrapiSponsor {
       edges {
         node {
           logo {
@@ -134,13 +129,6 @@ export const pageQuery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    cookoffStoreImg: strapiGalleryImages(title: { eq: "cookoff-store-flyer" }) {
-      image {
-        childImageSharp {
-          gatsbyImageData(width: 880, quality: 100)
         }
       }
     }

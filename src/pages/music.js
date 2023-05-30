@@ -8,7 +8,7 @@ import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
 import Itinerary from 'components/Itinerary';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const itinerary = [
   {
@@ -43,9 +43,10 @@ const itinerary = [
 ];
 
 const MusicPage = ({ data }) => {
+  console.log({data})
   const { allStrapiMusician, primaryImage, panelImage } = data;
-  const marqueeImage = primaryImage.image;
-  const panel = getImage(panelImage.image.childImageSharp);
+  const marqueeImage = primaryImage?.image;
+  const panel = getImage(panelImage.image);
   const title = `Music`;
   const marqueeData = { title, marqueeImage };
 
@@ -109,10 +110,7 @@ export const pageQuery = graphql`
             id
             localFile {
               childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-                fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData
               }
             }
           }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ticketDetails } from '../../content/tickets';
+import { ticketDetails } from '../content/tickets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function TicketsDetails() {

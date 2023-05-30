@@ -29,7 +29,7 @@ const MusicianTemplate = ({ data }) => {
 export default MusicianTemplate;
 
 export const pageQuery = graphql`
-  query ($id: String!) {
+  query MusicianTemplateQuery ($id: String!) {
     strapiMusician(id: { eq: $id }) {
       meta {
         description

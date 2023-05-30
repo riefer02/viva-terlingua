@@ -31,7 +31,7 @@ module.exports = {
       options: {
         // Defaults used for gatsbyImageData and StaticImage
         defaults: {
-          formats: [`auto`, `avif`, `webp`],
+          formats: [`avif`, `webp`, `auto`],
           placeholder: `blurred`,
           quality: 100,
           backgroundColor: `transparent`,
@@ -68,6 +68,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/gatsby-config.js`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-env-variables`,
       options: {
         allowList: ['STRIPE_API_KEY', 'NODE_ENV', 'DOMAIN_URL', 'TICKET_PRICE'],
@@ -82,14 +88,49 @@ module.exports = {
         collectionTypes: [
           'sponsor',
           'user',
-          'event',
-          'musician',
+          {
+            singularName: 'event',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'musician',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
           'local-attraction',
           'gallery-image',
           'resource',
           'winner',
         ],
-        singleTypes: ['home-page', 'tickets', 'thank-you', 'about-page', 'ticket'],
+        singleTypes: [
+          {
+            singularName: 'home-page',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'about-page',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'thank-you',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'ticket',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+        ],
       },
     },
     'gatsby-plugin-postcss',

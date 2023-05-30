@@ -1,6 +1,6 @@
 import React from 'react';
-import MainFeature from '../components/atoms/MainFeature';
-import SideFeature from './atoms/SideFeature';
+import MainFeature from '../components/MainFeature';
+import SideFeature from './SideFeature';
 
 export default function Feature({ items }) {
   const features = [...items];

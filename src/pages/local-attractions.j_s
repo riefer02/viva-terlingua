@@ -8,7 +8,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const EventsPage = ({ data }) => {
   const { allStrapiLocalAttraction, primaryImage, panel } = data;

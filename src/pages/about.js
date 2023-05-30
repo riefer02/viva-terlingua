@@ -8,7 +8,7 @@ import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const AboutPage = ({ data }) => {
   const {

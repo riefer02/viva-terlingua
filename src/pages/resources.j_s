@@ -6,7 +6,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const ResourcesPage = ({ data }) => {
   const {

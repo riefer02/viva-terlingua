@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { styles } from '../../utils/styles.js';
-import '../../utils/fontawesome';
+import { styles } from '../utils/styles.js';
+import '../utils/fontawesome.js';
 
 export default function MainFeature({ mainFeature }) {
   return (
@@ -35,7 +35,7 @@ export default function MainFeature({ mainFeature }) {
       </div>
       <div className="absolute top-0 left-0 h-full w-full bg-primary z-10">
         <GatsbyImage
-          image={getImage(mainFeature.image)}
+          image={getImage(mainFeature.image.localFile)}
           alt={''}
           className="h-full w-full shadow-lg"
         />

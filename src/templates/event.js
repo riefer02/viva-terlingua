@@ -7,7 +7,7 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const EventTemplate = ({ data }) => {
   const {
@@ -58,7 +58,7 @@ const EventTemplate = ({ data }) => {
 export default EventTemplate;
 
 export const pageQuery = graphql`
-  query ($id: String!) {
+  query EventTemplateQuery ($id: String!) {
     strapiEvent(id: { eq: $id }) {
       meta {
         description

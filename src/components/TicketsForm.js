@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import TicketsFormInput from '../atoms/TicketsFormInput';
-import { ticketFormInputs } from '../../content/tickets';
-import getStripe from '../../utils/stripe';
+import TicketsFormInput from './TicketsFormInput';
+import { ticketFormInputs } from '../content/tickets';
+import getStripe from '../utils/stripe';
 import validator from 'validator';
 
 export default function TicketsForm() {

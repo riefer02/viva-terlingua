@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../../utils/fontawesome';
+import '../utils/fontawesome';
 
 export default function SideFeature({ feature }) {
   const { title, description, calloutText, image, slug } = feature;
@@ -11,7 +11,7 @@ export default function SideFeature({ feature }) {
       <div className="lg:group-hover:bg-primary-light shadow-md pointer-events-none md:pointer-events-auto flex lg:grid grid-cols-10 justify-between bg-white transition ease-linear flex-col lg:flex-row mb-10 lg:mb-0 min-h-[170px]">
         <div className="col-span-2">
         <GatsbyImage
-          image={getImage(image)}
+          image={getImage(image.localFile)}
           placeholder="blurred"
           alt={title + ' link'}
           className="h-full w-full"

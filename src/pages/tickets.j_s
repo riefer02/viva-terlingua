@@ -6,11 +6,11 @@ import Container from 'components/Container';
 import Marquee from 'components/Marquee';
 import Seo from 'components/SEO';
 import PanelImage from 'components/PanelImage';
-import TicketsForm from '../components/molecules/TicketsForm';
-import Spacer from '../components/atoms/Spacer';
+import TicketsForm from '../components/TicketsForm';
+import Spacer from '../components/Spacer';
 
 import '../utils/fontawesome';
-import TicketsDetails from '../components/molecules/TicketsDetails';
+import TicketsDetails from '../components/TicketsDetails';
 
 const TicketsPage = ({}) => {
   // const {

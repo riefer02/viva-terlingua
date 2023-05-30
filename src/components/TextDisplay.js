@@ -35,7 +35,7 @@ export default function TextDisplay({ texts }) {
           {postDate && <div className="text-display__date">{postDate}</div>}
           <div
             className="text-display__text-area"
-            dangerouslySetInnerHTML={{ __html: primaryText }}
+            dangerouslySetInnerHTML={{ __html: primaryText.data.primaryText }}
           ></div>
           <div className="text-display__actions">
             <button className="text-display__action-btn">
