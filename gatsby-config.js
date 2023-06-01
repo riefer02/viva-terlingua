@@ -102,7 +102,12 @@ module.exports = {
           },
           'local-attraction',
           'gallery-image',
-          'resource',
+          {
+            singularName: 'resource',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
           'winner',
         ],
         singleTypes: [

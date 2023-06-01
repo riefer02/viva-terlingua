@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-tertiary border-t border-t-secondary">
-      <div className="flex flex-col lg:flex-row md:w-3/4 xl:w-1/2 mx-auto justify-between items-center gap-2 py-8 md:py-8 text-2xl lg:text-xl">
+      <div className="flex flex-col lg:flex-row md:w-3/4 xl:w-1/2 mx-auto justify-between items-center gap-2 py-8 md:py-8 text-base">
         <div>
           Contact Us:{' '}
           <a href="mailto:abowlofred@gmail.com" className={linkStyles}>

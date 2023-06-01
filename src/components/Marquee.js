@@ -22,7 +22,7 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="flex flex-col relative overflow-hidden md:h-[300px] lg:h-[43rem] container mx-auto mb-20 lg:mb-10">
+    <div className="flex flex-col relative overflow-hidden md:h-[300px] lg:h-[450px] container mx-auto mb-20 lg:mb-10">
       <Sponsors />
       <GatsbyImage
         className="h-[14vh] sm:h-[200px] md:h-[411px] mb-[-1px] sm:mb-0 overflow-hidden shadow-lg"

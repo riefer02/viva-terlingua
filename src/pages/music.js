@@ -43,19 +43,18 @@ const itinerary = [
 ];
 
 const MusicPage = ({ data }) => {
-  console.log({data})
   const { allStrapiMusician, primaryImage, panelImage } = data;
   const marqueeImage = primaryImage?.image;
   const panel = getImage(panelImage.image);
-  const title = `Music`;
+  const title = `Music & Artists Lineup`;
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout>
       <Seo
-        title="Music"
+        title={title}
         keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, 'off']}
-        description={seo.description}
+        description={`Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`}
       />
       <Marquee marquee={marqueeData} />
       <Container>
@@ -126,7 +125,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-const seo = {
-  description: `Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`,
-};

@@ -9,26 +9,31 @@ import '../utils/fontawesome';
 import Spacer from 'components/Spacer';
 
 const ResourcesPage = ({ data }) => {
-  const {
-    allStrapiResource,
-    // strapiGalleryImage
-  } = data;
+  const { allStrapiResource, strapiGalleryImage } = data;
   const resources = allStrapiResource.edges;
-  // const marqueeData = {
-  //   title: 'Rules and Events',
-  //   marqueeImage: strapiGalleryImage.image,
-  // };
+  const marqueeData = {
+    title: 'Rules and Events',
+    marqueeImage: strapiGalleryImage.image,
+  };
 
   return (
     <Layout>
       <Seo
-        title="Resources"
-        keywords={[`resources`, `cookoff schedule`, `events`, `chili`]}
+        title="Resources, Rules, and Cook Off Events"
+        keywords={[
+          `resources`,
+          `cookoff`,
+          `events`,
+          `chili`,
+          `rules`,
+          `regulations`,
+          `schedule`,
+        ]}
         description={
-          'Download information regarding upcoming chili cook offs and rules and regulations for participation.'
+          'Download information and resources regarding upcoming chili cook offs, rules and regulations for participation. Viva Terlingua!'
         }
       />
-      {/* <Marquee marquee={marqueeData} /> */}
+      {marqueeData.marqueeImage && <Marquee marquee={marqueeData} />}
       <Container>
         <div className="resources px-8 lg:px-0">
           <div className="resources__content">
@@ -36,6 +41,8 @@ const ResourcesPage = ({ data }) => {
             <ul className="resources__list">
               {resources.map((resource, index) => {
                 const { name, file } = resource.node;
+                if (!file) return;
+
                 return (
                   <a
                     className="resources__item"
@@ -73,29 +80,14 @@ export const pageQuery = graphql`
         }
       }
     }
+    strapiGalleryImage(title: { eq: "Camp and Sky" }) {
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
   }
 `;
-
-// export const pageQuery = graphql`
-//   query ResourcesPage {
-//     allStrapiResource {
-//       edges {
-//         node {
-//           name
-//           file {
-//             publicURL
-//           }
-//         }
-//       }
-//     }
-//     strapiGalleryImage(title: { eq: "Camp and Sky" }) {
-//       image {
-//         localFile {
-//           childImageSharp {
-//             gatsbyImageData
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
