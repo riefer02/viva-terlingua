@@ -21,8 +21,10 @@ const ThankYouPage = ({ data }) => {
       </Helmet>
       <Marquee marquee={marqueeData} />
       <Container>
-        <div className="bg-tertiary max-w-7xl mx-auto p-4">
-          <p className="thank-you__message bg-white p-2">{message}</p>
+        <div className="bg-tertiary max-w-5xl mx-auto p-4">
+          <p className="text-xl bg-white leading-loose p-2 px-4 py-4">
+            {message}
+          </p>
         </div>
         <QuickNav />
         <PanelImage image={getImage(panelImage)} />

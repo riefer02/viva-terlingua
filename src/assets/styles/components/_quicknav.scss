@@ -14,8 +14,6 @@
 .quick-nav__link {
   @apply shadow-md;
   background-color: $color-primary-light;
-  padding: 0.8rem 1.4rem;
-  font-size: 1.8rem;
   color: $color-white;
   transition: all 0.2s;
   transform: skew(-14deg, -0deg);

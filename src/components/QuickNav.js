@@ -14,9 +14,9 @@ const quickNavLinks = [
 export default function QuickNav() {
   return (
     <div className="quick-nav">
-      <ul className="quick-nav__list">
+      <ul className="quick-nav__list ">
         {quickNavLinks.map((navLink, index) => (
-          <Link key={index} className="quick-nav__link" to={`/${navLink.slug}`}>
+          <Link key={index} className="quick-nav__link px-4 py-1" to={`/${navLink.slug}`}>
             <div className="quick-nav__text">{navLink.label}</div>
           </Link>
         ))}
