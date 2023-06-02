@@ -79,7 +79,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="flex justify-center items-center gap-10">
+    <nav className="flex justify-center items-center gap-10 overflow-hidden">
       {desktopNavLinks.map((navLink, index) => (
         <Link
           key={index}
@@ -98,7 +98,7 @@ export default function NavBar() {
         {megaMenuActive ? 'Close' : 'Explore'}
       </div>
       <animated.div style={props}>
-        <div className={`${!megaMenuActive ? 'pointer-events-none' : ''} min-w-[100vw] absolute top-[110px] z-50 text-gray-dark left-0 w-full py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}>
+        <div className={`${!megaMenuActive ? 'pointer-events-none' : ''} min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}>
           {Object.keys(menuItems).map((category, index) => (
             <div
               key={index}

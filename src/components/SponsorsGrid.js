@@ -10,10 +10,10 @@ export default function SponsorsGrid({ sponsorLogos }) {
         </h3>
       </div>
       <div className="text-white border border-tertiary-light bg-tertiary p-4 shadow-lg mx-auto max-w-7xl rounded-lg">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-4 bg-white shadow-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-4 bg-gray-light-1 rounded-lg shadow-md">
           {sponsorLogos.map((image, index) => {
-            if(!image.node.logo) return
-            
+            if (!image.node.logo) return;
+
             return (
               <div
                 key={index}

@@ -8,13 +8,13 @@ export default function SideFeature({ feature }) {
   const { title, description, calloutText, image, slug } = feature;
   return (
     <Link to={slug} className="relative block group">
-      <div className="lg:group-hover:bg-primary-light shadow-md pointer-events-none md:pointer-events-auto flex lg:grid grid-cols-10 justify-between bg-white transition ease-linear flex-col lg:flex-row mb-10 lg:mb-0 min-h-[170px]">
+      <div className="lg:group-hover:bg-primary-light shadow-md pointer-events-none md:pointer-events-auto rounded-lg flex lg:grid grid-cols-10 justify-between bg-gray-light-1 transition ease-linear flex-col lg:flex-row mb-10 lg:mb-0 min-h-[170px]">
         <div className="col-span-2">
           <GatsbyImage
             image={getImage(image.localFile)}
             placeholder="blurred"
             alt={title + ' link'}
-            className="h-full w-full"
+            className="h-full w-full rounded-l-lg"
           />
         </div>
         <div className="flex flex-col col-span-8 justify-between px-10 py-3 lg:flex-row lg:group-hover:text-gray-light-1 relative">

@@ -35,23 +35,26 @@ const ResourcesPage = ({ data }) => {
       />
       {marqueeData.marqueeImage && <Marquee marquee={marqueeData} />}
       <Container>
-        <div className="resources px-8 lg:px-0">
-          <div className="resources__content">
-            <h1 className="resources__page-header">Resources</h1>
-            <ul className="resources__list">
+        <div className="w-full min-h-[260px] px-8">
+          <div className="shadow-md mx-auto bg-gray-100 max-w-[470px] lg:max-w-[660px] py-4 rounded-lg">
+            <h1 className="text-2xl">Resources</h1>
+            <ul className="flex flex-col p-8">
               {resources.map((resource, index) => {
                 const { name, file } = resource.node;
                 if (!file) return;
 
                 return (
                   <a
-                    className="resources__item"
+                    className="bg-tertiary text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-gray-700 hover:bg-gray-200 hover:text-tertiary-dark"
                     key={index}
                     href={file.publicURL}
                     download
                   >
                     <h4>{name}</h4>
-                    <FontAwesomeIcon icon="download"></FontAwesomeIcon>
+                    <FontAwesomeIcon
+                      className="text-xl ml-2"
+                      icon="download"
+                    ></FontAwesomeIcon>
                   </a>
                 );
               })}
