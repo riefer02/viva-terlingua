@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { styles } from '../utils/styles.js';
 import '../utils/fontawesome.js';
+
+const cardHeaderText =
+  'text-5xl mb-2 md:text-xl lg:text-3xl pt-4 lg:pt-0 pb-2 text-left font-secondary';
+const cardBodyText =
+  'text-left mb-4 lg:mb-0 text-3xl lg:text-xl leading-[30px] lg:leading-[30px] font-secondary';
 
 export default function MainFeature({ mainFeature }) {
   return (
@@ -13,22 +17,32 @@ export default function MainFeature({ mainFeature }) {
     >
       <div className="absolute top-0 left-0 z-20 h-full w-full">
         <div className="lg:group-hover:bg-secondary hidden w-[60%] top-0 xl:-left-[35%] transition ease-linear lg:block lg:group-hover:-translate-x-2 lg:group-hover:-skew-x-12 shadow-md bg-primary-light relative mx-auto m-[unset] lg:top-[2%] lg:right-[0%] -skew-x-12">
-          <h2 className="skew-x-12 text-white text-3xl py-3">
+          <h2 className="skew-x-12 text-white text-lg py-1">
             {mainFeature.calloutText}
-            <FontAwesomeIcon size="xs" icon="arrow-right" className="ml-2"></FontAwesomeIcon>
+            <FontAwesomeIcon
+              size="xs"
+              icon="arrow-right"
+              className="ml-2"
+            ></FontAwesomeIcon>
           </h2>
         </div>
-        <div className="absolute px-10 lg:px-10 py-10 bottom-0 bg-white lg:bg-secondary-dark lg:bg-opacity-80 w-full  lg:group-hover:bg-tertiary lg:group-hover:bg-opacity-50 transition ease-linear">
-          <h3 className={`lg:text-white lg:text-center underline ${styles.cardHeaderText}`}>
+        <div className="absolute px-4 py-6 bottom-0 bg-white lg:bg-secondary-dark lg:bg-opacity-80 w-full  lg:group-hover:bg-tertiary lg:group-hover:bg-opacity-50 transition ease-linear">
+          <h3
+            className={`lg:text-white lg:text-center underline ${cardHeaderText}`}
+          >
             {mainFeature.title}
           </h3>
-          <p className={`lg:text-white lg:text-center ${styles.cardBodyText}`}>
+          <p className={`lg:text-white lg:text-center ${cardBodyText}`}>
             {mainFeature.description}
           </p>
-          <div className="w-full xl:w-1/3 block lg:hidden bg-primary-light text-white py-4 -skew-x-12 hover:bg-secondary transition ease-linear">
-            <button className="skew-x-12 text-4xl lg:text-3xl transition ease-linear">
+          <div className="w-full xl:w-1/3 block lg:hidden bg-primary-light text-white py-1 -skew-x-12 hover:bg-secondary transition ease-linear">
+            <button className="skew-x-12 text-lg lg:text-xl transition ease-linear">
               {mainFeature.calloutText}{' '}
-              <FontAwesomeIcon size="xs" icon="arrow-right" className=""></FontAwesomeIcon>
+              <FontAwesomeIcon
+                size="xs"
+                icon="arrow-right"
+                className=""
+              ></FontAwesomeIcon>
             </button>
           </div>
         </div>

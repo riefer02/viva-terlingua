@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 
 export default function Quote({ quote }) {
   return (
-    <div className="px-8 lg:px-0">
-      <blockquote className="quote__text">
-        <div>{quote.text}</div>
-        <span className="quote__author">{quote.author}</span>
+    <div className="px-8 lg:px-4 py-10 bg-tertiary-light shadow-md rounded-lg max-w-6xl mx-auto">
+      <blockquote className="text-xl w-full font-secondary text-gray-dark leading-7 relative">
+        <div className="lg:text-2xl">{quote.text}</div>
+        <span className="block text-gray-dark font-bold mt-4">
+          {quote.author}
+        </span>
       </blockquote>
     </div>
   );

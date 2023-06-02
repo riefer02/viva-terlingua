@@ -23,7 +23,6 @@ const mobileNavLinks = [
 export default function NavBar() {
   const [mobileNavActive, setMobileNavActive] = useState(false);
   const [megaMenuActive, setMegaMenuActive] = useState(false);
-  let timeoutId = useRef(null);
 
   const data = useStaticQuery(graphql`
     query NavBarQuery {
@@ -74,27 +73,10 @@ export default function NavBar() {
     }
   }, [megaMenuActive, api]);
 
-  const handleMouseEnter = () => {
-    setMegaMenuActive(true);
-    console.log('enter');
-  };
-
-  const handleMouseLeave = () => {
-    setMegaMenuActive(false);
-    console.log('leave');
-  };
-
   const handleToggleMenu = () => {
     setMegaMenuActive((prevState) => !prevState);
     console.log('toggle');
   };
-
-  useEffect(() => {
-    console.log('/////////');
-    console.log({ timeoutId });
-    console.log({ megaMenuActive });
-    console.log('/////////');
-  }, [timeoutId, megaMenuActive]);
 
   return (
     <nav className="flex justify-center items-center gap-10">
@@ -116,28 +98,33 @@ export default function NavBar() {
         {megaMenuActive ? 'Close' : 'Explore'}
       </div>
       <animated.div style={props}>
-        <div className="min-w-[100vw] absolute top-[110px] z-50 text-gray-dark left-0 w-full py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block">
+        <div className={`${!megaMenuActive ? 'pointer-events-none' : ''} min-w-[100vw] absolute top-[110px] z-50 text-gray-dark left-0 w-full py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}>
           {Object.keys(menuItems).map((category, index) => (
             <div
               key={index}
               className="md:w-[25%] w-full h-full float-left bg-tertiary-light"
             >
               <h3 className="relative border-b mb-2 lg:text-lg font-secondary border-primary-light">
-                <Link to={menuItems[category].path}>{category}</Link>
+                <Link to={menuItems[category].path}>
+                  <span className="hover:text-primary transition">
+                    {category}
+                  </span>
+                </Link>
               </h3>
               <div className="flex gap-2 flex-col flex-wrap basis-[50%]">
                 {menuItems[category].items.map((item, index) => (
-                  <div key={index} className="slider-bg -ml-2">
-                    <Link
-                      to={item.slug || item.website}
-                      className="font-primary block slider-bg"
-                      target={item.website ? '_blank' : '_self'}
-                    >
+                  <Link
+                    key={index}
+                    to={item.slug || item.website || item.url}
+                    className="font-primary block slider-bg cursor-pointer -ml-2"
+                    target={item.website ? '_blank' : '_self'}
+                  >
+                    <div className="slider-bg ">
                       <span className="slider-text px-2">
                         {item.title || item.name}
                       </span>
-                    </Link>
-                  </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -22,35 +22,33 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="flex flex-col relative overflow-hidden md:h-[300px] lg:h-[450px] container mx-auto mb-20 lg:mb-10">
-      <Sponsors />
-      <GatsbyImage
-        className="h-[14vh] sm:h-[200px] md:h-[411px] mb-[-1px] sm:mb-0 overflow-hidden shadow-lg"
-        image={image}
-        alt="Fun exciting scene from Terlingua"
-        placeholder="blurred"
-      />
-
-      <div className="bg-secondary-dark top-[-12%] left-0 justify-center items-center flex flex-col relative shadow-lg mx-auto mb-[4rem] md:mb-4 lg:mb-0 text-white py-[1rem] px-[3rem] w-full lg:w-1/2 clip-marquee">
-        <h1 className="text-5xl lg:text-4xl leading-[35px] mb-2 py-2">
-          {marquee.title}
-        </h1>
-        {activeSub && (
-          <h2 className="text-3xl lg:text-2xl pb-4">{marquee.subhead}</h2>
-        )}
-      </div>
-
-      <div className="p-2">
-        <div className="marquee__premiere-sponsor">
+    <div className="relative mx-auto mb-20 lg:mb-10 md:h-[300px] lg:h-[450px]">
+      <div className="shadow-lg">
+        <div className="absolute top-0 left-0 h-[85%] overflow-hidden rounded-lg">
+          <Sponsors />
           <GatsbyImage
-            image={getImage(data.strapiSponsor.logo)}
-            alt="Liftmasters Logo"
+            image={image}
+            alt="Fun exciting scene from Terlingua"
             placeholder="blurred"
           />
         </div>
-        <div className="marquee__cookoff-dates shadow-lg">
-          <div className="marquee__date-text">Nov 2nd-5th 2022</div>
-        </div>
+      </div>
+
+      <div className="bg-secondary-dark absolute bottom-4 left-[25%] min-h-[90px] shadow-lg mx-auto text-gray-light-1 pt-4 pb-6 px-12 w-full lg:w-1/2 flex flex-col justify-center items-center clip-marquee">
+        <h1 className="text-xl lg:text-2xl">{marquee.title}</h1>
+        {activeSub && <h2 className="text-lg lg:text-xl">{marquee.subhead}</h2>}
+      </div>
+
+      <div className="absolute bottom-0 left-8 w-36 md:w-70 bg-primary-light h-12">
+        <GatsbyImage
+          image={getImage(data.strapiSponsor.logo)}
+          alt="Liftmasters Logo"
+          placeholder="blurred"
+        />
+      </div>
+
+      <div className="bg-primary-light -skew-x-12 text-white absolute bottom-0 right-8 p-2 transform-skew min-w-[200px] hidden md:block">
+        <div className="skew-x-12">Nov 2nd-5th {new Date().getFullYear()}</div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
     posters,
     sponsorLogos,
   } = data;
-  console.log('HERE!')
+  console.log('HERE!');
   console.log({ data });
 
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -51,10 +51,13 @@ const IndexPage = ({ data }) => {
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
+      <Spacer />
       <ImageGallery images={posters} />
+      <Spacer />
       <Quote quote={content}></Quote>
       <Spacer />
       <PanelImage image={panelImage} />
+      <Spacer />
     </Layout>
   );
 };

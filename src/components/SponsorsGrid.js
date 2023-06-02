@@ -3,14 +3,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function SponsorsGrid({ sponsorLogos }) {
   return (
-    <div className="px-8">
-      <div className="-skew-x-12 inline-block px-8 py-3 relative skew-x-10 shadow-md bg-primary-light mb-8">
-        <h3 className="skew-x-12 font-primary p-2 text-white drop-shadow-lg capitalize text-5xl">
+    <>
+      <div className="-skew-x-12 inline-block px-8 py-1 relative skew-x-10 shadow-md bg-primary-light mb-8">
+        <h3 className="skew-x-12 font-primary p-2 text-white drop-shadow-lg capitalize text-2xl">
           We Love Our Sponsors
         </h3>
       </div>
-      <div className="text-white border border-tertiary-light bg-tertiary p-8 shadow-lg mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-8 bg-white shadow-md">
+      <div className="text-white border border-tertiary-light bg-tertiary p-4 shadow-lg mx-auto max-w-7xl rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-10 justify-start p-4 bg-white shadow-md">
           {sponsorLogos.map((image, index) => {
             if(!image.node.logo) return
             
@@ -33,6 +33,6 @@ export default function SponsorsGrid({ sponsorLogos }) {
           })}
         </div>
       </div>
-    </div>
+    </>
   );
 }
