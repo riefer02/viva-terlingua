@@ -13,11 +13,17 @@ const quickNavLinks = [
 
 export default function QuickNav() {
   return (
-    <div className="quick-nav">
-      <ul className="quick-nav__list ">
+    <div className="">
+      <ul className="flex flex-row flex-wrap justify-center items-center mx-auto">
         {quickNavLinks.map((navLink, index) => (
-          <Link key={index} className="quick-nav__link px-4 py-1" to={`/${navLink.slug}`}>
-            <div className="quick-nav__text">{navLink.label}</div>
+          <Link
+            key={index}
+            className="shadow-md bg-primary-ligh hover:bg-secondary text-white transition-all duration-200 transform -skew-x-14 -skew-y-0 m-4 py-1"
+            to={`/${navLink.slug}`}
+          >
+            <div className=" transform skew-x-14 skew-y-0">
+              {navLink.label}
+            </div>
           </Link>
         ))}
       </ul>

@@ -1,7 +1,7 @@
 {
   "name": "viva-terlingua",
   "description": "Tolbert's Chili Cook Off website",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "author": "Andrew Riefenstahl",
   "dependencies": {
     "@fontsource/lato": "^4.5.1",

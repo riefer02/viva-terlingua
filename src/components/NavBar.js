@@ -4,7 +4,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 const desktopNavLinks = [
   { label: 'Home', slug: '' },
-  // { label: 'Tickets', slug: 'tickets' },
+  { label: 'Tickets', slug: 'tickets' },
   { label: 'Music', slug: 'music' },
   { label: 'About', slug: 'about' },
   { label: 'Resources', slug: 'resources' },
@@ -12,7 +12,7 @@ const desktopNavLinks = [
 
 const mobileNavLinks = [
   { label: 'Home', slug: '' },
-  // { label: 'Tickets', slug: 'tickets' },
+  { label: 'Tickets', slug: 'tickets' },
   { label: 'Music', slug: 'music' },
   { label: 'About', slug: 'about' },
   { label: 'Resources', slug: 'resources' },
@@ -75,7 +75,6 @@ export default function NavBar() {
 
   const handleToggleMenu = () => {
     setMegaMenuActive((prevState) => !prevState);
-    console.log('toggle');
   };
 
   return (
@@ -94,11 +93,18 @@ export default function NavBar() {
         id="dropdown-btn"
         onClick={handleToggleMenu}
         className="h-full min-w-[93px] text-center cursor-pointer transition group px-4 py-1 rounded-xl bg-tertiary-light text-primary hover:text-primary hover:bg-gray-light-1"
+        aria-expanded={megaMenuActive}
+        aria-haspopup="true"
+        aria-label={megaMenuActive ? 'Close menu' : 'Open menu'}
       >
         {megaMenuActive ? 'Close' : 'Explore'}
       </div>
       <animated.div style={props}>
-        <div className={`${!megaMenuActive ? 'pointer-events-none' : ''} min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}>
+        <div
+          className={`${
+            !megaMenuActive ? 'pointer-events-none' : ''
+          } min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}
+        >
           {Object.keys(menuItems).map((category, index) => (
             <div
               key={index}
@@ -164,7 +170,8 @@ const Hamburger = ({ mobileNavActive, setMobileNavActive }) => {
     <div
       onClick={() => setMobileNavActive((open) => !open)}
       id="hamburger"
-      role="navigation button"
+      role="button"
+      aria-label="Toggle navigation"
       className={`${mobileNavActive ? 'open' : ''}`}
     >
       <span></span>

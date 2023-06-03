@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Musician from 'components/Musician';
+import Spacer from 'components/Spacer';
 
 const MusicianTemplate = ({ data }) => {
   const { strapiMusician } = data;
@@ -19,9 +19,8 @@ const MusicianTemplate = ({ data }) => {
         description={artist.meta.description}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <Musician artist={artist} />
-      </Container>
+      <Musician artist={artist} />
+      <Spacer />
     </Layout>
   );
 };
@@ -29,7 +28,7 @@ const MusicianTemplate = ({ data }) => {
 export default MusicianTemplate;
 
 export const pageQuery = graphql`
-  query MusicianTemplateQuery ($id: String!) {
+  query MusicianTemplateQuery($id: String!) {
     strapiMusician(id: { eq: $id }) {
       meta {
         description
@@ -40,6 +39,7 @@ export const pageQuery = graphql`
       musicVideoID
       description
       setTime
+      year
       marqueeImage: image {
         localFile {
           childImageSharp {

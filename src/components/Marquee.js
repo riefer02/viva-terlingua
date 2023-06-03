@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Sponsors from 'components/Sponsors';
 
 export default function Marquee({ marquee }) {
-  const image = getImage(marquee.marqueeImage.localFile.childImageSharp);
+  const image = getImage(marquee.marqueeImage?.localFile.childImageSharp);
   const activeSub = marquee.subhead ? true : false;
 
   const data = useStaticQuery(graphql`

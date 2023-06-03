@@ -7,7 +7,7 @@ import '../utils/fontawesome';
 function Card({ item }) {
   // `slug` for internal links, `url` for external links
   const { image, slug, name, url, squareImage } = item.node;
-  const cardImage = squareImage ? squareImage.localFile : image.localFile;
+  const cardImage = squareImage ? squareImage.localFile : image?.localFile;
   const cardStyles = `p-4 block group max-w-[400px] mx-auto`;
   const cardContentStyles = 'px-8 lg:px-0';
   const cardLinkImgWrapperStyles = `block`;

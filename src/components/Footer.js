@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default function Footer() {
-  const linkStyles = 'text-primary hover:text-gray-dark transition ease-linear';
+  const linkStyles = 'text-primary-light hover:text-gray-dark transition ease-linear';
 
   return (
-    <footer className="bg-tertiary border-t border-t-secondary">
-      <div className="flex flex-col lg:flex-row md:w-3/4 xl:w-1/2 mx-auto justify-between items-center gap-2 py-4 md:py-4 text-base">
+    <footer className="bg-tertiary border-t border-t-secondary min-h-[80px] flex items-center justify-center">
+      <div className="flex flex-col lg:flex-row md:w-3/4 xl:w-1/2 mx-auto justify-between items-center gap-2 text-sm h-full">
         <div>
           Contact Us:{' '}
           <a href="mailto:abowlofred@gmail.com" className={linkStyles}>

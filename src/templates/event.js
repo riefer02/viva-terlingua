@@ -16,13 +16,13 @@ const EventTemplate = ({ data }) => {
       description,
       startDateTime,
       endDateTime,
-      // marqueeImage,
+      marqueeImage,
       meta,
-      // panelImage,
+      panelImage,
     },
   } = data;
-  // const marqueeData = { title, marqueeImage };
-  // const panel = getImage(panelImage.childImageSharp);
+  const marqueeData = { title, marqueeImage };
+  const panel = getImage(panelImage?.childImageSharp);
   let eventTime;
   if (startDateTime && endDateTime) {
     eventTime = `${startDateTime} — ${endDateTime}`;
@@ -45,11 +45,11 @@ const EventTemplate = ({ data }) => {
         keywords={[`${title}`, `event`, `beer`, `terlingua`, `chili`, `cook`]}
         description={meta.description}
       />
-      {/* <Marquee marquee={marqueeData} /> */}
+      <Marquee marquee={marqueeData} />
       <Container>
         <TextDisplay texts={pageContent} />
         <Spacer />
-        {/* <PanelImage image={panel} /> */}
+        <PanelImage image={panel} />
       </Container>
     </Layout>
   );
