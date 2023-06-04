@@ -14,9 +14,10 @@ const EventsPage = ({ data }) => {
   const { allStrapiLocalAttraction, primaryImage, panel } = data;
 
   const title = `Local Attractions`;
-  const marqueeImage = primaryImage.image;
-  const panelImage = getImage(panel.image);
+  const marqueeImage = primaryImage?.image;
+  const panelImage = getImage(panel?.image);
   const marqueeData = { title, marqueeImage };
+  console.log(marqueeData);
 
   return (
     <Layout>
@@ -42,7 +43,7 @@ export default EventsPage;
 
 export const pageQuery = graphql`
   query LocalAttractionsQuery {
-    primaryImage: strapiGalleryImage(title: { eq: "2-Alarm Chili" }) {
+    primaryImage: strapiGalleryImage(title: { eq: "Camp and Sky" }) {
       image {
         localFile {
           childImageSharp {

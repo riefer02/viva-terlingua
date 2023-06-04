@@ -5,6 +5,7 @@ import Layout from 'components/Layout';
 import Seo from 'components/SEO';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../utils/fontawesome';
+import Spacer from 'components/Spacer';
 
 export default function Mural2022({
   data: {
@@ -29,12 +30,13 @@ export default function Mural2022({
           '2022',
         ]}
       />
-      <div className="max-w-8xl w-full mx-auto ">
-        <div className="bg-tertiary max-w-7xl mx-auto shadow-md rounded-sm md:mb-10 md:-skew-x-12 mb-10">
-          <h1 className="underline md:no-underline px-4 py-4 md:py-0 md:skew-x-12">
+      <div className="max-w-7xl w-full mx-auto">
+        <div className="bg-secondary py-4 shadow-md rounded-sm mb-10 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-5xl mx-auto">
+          <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12 inline-block text-2xl text-gray-light-1">
             2022 Terlingua Chili Cook Off Collages
           </h1>
         </div>
+
         <div className="px-8">
           {edges.map((edge, index) => (
             <CollageItem key={index} edge={edge} />
@@ -47,7 +49,7 @@ export default function Mural2022({
 
 function CollageItem({ edge }) {
   const iconStyles = 'text-4xl md:text-3xl cursor-pointer md:skew-x-12';
-  const id = `${edge.node.photographer
+  const id = `${edge.node?.photographer
     .replaceAll(' ', '-')
     .toLowerCase()}-collage`;
 
@@ -59,46 +61,51 @@ function CollageItem({ edge }) {
   };
 
   return (
-    <div className="mb-10">
-      <div className="flex items-center px-4 md:px-8 justify-between md:-skew-x-12 bg-primary text-white shadow-md rounded-sm md:mb-10 mx-auto max-w-7xl">
+    <div>
+      <div className="flex max-w-xl mx-auto items-center px-4 md:px-8 justify-between md:-skew-x-12 bg-primary-light py-3 text-white shadow-md rounded-sm md:mb-10">
         <div onClick={() => handleFullscreenImage(id)}>
           <FontAwesomeIcon
             icon="expand"
             className={`${iconStyles} hidden md:block`}
           ></FontAwesomeIcon>
         </div>
-        <h3 className="md:skew-x-12">{edge.node.photographer}</h3>
-        <a href={edge.node.image.publicURL} download>
+        <h3 className="md:skew-x-12 text-xl lg:text-2xl">
+          {edge.node?.photographer}
+        </h3>
+        <a href={edge.node?.image?.publicURL} download>
           <FontAwesomeIcon
             icon="download"
             className={iconStyles}
           ></FontAwesomeIcon>
         </a>
       </div>
-      <div className="bg-tertiary p-2 md:p-6 lg:p-10">
+      <div className="rounded-lg max-w-3xl mx-auto">
         <GatsbyImage
-          image={getImage(edge.node.image)}
-          alt={`2022 Mural of photographer ${edge.node.photographer}`}
-          className=""
+          image={getImage(edge?.node?.image?.localFile)}
+          alt={`2022 Mural of photographer ${edge.node?.photographer}`}
+          className="rounded-lg"
           id={id}
         />
       </div>
+      <Spacer />
     </div>
   );
 }
 
 export const pageQuery = graphql`
   query Mural2022Query {
-    murals: allStrapiGalleryImages(
+    murals: allStrapiGalleryImage(
       filter: { role: { eq: "mural" }, year: { eq: 2022 } }
     ) {
       edges {
         node {
           image {
-            childImageSharp {
-              gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+              publicURL
             }
-            publicURL
           }
           photographer
         }

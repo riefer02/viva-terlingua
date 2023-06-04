@@ -38,14 +38,14 @@ const ResourcesPage = ({ data }) => {
         <div className="w-full min-h-[260px] px-8">
           <div className="shadow-md mx-auto bg-gray-100 max-w-[470px] lg:max-w-[660px] py-4 rounded-lg">
             <h1 className="text-2xl">Resources</h1>
-            <ul className="flex flex-col p-8">
+            <ul className="flex flex-col py-8 px-4">
               {resources.map((resource, index) => {
                 const { name, file } = resource.node;
                 if (!file) return;
 
                 return (
                   <a
-                    className="bg-tertiary text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-gray-700 hover:bg-gray-200 hover:text-tertiary-dark"
+                    className="bg-tertiary border-dark-grey text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-dark-grey hover:bg-secondary hover:text-gray-light-1"
                     key={index}
                     href={file.publicURL}
                     download

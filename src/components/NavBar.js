@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { useSpring, animated } from '@react-spring/web';
+import Hamburger from './Hamburger';
 
 const desktopNavLinks = [
   { label: 'Home', slug: '' },
@@ -63,7 +64,9 @@ export default function NavBar() {
     Sponsors: { items: [...data.allStrapiSponsor.nodes], path: '' },
   };
 
-  const [props, api] = useSpring(() => ({ opacity: 0 }));
+  const [props, api] = useSpring(() => ({
+    opacity: 0,
+  }));
 
   useEffect(() => {
     if (megaMenuActive) {
@@ -73,72 +76,83 @@ export default function NavBar() {
     }
   }, [megaMenuActive, api]);
 
+  useEffect(() => {
+    if (mobileNavActive) {
+      api.start({ opacity: 1 });
+    } else {
+      api.start({ opacity: 0 });
+    }
+  }, [mobileNavActive, api]);
+
   const handleToggleMenu = () => {
     setMegaMenuActive((prevState) => !prevState);
   };
 
   return (
     <nav className="flex justify-center items-center gap-10 overflow-hidden">
-      {desktopNavLinks.map((navLink, index) => (
-        <Link
-          key={index}
-          to={`/${navLink.slug}`}
-          className="items-center h-full md:text-lg text-center transition-all md:py-4 hover:underline hidden md:flex"
-        >
-          {navLink.label}
-        </Link>
-      ))}
+      <div className="hidden lg:flex justify-center items-center gap-6">
+        {desktopNavLinks.map((navLink, index) => (
+          <Link
+            key={index}
+            to={`/${navLink.slug}`}
+            className="items-center h-full md:text-lg text-center transition-all md:py-4 hover:underline"
+          >
+            {navLink.label}
+          </Link>
+        ))}
 
-      <div
-        id="dropdown-btn"
-        onClick={handleToggleMenu}
-        className="h-full min-w-[93px] text-center cursor-pointer transition group px-4 py-1 rounded-xl bg-tertiary-light text-primary hover:text-primary hover:bg-gray-light-1"
-        aria-expanded={megaMenuActive}
-        aria-haspopup="true"
-        aria-label={megaMenuActive ? 'Close menu' : 'Open menu'}
-      >
-        {megaMenuActive ? 'Close' : 'Explore'}
+        <div
+          id="dropdown-btn"
+          onClick={handleToggleMenu}
+          className="h-full min-w-[93px] text-center cursor-pointer transition group px-4 py-1 rounded-xl bg-gray-light-1 text-primary hover:text-white hover:bg-secondary"
+          aria-expanded={megaMenuActive}
+          aria-haspopup="true"
+          aria-label={megaMenuActive ? 'Close menu' : 'Open menu'}
+        >
+          {megaMenuActive ? 'Close' : 'Explore'}
+        </div>
+        <animated.div style={props}>
+          <div
+            className={`${
+              !megaMenuActive ? 'pointer-events-none' : ''
+            } min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}
+          >
+            {Object.keys(menuItems).map((category, index) => (
+              <div
+                key={index}
+                className="md:w-[25%] w-full h-full float-left bg-tertiary-light"
+              >
+                <h3 className="relative border-b mb-2 lg:text-lg font-secondary border-primary-light">
+                  <Link to={menuItems[category].path}>
+                    <span className="hover:text-primary transition">
+                      {category}
+                    </span>
+                  </Link>
+                </h3>
+                <div className="flex gap-2 flex-col flex-wrap basis-[50%]">
+                  {menuItems[category].items.map((item, index) => (
+                    <Link
+                      key={index}
+                      to={item.slug || item.website || item.url}
+                      className="font-primary block slider-bg cursor-pointer -ml-2"
+                      target={item.website ? '_blank' : '_self'}
+                    >
+                      <div className="slider-bg ">
+                        <span className="slider-text px-2">
+                          {item.title || item.name}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </animated.div>
       </div>
       <animated.div style={props}>
-        <div
-          className={`${
-            !megaMenuActive ? 'pointer-events-none' : ''
-          } min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}
-        >
-          {Object.keys(menuItems).map((category, index) => (
-            <div
-              key={index}
-              className="md:w-[25%] w-full h-full float-left bg-tertiary-light"
-            >
-              <h3 className="relative border-b mb-2 lg:text-lg font-secondary border-primary-light">
-                <Link to={menuItems[category].path}>
-                  <span className="hover:text-primary transition">
-                    {category}
-                  </span>
-                </Link>
-              </h3>
-              <div className="flex gap-2 flex-col flex-wrap basis-[50%]">
-                {menuItems[category].items.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.slug || item.website || item.url}
-                    className="font-primary block slider-bg cursor-pointer -ml-2"
-                    target={item.website ? '_blank' : '_self'}
-                  >
-                    <div className="slider-bg ">
-                      <span className="slider-text px-2">
-                        {item.title || item.name}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </animated.div>
-
       <MobileNav mobileNavActive={mobileNavActive} />
+</animated.div>
       <Hamburger
         mobileNavActive={mobileNavActive}
         setMobileNavActive={setMobileNavActive}
@@ -149,34 +163,27 @@ export default function NavBar() {
 
 const MobileNav = ({ mobileNavActive }) => {
   return (
-    <div className={`mobile-nav ${mobileNavActive ? 'nav--open' : ''}`}>
-      <div className="mobile-nav__list">
-        {mobileNavLinks.map((navLink, index) => (
-          <Link
-            key={index}
-            to={`/${navLink.slug}`}
-            className="mobile-nav__item"
-          >
-            {navLink.label}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const Hamburger = ({ mobileNavActive, setMobileNavActive }) => {
-  return (
     <div
-      onClick={() => setMobileNavActive((open) => !open)}
-      id="hamburger"
-      role="button"
-      aria-label="Toggle navigation"
-      className={`${mobileNavActive ? 'open' : ''}`}
+      className={`${
+        mobileNavActive ? 'fixed' : 'hidden'
+      } top-[64px] sm:top-[114px] left-0 w-[100vw] h-[calc(100vh-64px)] bg-primary bg-opacity-100`}
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <ul
+        className={
+          'h-full flex flex-col p-4 py-8 gap-8 items-center justify-start uppercase'
+        }
+      >
+        {mobileNavLinks.map((navLink, index) => (
+          <li
+            key={index}
+            className="text-xl text-gray-light-1 bg-secondary min-w-[240px] px-2 py-2 rounded-lg shadow text-center"
+          >
+            <Link to={`/${navLink.slug}`} className="">
+              {navLink.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

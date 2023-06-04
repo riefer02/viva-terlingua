@@ -73,7 +73,7 @@ export const ticketDetails = [
   <>
     {' '}
     Live music for four nights straight with eight
-    <Link to="/music" className="text-primary ml-3">
+    <Link to="/music" className="text-primary ml-1">
       bands
     </Link>
     .

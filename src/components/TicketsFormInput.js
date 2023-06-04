@@ -5,8 +5,13 @@ export default function TicketsFormInput({
   handler,
   customHandler,
   showAlternativeInputs,
+  error,
 }) {
-  const ticketsFormLabelStyles = `mb-2 text-xl inline mr-auto`
+  const ticketsFormLabelStyles = `block text-gray-dark text-left text-xs uppercase font-bold font-primary`;
+  const inputStyles = `accent-secondary border border-gray-400 border-opacity-30 bg-tertiary-light text-gray-700 border-gray-light-2  text-base font-primary  block w-full shadow-sm sm:text-sm border-gray-dark rounded-xl px-2 py-2 placeholder-gray-400`;
+  const inputErrorStyles = `focus:ring-secondary focus:border-secondary block w-full shadow-sm sm:text-sm border-primary text-primary placeholder-primary rounded-lg`;
+
+  const currentStyles = error ? inputErrorStyles : inputStyles;
 
   if (showAlternativeInputs && input.name.includes('recipient')) {
     return (
@@ -17,42 +22,55 @@ export default function TicketsFormInput({
 
         <input
           {...input}
-          className="tickets-form__input"
+          className={currentStyles}
           onChange={(e) => handler(e.target.value, input.name)}
-        ></input>
+        />
+
+        {error && <p className="mt-2 text-sm text-primary">{error}</p>}
       </>
     );
   }
 
-  if (input.type !== 'checkbox' && !input.name.includes('recipient'))
+  if (input.type !== 'checkbox' && !input.name.includes('recipient')) {
     return (
       <>
         <label className={ticketsFormLabelStyles} htmlFor={input.name}>
           {input.label}
         </label>
+
         <input
           {...input}
-          className="tickets-form__input"
+          className={currentStyles}
           onChange={(e) => handler(e.target.value, input.name)}
-        ></input>
+        />
+
+        {error && <p className="mt-2 text-sm text-primary">{error}</p>}
       </>
     );
+  }
 
-  if (input.type === 'checkbox')
+  if (input.type === 'checkbox') {
     return (
       <div className="flex justify-between my-5">
-        <label className={ticketsFormLabelStyles + ' w-full text-left'} htmlFor="firstName">
+        <label
+          className={ticketsFormLabelStyles + ' w-full text-left'}
+          htmlFor="firstName"
+        >
           {input.label}
         </label>
+
         <div className="w-full flex justify-end">
           <input
             {...input}
-            className="tickets-form__input tickets-form__input--checkbox"
+            className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
             onChange={() => customHandler((prevState) => !prevState)}
-          ></input>
+          />
         </div>
+
+        {error && <p className="mt-2 text-sm text-primary">{error}</p>}
       </div>
     );
+  }
 
   return <div></div>;
 }

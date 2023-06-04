@@ -8,7 +8,7 @@ export default function SideFeature({ feature }) {
   const { title, description, calloutText, image, slug } = feature;
   return (
     <Link to={slug} className="relative block group">
-      <div className="lg:group-hover:bg-primary-light shadow-md pointer-events-none md:pointer-events-auto rounded-lg flex lg:grid grid-cols-10 justify-between bg-gray-light-1 transition ease-linear flex-col lg:flex-row mb-10 lg:mb-0 min-h-[170px]">
+      <div className="lg:group-hover:bg-secondary shadow-md pointer-events-none md:pointer-events-auto rounded-lg flex lg:grid grid-cols-10 justify-between bg-gray-light-1 transition ease-linear flex-col lg:flex-row mb-10 lg:mb-0 min-h-[170px]">
         <div className="col-span-2">
           <GatsbyImage
             image={getImage(image.localFile)}

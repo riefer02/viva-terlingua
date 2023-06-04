@@ -26,7 +26,7 @@ export default function MainFeature({ mainFeature }) {
             ></FontAwesomeIcon>
           </h2>
         </div>
-        <div className="absolute px-4 py-6 bottom-0 bg-white lg:bg-secondary-dark rounded-b-lg lg:bg-opacity-80 w-full  lg:group-hover:bg-tertiary lg:group-hover:bg-opacity-50 transition ease-linear">
+        <div className="absolute px-4 py-6 bottom-0 bg-white lg:bg-secondary-dark rounded-b-lg lg:bg-opacity-80 w-full  lg:group-hover:bg-secondary lg:group-hover:bg-opacity-100 transition ease-linear">
           <h3
             className={`lg:text-white lg:text-center underline ${cardHeaderText}`}
           >

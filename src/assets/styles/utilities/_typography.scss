@@ -22,22 +22,3 @@ ol {
   font-family: $secondary-font-family;
 }
 
-
-.paragraph {
-  font-size: $default-font-size;
-
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
-}
-
-.p-lead {
-  font-size: 2.2rem;
-  @apply leading-loose;
-  margin-bottom: 1.6rem;
-  padding: 0.5rem 1rem 2rem;
-
-  @include respond(tab-land) {
-    padding: 0.5rem 1rem;
-  }
-}

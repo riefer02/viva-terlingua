@@ -45,10 +45,11 @@ const IndexPage = ({ data }) => {
           'international',
         ]}
       />
-      <Marquee marquee={marqueeData} />
+      {/* <Marquee marquee={marqueeData} /> */}
       {/* <OfficialCookOffPoster className="lg:hidden" /> */}
-      <Feature items={featured.featuresList} />
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
+
+      {/* <Feature items={featured.featuresList} />
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <Spacer />
@@ -57,7 +58,7 @@ const IndexPage = ({ data }) => {
       <Quote quote={content}></Quote>
       <Spacer />
       <PanelImage image={panelImage} />
-      <Spacer />
+      <Spacer /> */}
     </Layout>
   );
 };

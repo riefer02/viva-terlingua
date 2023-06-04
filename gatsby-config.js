@@ -108,7 +108,12 @@ module.exports = {
               populate: 'deep',
             },
           },
-          'winner',
+          {
+            singularName: 'winner',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
         ],
         singleTypes: [
           {
