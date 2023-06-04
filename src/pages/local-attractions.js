@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
@@ -30,11 +29,10 @@ const EventsPage = ({ data }) => {
         <title>Events</title>
       </Helmet>
       <Marquee marquee={marqueeData} />
-      <Container>
-        <CardGallery items={allStrapiLocalAttraction.edges} />
-        <Spacer />
-        <PanelImage image={panelImage} />
-      </Container>
+      <Spacer />
+      <CardGallery items={allStrapiLocalAttraction.edges} />
+      <Spacer />
+      <PanelImage image={panelImage} />
     </Layout>
   );
 };

@@ -34,7 +34,7 @@ export default function TicketsDetails() {
               </div>
               <div className="flex flex-col gap-4 p-0 md:p-2">
                 <div className="relative">
-                  <h2 className="text-lg md:text-2xl underline font-semibold">
+                  <h2 className="text-lg md:text-xl underline font-semibold">
                     What's Included
                   </h2>
                 </div>
@@ -54,7 +54,7 @@ export default function TicketsDetails() {
                 </ul>
               </div>
               <div className="flex flex-col gap-2 md:gap-4 p-0 md:p-2">
-                <h2 className="text-lg md:text-2xl underline font-semibold">
+                <h2 className="text-lg md:text-xl underline font-semibold">
                   Physical Address:
                 </h2>
 
@@ -64,7 +64,7 @@ export default function TicketsDetails() {
               </div>
 
               <div className="flex flex-col gap-4 p-0 md:p-2">
-                <h2 className="text-lg md:text-2xl underline font-semibold">
+                <h2 className="text-lg md:text-xl underline font-semibold">
                   Disclaimer:
                 </h2>
                 <p className="lg:text-lg font-primary">

@@ -57,14 +57,12 @@ const MusicPage = ({ data }) => {
         description={`Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <CardGallery items={allStrapiMusician.edges} />
-        <Spacer />
-
-        <Itinerary itinerary={itinerary} />
-        <Spacer />
-        <PanelImage image={panel} />
-      </Container>
+      <Spacer />
+      <CardGallery items={allStrapiMusician.edges} />
+      <Spacer />
+      <Itinerary itinerary={itinerary} />
+      <Spacer />
+      <PanelImage image={panel} />
     </Layout>
   );
 };

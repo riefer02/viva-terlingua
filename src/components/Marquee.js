@@ -34,14 +34,18 @@ export default function Marquee({ marquee }) {
           />
         </div>
 
-        <div className="bg-secondary-dark absolute bottom-0 lg:bottom-4 lg:left-[25%] min-h-[60px] md:min-h-[90px] shadow-lg mx-auto text-gray-light-1 md:pt-4 pb-2 md:pb-6 md:px-12 w-full lg:w-1/2 flex flex-col justify-center items-center clip-marquee">
-          <h1 className="md:text-xl lg:text-2xl">{marquee.title}</h1>
-          {activeSub && (
-            <h2 className="text-xs md:text-lg lg:text-xl">{marquee.subhead}</h2>
-          )}
+        <div className="absolute bottom-0 lg:bottom-4 flex items-center justify-center w-full">
+          <div className="bg-secondary-dark max-w-xl lg:max-w-2xl w-full px-4 py-1 pb-2 min-h-[70px] lg:min-h-[80px] shadow-lg mx-auto text-gray-light-1 flex flex-col justify-center items-center clip-marquee">
+            <h1 className="md:text-xl lg:text-2xl">{marquee.title}</h1>
+            {activeSub && (
+              <h2 className="text-xs md:text-base lg:text-lg">
+                {marquee.subhead}
+              </h2>
+            )}
+          </div>
         </div>
 
-        <div className="hidden md:block absolute bottom-0 left-8 w-36 bg-primary-light h-12">
+        <div className="hidden md:block absolute bottom-[-40px] lg:bottom-0 left-8 w-36 bg-primary-light h-8">
           <GatsbyImage
             image={getImage(data.strapiSponsor.logo)}
             alt="Liftmasters Logo"
@@ -50,8 +54,8 @@ export default function Marquee({ marquee }) {
           />
         </div>
 
-        <div className="bg-primary-light -skew-x-12 text-white absolute bottom-0 md:right-4 lg:right-8 p-2 transform-skew min-w-[200px] hidden md:block">
-          <div className="skew-x-12 text-sm lg:text-base">
+        <div className="bg-primary-light -skew-x-12 text-white absolute bottom-[-40px] lg:bottom-0 md:right-4 lg:right-8 p-2 px-4 transform-skew hidden md:block">
+          <div className="skew-x-12 text-sm">
             Nov 2nd-5th {new Date().getFullYear()}
           </div>
         </div>

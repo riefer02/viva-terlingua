@@ -50,8 +50,8 @@ export default function Champions2022Page({
           ]}
         />
         <div className="max-w-7xl mx-auto w-full">
-          <div className="bg-secondary py-4 px-2 mx-auto shadow-md rounded-sm mb-4 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-5xl">
-            <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12 inline-block text-2xl text-gray-light-1">
+          <div className="bg-secondary py-4 px-2 mx-auto shadow-md rounded-sm mb-4 md:mb-10 lg:-skew-x-12 border-gray-light-1 border-2 max-w-5xl">
+            <h1 className="underline md:no-underline py-4 md:py-0 lg:skew-x-12 inline-block text-2xl text-gray-light-1">
               Cook Off Champions 2022
             </h1>
           </div>

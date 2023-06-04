@@ -31,14 +31,20 @@ export default function TextDisplay({ texts }) {
   };
 
   return (
-    <div className="bg-tertiary-light p-4 inline-block shadow-md text-gray-dark rounded-lg max-w-5xl">
+    <div className="bg-tertiary-light p-2 lg:p-4 inline-block shadow-md text-gray-dark rounded-lg max-w-5xl">
       <div className="shadow-md bg-white p-5 lg:p-10 rounded-lg">
-        <div className="relative font-secondary text-3xl z-10 inline-block underline mb-2">
-          {author}
+        <div className="border-b-primary-light border-b mb-4">
+          <div className="relative font-secondary text-lg md:text-xl lg:text-3xl z-10 inline-block mb-2">
+            {author}
+          </div>
+          {postDate && (
+            <div className="text-base md:text-lg lg:text-xl mb-2 lg:mb-8 font-primary">
+              {postDate}
+            </div>
+          )}
         </div>
-        {postDate && <div className="text-xl mb-2 lg:mb-8 font-primary">{postDate}</div>}
         <div
-          className="m-auto leading-loose text-xl font-primary mb-8"
+          className="m-auto md:leading-loose lg:leading-loose md:text-lg lg:text-xl font-primary mb-8 text-left indent-8"
           dangerouslySetInnerHTML={{
             __html: primaryText?.data?.primaryText || primaryText,
           }}

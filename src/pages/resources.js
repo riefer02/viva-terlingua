@@ -34,35 +34,34 @@ const ResourcesPage = ({ data }) => {
         }
       />
       {marqueeData.marqueeImage && <Marquee marquee={marqueeData} />}
-      <Container>
-        <div className="w-full min-h-[260px] px-8">
-          <div className="shadow-md mx-auto bg-gray-100 max-w-[470px] lg:max-w-[660px] py-4 rounded-lg">
-            <h1 className="text-2xl">Resources</h1>
-            <ul className="flex flex-col py-8 px-4">
-              {resources.map((resource, index) => {
-                const { name, file } = resource.node;
-                if (!file) return;
+      <Spacer />
+      <div className="w-full min-h-[260px] px-8">
+        <div className="shadow-md mx-auto bg-gray-100 max-w-[470px] lg:max-w-[660px] py-4 rounded-lg">
+          <h1 className="text-2xl">Resources</h1>
+          <ul className="flex flex-col py-8 px-4">
+            {resources.map((resource, index) => {
+              const { name, file } = resource.node;
+              if (!file) return;
 
-                return (
-                  <a
-                    className="bg-tertiary border-dark-grey text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-dark-grey hover:bg-secondary hover:text-gray-light-1"
-                    key={index}
-                    href={file.publicURL}
-                    download
-                  >
-                    <h4>{name}</h4>
-                    <FontAwesomeIcon
-                      className="text-xl ml-2"
-                      icon="download"
-                    ></FontAwesomeIcon>
-                  </a>
-                );
-              })}
-            </ul>
-          </div>
+              return (
+                <a
+                  className="bg-tertiary border-dark-grey text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-dark-grey hover:bg-secondary hover:text-gray-light-1"
+                  key={index}
+                  href={file.publicURL}
+                  download
+                >
+                  <h4>{name}</h4>
+                  <FontAwesomeIcon
+                    className="text-xl ml-2"
+                    icon="download"
+                  ></FontAwesomeIcon>
+                </a>
+              );
+            })}
+          </ul>
         </div>
-        <Spacer />
-      </Container>
+      </div>
+      <Spacer />
     </Layout>
   );
 };

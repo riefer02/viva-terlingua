@@ -9,7 +9,7 @@ function Card({ item }) {
   const { image, slug, name, url, squareImage } = item.node;
   const cardImage = squareImage ? squareImage.localFile : image?.localFile;
   const cardStyles = `p-4 block group max-w-[400px] mx-auto`;
-  const cardContentStyles = 'px-8 lg:px-0';
+  const cardContentStyles = '';
   const cardLinkImgWrapperStyles = `block`;
   const cardGalleryCardImgStyles = 'rounded-t-lg h-[300px] shadow';
   const cardTextAreaStyles = `bg-primary-light group-hover:bg-secondary transition ease-linear text-white rounded-b-lg px-4`;

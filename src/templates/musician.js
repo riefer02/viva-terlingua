@@ -19,6 +19,7 @@ const MusicianTemplate = ({ data }) => {
         description={artist.meta.description}
       />
       <Marquee marquee={marqueeData} />
+      <Spacer />
       <Musician artist={artist} />
       <Spacer />
     </Layout>

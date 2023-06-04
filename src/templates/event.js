@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import TextDisplay from 'components/TextDisplay';
@@ -46,11 +45,11 @@ const EventTemplate = ({ data }) => {
         description={meta.description}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <TextDisplay texts={pageContent} />
-        <Spacer />
-        <PanelImage image={panel} />
-      </Container>
+
+      <Spacer />
+      <TextDisplay texts={pageContent} />
+      <Spacer />
+      <PanelImage image={panel} />
     </Layout>
   );
 };
@@ -58,7 +57,7 @@ const EventTemplate = ({ data }) => {
 export default EventTemplate;
 
 export const pageQuery = graphql`
-  query EventTemplateQuery ($id: String!) {
+  query EventTemplateQuery($id: String!) {
     strapiEvent(id: { eq: $id }) {
       meta {
         description

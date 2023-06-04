@@ -24,6 +24,7 @@ const EventsPage = ({ data }) => {
         description={`Events, dates, times, and details for the Tolbert's International Chili Cook Off in Terlingua, Texas. How to enter, where to go, things to do around town, all we be listed here in the events page of the chili music festival. Beer, fun, sun, and friends.`}
       />
       <Marquee marquee={marqueeData} />
+      <Spacer />
       <CardGallery items={allStrapiEvent.edges} />
       <Spacer />
       <GatsbyImage

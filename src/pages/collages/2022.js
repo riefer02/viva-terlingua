@@ -31,8 +31,8 @@ export default function Mural2022({
         ]}
       />
       <div className="max-w-7xl w-full mx-auto">
-        <div className="bg-secondary py-4 px-2 shadow-md rounded-sm mb-10 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-5xl mx-auto">
-          <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12 inline-block text-2xl text-gray-light-1">
+        <div className="bg-secondary py-4 px-2 shadow-md rounded-sm mb-10 md:mb-10 lg:-skew-x-12 border-gray-light-1 border-2 max-w-5xl mx-auto">
+          <h1 className="underline md:no-underline py-4 md:py-0 lg:skew-x-12 inline-block text-2xl text-gray-light-1">
             2022 Terlingua Chili Cook Off Collages
           </h1>
         </div>
@@ -61,7 +61,7 @@ function CollageItem({ edge }) {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="flex max-w-xl mx-auto items-center px-4 md:px-8 justify-between md:-skew-x-12 bg-primary-light py-3 text-white shadow-md rounded-sm md:mb-10">
         <div onClick={() => handleFullscreenImage(id)}>
           <FontAwesomeIcon
@@ -79,7 +79,7 @@ function CollageItem({ edge }) {
           ></FontAwesomeIcon>
         </a>
       </div>
-      <div className="rounded-lg max-w-3xl mx-auto">
+      <div className="rounded-lg max-w-3xl mx-auto mt-4">
         <GatsbyImage
           image={getImage(edge?.node?.image?.localFile)}
           alt={`2022 Mural of photographer ${edge.node?.photographer}`}
