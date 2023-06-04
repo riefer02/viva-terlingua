@@ -7,8 +7,8 @@ export default function TicketsFormInput({
   showAlternativeInputs,
   error,
 }) {
-  const ticketsFormLabelStyles = `block text-gray-dark text-left text-xs uppercase font-bold font-primary`;
-  const inputStyles = `accent-secondary border border-gray-400 border-opacity-30 bg-tertiary-light text-gray-700 border-gray-light-2  text-base font-primary  block w-full shadow-sm sm:text-sm border-gray-dark rounded-xl px-2 py-2 placeholder-gray-400`;
+  const ticketsFormLabelStyles = `block text-gray-dark text-left text-[10px] md:text-xs uppercase font-bold font-primary`;
+  const inputStyles = `accent-secondary border border-gray-400 border-opacity-30 bg-tertiary-light text-gray-700 border-gray-light-2 text-base font-primary  block w-full shadow-sm sm:text-sm border-gray-dark rounded-xl px-2 py-2 placeholder-gray-400`;
   const inputErrorStyles = `focus:ring-secondary focus:border-secondary block w-full shadow-sm sm:text-sm border-primary text-primary placeholder-primary rounded-lg`;
 
   const currentStyles = error ? inputErrorStyles : inputStyles;
@@ -62,7 +62,7 @@ export default function TicketsFormInput({
         <div className="w-full flex justify-end">
           <input
             {...input}
-            className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+            className="focus:ring-secondary h-4 w-4 text-indigo-600 border-gray-300 rounded"
             onChange={() => customHandler((prevState) => !prevState)}
           />
         </div>

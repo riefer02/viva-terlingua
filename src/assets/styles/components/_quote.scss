@@ -5,18 +5,27 @@ blockquote::after {
   color: $color-primary-light;
   position: absolute;
   font-size: 6rem;
-
-  @include respond(tab-port) {
-    content: '\201C';
-  }
+  content: '\201C';
 }
 
 blockquote::before {
-  left: 10px;
+  left: -22px;
   top: 0;
+
+  @include respond(tab-port) {
+    left: 10px;
+    top: 0;
+  }
 }
 
 blockquote::after {
-  right: 10px;
+  right: -22px;
   top: 0;
+  transform: rotate(-180deg);
+
+  @include respond(tab-port) {
+    transform: rotate(0deg);
+    right: 10px;
+    top: 0;
+  }
 }

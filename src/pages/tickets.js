@@ -26,7 +26,7 @@ const TicketsPage = ({ data }) => {
         description={meta.description}
       />
       <Marquee marquee={marqueeData} />
-
+      <Spacer />
       <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-4">
         <TicketsDetails />
         <TicketsForm />

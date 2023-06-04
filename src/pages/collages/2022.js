@@ -31,7 +31,7 @@ export default function Mural2022({
         ]}
       />
       <div className="max-w-7xl w-full mx-auto">
-        <div className="bg-secondary py-4 shadow-md rounded-sm mb-10 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-5xl mx-auto">
+        <div className="bg-secondary py-4 px-2 shadow-md rounded-sm mb-10 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-5xl mx-auto">
           <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12 inline-block text-2xl text-gray-light-1">
             2022 Terlingua Chili Cook Off Collages
           </h1>

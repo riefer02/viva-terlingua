@@ -151,8 +151,8 @@ export default function NavBar() {
         </animated.div>
       </div>
       <animated.div style={props}>
-      <MobileNav mobileNavActive={mobileNavActive} />
-</animated.div>
+        <MobileNav mobileNavActive={mobileNavActive} />
+      </animated.div>
       <Hamburger
         mobileNavActive={mobileNavActive}
         setMobileNavActive={setMobileNavActive}
@@ -174,14 +174,14 @@ const MobileNav = ({ mobileNavActive }) => {
         }
       >
         {mobileNavLinks.map((navLink, index) => (
-          <li
-            key={index}
-            className="text-xl text-gray-light-1 bg-secondary min-w-[240px] px-2 py-2 rounded-lg shadow text-center"
-          >
-            <Link to={`/${navLink.slug}`} className="">
+          <Link to={`/${navLink.slug}`} className="">
+            <li
+              key={index}
+              className="text-xl text-gray-light-1 bg-secondary min-w-[240px] px-2 py-2 rounded-lg shadow text-center"
+            >
               {navLink.label}
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>

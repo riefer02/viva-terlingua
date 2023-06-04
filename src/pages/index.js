@@ -25,8 +25,6 @@ const IndexPage = ({ data }) => {
     posters,
     sponsorLogos,
   } = data;
-  console.log('HERE!');
-  console.log({ data });
 
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
 
@@ -45,11 +43,11 @@ const IndexPage = ({ data }) => {
           'international',
         ]}
       />
-      {/* <Marquee marquee={marqueeData} /> */}
+      <Marquee marquee={marqueeData} />
       {/* <OfficialCookOffPoster className="lg:hidden" /> */}
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
-
-      {/* <Feature items={featured.featuresList} />
+      <Spacer />
+      <Feature items={featured.featuresList} />
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <Spacer />
@@ -58,7 +56,7 @@ const IndexPage = ({ data }) => {
       <Quote quote={content}></Quote>
       <Spacer />
       <PanelImage image={panelImage} />
-      <Spacer /> */}
+      <Spacer />
     </Layout>
   );
 };

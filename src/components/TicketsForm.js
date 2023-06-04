@@ -159,12 +159,12 @@ export default function TicketsForm() {
   };
   return (
     <div>
-      <div className="p-4 bg-tertiary-light rounded-lg max-w-md mx-auto">
+      <div className="p-2 lg:p-4 bg-tertiary-light rounded-lg max-w-md mx-auto">
         <div
           ref={formRef}
-          className=" p-6 bg-white rounded-lg shadow-md w-full"
+          className="p-2 md:p-6 bg-white rounded-lg shadow-md w-full"
         >
-          <h2 className="text-2xl font-bold text-gray-dark">
+          <h2 className="text-lg md:text-2xl underline font-bold text-gray-dark">
             Ticket Order Form
           </h2>
           <div className="py-2">
@@ -191,13 +191,13 @@ export default function TicketsForm() {
             >
               Review Order
             </button>
-            <sub className="text-gray-dark text-[10px]">
+            <div className="text-gray-dark text-[10px]">
               *All information is handled through
               <a className="text-indigo-500 mx-1" href="https://stripe.com/">
                 Stripe
               </a>
               payment integration systems.
-            </sub>
+            </div>
           </form>
         </div>
       </div>

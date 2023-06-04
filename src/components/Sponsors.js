@@ -25,17 +25,17 @@ export default function Sponsors() {
   `);
 
   return (
-    <div className="sponsors">
-      <div className="sponsors__list">
-        {data.allStrapiSponsor.edges.map((edge, index) =>  {
-          if(!edge.node.logo) return
-          
+    <div className="hidden md:block absolute z-30 w-full overflow-visible bg-gradient-to-b from-gray-dark to-transparent">
+      <div className="relative flex items-center justify-center w-full md:pt-2 lg:w-auto lg:pt-2 gap-4">
+        {data.allStrapiSponsor.edges.map((edge, index) => {
+          if (!edge.node.logo) return;
+
           return (
-            <div key={index} className="sponsors__item">
+            <div key={index} className="md:max-w-[40px] lg:max-w-[60px]">
               <GatsbyImage
                 image={getImage(edge.node.logo.localFile.childImageSharp)}
                 alt="sponsor"
-                className="sponsors__logo"
+                className="h-full w-full"
               />
             </div>
           );

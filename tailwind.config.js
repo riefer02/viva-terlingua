@@ -3,6 +3,9 @@ module.exports = {
   media: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xxl: '1440px',
+      },
       colors: {
         primary: '#e74853',
         'primary-light': '#ec6d75',

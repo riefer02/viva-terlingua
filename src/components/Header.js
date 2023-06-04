@@ -6,7 +6,7 @@ import logo from '../assets/images/oticcc-logo-white-sm.png';
 
 export default function Header() {
   return (
-    <header className="shadow-md z-50 w-full top-0 fixed md:relative bg-primary px-2 sm:px-0">
+    <header className="shadow-md z-50 w-full top-0 fixed sm:relative bg-primary px-2 sm:px-0">
       <Banner />
       <div className="flex items-center justify-between max-w-7xl py-2 px-3 lg:py-0 container mx-auto text-gray-light-1">
         <Link to="/">

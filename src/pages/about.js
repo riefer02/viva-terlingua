@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
@@ -25,13 +24,12 @@ const AboutPage = ({ data }) => {
         description={meta.description}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <TextDisplay texts={pageContent} />
-        <Spacer />
-        <Quote quote={quoteContent}></Quote>
-        <Spacer />
-        <PanelImage image={image} />
-      </Container>
+      <Spacer />
+      <TextDisplay texts={pageContent} />
+      <Spacer />
+      <Quote quote={quoteContent}></Quote>
+      <Spacer />
+      <PanelImage image={image} />
     </Layout>
   );
 };
