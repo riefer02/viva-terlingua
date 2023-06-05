@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Terlingua International Chili Cook Off`,
-    titleTemplate: `Terlingua International Chili Cook Off`,
+    title: `Original Terlingua International Championship Chili Cook-off`,
+    titleTemplate: `Original Terlingua International Championship Chili Cook-off`,
     description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
     siteUrl: `https://abowlofred.com`,
     url: `${
