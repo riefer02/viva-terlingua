@@ -71,6 +71,14 @@ function Seo({ description, lang, keywords, title, article }) {
         'https://abowlofred.com/static/343e93848bf82805b9e661cee3ceb578/fcb2f/open-graph-v2.jpg',
       description:
         'The original and Grand Daddy of all chili cook-offs - in the world! An outdoor festival where beer, sun, chili, and laughs flow freely. Over eight musical performances over four nights.',
+      offers: {
+        '@type': 'Offer',
+        price: '50',
+        priceCurrency: 'USD',
+        url: 'https://abowlofred.com/tickets',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2023-11-01',
+      },
     },
   };
 
