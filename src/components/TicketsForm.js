@@ -6,6 +6,7 @@ import validator from 'validator';
 
 export default function TicketsForm() {
   const formRef = useRef(null);
+  const errorRef = useRef(null); // Add this reference
   const [message, setMessage] = useState(null);
   const [forAlternativeRecipient, setForAlternativeRecipient] = useState(false);
   const [form, setForm] = useState({
@@ -89,6 +90,7 @@ export default function TicketsForm() {
 
     if (validator.isEmpty(firstName)) {
       setMessage(`What's your first name?`);
+      errorRef.current.scrollIntoView({ behavior: 'smooth' }); // Add this line
       return false;
     }
     if (validator.isEmpty(lastName)) {
@@ -169,7 +171,7 @@ export default function TicketsForm() {
           </h2>
           <div className="py-2">
             {message && (
-              <div className="-mt-1 -mb-1 text-primary text-xs">
+              <div ref={errorRef} className="-mt-1 -mb-1 text-primary text-xs">
                 {message}
               </div>
             )}
