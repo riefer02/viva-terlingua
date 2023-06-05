@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';

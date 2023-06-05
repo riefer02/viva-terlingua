@@ -8,8 +8,8 @@ export default function TicketsFormInput({
   error,
 }) {
   const ticketsFormLabelStyles = `block text-gray-dark text-left text-[10px] md:text-xs uppercase font-bold font-primary`;
-  const inputStyles = `accent-secondary border border-gray-400 border-opacity-30 bg-tertiary-light text-gray-700 border-gray-light-2 text-base font-primary  block w-full shadow-sm sm:text-sm border-gray-dark rounded-xl px-2 py-2 placeholder-gray-400`;
-  const inputErrorStyles = `focus:ring-secondary focus:border-secondary block w-full shadow-sm sm:text-sm border-primary text-primary placeholder-primary rounded-lg`;
+  const inputStyles = `accent-secondary border border-gray-300 border-opacity-10 bg-gray-100 text-gray-700 text-base font-primary block w-full shadow-sm sm:text-sm border-gray-dark rounded-xl px-2 py-2 placeholder-gray-400`;
+  const inputErrorStyles = ``;
 
   const currentStyles = error ? inputErrorStyles : inputStyles;
 

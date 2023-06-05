@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

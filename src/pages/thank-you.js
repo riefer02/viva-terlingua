@@ -4,9 +4,9 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Marquee from 'components/Marquee';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import PanelImage from 'components/PanelImage';
 import QuickNav from 'components/QuickNav';
+import Spacer from 'components/Spacer';
 
 const ThankYouPage = ({ data }) => {
   const {
@@ -20,15 +20,15 @@ const ThankYouPage = ({ data }) => {
         <title>Thank you</title>
       </Helmet>
       <Marquee marquee={marqueeData} />
-      <Container>
-        <div className="bg-tertiary max-w-5xl mx-auto p-4">
-          <p className="text-xl bg-white leading-loose p-2 px-4 py-4">
-            {message}
-          </p>
-        </div>
-        <QuickNav />
-        <PanelImage image={getImage(panelImage)} />
-      </Container>
+      <Spacer />
+      <div className="bg-tertiary-light max-w-4xl mx-auto p-2 lg:p-4 rounded-lg">
+        <p className="text-xl leading-loose bg-white p-2 lg:p-4 rounded-lg text-left indent-8 font-primary">
+          {message}
+        </p>
+      </div>
+      <Spacer/>
+      <QuickNav />
+      <PanelImage image={getImage(panelImage)} />
     </Layout>
   );
 };

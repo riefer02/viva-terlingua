@@ -26,8 +26,8 @@ export default function SideFeature({ feature }) {
               {description}
             </p>
           </div>
-          <div className="lg:group-hover:translate-x-2 transition min-w-[170px] ease-liner shadow-sm w-full lg:w-auto px-6 lg:absolute top-4 xl:top-[18px] xxl:-right-16 right-6 inline-block bg-primary-light lg:group-hover:bg-secondary text-white py-1 -skew-x-12 hover:bg-secondary">
-            <button className="skew-x-12 lg:text-lg">
+          <div className="lg:group-hover:translate-x-2 transition min-w-[170px] ease-liner shadow-sm w-full lg:w-auto px-6 lg:absolute top-4 xl:top-[18px] xxl:-right-8 right-6 inline-block bg-primary-light lg:group-hover:bg-secondary text-white py-1 -skew-x-12 hover:bg-secondary">
+            <button className="skew-x-12 text-lg">
               {calloutText}{' '}
               <FontAwesomeIcon size="xs" icon="arrow-right"></FontAwesomeIcon>
             </button>
