@@ -68,6 +68,20 @@ export const pageQuery = graphql`
       id
       title
       startDateTime(formatString: "MMMM Do, YYYY")
+      marqueeImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      panelImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
     }
   }
 `;
