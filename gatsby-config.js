@@ -87,7 +87,6 @@ module.exports = {
         queryLimit: 1000, // Default to 100
         collectionTypes: [
           'sponsor',
-          'user',
           {
             singularName: 'event',
             queryParams: {
