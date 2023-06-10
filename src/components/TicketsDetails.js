@@ -28,7 +28,7 @@ export default function TicketsDetails() {
                 </p>
                 <p className="md:text-lg lg:text-xl text-gray-dark font-primary">
                   Tickets are $
-                  <span className="text-primary font-bold">50</span>
+                  <span className="text-primary font-bold">53</span>
                   /person
                 </p>
               </div>
