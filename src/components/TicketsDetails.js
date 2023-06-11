@@ -24,7 +24,7 @@ export default function TicketsDetails() {
                   Chili Cook Off:
                 </p>
                 <p className="md:text-lg lg:text-xl font-primary">
-                  November 2nd - 5th, {new Date().getFullYear()}
+                  November 1st - 4th, {new Date().getFullYear()}
                 </p>
                 <p className="md:text-lg lg:text-xl text-gray-dark font-primary">
                   Tickets are $
