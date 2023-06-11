@@ -24,7 +24,7 @@ export default function Marquee({ marquee }) {
   return (
     <div className="relative mx-auto h-[172px] sm:h-[200px] md:h-[280px] lg:h-[415px] max-w-7xl rounded-lg overflow-hidden">
       <div className="">
-        <div className="absolute top-0 left-0 sm:h-[85%] overflow-hidden rounded-lg w-full bg-red-500">
+        <div className="absolute top-0 left-0 sm:h-[85%] overflow-hidden rounded-lg w-full">
           <Sponsors />
           <GatsbyImage
             image={image}
