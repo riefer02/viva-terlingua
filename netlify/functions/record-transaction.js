@@ -22,20 +22,21 @@ const recordTransaction = async (session) => {
     cookOffYear: date.getFullYear(),
   };
 
-  await axios
-    .post(`${process.env.STRAPI_URL}/ticket-holders`, transaction)
-    .then((res) => {
-      return {
-        statusCode: 200,
-        body: { message: 'success', data: res.data },
-      };
-    })
-    .catch((err) => {
-      return {
-        statusCode: 400,
-        body: { message: err.message },
-      };
-    });
+  try {
+    const res = await axios.post(
+      `${process.env.STRAPI_URL}/api/ticket-holders`,
+      transaction
+    );
+    return {
+      statusCode: 200,
+      body: { message: 'success', data: res.data },
+    };
+  } catch (err) {
+    return {
+      statusCode: 400,
+      body: { message: err.message },
+    };
+  }
 };
 
 exports.handler = async function ({ body, headers }, context) {
