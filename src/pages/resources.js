@@ -41,7 +41,7 @@ const ResourcesPage = ({ data }) => {
             {resources.map((resource, index) => {
               const { name, file } = resource.node;
               if (!file) return;
-              console.log(file)
+              
               return (
                 <a
                   className="bg-tertiary border-dark-grey text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-dark-grey hover:bg-secondary hover:text-gray-light-1"
