@@ -11,32 +11,33 @@ import Spacer from 'components/Spacer';
 
 const itinerary = [
   {
-    date: 'Wednesday, November 2nd',
+    date: 'Wednesday, November 1st',
     events: [
-      { time: '5:00pm', event: 'Los Pinche Gringos' },
-      { time: '7:15pm', event: 'Kathryn Legendre' },
-      { time: '9:30pm', event: 'Ray Wylie Hubbard' },
+      { time: '6:30pm', event: 'The Moonshiners' },
+      { time: '8:15pm', event: 'Thomas Michael Riley' },
+      { time: '10:00pm', event: 'Gary P. Nunn' },
     ],
   },
   {
-    date: 'Thursday, November 3rd',
+    date: 'Thursday, November 2nd',
     events: [
-      { time: '7:15pm', event: 'Thomas Michael Riley' },
-      { time: '9:30pm', event: 'Nikki Lane' },
+      { time: '6:30pm', event: 'Los Pinche Gringos' },
+      { time: '8:15pm', event: 'The Scott Walker Band' },
+      { time: '10:00pm', event: 'Ellis Bullard' },
     ],
   },
   {
-    date: 'Friday, November 4th',
+    date: 'Friday, November 3rd',
     events: [
-      { time: '7:15pm', event: 'Nathan Colt Young' },
-      { time: '9:30pm', event: 'Matt Castillo' },
+      { time: '7:30pm', event: 'Nathan Colt Young' },
+      { time: '10:00pm', event: 'Mike and the Moonpies' },
     ],
   },
   {
-    date: 'Saturday, November 5th',
+    date: 'Saturday, November 4th',
     events: [
-      { time: '7:15pm', event: 'Mark David Manders' },
-      { time: '9:30pm', event: 'Gary P. Nunn' },
+      { time: '7:30pm', event: 'Nik Parr and the Selfless Lovers' },
+      { time: '10:00pm', event: 'Sunny Sweeney' },
     ],
   },
 ];
@@ -53,13 +54,13 @@ const MusicPage = ({ data }) => {
       <Seo
         title={title}
         keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, 'off']}
-        description={`Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`}
+        description={`Tolbert's Original Terlingua International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`}
       />
       <Marquee marquee={marqueeData} />
       <Spacer />
-      <CardGallery items={allStrapiMusician.edges} />
-      <Spacer />
       <Itinerary itinerary={itinerary} />
+      <Spacer />
+      <CardGallery items={allStrapiMusician.edges} />
       <Spacer />
       <PanelImage image={panel} />
     </Layout>

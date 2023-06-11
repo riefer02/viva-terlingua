@@ -56,7 +56,7 @@ export default function Marquee({ marquee }) {
 
         <div className="bg-primary-light -skew-x-12 text-white absolute bottom-[-40px] lg:bottom-0 md:right-4 lg:right-8 p-2 px-4 transform-skew hidden md:block">
           <div className="skew-x-12 text-sm">
-            Nov 2nd-5th {new Date().getFullYear()}
+            Nov 1st-4th {new Date().getFullYear()}
           </div>
         </div>
       </div>
