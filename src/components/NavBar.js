@@ -150,9 +150,7 @@ export default function NavBar() {
           </div>
         </animated.div>
       </div>
-      <animated.div style={props}>
-        <MobileNav mobileNavActive={mobileNavActive} />
-      </animated.div>
+      {mobileNavActive && <MobileNav mobileNavActive={mobileNavActive} />}
       <Hamburger
         mobileNavActive={mobileNavActive}
         setMobileNavActive={setMobileNavActive}
