@@ -15,7 +15,7 @@ export default function ImageGallery({ images }) {
 
           return (
             <a
-              href={item.node.image.publicURL}
+              href={item.node.image.localFile.publicURL}
               download
               key={index}
               className="p-4 w-80 aspect-w-9 aspect-h-11 cursor-pointer lg:w-92 xl:w-100"
