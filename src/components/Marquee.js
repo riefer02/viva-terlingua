@@ -45,7 +45,7 @@ export default function Marquee({ marquee }) {
           </div>
         </div>
 
-        <div className="hidden md:block absolute bottom-[-40px] lg:bottom-0 left-8 w-36 h-8">
+        <div className="hidden md:block absolute bottom-[-40px] lg:bottom-0 left-8 w-[160px]">
           <GatsbyImage
             image={getImage(data.strapiSponsor?.logo?.localFile)}
             alt="Liftmasters Logo"
