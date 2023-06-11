@@ -39,7 +39,7 @@ export default function NavBar() {
           url
         }
       }
-      allStrapiMusician {
+      allStrapiMusician(filter: { year: { eq: 2023 } }) {
         nodes {
           slug
           name
