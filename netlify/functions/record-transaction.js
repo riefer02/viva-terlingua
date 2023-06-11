@@ -52,7 +52,10 @@ exports.handler = async function ({ body, headers }, context) {
 
     if (stripeEvent.type === 'checkout.session.completed') {
       const session = stripeEvent.data.object;
-      await recordTransaction(session);
+      const transactionResult = await recordTransaction(session);
+      if (transactionResult.statusCode !== 200) {
+        throw new Error(transactionResult.body.message);
+      }
     }
 
     return {
