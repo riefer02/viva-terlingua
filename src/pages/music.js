@@ -99,7 +99,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allStrapiMusician(sort: { fields: [order], order: ASC }) {
+    allStrapiMusician(
+      sort: { fields: [order], order: ASC }
+      filter: { year: { eq: 2023 } }
+    ) {
       edges {
         node {
           name
