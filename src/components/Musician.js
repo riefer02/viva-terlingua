@@ -19,7 +19,7 @@ export default function Musician({ artist }) {
 
   return (
     <div className="">
-      <div className="flex flex-col bg-gray-light-1 p-4 rounded-lg font-secondary border-t-5 border-b-5 border-primary-light md:flex-row md:border-none shadow-md">
+      <div className="flex flex-col max-w-7xl mx-auto gap-4 lg:gap-0 bg-gray-light-1 p-4 rounded-lg font-secondary border-t-5 border-b-5 border-primary-light md:flex-row md:border-none shadow-md">
         <GatsbyImage
           className=" bg-secondary h-100 w-auto order-2 md:order-1 md:h-auto md:w-1/3 rounded-lg"
           image={adaptiveImage}
@@ -29,20 +29,20 @@ export default function Musician({ artist }) {
         {/* Artist Description */}
         <div className="order-1 flex flex-col justify-center items-center gap-8 w-full h-auto md:order-2 md:w-2/3 md:m-6 md:h-auto">
           <div className="relative">
-            <h4 className="font-primary text-3xl relative z-10 inline-block text-left md:text-4xl">
+            <h4 className="font-primary text-lg font-bold lg:text-3xl relative z-10 inline-block text-left md:text-4xl">
               {setTime}
             </h4>
           </div>
           <p className="px-4 leading-loose">{description}</p>
           <a href={website} target="_blank">
-            <div className="font-primary text-4xl text-primary hover:text-primary-light transition relative w-9/10 text-center z-10 cursor-pointer m-auto md:text-2xl lg:w-full">
+            <div className="font-primary text-base md:text-lg lg:text-2xl text-primary hover:text-primary-light transition relative w-9/10 text-center z-10 cursor-pointer m-auto lg:w-full">
               {website}
             </div>
           </a>
         </div>
         {/* Spotify Player */}
         {spotifyID ? (
-          <div className="order-2 w-1/3 md:order-3 md:h-full">
+          <div className="order-2 w-full md:w-1/3 md:order-3 md:h-full">
             <iframe
               src={`https://open.spotify.com/embed/artist/${spotifyID}`}
               width="100%"
