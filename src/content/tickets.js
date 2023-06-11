@@ -72,11 +72,12 @@ export const ticketDetails = [
   'Camping for the entire weekend through Sunday.',
   <>
     {' '}
-    Live music for four nights straight with eight
-    <Link to="/music" className="text-primary ml-3">
-      bands
-    </Link>
-    .
+    <span>
+      Live music for four nights straight with eight
+      <Link to="/music" className="text-primary ml-1 inline">
+        bands
+      </Link>
+    </span>
   </>,
   'Opportunity to sign up to judge in the competition.',
   "Interact with over forty unique vendors from across the nation and meet Texas' finest authors and artists.",

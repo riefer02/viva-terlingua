@@ -3,16 +3,28 @@ module.exports = {
   media: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xxl: '1440px',
+      },
       colors: {
-        primary: '#e74853',
-        'primary-light': '#ec6d75',
-        secondary: '#5d99a4',
-        'secondary-dark': '#46747c',
-        tertiary: '#ece5e3',
-        'tertiary-light': '#f0eae9',
-        'gray-dark': '#333',
-        'gray-light-1': '#f7f7f7',
-        'gray-light-2': '#eee',
+        primary: {
+          DEFAULT: '#e74853',
+          light: '#ec6d75',
+        },
+        secondary: {
+          DEFAULT: '#5d99a4',
+          dark: '#46747c',
+        },
+        tertiary: {
+          DEFAULT: '#ece5e3',
+          light: '#f0eae9',
+          dark: '#9c8e8c',
+        },
+        gray: {
+          dark: '#333',
+          'light-1': '#f7f7f7',
+          'light-2': '#eee',
+        },
       },
       fontFamily: {
         primary: ['Lato', 'sans-serif'],

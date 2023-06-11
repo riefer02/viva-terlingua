@@ -2,22 +2,22 @@ const { data } = require('autoprefixer');
 const path = require(`path`);
 const fs = require('fs');
 
-const { zipFunctions } = require('@netlify/zip-it-and-ship-it');
+// const { zipFunctions } = require('@netlify/zip-it-and-ship-it');
 
-exports.onPostBuild = () => {
-  const srcLocation = path.join(__dirname, `./netlify/functions`);
-  const outputLocation = path.join(__dirname, `./public/functions`);
-  if (!fs.existsSync(outputLocation)) {
-    fs.mkdirSync(outputLocation);
-  }
-  console.log('Building a better tomorrow.')
-  return zipFunctions(srcLocation, outputLocation);
-};
+// exports.onPostBuild = () => {
+//   const srcLocation = path.join(__dirname, `./netlify/functions`);
+//   const outputLocation = path.join(__dirname, `./public/functions`);
+//   if (!fs.existsSync(outputLocation)) {
+//     fs.mkdirSync(outputLocation);
+//   }
+//   console.log('Building a better tomorrow.')
+//   return zipFunctions(srcLocation, outputLocation);
+// };
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
-    query MyQuery {
-      allStrapiEvents {
+    query CreatePagesQuery {
+      allStrapiEvent {
         edges {
           node {
             slug
@@ -25,7 +25,7 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      allStrapiMusicians {
+      allStrapiMusician {
         edges {
           node {
             id
@@ -37,7 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   // Create Individual Musician Page
-  data.allStrapiMusicians.edges.forEach((edge) => {
+  data.allStrapiMusician.edges.forEach((edge) => {
     const { slug, id } = edge.node;
     actions.createPage({
       path: slug,
@@ -49,8 +49,8 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   });
 
-  // Create Individual Event Page
-  data.allStrapiEvents.edges.forEach((edge) => {
+  //   Create Individual Event Page
+  data.allStrapiEvent.edges.forEach((edge) => {
     const { slug, id } = edge.node;
     actions.createPage({
       path: slug,

@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
-import TicketsFormInput from '../atoms/TicketsFormInput';
-import { ticketFormInputs } from '../../content/tickets';
-import getStripe from '../../utils/stripe';
+import TicketsFormInput from './TicketsFormInput';
+import { ticketFormInputs } from '../content/tickets';
+import getStripe from '../utils/stripe';
 import validator from 'validator';
 
 export default function TicketsForm() {
   const formRef = useRef(null);
+  const errorRef = useRef(null); // Add this reference
   const [message, setMessage] = useState(null);
   const [forAlternativeRecipient, setForAlternativeRecipient] = useState(false);
   const [form, setForm] = useState({
@@ -89,6 +90,7 @@ export default function TicketsForm() {
 
     if (validator.isEmpty(firstName)) {
       setMessage(`What's your first name?`);
+      errorRef.current.scrollIntoView({ behavior: 'smooth' }); // Add this line
       return false;
     }
     if (validator.isEmpty(lastName)) {
@@ -96,11 +98,11 @@ export default function TicketsForm() {
       return false;
     }
     if (!validator.isEmail(email)) {
-      setMessage(`That's not a email.`);
+      setMessage(`That's not an email.`);
       return false;
     }
     if (email !== emailConfirm) {
-      setMessage(`These email's don't match.`);
+      setMessage(`These emails don't match.`);
       return false;
     }
     if (!validator.isMobilePhone(phone)) {
@@ -158,36 +160,49 @@ export default function TicketsForm() {
     }
   };
   return (
-    <div ref={formRef} className="tickets-form mx-auto">
-      <h2 className="tickets-form__header">Ticket Order Form</h2>
-      <div className="tickets-form__message">{message ? message : ''}</div>
-      <form className="tickets-form__content pointer-events-none opacity-60">
-        {ticketFormInputs.map((input, index) => (
-          <TicketsFormInput
-            key={index}
-            input={input}
-            handler={handleInput}
-            customHandler={setForAlternativeRecipient}
-            showAlternativeInputs={forAlternativeRecipient}
-            disabled
-          />
-        ))}
-        <button
-          className="tickets-form__submit-btn"
-          type="submit"
-          onClick={(e) => handleSubmit(e)}
-          disabled
+    <div>
+      <div className="p-2 lg:p-4 bg-tertiary-light rounded-lg max-w-md mx-auto">
+        <div
+          ref={formRef}
+          className="p-2 md:p-6 bg-white rounded-lg shadow-md w-full"
         >
-          Portal is Closed
-        </button>
-        <sub className="mt-5 text-sm">
-          *All information is handled through
-          <a className="text-indigo-600 mx-1" href="https://stripe.com/">
-            Stripe
-          </a>
-          payment integration systems.
-        </sub>
-      </form>
+          <h2 className="text-lg md:text-2xl underline font-bold text-gray-dark">
+            Ticket Order Form
+          </h2>
+          <div className="py-2">
+            {message && (
+              <div ref={errorRef} className="-mt-1 -mb-1 text-primary text-xs">
+                {message}
+              </div>
+            )}
+          </div>
+          <form className=" space-y-3">
+            {ticketFormInputs.map((input, index) => (
+              <TicketsFormInput
+                key={index}
+                input={input}
+                handler={handleInput}
+                customHandler={setForAlternativeRecipient}
+                showAlternativeInputs={forAlternativeRecipient}
+              />
+            ))}
+            <button
+              className="w-full py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-primary  hover:bg-secondary transition focus:outline-none"
+              type="submit"
+              onClick={(e) => handleSubmit(e)}
+            >
+              Review Order
+            </button>
+            <div className="text-gray-dark text-[10px]">
+              *All information is handled through
+              <a className="text-indigo-500 mx-1" href="https://stripe.com/">
+                Stripe
+              </a>
+              payment integration systems.
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

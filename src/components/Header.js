@@ -6,17 +6,17 @@ import logo from '../assets/images/oticcc-logo-white-sm.png';
 
 export default function Header() {
   return (
-    <header className="shadow-md z-50 w-full top-0 fixed md:relative bg-primary">
+    <header className="shadow-md z-50 w-full top-0 fixed sm:relative bg-primary px-2 sm:px-0">
       <Banner />
-      <div className="header__container container mx-auto">
+      <div className="flex items-center justify-between max-w-7xl py-2 px-3 lg:py-0 mx-auto text-gray-light-1">
         <Link to="/">
-          <div className="flex justify-center align-center">
+          <div className="flex justify-center items-center gap-4">
             <img
-              className="header__logo"
+              className="h-10 w-10"
               src={logo}
               alt="Tolbert's International Wick Fowler Chili Cook Off"
             />
-            <p className="header__site-title">
+            <p className="md:text-lg lg:text-xl hidden sm:block">
               The Tolbert Chili Cookoff Group
             </p>
           </div>

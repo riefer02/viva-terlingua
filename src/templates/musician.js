@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Musician from 'components/Musician';
+import Spacer from 'components/Spacer';
 
 const MusicianTemplate = ({ data }) => {
-  const { strapiMusicians } = data;
-  const artist = { ...strapiMusicians };
+  const { strapiMusician } = data;
+  const artist = { ...strapiMusician };
   const marqueeData = { title: artist.name, marqueeImage: artist.marqueeImage };
 
   return (
@@ -19,9 +19,9 @@ const MusicianTemplate = ({ data }) => {
         description={artist.meta.description}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <Musician artist={artist} />
-      </Container>
+      <Spacer />
+      <Musician artist={artist} />
+      <Spacer />
     </Layout>
   );
 };
@@ -29,8 +29,8 @@ const MusicianTemplate = ({ data }) => {
 export default MusicianTemplate;
 
 export const pageQuery = graphql`
-  query ($id: String!) {
-    strapiMusicians(id: { eq: $id }) {
+  query MusicianTemplateQuery($id: String!) {
+    strapiMusician(id: { eq: $id }) {
       meta {
         description
       }
@@ -40,19 +40,26 @@ export const pageQuery = graphql`
       musicVideoID
       description
       setTime
+      year
       marqueeImage: image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       artistImage: image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       squareImage {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }

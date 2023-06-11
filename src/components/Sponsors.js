@@ -1,45 +1,46 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Sponsors() {
-  return (
-    <StaticQuery
-      query={graphql`
-        query MyQuery {
-          allStrapiSponsors(sort: { fields: priority, order: ASC }, limit: 8) {
-            edges {
-              node {
-                logo {
-                  childImageSharp {
-                    gatsbyImageData(
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
+  const data = useStaticQuery(graphql`
+    query SponsorsQuery {
+      allStrapiSponsor(sort: { fields: priority, order: ASC }, limit: 8) {
+        edges {
+          node {
+            logo {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
                 }
               }
             }
           }
         }
-      `}
-      render={(data) => (
-        <div className="sponsors">
-          <div className="sponsors__list">
-            {data.allStrapiSponsors.edges.map((edge, index) => {
-              return (
-                <div key={index} className="sponsors__item">
-                  <GatsbyImage
-                    image={getImage(edge.node.logo)}
-                    alt="sponsor"
-                    className="sponsors__logo"
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-    />
+      }
+    }
+  `);
+
+  return (
+    <div className="hidden md:block absolute z-30 w-full overflow-visible bg-gradient-to-b from-gray-400 to-transparent">
+      <div className="relative flex items-center justify-center w-full md:pt-2 lg:w-auto lg:pt-2 gap-4">
+        {data.allStrapiSponsor.edges.map((edge, index) => {
+          if (!edge.node.logo) return;
+
+          return (
+            <div key={index} className="md:max-w-[50px] lg:max-w-[80px]">
+              <GatsbyImage
+                image={getImage(edge.node.logo.localFile.childImageSharp)}
+                alt="sponsor"
+                className="h-full w-full"
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

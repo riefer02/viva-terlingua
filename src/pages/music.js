@@ -2,13 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
 import Itinerary from 'components/Itinerary';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const itinerary = [
   {
@@ -43,26 +42,26 @@ const itinerary = [
 ];
 
 const MusicPage = ({ data }) => {
-  const { allStrapiMusicians, primaryImage, panelImage } = data;
-  const marqueeImage = primaryImage.image;
-  const panel = getImage(panelImage.image.childImageSharp);
-  const title = `Music`;
+  const { allStrapiMusician, primaryImage, panelImage } = data;
+  const marqueeImage = primaryImage?.image;
+  const panel = getImage(panelImage.image);
+  const title = `Music & Artists Lineup`;
   const marqueeData = { title, marqueeImage };
 
   return (
     <Layout>
       <Seo
-        title="Music"
+        title={title}
         keywords={[`music`, `artists`, `terlingua`, `chili`, `cook`, 'off']}
-        description={seo.description}
+        description={`Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <CardGallery items={allStrapiMusicians.edges} />
-        <Spacer />
-        <Itinerary itinerary={itinerary} />
-        <PanelImage image={panel} />
-      </Container>
+      <Spacer />
+      <CardGallery items={allStrapiMusician.edges} />
+      <Spacer />
+      <Itinerary itinerary={itinerary} />
+      <Spacer />
+      <PanelImage image={panel} />
     </Layout>
   );
 };
@@ -71,31 +70,35 @@ export default MusicPage;
 
 export const pageQuery = graphql`
   query MusicQuery {
-    panelImage: strapiGalleryImages(
+    panelImage: strapiGalleryImage(
       role: { eq: "panel" }
       page: { eq: "music" }
     ) {
       title
       description
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
-    primaryImage: strapiGalleryImages(
+    primaryImage: strapiGalleryImage(
       role: { eq: "marquee" }
       page: { eq: "music" }
     ) {
       title
       description
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
-    allStrapiMusicians(sort: { fields: [order], order: ASC }) {
+    allStrapiMusician(sort: { fields: [order], order: ASC }) {
       edges {
         node {
           name
@@ -103,16 +106,17 @@ export const pageQuery = graphql`
           slug
           image {
             id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
-              fluid(quality: 90, maxWidth: 1920, maxHeight: 1080) {
-                ...GatsbyImageSharpFluid_withWebp
+            localFile {
+              childImageSharp {
+                gatsbyImageData
               }
             }
           }
           squareImage {
-            childImageSharp {
-              gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
         }
@@ -120,7 +124,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-const seo = {
-  description: `Tolbert's International Chili Cook Off Musicians and Musical Acts. Who's playing live music in the desert? Eight performing acts across four nights. The Wick Fowler, Tolbert's Terlingua chili and music festival has all you need for a great time. Beer, sun, chili, friends, and fun.`,
-};

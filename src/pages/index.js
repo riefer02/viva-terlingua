@@ -7,10 +7,9 @@ import Quote from 'components/Quote';
 import Feature from 'components/Feature';
 import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
-import SponsorsGrid from 'components/molecules/SponsorsGrid';
-import Spacer from 'components/atoms/Spacer';
-import OfficialCookOffPoster from '../components/atoms/OfficialCookOffPoster';
-import StoreCallout from '../components/atoms/StoreCallout';
+import SponsorsGrid from 'components/SponsorsGrid';
+import Spacer from 'components/Spacer';
+// import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
   const {
@@ -25,7 +24,6 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
-    cookoffStoreImg,
   } = data;
 
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -47,15 +45,18 @@ const IndexPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       {/* <OfficialCookOffPoster className="lg:hidden" /> */}
-      <Feature items={featured.featuresList} />
-      {/* <StoreCallout image={cookoffStoreImg.image} /> */}
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
-      <Spacer/>
+      <Spacer />
+      <Feature items={featured.featuresList} />
+      <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
+      <Spacer />
       <ImageGallery images={posters} />
+      <Spacer />
       <Quote quote={content}></Quote>
       <Spacer />
       <PanelImage image={panelImage} />
+      <Spacer />
     </Layout>
   );
 };
@@ -63,78 +64,73 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query HomePageQuery {
     strapiHomePage {
       id
       title
+      secondaryText
+      featured {
+        featuresList {
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 400)
+              }
+            }
+          }
+          calloutText
+          id
+          slug
+          title
+          description
+        }
+      }
+      meta {
+        description
+      }
+      marqueeImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      panelImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
       content: quoteContent {
         author
         text
       }
-      secondaryText
-      meta {
-        description
-      }
-      featured {
-        id
-        featuresList {
-          id
-          slug
-          title
-          image {
-            childImageSharp {
-              gatsbyImageData
-              fluid(quality: 90, maxWidth: 800, maxHeight: 800) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-          description
-          calloutText
-        }
-      }
-      marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-        }
-      }
-      panelImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-        }
-      }
     }
-    posters: allStrapiGalleryImages(filter: { role: { eq: "poster" } }) {
+    posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
       edges {
         node {
           image {
-            childImageSharp {
-              gatsbyImageData(
-                webpOptions: { quality: 50 }
-                placeholder: BLURRED
-                formats: [WEBP]
-              )
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+              publicURL
             }
-            publicURL
           }
         }
       }
     }
-    sponsorLogos: allStrapiSponsors(sort: { fields: priority, order: ASC }) {
+    sponsorLogos: allStrapiSponsor {
       edges {
         node {
           logo {
-            childImageSharp {
-              gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
-        }
-      }
-    }
-    cookoffStoreImg: strapiGalleryImages(title: { eq: "cookoff-store-flyer" }) {
-      image {
-        childImageSharp {
-          gatsbyImageData(width: 880, quality: 100)
         }
       }
     }

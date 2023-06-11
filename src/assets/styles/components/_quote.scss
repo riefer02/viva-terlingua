@@ -1,21 +1,10 @@
-blockquote {
-  @apply shadow-md;
-  font-size: 1.4em;
-  width: 100%;
-  font-family: $secondary-font-family;
-  color: $color-grey-dark-3;
-  line-height: 1.8;
-  position: relative;
-  background: $color-tertiary;
-}
-
 blockquote::before,
 blockquote::after {
   content: none;
   font-family: Arial;
   color: $color-primary-light;
-  font-size: 4em;
   position: absolute;
+  font-size: 6rem;
 
   @include respond(tab-port) {
     content: '\201C';
@@ -24,44 +13,10 @@ blockquote::after {
 
 blockquote::before {
   left: 10px;
-  top: -10px;
+  top: 0;
 }
 
 blockquote::after {
   right: 10px;
-  top: -10px;
+  top: 0;
 }
-
-blockquote span {
-  display: block;
-  color: $color-grey-dark-3;
-  font-style: normal;
-  font-weight: bold;
-  margin-top: 1em;
-}
-
-.quote__text {
-  font-size: 2.4rem;
-  padding: 3.2rem;
-  border-left: 8px solid $color-primary-light;
-  border-right: 8px solid $color-primary-light;
-
-  @include respond(tab-port) {
-    padding: 4rem;
-  }
-
-  @include respond(desktop) {
-    padding: 1.2em 60px 1.2em 105px;
-    border-right: none;
-  }
-
-  & div {
-    font-family: $primary-font-family;
-    margin: 0 auto;
-
-    @include respond(desktop) {
-      width: 70ch;
-    }
-  }
-}
-

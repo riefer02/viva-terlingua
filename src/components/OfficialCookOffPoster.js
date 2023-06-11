@@ -5,12 +5,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 export default function OfficialCookOffPoster({ className }) {
   const { officialCookOffPoster } = useStaticQuery(graphql`
     query OfficialPosterQuery {
-      officialCookOffPoster: strapiGalleryImages(
+      officialCookOffPoster: strapiGalleryImage(
         title: { eq: "Official Cook Off Poster" }
       ) {
         image {
-          childImageSharp {
-            gatsbyImageData(width: 880)
+          localFile {
+            childImageSharp {
+              gatsbyImageData(width: 880)
+            }
           }
         }
       }

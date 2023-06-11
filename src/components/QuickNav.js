@@ -6,18 +6,22 @@ const quickNavLinks = [
   { label: 'About', slug: 'about' },
   { label: 'Music', slug: 'music' },
   { label: 'Resources', slug: 'resources' },
-  // { label: `Stories & Events`, slug: 'events' },
-  // { label: 'Local Attractions', slug: 'local-attractions' },
+  { label: `Events`, slug: 'events' },
+  { label: 'Terlingua', slug: 'local-attractions' },
   { label: 'Tickets', slug: 'tickets' },
 ];
 
 export default function QuickNav() {
   return (
-    <div className="quick-nav">
-      <ul className="quick-nav__list">
+    <div className="">
+      <ul className="grid grid-cols-3 sm:flex flex-row flex-wrap gap-4 justify-center items-center mx-auto">
         {quickNavLinks.map((navLink, index) => (
-          <Link key={index} className="quick-nav__link" to={`/${navLink.slug}`}>
-            <div className="quick-nav__text">{navLink.label}</div>
+          <Link
+            key={index}
+            className="shadow-md bg-primary-light p-2 rounded-lg hover:bg-secondary text-white transition-all duration-200 transform -skew-x-14 -skew-y-0 py-1"
+            to={`/${navLink.slug}`}
+          >
+            <div className=" transform skew-x-14 skew-y-0">{navLink.label}</div>
           </Link>
         ))}
       </ul>

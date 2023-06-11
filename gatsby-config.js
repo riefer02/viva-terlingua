@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Terlingua International Chili Cook Off`,
-    titleTemplate: `Terlingua International Chili Cook Off`,
+    title: `Original Terlingua International Championship Chili Cook-off`,
+    titleTemplate: `Original Terlingua International Championship Chili Cook-off`,
     description: `Official Website for the Wick Fowler, Frank X. Tolbert, Terlingua International Chili Cook Off - Behind the store.`,
     siteUrl: `https://abowlofred.com`,
     url: `${
@@ -31,8 +31,16 @@ module.exports = {
       options: {
         // Defaults used for gatsbyImageData and StaticImage
         defaults: {
-          placeholder: 'blurred',
-          formats: ['avif', 'webp'],
+          formats: [`avif`, `webp`, `auto`],
+          placeholder: `blurred`,
+          quality: 100,
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
         },
         // Set to false to allow builds to continue on image errors
         failOnError: true,
@@ -60,6 +68,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/gatsby-config.js`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-env-variables`,
       options: {
         allowList: ['STRIPE_API_KEY', 'NODE_ENV', 'DOMAIN_URL', 'TICKET_PRICE'],
@@ -69,25 +83,63 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.STRAPI_URL,
+        accessToken: process.env.STRAPI_API_TOKEN,
         queryLimit: 1000, // Default to 100
-        contentTypes: [
-          'sponsors',
-          'users',
-          'events',
-          'musicians',
-          'local-attractions',
-          'gallery-images',
-          'resources',
-          'winners',
+        collectionTypes: [
+          'sponsor',
+          {
+            singularName: 'event',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'musician',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          'local-attraction',
+          'gallery-image',
+          {
+            singularName: 'resource',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'winner',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
         ],
-        singleTypes: ['home-page', 'tickets', 'thank-you', 'about-page'],
-      },
-    },
-    {
-      resolve: 'gatsby-background-image-es5',
-      options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:',
+        singleTypes: [
+          {
+            singularName: 'home-page',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'about-page',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'thank-you',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
+            singularName: 'ticket',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+        ],
       },
     },
     'gatsby-plugin-postcss',

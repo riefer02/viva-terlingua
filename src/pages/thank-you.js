@@ -4,9 +4,9 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Marquee from 'components/Marquee';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import PanelImage from 'components/PanelImage';
 import QuickNav from 'components/QuickNav';
+import Spacer from 'components/Spacer';
 
 const ThankYouPage = ({ data }) => {
   const {
@@ -20,11 +20,15 @@ const ThankYouPage = ({ data }) => {
         <title>Thank you</title>
       </Helmet>
       <Marquee marquee={marqueeData} />
-      <Container>
-        <p className="thank-you__message mx-auto max-w-7xl">{message}</p>
-        <QuickNav />
-        <PanelImage image={getImage(panelImage)} />
-      </Container>
+      <Spacer />
+      <div className="bg-tertiary-light max-w-4xl mx-auto p-2 lg:p-4 rounded-lg">
+        <p className="text-xl leading-loose bg-white p-2 lg:p-4 rounded-lg text-left indent-8 font-primary">
+          {message}
+        </p>
+      </div>
+      <Spacer/>
+      <QuickNav />
+      <PanelImage image={getImage(panelImage)} />
     </Layout>
   );
 };
@@ -38,13 +42,17 @@ export const pageQuery = graphql`
       id
       message
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       panelImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }

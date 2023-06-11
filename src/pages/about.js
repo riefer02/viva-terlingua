@@ -2,13 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import Quote from 'components/Quote';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const AboutPage = ({ data }) => {
   const {
@@ -25,13 +24,12 @@ const AboutPage = ({ data }) => {
         description={meta.description}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <TextDisplay texts={pageContent} />
-        <Spacer />
-        <Quote quote={quoteContent}></Quote>
-        <Spacer />
-        <PanelImage image={image} />
-      </Container>
+      <Spacer />
+      <TextDisplay texts={pageContent} />
+      <Spacer />
+      <Quote quote={quoteContent}></Quote>
+      <Spacer />
+      <PanelImage image={image} />
     </Layout>
   );
 };
@@ -45,8 +43,10 @@ export const pageQuery = graphql`
         description
       }
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+          }
         }
       }
       title
@@ -58,7 +58,11 @@ export const pageQuery = graphql`
         }
         author
         postDate
-        primaryText
+        primaryText {
+          data {
+            primaryText
+          }
+        }
       }
       quoteContent {
         text

@@ -26,6 +26,62 @@ function Seo({ description, lang, keywords, title, article }) {
     url: `${siteUrl}${pathname}`,
   };
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'NonProfitOrganization',
+    name: 'Original Terlingua International Championship Chili Cook-off',
+    url: 'https://abowlofred.com',
+    logo: 'https://abowlofred.com/static/343e93848bf82805b9e661cee3ceb578/fcb2f/open-graph-v2.jpg',
+    description:
+      "Original Terlingua International Championship Chili Cook-off, frequently referred to as the Tolbert's Cook Off, or Behind the Store, this is the original and Grand Daddy of all chili cook-offs - in the world! An outdoor festival where beer, sun, chili, and laughs flow freely. Over eight musical performances over four nights. Located near Big Bend National Park, Terlingua is the historic town that hosts the International Chili Cook Off once a year. The first cook-off in 1967, was created and promoted by Frank X. Tolbert. All Tolbert International Chili Cook Off proceeds go to local charities. In honor of the event co-founder Wick Fowler, Behind the Store's primary beneficiary is the ALS Association of Texas. ALS is commonly known as Lou Gehrig’s Disease. If you're looking for a getaway that inludes camping, exploration, beer, music, ghost towns, and excitement, located just a stone's throw from Alpine and Marfa, Texas, this is the chili festival destination for you.",
+    foundingDate: '1967',
+    founder: {
+      '@type': 'Person',
+      name: 'Frank X. Tolbert',
+    },
+    location: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '22970 FM 170',
+        addressLocality: 'Terlingua',
+        addressRegion: 'TX',
+        postalCode: '79852',
+        addressCountry: 'USA',
+      },
+    },
+    event: {
+      '@type': 'Event',
+      name: '56th Annual Original Terlingua International Championship Chili Cook-off',
+      startDate: '2023-11-01',
+      endDate: '2023-11-04',
+      location: {
+        '@type': 'Place',
+        name: 'Terlingua',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '22970 FM 170',
+          addressLocality: 'Terlingua',
+          addressRegion: 'TX',
+          postalCode: '79852',
+          addressCountry: 'USA',
+        },
+      },
+      image:
+        'https://abowlofred.com/static/343e93848bf82805b9e661cee3ceb578/fcb2f/open-graph-v2.jpg',
+      description:
+        'The original and Grand Daddy of all chili cook-offs - in the world! An outdoor festival where beer, sun, chili, and laughs flow freely. Over eight musical performances over four nights.',
+      offers: {
+        '@type': 'Offer',
+        price: '50',
+        priceCurrency: 'USD',
+        url: 'https://abowlofred.com/tickets',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2023-11-01',
+      },
+    },
+  };
+
   return (
     <Helmet
       htmlAttributes={{
@@ -53,6 +109,7 @@ function Seo({ description, lang, keywords, title, article }) {
         <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );
 }

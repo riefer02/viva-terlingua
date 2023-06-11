@@ -3,20 +3,20 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const EventsPage = ({ data }) => {
-  const { allStrapiLocalAttractions, primaryImage, panel } = data;
+  const { allStrapiLocalAttraction, primaryImage, panel } = data;
 
   const title = `Local Attractions`;
-  const marqueeImage = primaryImage.image;
-  const panelImage = getImage(panel.image);
+  const marqueeImage = primaryImage?.image;
+  const panelImage = getImage(panel?.image);
   const marqueeData = { title, marqueeImage };
+  console.log(marqueeData);
 
   return (
     <Layout>
@@ -29,11 +29,10 @@ const EventsPage = ({ data }) => {
         <title>Events</title>
       </Helmet>
       <Marquee marquee={marqueeData} />
-      <Container>
-        <CardGallery items={allStrapiLocalAttractions.edges} />
-        <Spacer />
-        <PanelImage image={panelImage} />
-      </Container>
+      <Spacer />
+      <CardGallery items={allStrapiLocalAttraction.edges} />
+      <Spacer />
+      <PanelImage image={panelImage} />
     </Layout>
   );
 };
@@ -42,32 +41,38 @@ export default EventsPage;
 
 export const pageQuery = graphql`
   query LocalAttractionsQuery {
-    primaryImage: strapiGalleryImages(title: { eq: "2-Alarm Chili" }) {
+    primaryImage: strapiGalleryImage(title: { eq: "Camp and Sky" }) {
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       title
       description
     }
-    panel: strapiGalleryImages(title: { eq: "Watching the Show" }) {
+    panel: strapiGalleryImage(title: { eq: "Watching the Show" }) {
       title
       description
       image {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
-    allStrapiLocalAttractions {
+    allStrapiLocalAttraction {
       edges {
         node {
           description
           image: marqueeImage {
             id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, formats: AUTO)
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
           name

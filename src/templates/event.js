@@ -2,16 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import TextDisplay from 'components/TextDisplay';
 import PanelImage from 'components/PanelImage';
-import Spacer from 'components/atoms/Spacer';
+import Spacer from 'components/Spacer';
 
 const EventTemplate = ({ data }) => {
   const {
-    strapiEvents: {
+    strapiEvent: {
       title,
       description,
       startDateTime,
@@ -22,7 +21,7 @@ const EventTemplate = ({ data }) => {
     },
   } = data;
   const marqueeData = { title, marqueeImage };
-  const panel = getImage(panelImage.childImageSharp);
+  const panel = getImage(panelImage?.childImageSharp);
   let eventTime;
   if (startDateTime && endDateTime) {
     eventTime = `${startDateTime} — ${endDateTime}`;
@@ -46,11 +45,11 @@ const EventTemplate = ({ data }) => {
         description={meta.description}
       />
       <Marquee marquee={marqueeData} />
-      <Container>
-        <TextDisplay texts={pageContent} />
-        <Spacer />
-        <PanelImage image={panel} />.
-      </Container>
+
+      <Spacer />
+      <TextDisplay texts={pageContent} />
+      <Spacer />
+      <PanelImage image={panel} />
     </Layout>
   );
 };
@@ -58,28 +57,62 @@ const EventTemplate = ({ data }) => {
 export default EventTemplate;
 
 export const pageQuery = graphql`
-  query ($id: String!) {
-    strapiEvents(id: { eq: $id }) {
+  query EventTemplateQuery($id: String!) {
+    strapiEvent(id: { eq: $id }) {
       meta {
         description
         title
       }
-      created_at
       description
       endDateTime(formatString: "MMMM Do, YYYY")
       id
       title
       startDateTime(formatString: "MMMM Do, YYYY")
       marqueeImage {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
       panelImage {
-        childImageSharp {
-          gatsbyImageData
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
   }
 `;
+
+// export const pageQuery = graphql`
+//   query ($id: String!) {
+//     strapiEvent(id: { eq: $id }) {
+//       meta {
+//         description
+//         title
+//       }
+//       created_at
+//       description
+//       endDateTime(formatString: "MMMM Do, YYYY")
+//       id
+//       title
+//       startDateTime(formatString: "MMMM Do, YYYY")
+//       marqueeImage {
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//       panelImage {
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
