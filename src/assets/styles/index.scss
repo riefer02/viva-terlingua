@@ -1,10 +1,11 @@
-@import "utilities/__utilities.scss";
-@import "components/__components";
+@import 'utilities/__utilities.scss';
+@import 'components/__components';
 
 body {
   font-family: $primary-font-family;
   padding: 0;
   margin: 0;
+  background-color: '#e1cdaa';
   background-image: url(../images/paper-bg.jpg);
   background-size: 100%;
   background-repeat: repeat;
@@ -12,20 +13,20 @@ body {
 }
 
 // Keep Mobile Phone from zooming in on input fields
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
 select:focus,
 textarea {
   font-size: 16px;
