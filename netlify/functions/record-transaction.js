@@ -8,18 +8,20 @@ const recordTransaction = async (session) => {
   const date = new Date();
 
   const transaction = {
-    name: fullName,
-    firstName: personalInfo[0],
-    lastName: personalInfo[1],
-    numberOfTickets: personalInfo[2],
-    email: session.customer_details.email,
-    phoneNumber: personalInfo[3],
-    customerID: session.customer,
-    transactionID: session.id,
-    timeOfPurchase: personalInfo[4],
-    recipientFirstName: personalInfo[5] ? personalInfo[5] : '',
-    recipientLastName: personalInfo[6] ? personalInfo[6] : '',
-    cookOffYear: date.getFullYear(),
+    data: {
+      name: fullName,
+      firstName: personalInfo[0],
+      lastName: personalInfo[1],
+      numberOfTickets: parseInt(personalInfo[2]),
+      email: session.customer_details.email,
+      phoneNumber: personalInfo[3],
+      customerID: session.customer,
+      transactionID: session.id,
+      timeOfPurchase: personalInfo[4],
+      recipientFirstName: personalInfo[5] ? personalInfo[5] : '',
+      recipientLastName: personalInfo[6] ? personalInfo[6] : '',
+      cookOffYear: date.getFullYear(),
+    },
   };
 
   try {

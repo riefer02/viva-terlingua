@@ -1,18 +1,4 @@
-const { data } = require('autoprefixer');
 const path = require(`path`);
-const fs = require('fs');
-
-// const { zipFunctions } = require('@netlify/zip-it-and-ship-it');
-
-// exports.onPostBuild = () => {
-//   const srcLocation = path.join(__dirname, `./netlify/functions`);
-//   const outputLocation = path.join(__dirname, `./public/functions`);
-//   if (!fs.existsSync(outputLocation)) {
-//     fs.mkdirSync(outputLocation);
-//   }
-//   console.log('Building a better tomorrow.')
-//   return zipFunctions(srcLocation, outputLocation);
-// };
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
