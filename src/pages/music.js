@@ -15,15 +15,15 @@ const itinerary = [
     events: [
       { time: '6:30pm', event: 'The Moonshiners' },
       { time: '8:15pm', event: 'Thomas Michael Riley' },
-      { time: '10:00pm', event: 'Gary P. Nunn' },
+      { time: '10:00pm', event: 'Sunny Sweeney' },
     ],
   },
   {
     date: 'Thursday, November 2nd',
     events: [
-      { time: '6:30pm', event: 'Los Pinche Gringos' },
-      { time: '8:15pm', event: 'The Scott Walker Band' },
-      { time: '10:00pm', event: 'Ellis Bullard' },
+      { time: '6:30pm', event: 'The Scott Walker Band' },
+      { time: '8:15pm', event: 'Ellis Bullard' },
+      { time: '10:00pm', event: 'Gary P. Nunn' },
     ],
   },
   {
@@ -37,7 +37,7 @@ const itinerary = [
     date: 'Saturday, November 4th',
     events: [
       { time: '7:30pm', event: 'Nik Parr and the Selfless Lovers' },
-      { time: '10:00pm', event: 'Sunny Sweeney' },
+      { time: '10:00pm', event: 'Los Pinche Gringos' },
     ],
   },
 ];
