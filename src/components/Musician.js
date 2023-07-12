@@ -33,7 +33,7 @@ export default function Musician({ artist }) {
               {setTime}
             </h4>
           </div>
-          <p className="px-4 leading-loose">{description}</p>
+          <p className="px-4 leading-loose text-center">{description}</p>
           <a href={website} target="_blank">
             <div className="font-primary text-base md:text-lg lg:text-2xl text-primary hover:text-primary-light transition relative w-9/10 text-center z-10 cursor-pointer m-auto lg:w-full">
               {website}

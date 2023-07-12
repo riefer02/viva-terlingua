@@ -31,17 +31,17 @@ export default function TextDisplay({ texts }) {
   };
 
   return (
-    <div className="bg-tertiary-light p-2 lg:p-4 inline-block shadow-md text-gray-dark rounded-lg max-w-5xl">
-      <div className="shadow-md bg-white p-5 lg:p-10 rounded-lg">
+    <div className="bg-tertiary-light p-2 lg:p-4 shadow-md text-gray-dark rounded-lg max-w-5xl mx-auto">
+      <div className="shadow-md bg-white p-5 lg:px-10 py-6 rounded-lg">
         <div className="border-b-primary-light border-b mb-4">
-          <div className="relative font-secondary text-lg md:text-xl lg:text-3xl z-10 inline-block mb-2">
-            {author}
-          </div>
           {postDate && (
-            <div className="text-base md:text-lg lg:text-xl mb-2 lg:mb-8 font-primary">
+            <div className="text-base md:text-lg lg:text-xl mb-2 font-primary">
               {postDate}
             </div>
           )}
+          <div className="relative font-secondary text-lg md:text-xl lg:text-3xl z-10 inline-block mb-2">
+            {author}
+          </div>
         </div>
         <div
           className="m-auto md:leading-loose lg:leading-loose md:text-lg lg:text-xl font-primary mb-8 text-left indent-8"
@@ -49,7 +49,7 @@ export default function TextDisplay({ texts }) {
             __html: primaryText?.data?.primaryText || primaryText,
           }}
         ></div>
-        <div className="m-3">
+        <div className="m-3 flex items-center justify-center flex-col">
           <button
             className={`bg-primary-light hover:bg-secondary -skew-x-12 px-3 py-2 text-xl text-white shadow-md transition-all duration-200 transform skew-x-14 mb-4 ${commonStyles}`}
           >
@@ -58,7 +58,7 @@ export default function TextDisplay({ texts }) {
             </Link>
           </button>
           <hr />
-          <ul>{linkList()}</ul>
+          <ul className="mx-auto max-w-3xl flex flex-col md:flex-row text-center">{linkList()}</ul>
         </div>
       </div>
     </div>

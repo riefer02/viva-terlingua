@@ -17,6 +17,7 @@ module.exports = {
     author: `@riefer02 - Andrew Riefenstahl`,
     twitter: `@riefer02`,
   },
+  trailingSlash: `never`,
   flags: {
     DEV_SSR: false,
   },
@@ -26,6 +27,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-image`,
     'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
+    'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -46,7 +49,7 @@ module.exports = {
         failOnError: true,
       },
     },
-    `gatsby-plugin-fontawesome-css`,
+    // `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -86,6 +89,12 @@ module.exports = {
         accessToken: process.env.STRAPI_API_TOKEN,
         queryLimit: 1000, // Default to 100
         collectionTypes: [
+          {
+            singularName: 'blog',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
           'sponsor',
           {
             singularName: 'event',

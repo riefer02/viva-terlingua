@@ -7,7 +7,7 @@ export default function Quote({ quote }) {
         <div className="text-lg md:text-xl lg:text-xl max-w-xl lg:max-w-4xl mx-auto">
           {quote.text}
         </div>
-        <span className="block text-gray-dark font-bold mt-4 md:text-xl">
+        <span className="block text-gray-dark font-bold mt-4 md:text-xl text-center">
           - {quote.author}
         </span>
       </blockquote>

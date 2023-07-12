@@ -122,67 +122,65 @@ function ChampionCard({ winner }) {
   );
 }
 
-export const pageQuery = graphql`
-  query Champions2022Query {
-    saturdayChili: allStrapiWinner(
-      filter: { competition: { eq: "saturdaychili" }, year: { eq: 2022 } }
-      sort: { fields: rank, order: ASC }
-    ) {
-      edges {
-        node {
-          rank
-          name
-          id
-          competition
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-      }
-    }
-    limitedShow: allStrapiWinner(
-      filter: { competition: { eq: "limitedshow" }, year: { eq: 2022 } }
-      sort: { fields: rank, order: ASC }
-    ) {
-      edges {
-        node {
-          rank
-          name
-          id
-          competition
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-      }
-    }
-    openShow: allStrapiWinner(
-      filter: { competition: { eq: "openshow" }, year: { eq: 2022 } }
-      sort: { fields: rank, order: ASC }
-    ) {
-      edges {
-        node {
-          rank
-          name
-          id
-          competition
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
+export const pageQuery = graphql`query Champions2022Query {
+  saturdayChili: allStrapiWinner(
+    filter: {competition: {eq: "saturdaychili"}, year: {eq: 2022}}
+    sort: {rank: ASC}
+  ) {
+    edges {
+      node {
+        rank
+        name
+        id
+        competition
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
             }
           }
         }
       }
     }
   }
-`;
+  limitedShow: allStrapiWinner(
+    filter: {competition: {eq: "limitedshow"}, year: {eq: 2022}}
+    sort: {rank: ASC}
+  ) {
+    edges {
+      node {
+        rank
+        name
+        id
+        competition
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+  openShow: allStrapiWinner(
+    filter: {competition: {eq: "openshow"}, year: {eq: 2022}}
+    sort: {rank: ASC}
+  ) {
+    edges {
+      node {
+        rank
+        name
+        id
+        competition
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+}`;

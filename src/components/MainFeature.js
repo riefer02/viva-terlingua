@@ -16,7 +16,7 @@ export default function MainFeature({ mainFeature }) {
     >
       <div className="absolute top-0 left-0 z-20 h-full w-full">
         <div className="lg:group-hover:bg-secondary hidden w-[60%] top-0 xxl:-left-[30%] transition ease-linear lg:block lg:group-hover:-translate-x-2 lg:group-hover:-skew-x-12 shadow-md bg-primary-light relative mx-auto m-[unset] lg:top-[2%] lg:right-[0%] -skew-x-12">
-          <h2 className="skew-x-12 text-white text-lg py-1">
+          <h2 className="skew-x-12 text-white text-lg py-1 text-center">
             {mainFeature.calloutText}
             <FontAwesomeIcon
               size="xs"
@@ -36,7 +36,7 @@ export default function MainFeature({ mainFeature }) {
           >
             {mainFeature.description}
           </p>
-          <div className="w-full xl:w-1/3 block lg:hidden bg-primary-light text-white py-1 -skew-x-12 hover:bg-secondary transition ease-linear">
+          <div className="w-full xl:w-1/3 block lg:hidden bg-primary-light text-center text-white py-1 -skew-x-12 hover:bg-secondary transition ease-linear">
             <button className="skew-x-12 text-lg transition ease-linear">
               {mainFeature.calloutText}{' '}
               <FontAwesomeIcon

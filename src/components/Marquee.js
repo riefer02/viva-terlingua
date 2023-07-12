@@ -22,7 +22,7 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="relative mx-auto h-[172px] sm:h-[200px] md:h-[280px] lg:h-[415px] max-w-7xl rounded-lg overflow-hidden">
+    <div className="relative mx-auto h-[172px] sm:h-[200px] md:h-[280px] lg:h-[415px] max-w-7xl rounded-lg overflow-hidden text-center">
       <div className="">
         <div className="absolute top-0 left-0 sm:h-[85%] overflow-hidden rounded-lg w-full">
           <Sponsors />
@@ -35,7 +35,7 @@ export default function Marquee({ marquee }) {
         </div>
 
         <div className="absolute bottom-0 lg:bottom-4 flex items-center justify-center w-full">
-          <div className="bg-secondary-dark max-w-xl lg:max-w-2xl w-full px-4 py-1 pb-2 min-h-[70px] lg:min-h-[80px] shadow-lg mx-auto text-gray-light-1 flex flex-col justify-center items-center clip-marquee">
+          <div className="bg-secondary-dark max-w-xl lg:max-w-3xl w-full px-4 py-2 pb-4 min-h-[70px] lg:min-h-[80px] shadow-lg mx-auto text-gray-light-1 flex flex-col justify-center items-center clip-marquee">
             <h1 className="md:text-xl lg:text-2xl">{marquee.title}</h1>
             {activeSub && (
               <h2 className="text-xs md:text-base lg:text-lg">

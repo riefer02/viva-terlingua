@@ -36,7 +36,7 @@ const ResourcesPage = ({ data }) => {
       <Spacer />
       <div className="w-full min-h-[260px] px-8">
         <div className="shadow-md mx-auto bg-gray-100 max-w-[470px] lg:max-w-[660px] py-4 rounded-lg">
-          <h1 className="text-2xl">Resources</h1>
+          <h1 className="text-2xl text-center">Resources</h1>
           <ul className="flex flex-col py-8 px-4 gap-2">
             {resources.map((resource, index) => {
               const { name, file } = resource.node;

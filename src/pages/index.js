@@ -9,10 +9,12 @@ import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/SponsorsGrid';
 import Spacer from 'components/Spacer';
+import CardCarousel from '../components/CardCarousel';
 // import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
   const {
+    allStrapiBlog,
     strapiHomePage: {
       title,
       content,
@@ -49,6 +51,8 @@ const IndexPage = ({ data }) => {
       <Spacer />
       <Feature items={featured.featuresList} />
       <Spacer />
+      <CardCarousel cardsData={allStrapiBlog.edges} />
+      <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <Spacer />
       <ImageGallery images={posters} />
@@ -74,7 +78,7 @@ export const pageQuery = graphql`
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 600)
+                gatsbyImageData
               }
             }
           }
@@ -128,6 +132,22 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+    allStrapiBlog {
+      edges {
+        node {
+          title
+          author
+          publishedAt
+          heroImage {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 600)
               }
             }
           }

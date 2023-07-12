@@ -166,7 +166,7 @@ export default function TicketsForm() {
           ref={formRef}
           className="p-2 md:p-6 bg-white rounded-lg shadow-md w-full"
         >
-          <h2 className="text-lg md:text-2xl underline font-bold text-gray-dark">
+          <h2 className="text-lg md:text-2xl underline font-bold text-gray-dark text-center">
             Ticket Order Form
           </h2>
           <div className="py-2">
