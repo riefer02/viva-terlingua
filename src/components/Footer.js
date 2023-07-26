@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 export default function Footer() {
-  const linkStyles = 'text-gray-light-1 hover:text-gray-dark transition ease-linear';
+  const linkStyles =
+    'text-gray-light-1 hover:text-gray-dark transition ease-linear';
 
   return (
     <footer className="bg-primary text-gray-light-1 font-primary min-h-[64px] flex items-center justify-center py-4 pb-6 lg:p-0">
@@ -22,6 +24,11 @@ export default function Footer() {
           >
             Andrew Riefenstahl @riefer02
           </a>
+        </div>
+        <div>
+          <Link to="/archive" className={linkStyles}>
+            OTICCC Archive
+          </Link>
         </div>
       </div>
     </footer>
