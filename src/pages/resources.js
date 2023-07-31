@@ -6,9 +6,10 @@ import Marquee from 'components/Marquee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome';
 import Spacer from 'components/Spacer';
+import ImageGallery from 'components/ImageGallery';
 
 const ResourcesPage = ({ data }) => {
-  const { allStrapiResource, strapiGalleryImage } = data;
+  const { allStrapiResource, strapiGalleryImage, posters } = data;
   const resources = allStrapiResource.edges;
   const marqueeData = {
     title: 'Rules and Events',
@@ -41,7 +42,7 @@ const ResourcesPage = ({ data }) => {
             {resources.map((resource, index) => {
               const { name, file } = resource.node;
               if (!file) return;
-              
+
               return (
                 <a
                   className="bg-tertiary border-dark-grey text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-dark-grey hover:bg-secondary hover:text-gray-light-1"
@@ -60,6 +61,8 @@ const ResourcesPage = ({ data }) => {
           </ul>
         </div>
       </div>
+      <Spacer />
+      <ImageGallery images={posters} />
       <Spacer />
     </Layout>
   );
@@ -86,6 +89,20 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             gatsbyImageData
+          }
+        }
+      }
+    }
+    posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
+      edges {
+        node {
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+              publicURL
+            }
           }
         }
       }
