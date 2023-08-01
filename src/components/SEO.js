@@ -90,6 +90,19 @@ function Seo({ description, lang, keywords, title, article }) {
       title={seo.title}
       titleTemplate={`%s | ${titleTemplate}`}
     >
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GA4_ID}`}
+      ></script>
+      <script>
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${process.env.GATSBY_GA4_ID}');
+  `}
+      </script>
+
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta name="keywords" content={keywords} />
