@@ -65,7 +65,7 @@ export default function Musician({ artist }) {
       <Spacer />
       {/* Music Video */}
       <div className="max-w-4xl mx-auto relative aspect-[16/9]">
-        {musicVideoID && ( // Check if 'musicVideoID' is truthy
+        {musicVideoID && (
           <iframe
             src={`https://www.youtube.com/embed/${musicVideoID}`}
             title="artist video"
