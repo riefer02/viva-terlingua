@@ -7,7 +7,9 @@ import { getImage } from 'gatsby-plugin-image';
 
 function Seo({ description, lang, keywords, title, article }) {
   const { pathname } = useLocation();
-  const { site, ogImage } = useStaticQuery(query);
+  const { site, ogImage, musicians } = useStaticQuery(query);
+
+  const musiciansList = musicians?.nodes || [];
 
   const {
     defaultTitle,
@@ -26,9 +28,9 @@ function Seo({ description, lang, keywords, title, article }) {
     url: `${siteUrl}${pathname}`,
   };
 
-  const schema = {
+  let schema = {
     '@context': 'https://schema.org',
-    '@type': 'NonProfitOrganization',
+    '@type': 'Organization',
     name: 'Original Terlingua International Championship Chili Cook-off',
     url: 'https://abowlofred.com',
     logo: 'https://abowlofred.com/static/343e93848bf82805b9e661cee3ceb578/fcb2f/open-graph-v2.jpg',
@@ -55,6 +57,9 @@ function Seo({ description, lang, keywords, title, article }) {
       name: '56th Annual Original Terlingua International Championship Chili Cook-off',
       startDate: '2023-11-01',
       endDate: '2023-11-04',
+      eventStatus: 'https://schema.org/EventScheduled', // Add event status
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', // Add event attendance mode
+      previousStartDate: '2022-11-03',
       location: {
         '@type': 'Place',
         name: 'Terlingua',
@@ -73,14 +78,26 @@ function Seo({ description, lang, keywords, title, article }) {
         'The original and Grand Daddy of all chili cook-offs - in the world! An outdoor festival where beer, sun, chili, and laughs flow freely. Over eight musical performances over four nights.',
       offers: {
         '@type': 'Offer',
-        price: '50',
+        price: '53',
         priceCurrency: 'USD',
         url: 'https://abowlofred.com/tickets',
         availability: 'https://schema.org/InStock',
         validFrom: '2023-11-01',
       },
+      organizer: {
+        '@type': 'Organization',
+        name: 'Original Terlingua International Championship Chili Cook-off',
+        url: 'https://abowlofred.com',
+      },
     },
   };
+
+  if (musiciansList.length > 0) {
+    schema.event.performer = musiciansList.map((musician) => ({
+      '@type': 'PerformingGroup',
+      name: musician.name,
+    }));
+  }
 
   return (
     <Helmet
@@ -154,6 +171,11 @@ const query = graphql`
         siteUrl: url
         defaultImage: image
         twitterUsername: twitter
+      }
+    }
+    musicians: allStrapiMusician(filter: { year: { eq: 2023 } }) {
+      nodes {
+        name
       }
     }
     ogImage: file(relativePath: { eq: "open-graph-v2.jpg" }) {

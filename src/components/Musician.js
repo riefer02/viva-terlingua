@@ -28,17 +28,22 @@ export default function Musician({ artist }) {
         ></GatsbyImage>
         {/* Artist Description */}
         <div className="order-1 flex flex-col justify-center items-center gap-8 w-full h-auto md:order-2 md:w-2/3 md:m-6 md:h-auto">
-          <div className="relative">
-            <h4 className="font-primary text-lg font-bold lg:text-3xl relative z-10 inline-block text-left md:text-4xl">
-              {setTime}
-            </h4>
-          </div>
-          <p className="px-4 leading-loose">{description}</p>
-          <a href={website} target="_blank">
-            <div className="font-primary text-base md:text-lg lg:text-2xl text-primary hover:text-primary-light transition relative w-9/10 text-center z-10 cursor-pointer m-auto lg:w-full">
-              {website}
+          {setTime && (
+            <div className="relative">
+              <h4 className="font-primary text-lg font-bold lg:text-3xl relative z-10 inline-block text-left md:text-4xl">
+                {setTime}
+              </h4>
             </div>
-          </a>
+          )}
+          {description && <p className="px-4 leading-loose">{description}</p>}
+
+          {website && (
+            <a href={website} target="_blank">
+              <div className="font-primary text-base md:text-lg lg:text-2xl text-primary hover:text-primary-light transition relative w-9/10 text-center z-10 cursor-pointer m-auto lg:w-full">
+                {website}
+              </div>
+            </a>
+          )}
         </div>
         {/* Spotify Player */}
         {spotifyID ? (
@@ -60,13 +65,15 @@ export default function Musician({ artist }) {
       <Spacer />
       {/* Music Video */}
       <div className="max-w-4xl mx-auto relative aspect-[16/9]">
-        <iframe
-          src={`https://www.youtube.com/embed/${musicVideoID}`}
-          title="artist video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute inset-0 w-full h-full"
-        ></iframe>
+        {musicVideoID && (
+          <iframe
+            src={`https://www.youtube.com/embed/${musicVideoID}`}
+            title="artist video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          ></iframe>
+        )}
       </div>
     </div>
   );
