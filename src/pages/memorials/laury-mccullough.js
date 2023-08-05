@@ -5,7 +5,8 @@ import Layout from 'components/Layout';
 import Seo from 'components/SEO';
 
 export default function LauryMcCulloughPage({ data: { memorialImg } }) {
-  const textStyles = 'text-xl leading-loose indent-10';
+  const textStyles = 'text-sm md:text-lg !leading-loose indent-10';
+  const linkStyle = 'text-primary underline hover:text-secondary';
 
   return (
     <div>
@@ -28,8 +29,8 @@ export default function LauryMcCulloughPage({ data: { memorialImg } }) {
           ]}
         />
         <div className="max-w-5xl mx-auto w-full">
-          <div className="bg-secondary py-4 shadow-md rounded-sm mb-10 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-5xl">
-            <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12 inline-block text-2xl text-gray-light-1">
+          <div className="bg-secondary py-4 shadow-md rounded-lg mb-10 md:mb-10 md:-skew-x-12 border-gray-light-1 border-2 max-w-3xl mx-auto">
+            <h1 className="underline md:no-underline py-4 md:py-0 md:skew-x-12 inline-block text-2xl md:text-3xl lg:text-4xl text-gray-light-1">
               Laury McCullough
             </h1>
           </div>
@@ -40,18 +41,18 @@ export default function LauryMcCulloughPage({ data: { memorialImg } }) {
               className="rounded-lg"
             />
           </div>
-          <div className="bg-gray-light-1 p-10 shadow-md mb-10 text-left rounded-lg border-2 max-w-5xl mx-auto flex flex-col gap-6">
+          <div className="bg-gray-light-1 p-10 px-4 md:px-8 shadow-md mb-10 text-left rounded-lg border-2 max-w-5xl mx-auto flex flex-col gap-6">
             <p className={textStyles}>
               It is with heavy hearts that we announce the passing of Laury
               McCullough on January 23, 2023. Laury was a beloved figure in the
               chili community, known for her passion and dedication to the
-              craft.{' '}
+              craft.
             </p>
 
             <p className={textStyles}>
               She served as a reporter and communications director for CTTCG and
               later as Facebook and website manager for the organization. Laury
-              was also a webmaster for OTICCC.{' '}
+              was also a webmaster for OTICCC.
             </p>
 
             <p className={textStyles}>
@@ -60,6 +61,7 @@ export default function LauryMcCulloughPage({ data: { memorialImg } }) {
               thoughts and condolences go out to all who were close to Laury and
               knew her well. A full obituary will be shared in the coming days.
             </p>
+
             <p className="text-lg md:text-2xl leading-loose text-center">
               Rest in peace, Laury McCullough.
             </p>

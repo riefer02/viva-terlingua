@@ -96,7 +96,7 @@ export default function Champions2022Page({
             ))}
           </div>
         </div>
-        <Spacer/>
+        <Spacer />
       </Layout>
     </div>
   );
@@ -110,7 +110,7 @@ function ChampionCard({ winner }) {
     <li className="flex flex-col items-center justify-center bg-tertiary-light rounded-lg p-6 py-8 shadow-md">
       <div className="w-full md:w-96 lg:w-80 mb-6 overflow-hidden rounded-lg">
         <GatsbyImage
-          image={getImage(image)}
+          image={getImage(image?.localFile)}
           alt={`${name}, ${ranking} Place, Saturday Chili Competition`}
           imgStyle={{ borderRadius: '8px' }}
           className="rounded-lg"
