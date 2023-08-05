@@ -59,7 +59,6 @@ function Seo({ description, lang, keywords, title, article }) {
       endDate: '2023-11-04',
       eventStatus: 'https://schema.org/EventScheduled', // Add event status
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', // Add event attendance mode
-      previousStartDate: '2022-11-03',
       location: {
         '@type': 'Place',
         name: 'Terlingua',
