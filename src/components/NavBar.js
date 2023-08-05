@@ -25,34 +25,32 @@ export default function NavBar() {
   const [mobileNavActive, setMobileNavActive] = useState(false);
   const [megaMenuActive, setMegaMenuActive] = useState(false);
 
-  const data = useStaticQuery(graphql`
-    query NavBarQuery {
-      allStrapiEvent {
-        nodes {
-          slug
-          title
-        }
-      }
-      allStrapiLocalAttraction {
-        nodes {
-          name
-          url
-        }
-      }
-      allStrapiMusician(filter: { year: { eq: 2023 } }) {
-        nodes {
-          slug
-          name
-        }
-      }
-      allStrapiSponsor(sort: { fields: priority, order: ASC }, limit: 8) {
-        nodes {
-          website
-          name
-        }
-      }
+  const data = useStaticQuery(graphql`query NavBarQuery {
+  allStrapiEvent {
+    nodes {
+      slug
+      title
     }
-  `);
+  }
+  allStrapiLocalAttraction {
+    nodes {
+      name
+      url
+    }
+  }
+  allStrapiMusician(filter: {year: {eq: 2023}}) {
+    nodes {
+      slug
+      name
+    }
+  }
+  allStrapiSponsor(sort: {priority: ASC}, limit: 8) {
+    nodes {
+      website
+      name
+    }
+  }
+}`);
 
   const menuItems = {
     'Events/News': { items: [...data.allStrapiEvent.nodes], path: '/events' },

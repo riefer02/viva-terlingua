@@ -3,26 +3,21 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Sponsors() {
-  const data = useStaticQuery(graphql`
-    query SponsorsQuery {
-      allStrapiSponsor(sort: { fields: priority, order: ASC }, limit: 8) {
-        edges {
-          node {
-            logo {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                  )
-                }
-              }
+  const data = useStaticQuery(graphql`query SponsorsQuery {
+  allStrapiSponsor(sort: {priority: ASC}, limit: 8) {
+    edges {
+      node {
+        logo {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
         }
       }
     }
-  `);
+  }
+}`);
 
   return (
     <div className="hidden md:block absolute z-30 w-full overflow-visible bg-gradient-to-b from-gray-400 to-transparent">
