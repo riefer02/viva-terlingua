@@ -15,7 +15,6 @@ const TicketsPage = ({ data }) => {
   const {
     strapiTicket: { title, marqueeImage, panelImage, meta },
   } = data;
-  const image = getImage(panelImage);
   const marqueeData = { title, marqueeImage };
 
   return (
@@ -32,7 +31,8 @@ const TicketsPage = ({ data }) => {
         <TicketsForm />
       </div>
       <Spacer />
-      <PanelImage image={image} />
+      <PanelImage image={panelImage} />
+      <Spacer />
     </Layout>
   );
 };
