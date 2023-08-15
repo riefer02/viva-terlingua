@@ -93,7 +93,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
+    posters: allStrapiGalleryImage(
+      filter: { role: { eq: "poster" } }
+      sort: { title: ASC }
+    ) {
       edges {
         node {
           image {
