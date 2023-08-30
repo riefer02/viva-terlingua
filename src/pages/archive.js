@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import Layout from 'components/Layout';
 import Seo from 'components/SEO';
 
-// Sample placeholder array
 const data = [
   {
     title: 'Frank X. Tolbert 2',
@@ -19,6 +18,11 @@ const data = [
 
   { title: '2022', type: 'champions', link: '/champions/2022' },
   { title: 'Resources', type: 'misc', link: '/resources' },
+  {
+    title: '2022 Cook Off Announcement',
+    type: 'misc',
+    link: '/terlingua-international-chili-cook-off', // change to 2022?
+  },
 ];
 
 const PageLink = ({ title, link }) => (
