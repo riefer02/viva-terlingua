@@ -9,6 +9,7 @@ import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/SponsorsGrid';
 import Spacer from 'components/Spacer';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
@@ -24,8 +25,9 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
+    trophySponsorsImg
   } = data;
-
+console.log(trophySponsorsImg)
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
 
   return (
@@ -48,6 +50,10 @@ const IndexPage = ({ data }) => {
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
       <Spacer />
       <Feature items={featured.featuresList} />
+      <Spacer />
+      <div className='max-w-xl mx-auto'>
+      <GatsbyImage image={getImage(trophySponsorsImg.image.localFile)}/>
+      </div>
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <Spacer />
@@ -133,6 +139,15 @@ export const pageQuery = graphql`
                 gatsbyImageData
               }
             }
+          }
+        }
+      }
+    }
+    trophySponsorsImg:strapiGalleryImage(title: {eq: "Trophy Sponsors 2023"}) {
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width:745)
           }
         }
       }
