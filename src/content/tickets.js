@@ -79,6 +79,6 @@ export const ticketDetails = [
       </Link>
     </span>
   </>,
-  "Interact with over forty-one unique vendors from across the nation and meet Texas' finest authors and artists.",
+  "Interact with over forty unique vendors from across the nation and meet Texas' finest authors and artists.",
   'Proceeds go towards fighting ALS, and local charities.',
 ];
