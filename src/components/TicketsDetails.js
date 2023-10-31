@@ -13,16 +13,16 @@ export default function TicketsDetails() {
                 <h2 className="text-lg md:text-2xl underline font-semibold">
                   ¡Viva Terlingua!
                 </h2>
-                {/* <p className="text-lg lg:text-xl text-gray-dark">
+                <p className="text-lg lg:text-xl text-gray-dark">
                 The ticket portal for the {new Date().getFullYear()} Terlingua Chili
                 Cook Off is{' '}
                 <span className="text-primary font-bold">closed</span>. You can
                 still purchase your tickets at the front gate when you arrive.
-              </p> */}
-                <p className="md:text-lg lg:text-xl font-primary">
+              </p>
+                {/* <p className="md:text-lg lg:text-xl font-primary">
                   Get your tickets to the {new Date().getFullYear()} Terlingua
                   Chili Cook Off:
-                </p>
+                </p> */}
                 <p className="md:text-lg lg:text-xl font-primary">
                   November 1st - 4th, {new Date().getFullYear()}
                 </p>

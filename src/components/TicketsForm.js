@@ -187,11 +187,12 @@ export default function TicketsForm() {
               />
             ))}
             <button
-              className="w-full py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-primary  hover:bg-secondary transition focus:outline-none"
+              className="opacity-70 w-full py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-primary  hover:bg-secondary transition focus:outline-none"
               type="submit"
               onClick={(e) => handleSubmit(e)}
+              disabled
             >
-              Review Order
+              Online Sales Closed
             </button>
             <div className="text-gray-dark text-[10px]">
               *All information is handled through
