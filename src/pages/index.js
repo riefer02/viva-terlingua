@@ -39,6 +39,7 @@ console.log(trophySponsorsImg)
           `terlingua`,
           `chili`,
           `cook off`,
+          `championship`,
           `tolbert`,
           `wick fowler`,
           `original`,
