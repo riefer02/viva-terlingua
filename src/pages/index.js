@@ -10,6 +10,7 @@ import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/SponsorsGrid';
 import Spacer from 'components/Spacer';
 import CardCarousel from '../components/CardCarousel';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
@@ -26,6 +27,7 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
+    trophySponsorsImg,
   } = data;
 
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -39,6 +41,7 @@ const IndexPage = ({ data }) => {
           `terlingua`,
           `chili`,
           `cook off`,
+          `championship`,
           `tolbert`,
           `wick fowler`,
           `original`,
@@ -52,6 +55,9 @@ const IndexPage = ({ data }) => {
       <Feature items={featured.featuresList} />
       <Spacer />
       <CardCarousel cardsData={allStrapiBlog.edges} />
+      <div className="max-w-xl mx-auto">
+        <GatsbyImage image={getImage(trophySponsorsImg.image.localFile)} />
+      </div>
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <Spacer />
@@ -111,7 +117,10 @@ export const pageQuery = graphql`
         text
       }
     }
-    posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
+    posters: allStrapiGalleryImage(
+      filter: { role: { eq: "poster" } }
+      sort: { title: ASC }
+    ) {
       edges {
         node {
           image {
@@ -138,6 +147,7 @@ export const pageQuery = graphql`
         }
       }
     }
+<<<<<<< HEAD
     allStrapiBlog {
       edges {
         node {
@@ -150,6 +160,15 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 600)
               }
             }
+=======
+    trophySponsorsImg: strapiGalleryImage(
+      title: { eq: "Trophy Sponsors 2023" }
+    ) {
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width: 745)
+>>>>>>> master
           }
         }
       }

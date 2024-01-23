@@ -40,6 +40,7 @@ const ResourcesPage = ({ data }) => {
           <h1 className="text-2xl text-center">Resources</h1>
           <ul className="flex flex-col py-8 px-4 gap-2">
             {resources.map((resource, index) => {
+            // TO DO: Add View and Download Feature
               const { name, file } = resource.node;
               if (!file) return;
 
@@ -93,7 +94,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    posters: allStrapiGalleryImage(filter: { role: { eq: "poster" } }) {
+    posters: allStrapiGalleryImage(
+      filter: { role: { eq: "poster" } }
+      sort: { title: ASC }
+    ) {
       edges {
         node {
           image {
