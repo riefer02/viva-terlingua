@@ -25,9 +25,9 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
-    trophySponsorsImg
+    trophySponsorsImg,
   } = data;
-console.log(trophySponsorsImg)
+
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
 
   return (
@@ -52,8 +52,8 @@ console.log(trophySponsorsImg)
       <Spacer />
       <Feature items={featured.featuresList} />
       <Spacer />
-      <div className='max-w-xl mx-auto'>
-      <GatsbyImage image={getImage(trophySponsorsImg.image.localFile)}/>
+      <div className="max-w-xl mx-auto">
+        <GatsbyImage image={getImage(trophySponsorsImg.image.localFile)} />
       </div>
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
@@ -144,11 +144,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    trophySponsorsImg:strapiGalleryImage(title: {eq: "Trophy Sponsors 2023"}) {
+    trophySponsorsImg: strapiGalleryImage(
+      title: { eq: "Trophy Sponsors 2023" }
+    ) {
       image {
         localFile {
           childImageSharp {
-            gatsbyImageData(width:745)
+            gatsbyImageData(width: 745)
           }
         }
       }
