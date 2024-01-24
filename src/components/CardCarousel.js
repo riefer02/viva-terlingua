@@ -4,26 +4,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import slugify from '../utils/slugify';
 
-const defaultCards = [
-  {
-    image: 'https://placehold.co/400',
-    link: '/champions/2022',
-    alt: 'The 2022 OTICCC Winner',
-    cta: '2022 Champions',
-  },
-  {
-    image: 'https://placehold.co/400',
-    link: '/memorials/laury-mccullough',
-    alt: 'Laury McCullough',
-    cta: 'In Memory',
-  },
-  {
-    image: 'https://placehold.co/400',
-    link: '/collages/2022',
-    alt: '',
-    cta: 'Art Collage',
-  },
-];
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -38,7 +18,7 @@ const CardCarousel = ({ cardsData }) => {
     autoplay: true,
     autoplaySpeed: 3000, // Set the duration between slides
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     responsive: [
       {
@@ -66,30 +46,39 @@ const CardCarousel = ({ cardsData }) => {
     <div className="max-w-6xl mx-auto">
       <div id="gallery" className="md:w-full py-8 px-6">
         <Slider {...settings}>
-          {cardsData.map((card, index) => (
-            <Link to={slugify(card.node.title)}>
-              <div key={index} className="px-2 group">
-                <div className="bg-tertiary-light p-2 rounded-lg">
-                  <div className="bg-gray-light-1 rounded-lg">
-                    <GatsbyImage
-                      image={getImage(card.node.heroImage.localFile)}
-                      alt={card.node.title}
-                      className="rounded-t-l max-w-[400px] w-full h-0 pb-[100%] relative"
-                      objectFit="cover"
-                      objectPosition="50% 50%"
-                    />
-                    <div className="p-4 px-6 flex flex-col text-left items-center min-h-[86px] justify-start text-gray-dark bg-gray-light-1 w-full group-hover:bg-primary-light group-hover:text-white transition-colors rounded-b">
-                      <div className="mb-2 line-clamp-2 min-h-[54px]">{card.node.title}</div>
-                      <div className="mb-2 text-sm w-full text-primary-light group-hover:text-white transition">{card.node.author}</div>
-                      <div className="text-sm w-full">
-                        {formatDate(card.node.publishedAt)}
+          {cardsData.map(({ node }, index) => {
+            const { title, description, publishedAt, tags, heroImage } = node;
+            const imagePath = getImage(heroImage.imageMedia.localFile);
+
+            return (
+              <Link to={`/blog/${slugify(title)}`} key={index}>
+                <div className="px-2 group">
+                  <div className="bg-tertiary-light p-2 rounded-lg">
+                    <div className="bg-gray-light-1 rounded-lg">
+                      {imagePath && (
+                        <GatsbyImage
+                          image={imagePath}
+                          alt={heroImage.imageAlt || 'Blog Post Image'}
+                          className="rounded-t-lg max-w-[400px] w-full"
+                        />
+                      )}
+                      <div className="p-4 px-6 flex flex-col text-left items-center min-h-[86px] justify-start text-gray-dark bg-gray-light-1 w-full group-hover:bg-primary-light group-hover:text-white transition-colors rounded-b-lg">
+                        <h3 className="mb-2 line-clamp-2 min-h-[54px]">
+                          {title}
+                        </h3>
+                        <p className="mb-2 text-sm w-full text-primary-light group-hover:text-white transition">
+                          {tags.map((tag) => tag.name).join(', ')}
+                        </p>
+                        <p className="text-sm w-full">
+                          {formatDate(publishedAt)}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </Slider>
       </div>
     </div>

@@ -47,7 +47,7 @@ exports.createPages = async ({ actions, graphql }) => {
   data.allStrapiBlog.edges.forEach((edge) => {
     const { title, id } = edge.node;
     actions.createPage({
-      path: slugify(title),
+      path: `/blog/${slugify(title)}`,
       component: path.resolve(`./src/templates/blog.js`),
       context: {
         id: id,

@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-sitemap": "^0.8.1",
+    "@tailwindcss/typography": "^0.5.10",
     "netlify-cli": "^5.4.16",
     "sass": "^1.49.7"
   },

@@ -52,26 +52,7 @@ export default function NavBar() {
         }
       }
     }
-  }
-  allStrapiLocalAttraction {
-    nodes {
-      name
-      url
-    }
-  }
-  allStrapiMusician(filter: {year: {eq: 2023}}) {
-    nodes {
-      slug
-      name
-    }
-  }
-  allStrapiSponsor(sort: {priority: ASC}, limit: 8) {
-    nodes {
-      website
-      name
-    }
-  }
-}`);
+  `);
 
   const menuItems = {
     'Events/News': { items: [...data.allStrapiEvent.nodes], path: '/events' },

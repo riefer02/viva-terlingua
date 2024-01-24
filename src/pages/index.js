@@ -147,20 +147,29 @@ export const pageQuery = graphql`
         }
       }
     }
-<<<<<<< HEAD
-    allStrapiBlog {
+    allStrapiBlog(sort: { publishedAt: DESC }) {
       edges {
         node {
           title
-          author
+          description
           publishedAt
+          tags {
+            name
+            slug
+          }
           heroImage {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(width: 600)
+            imageMedia {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH)
+                }
               }
             }
-=======
+            imageAlt
+          }
+        }
+      }
+    }
     trophySponsorsImg: strapiGalleryImage(
       title: { eq: "Trophy Sponsors 2023" }
     ) {
@@ -168,7 +177,6 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             gatsbyImageData(width: 745)
->>>>>>> master
           }
         }
       }
