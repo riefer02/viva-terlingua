@@ -4,8 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/fontawesome.js';
 
-const cardHeaderText =
-  'text-lg mb-2 md:text-xl lg:text-3xl text-left font-secondary';
+const cardHeaderText = 'text-2xl mb-2 lg:text-3xl text-left font-secondary';
 const cardBodyText = 'text-left mb-4 lg:mb-0 md:text-lg lg:text-xl';
 
 export default function MainFeature({ mainFeature }) {

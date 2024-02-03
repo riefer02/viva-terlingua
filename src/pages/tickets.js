@@ -24,15 +24,16 @@ const TicketsPage = ({ data }) => {
         keywords={[`terlingua`, `chili`, `cook`, 'off', 'tickets']}
         description={meta.description}
       />
+
       <Marquee marquee={marqueeData} />
+      {/* <div class="lg:py-8"></div> */}
       <Spacer />
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-4">
         <TicketsDetails />
         <TicketsForm />
       </div>
       <Spacer />
       <PanelImage image={panelImage} />
-      <Spacer />
     </Layout>
   );
 };

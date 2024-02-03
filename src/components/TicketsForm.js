@@ -160,23 +160,19 @@ export default function TicketsForm() {
     }
   };
   return (
-    <div>
-      <div className="p-2 lg:p-4 bg-tertiary-light rounded-lg max-w-md mx-auto">
+    <div className="mx-auto w-full">
+      <div className="bg-tertiary-light p-4 lg:p-4 sm:rounded-lg">
         <div
           ref={formRef}
-          className="p-2 md:p-6 bg-white rounded-lg shadow-md w-full"
+          className="bg-white mx-auto w-full shadow-md rounded-lg p-4 md:p-6 prose prose-sm md:prose-lg lg:prose-xl"
         >
-          <h2 className="text-lg md:text-2xl underline font-bold text-gray-dark text-center">
-            Ticket Order Form
-          </h2>
-          <div className="py-2">
-            {message && (
-              <div ref={errorRef} className="-mt-1 -mb-1 text-primary text-xs">
-                {message}
-              </div>
-            )}
-          </div>
-          <form className=" space-y-3">
+          <h2 className="text-center">Ticket Order Form</h2>
+          {message && (
+            <p ref={errorRef} className="text-primary">
+              {message}
+            </p>
+          )}
+          <form onSubmit={handleSubmit} className="space-y-4">
             {ticketFormInputs.map((input, index) => (
               <TicketsFormInput
                 key={index}
@@ -187,20 +183,19 @@ export default function TicketsForm() {
               />
             ))}
             <button
-              className="opacity-70 w-full py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-primary  hover:bg-secondary transition focus:outline-none"
+              className="mt-4 w-full py-2 text-white bg-primary hover:bg-secondary focus:outline-none rounded-lg transition-opacity opacity-70 disabled:opacity-50"
               type="submit"
-              onClick={(e) => handleSubmit(e)}
               disabled
             >
               Online Sales Closed
             </button>
-            <div className="text-gray-dark text-[10px]">
+            <p className="text-xs text-gray-dark">
               *All information is handled through
-              <a className="text-indigo-500 mx-1" href="https://stripe.com/">
+              <a href="https://stripe.com/" className="text-indigo-500 mx-1">
                 Stripe
               </a>
               payment integration systems.
-            </div>
+            </p>
           </form>
         </div>
       </div>

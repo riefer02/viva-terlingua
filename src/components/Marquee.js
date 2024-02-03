@@ -22,39 +22,41 @@ export default function Marquee({ marquee }) {
   `);
 
   return (
-    <div className="relative mx-auto h-[172px] sm:h-[200px] md:h-[280px] lg:h-[415px] max-w-7xl rounded-lg overflow-hidden text-center">
-      <div className="">
-        <div className="absolute top-0 left-0 sm:h-[85%] overflow-hidden rounded-lg w-full">
+    <div className="relative mx-auto max-w-7xl overflow-hidden text-center">
+      <div className="flex flex-col">
+        <div className="top-0 left-0 overflow-hidden w-full max-h-[356px]">
           <Sponsors />
           <GatsbyImage
             image={image}
             alt="Fun exciting scene from Terlingua"
             placeholder="blurred"
-            className="w-full h-full max-h-[140px] md:max-h-[unset]"
+            className="w-full h-full"
           />
         </div>
 
-        <div className="absolute bottom-0 lg:bottom-4 flex items-center justify-center w-full">
-          <div className="bg-secondary-dark max-w-xl lg:max-w-3xl w-full px-4 py-2 pb-4 min-h-[70px] lg:min-h-[80px] shadow-lg mx-auto text-gray-light-1 flex flex-col justify-center items-center clip-marquee">
-            <h1 className="md:text-xl lg:text-2xl">{marquee.title}</h1>
+        <div className=" bottom-0 lg:bottom-4 flex items-center justify-center w-full">
+          <div className=" bg-white py-4 xl:py-6 xl:rounded-b-lg flex flex-col gap-2 w-full min-h-[70px] lg:min-h-[80px] shadow-lg mx-auto text-gray-dark justify-center items-center">
+            <h1 className="text-3xl md:text-3xl lg:text-4xl max-w-sm sm:max-w-none leading-normal">
+              {marquee.title}
+            </h1>
             {activeSub && (
-              <h2 className="text-xs md:text-base lg:text-lg">
-                {marquee.subhead}
-              </h2>
+              <h2 className="text-xl lg:text-2xl">{marquee.subhead}</h2>
             )}
           </div>
         </div>
 
         <div className="hidden md:block absolute bottom-[-40px] lg:bottom-0 left-8 w-[160px]">
           <GatsbyImage
-            image={getImage(data.strapiSponsor?.logo?.localFile)}
+            image={getImage(
+              data.strapiSponsor?.logo?.localFile?.childImageSharp
+            )}
             alt="Liftmasters Logo"
             placeholder="blurred"
             className="h-full w-full"
           />
         </div>
 
-        <div className="bg-primary-light -skew-x-12 text-white absolute bottom-[-40px] lg:bottom-0 md:right-4 lg:right-8 p-2 px-4 transform-skew hidden md:block">
+        <div className="bg-primary-light -skew-x-12 text-white absolute bottom-[-40px] lg:bottom-4 md:right-4 lg:right-8 p-2 px-4 transform-skew hidden md:block">
           <div className="skew-x-12 text-sm">
             Nov 1st-4th {new Date().getFullYear()}
           </div>

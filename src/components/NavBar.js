@@ -164,7 +164,7 @@ const MobileNav = ({ mobileNavActive }) => {
     <div
       className={`${
         mobileNavActive ? 'fixed' : 'hidden'
-      } top-[64px] sm:top-[114px] left-0 w-[100vw] h-[calc(100vh-64px)] bg-primary bg-opacity-100`}
+      } top-[64px] sm:top-[114px] left-0 w-[100vw] h-[calc(100vh-65px)] bg-primary bg-opacity-100`}
     >
       <ul
         className={

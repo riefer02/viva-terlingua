@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   return (
     <div className="text-gray-dark">
       <Header />
-      <main className="min-h-screen max-w-8xl mx-auto lg:mt-8 px-2 mt-[74px] sm:mt-2">
+      <main className="min-h-screen max-w-7xl mx-auto xl:mt-0 mt-[64px] sm:mt-0">
         {children}
       </main>
       <Footer />

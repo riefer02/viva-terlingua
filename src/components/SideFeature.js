@@ -19,9 +19,7 @@ export default function SideFeature({ feature }) {
         </div>
         <div className="flex flex-col py-4 px-6 lg:px-6 lg:py-6 col-span-8 justify-between lg:flex-row lg:group-hover:text-gray-light-1 relative">
           <div className="text-left  lg:pr-28">
-            <h3 className="text-xl lg:text-2xl mb-2 font-secondary underline">
-              {title}
-            </h3>
+            <h3 className="text-2xl mb-2 font-secondary underline">{title}</h3>
             <p className="md:text-lg font-primary mb-4 lg:mb-0">
               {description}
             </p>

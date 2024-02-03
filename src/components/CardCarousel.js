@@ -18,7 +18,7 @@ const CardCarousel = ({ cardsData }) => {
     autoplay: true,
     autoplaySpeed: 3000, // Set the duration between slides
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -44,34 +44,45 @@ const CardCarousel = ({ cardsData }) => {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div id="gallery" className="md:w-full py-8 px-6">
+      <div id="gallery" className="w-full py-8 px-4 md:px-6">
         <Slider {...settings}>
           {cardsData.map(({ node }, index) => {
             const { title, description, publishedAt, tags, heroImage } = node;
             const imagePath = getImage(heroImage.imageMedia.localFile);
 
             return (
-              <Link to={`/blog/${slugify(title)}`} key={index}>
+              <Link
+                to={`/blog/${slugify(title)}`}
+                key={index}
+                className="block"
+              >
                 <div className="px-2 group">
-                  <div className="bg-tertiary-light p-2 rounded-lg">
-                    <div className="bg-gray-light-1 rounded-lg">
+                  <div className="flex flex-col bg-tertiary-light p-2 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 min-h-[420px]">
+                    <div className="bg-gray-100 rounded-lg overflow-hidden flex flex-col justify-between flex-grow">
                       {imagePath && (
                         <GatsbyImage
                           image={imagePath}
                           alt={heroImage.imageAlt || 'Blog Post Image'}
-                          className="rounded-t-lg max-w-[400px] w-full"
+                          className="h-48 w-full object-cover"
                         />
                       )}
-                      <div className="p-4 px-6 flex flex-col text-left items-center min-h-[86px] justify-start text-gray-dark bg-gray-light-1 w-full group-hover:bg-primary-light group-hover:text-white transition-colors rounded-b-lg">
-                        <h3 className="mb-2 line-clamp-2 min-h-[54px]">
-                          {title}
-                        </h3>
-                        <p className="mb-2 text-sm w-full text-primary-light group-hover:text-white transition">
-                          {tags.map((tag) => tag.name).join(', ')}
-                        </p>
-                        <p className="text-sm w-full">
-                          {formatDate(publishedAt)}
-                        </p>
+                      <div className="p-4 text-left flex flex-col justify-between flex-grow">
+                        <div>
+                          <h3 className="text-lg font-semibold line-clamp-2 mb-2">
+                            {title}
+                          </h3>
+                          <p className="mb-2 text-sm line-clamp-3 text-primary-dark">
+                            {description}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-primary-light mb-1">
+                            {tags.map((tag) => `#${tag.name}`).join(', ')}
+                          </p>
+                          <p className="text-xs text-gray-600">
+                            {formatDate(publishedAt)}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
