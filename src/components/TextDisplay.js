@@ -32,7 +32,7 @@ export default function TextDisplay({ texts }) {
 
   return (
     <div className="bg-tertiary-light p-4 lg:p-4 shadow-md text-gray-dark rounded-lg max-w-5xl mx-auto">
-      <div className="shadow-md bg-white p-5 lg:px-10 py-6 rounded-lg">
+      <div className="shadow-md bg-gray-light-1 p-5 lg:px-10 py-6 rounded-lg">
         <div className="border-b-primary-light border-b mb-4">
           {postDate && (
             <div className="text-base md:text-lg lg:text-xl mb-2 font-primary">

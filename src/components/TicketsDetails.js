@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function TicketsDetails() {
   return (
     <article className="bg-tertiary-light p-4 lg:p-4 lg:rounded-lg">
-      <section className="container mx-auto p-2 px-4 md:p-4 bg-white shadow-md rounded-lg">
+      <section className="container mx-auto p-2 px-4 md:p-4 bg-gray-light-1 shadow-md rounded-lg">
         <div className="prose lg:prose-lg mx-auto">
           <header>
             <p>

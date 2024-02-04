@@ -164,7 +164,7 @@ export default function TicketsForm() {
       <div className="bg-tertiary-light p-4 lg:p-4 sm:rounded-lg">
         <div
           ref={formRef}
-          className="bg-white mx-auto w-full shadow-md rounded-lg p-4 md:p-6 prose prose-sm md:prose-lg lg:prose-xl"
+          className="bg-gray-light-1 mx-auto w-full shadow-md rounded-lg p-4 md:p-6 prose prose-sm md:prose-lg lg:prose-xl"
         >
           <h2 className="text-center">Ticket Order Form</h2>
           {message && (

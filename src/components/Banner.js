@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 
 export default function Banner() {
   const linkStyle =
-    'mx-2 uppercase text-tertiary-dark hover:text-secondary transition underline';
+    'mx-2 uppercase text-primary hover:text-secondary transition underline';
 
   return (
     <div className="banner hidden sm:flex items-center justify-center bg-gray-light-1 min-h-[50px]">
-      <div className="flex items-center justify-center w-full container mx-auto text-primary">
+      <div className="flex items-center justify-center w-full container mx-auto ">
         <p className="text-lg">
           Buy Tickets
           <Link to="/tickets" className={linkStyle}>

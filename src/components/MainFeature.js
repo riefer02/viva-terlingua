@@ -11,7 +11,7 @@ export default function MainFeature({ mainFeature }) {
   return (
     <Link
       to={mainFeature.slug}
-      className="flex w-full col-span-4 mb-10 lg:mb-0 shadow-md rounded-lg bg-white lg:bg-transparent group relative min-h-[510px] md:min-h-[540px]"
+      className="flex w-full col-span-4 mb-10 lg:mb-0 shadow-md rounded-lg bg-gray-light-1 lg:bg-transparent group relative min-h-[510px] md:min-h-[540px]"
     >
       <div className="absolute top-0 left-0 z-20 h-full w-full">
         <div className="lg:group-hover:bg-secondary hidden w-[60%] top-0 xxl:-left-[30%] transition ease-linear lg:block lg:group-hover:-translate-x-2 lg:group-hover:-skew-x-12 shadow-md bg-primary-light relative mx-auto m-[unset] lg:top-[2%] lg:right-[0%] -skew-x-12">
@@ -24,7 +24,7 @@ export default function MainFeature({ mainFeature }) {
             ></FontAwesomeIcon>
           </h2>
         </div>
-        <div className="absolute py-4 px-6 lg:px-4 lg:py-6 bottom-0 bg-white lg:bg-secondary-dark rounded-b-lg lg:bg-opacity-80 w-full  lg:group-hover:bg-secondary lg:group-hover:bg-opacity-100 transition ease-linear">
+        <div className="absolute py-4 px-6 lg:px-4 lg:py-6 bottom-0 bg-gray-light-1 lg:bg-secondary-dark rounded-b-lg lg:bg-opacity-80 w-full  lg:group-hover:bg-secondary lg:group-hover:bg-opacity-100 transition ease-linear">
           <h3
             className={`lg:text-white lg:text-center underline ${cardHeaderText}`}
           >
