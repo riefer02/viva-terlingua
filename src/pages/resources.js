@@ -35,28 +35,48 @@ const ResourcesPage = ({ data }) => {
       />
       {marqueeData.marqueeImage && <Marquee marquee={marqueeData} />}
       <Spacer />
-      <div className="w-full min-h-[260px] px-8">
+      <div className="w-full min-h-[260px] px-2">
         <div className="shadow-md mx-auto bg-gray-100 max-w-[470px] lg:max-w-[660px] py-4 rounded-lg">
           <h1 className="text-2xl text-center">Resources</h1>
-          <ul className="flex flex-col py-8 px-4 gap-2">
+          <ul className="flex flex-col py-8 px-2 gap-2">
             {resources.map((resource, index) => {
-            // TO DO: Add View and Download Feature
               const { name, file } = resource.node;
-              if (!file) return;
+              if (!file) return null; // Skip rendering if no file is present
 
               return (
-                <a
-                  className="bg-tertiary border-dark-grey text-lg lg:text-xl rounded-lg flex justify-between items-center px-4 py-2 transition-all ease-in cursor-pointer text-dark-grey hover:bg-secondary hover:text-gray-light-1"
+                <li
                   key={index}
-                  href={file.localFile.publicURL}
-                  download
+                  className="bg-tertiary border-dark-grey rounded-lg flex justify-between gap-2 items-center px-4 py-2 text-dark-grey mb-2"
                 >
-                  <h4>{name}</h4>
-                  <FontAwesomeIcon
-                    className="text-xl ml-2"
-                    icon="download"
-                  ></FontAwesomeIcon>
-                </a>
+                  <h4 className="text-lg lg:text-xl flex-grow line-clamp-1">
+                    {name}
+                  </h4>
+                  <div className="flex items-center justify-end">
+                    <a
+                      href={file.localFile.publicURL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:bg-secondary hover:text-gray-light-1 transition-all ease-in cursor-pointer rounded-lg flex items-center justify-center p-2 mr-1 md:mr-2 lg:mr-4"
+                    >
+                      <FontAwesomeIcon
+                        className="text-xl"
+                        icon="eye"
+                        title="View"
+                      ></FontAwesomeIcon>
+                    </a>
+                    <a
+                      href={file.localFile.publicURL}
+                      download
+                      className="hover:bg-secondary hover:text-gray-light-1 transition-all ease-in cursor-pointer rounded-lg flex items-center justify-center p-2"
+                    >
+                      <FontAwesomeIcon
+                        className="text-xl"
+                        icon="download"
+                        title="Download"
+                      ></FontAwesomeIcon>
+                    </a>
+                  </div>
+                </li>
               );
             })}
           </ul>

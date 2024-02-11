@@ -55,11 +55,11 @@ const Accordion = ({ question, answer }) => {
       </button>
       <animated.div
         style={expand}
-        className="overflow-hidden transition-all duration-200 ease-in-out w-full max-w-[470px] lg:max-w-[660px] mb-2" // Added mb-2 for bottom margin
+        className="overflow-hidden transition-all duration-200 ease-in-out w-full max-w-[470px] lg:max-w-[660px] mb-1"
       >
         <div
           ref={contentRef}
-          className="bg-gray-100 shadow-md w-full border-secondary border-2 border-t-0 rounded-b-lg py-4 px-4 text-gray-dark group-focus:ring-2 focus:ring-tertiary lg:text-lg"
+          className="bg-gray-100 shadow-md w-full border-secondary border-2 border-t-0 py-4 px-4 text-gray-dark group-focus:ring-2 focus:ring-tertiary lg:text-lg"
         >
           {answer}
         </div>

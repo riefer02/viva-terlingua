@@ -6,6 +6,7 @@ import {
   faArrowCircleDown,
   faExpand,
   faChevronDown,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 library.add(
   faPepperHot,
@@ -13,5 +14,6 @@ library.add(
   faDownload,
   faArrowCircleDown,
   faExpand,
-  faChevronDown
+  faChevronDown,
+  faEye
 );
