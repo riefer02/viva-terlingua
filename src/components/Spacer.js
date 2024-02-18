@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const sizeToTailwindClass = {
   xs: 'py-2 md:py-4 lg:py-8',
-  sm: 'py-4 md:py-8 lg:py-12',
+  sm: 'py-4 md:py-8 lg:py-8',
   md: 'py-8 md:py-12 lg:py-16',
   lg: 'py-12 md:py-16 lg:py-20',
 };

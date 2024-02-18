@@ -5,7 +5,7 @@ import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-function Seo({ description, lang, keywords, title, article }) {
+function Seo({ description, lang, keywords, title, article, schemaMarkup }) {
   const { pathname } = useLocation();
   const { site, ogImage, musicians } = useStaticQuery(query);
 
@@ -90,6 +90,10 @@ function Seo({ description, lang, keywords, title, article }) {
       },
     },
   };
+
+  if (schemaMarkup) {
+    schema = { ...schema, ...schemaMarkup };
+  }
 
   if (musiciansList.length > 0) {
     schema.event.performer = musiciansList.map((musician) => ({

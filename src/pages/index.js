@@ -9,11 +9,13 @@ import PanelImage from 'components/PanelImage';
 import ImageGallery from 'components/ImageGallery';
 import SponsorsGrid from 'components/SponsorsGrid';
 import Spacer from 'components/Spacer';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import CardCarousel from '../components/CardCarousel';
+import SectionTitle from '../components/SectionTitle';
 // import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
 
 const IndexPage = ({ data }) => {
   const {
+    allStrapiBlog,
     strapiHomePage: {
       title,
       content,
@@ -25,7 +27,6 @@ const IndexPage = ({ data }) => {
     },
     posters,
     sponsorLogos,
-    trophySponsorsImg,
   } = data;
 
   const marqueeData = { title, marqueeImage, subhead: secondaryText };
@@ -52,9 +53,9 @@ const IndexPage = ({ data }) => {
       <Spacer />
       <Feature items={featured.featuresList} />
       <Spacer />
-      <div className="max-w-xl mx-auto">
-        <GatsbyImage image={getImage(trophySponsorsImg.image.localFile)} />
-      </div>
+      <SectionTitle title="news and announcements" />
+      <CardCarousel cardsData={allStrapiBlog.edges} />
+
       <Spacer />
       <SponsorsGrid sponsorLogos={sponsorLogos.edges} />
       <Spacer />
@@ -63,7 +64,6 @@ const IndexPage = ({ data }) => {
       <Quote quote={content}></Quote>
       <Spacer />
       <PanelImage image={panelImage} />
-      <Spacer />
     </Layout>
   );
 };
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 600)
+                gatsbyImageData
               }
             }
           }
@@ -144,13 +144,25 @@ export const pageQuery = graphql`
         }
       }
     }
-    trophySponsorsImg: strapiGalleryImage(
-      title: { eq: "Trophy Sponsors 2023" }
-    ) {
-      image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData(width: 745)
+    allStrapiBlog(sort: { publishedAt: DESC }) {
+      edges {
+        node {
+          title
+          description
+          publishedAt
+          tags {
+            name
+            slug
+          }
+          heroImage {
+            imageMedia {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH)
+                }
+              }
+            }
+            imageAlt
           }
         }
       }

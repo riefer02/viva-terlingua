@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { useSpring, animated } from '@react-spring/web';
 import Hamburger from './Hamburger';
+import slugify from '../utils/slugify';
 
 const desktopNavLinks = [
-  { label: 'Home', slug: '' },
+  // { label: 'Home', slug: '' },
   { label: 'Tickets', slug: 'tickets' },
   { label: 'Music', slug: 'music' },
   { label: 'About', slug: 'about' },
   { label: 'Resources', slug: 'resources' },
+  { label: 'FAQ', slug: 'faqs' },
+  { label: 'Blog', slug: 'blogs' },
 ];
 
 const mobileNavLinks = [
@@ -16,9 +19,11 @@ const mobileNavLinks = [
   { label: 'Tickets', slug: 'tickets' },
   { label: 'Music', slug: 'music' },
   { label: 'About', slug: 'about' },
+  { label: 'FAQ', slug: 'faqs' },
   { label: 'Resources', slug: 'resources' },
   { label: `News & Events`, slug: 'events' },
   { label: 'Local Attractions', slug: 'local-attractions' },
+  { label: 'Blog', slug: 'blogs' },
 ];
 
 export default function NavBar() {
@@ -30,6 +35,11 @@ export default function NavBar() {
       allStrapiEvent {
         nodes {
           slug
+          title
+        }
+      }
+      allStrapiBlog(sort: { publishedAt: DESC }, limit: 8) {
+        nodes {
           title
         }
       }
@@ -62,6 +72,7 @@ export default function NavBar() {
       path: '/local-attractions',
     },
     Sponsors: { items: [...data.allStrapiSponsor.nodes], path: '' },
+    Blogs: { items: [...data.allStrapiBlog.nodes], path: '/blogs' },
   };
 
   const [props, api] = useSpring(() => ({
@@ -115,13 +126,10 @@ export default function NavBar() {
           <div
             className={`${
               !megaMenuActive ? 'pointer-events-none' : ''
-            } min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none md:block`}
+            } md:!grid grid-cols-5 gap-4 min-w-[100%] absolute top-[110px] z-50 text-gray-dark left-0 py-2 pb-4 px-4 group-hover:border-tertiary-light shadow-md overflow-hidden transition bg-tertiary-light hidden border-none`}
           >
             {Object.keys(menuItems).map((category, index) => (
-              <div
-                key={index}
-                className="md:w-[25%] w-full h-full float-left bg-tertiary-light"
-              >
+              <div key={index} className="bg-tertiary-light">
                 <h3 className="relative border-b mb-2 lg:text-lg font-secondary border-primary-light">
                   <Link to={menuItems[category].path}>
                     <span className="hover:text-primary transition">
@@ -129,21 +137,25 @@ export default function NavBar() {
                     </span>
                   </Link>
                 </h3>
-                <div className="flex gap-2 flex-col flex-wrap basis-[50%]">
-                  {menuItems[category].items.map((item, index) => (
-                    <Link
-                      key={index}
-                      to={item.slug || item.website || item.url}
-                      className="font-primary block slider-bg cursor-pointer -ml-2"
-                      target={item.website ? '_blank' : '_self'}
-                    >
-                      <div className="slider-bg ">
-                        <span className="slider-text px-2">
+                <div className="flex flex-col gap-2">
+                  {menuItems[category].items.map((item, index) => {
+                    const path =
+                      category === 'Blogs'
+                        ? `/blog/${slugify(item.title)}`
+                        : item.slug || item.website || item.url;
+                    return (
+                      <Link
+                        key={index}
+                        to={path}
+                        className="font-primary block cursor-pointer"
+                        target={item.website ? '_blank' : '_self'}
+                      >
+                        <span className="px-0 line-clamp-1">
                           {item.title || item.name}
                         </span>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -164,11 +176,11 @@ const MobileNav = ({ mobileNavActive }) => {
     <div
       className={`${
         mobileNavActive ? 'fixed' : 'hidden'
-      } top-[64px] sm:top-[114px] left-0 w-[100vw] h-[calc(100vh-64px)] bg-primary bg-opacity-100`}
+      } top-[64px] sm:top-[114px] left-0 w-[100vw] h-[calc(100vh-65px)] bg-primary bg-opacity-100`}
     >
       <ul
         className={
-          'h-full flex flex-col p-4 py-8 gap-8 items-center justify-start uppercase'
+          'h-full flex flex-col p-4 py-8 gap-4 items-center justify-start uppercase'
         }
       >
         {mobileNavLinks.map((navLink, index) => (

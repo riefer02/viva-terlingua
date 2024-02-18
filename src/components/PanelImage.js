@@ -8,7 +8,7 @@ export default function PanelImage({ image }) {
     <GatsbyImage
       image={getImage(image.localFile)}
       alt="People enjoying themselves in Terlingua"
-      className="md:h-[200px] h-[14vh] lg:h-[400px] rounded-lg"
+      className="md:h-[200px] h-[14vh] lg:h-[400px] rounded-t-lg"
     />
   );
 }

@@ -103,6 +103,12 @@ module.exports = {
             },
           },
           {
+            singularName: 'faq',
+            queryParams: {
+              populate: 'deep',
+            },
+          },
+          {
             singularName: 'musician',
             queryParams: {
               populate: 'deep',

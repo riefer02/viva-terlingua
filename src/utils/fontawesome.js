@@ -5,11 +5,15 @@ import {
   faDownload,
   faArrowCircleDown,
   faExpand,
+  faChevronDown,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 library.add(
   faPepperHot,
   faArrowRight,
   faDownload,
   faArrowCircleDown,
-  faExpand
+  faExpand,
+  faChevronDown,
+  faEye
 );

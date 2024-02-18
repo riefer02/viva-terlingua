@@ -22,11 +22,11 @@ const ThankYouPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       <Spacer />
       <div className="bg-tertiary-light max-w-4xl mx-auto p-2 lg:p-4 rounded-lg">
-        <p className="text-xl leading-loose bg-white p-2 lg:p-4 rounded-lg text-left indent-8 font-primary">
+        <p className="text-xl leading-loose bg-gray-light-1 p-2 lg:p-4 rounded-lg text-left indent-8 font-primary">
           {message}
         </p>
       </div>
-      <Spacer/>
+      <Spacer />
       <QuickNav />
       <PanelImage image={getImage(panelImage)} />
     </Layout>

@@ -8,7 +8,7 @@ function Card({ item }) {
   // `slug` for internal links, `url` for external links
   const { image, slug, name, url, squareImage } = item.node;
   const cardImage = squareImage ? squareImage.localFile : image?.localFile;
-  const cardStyles = `p-4 block group max-w-[400px] mx-auto`;
+  const cardStyles = `p-4 block group max-w-[400px] mx-auto text-center`;
   const cardContentStyles = '';
   const cardLinkImgWrapperStyles = `block`;
   const cardGalleryCardImgStyles = 'rounded-t-lg h-[300px] shadow';
