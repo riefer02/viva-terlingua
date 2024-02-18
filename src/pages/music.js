@@ -58,7 +58,7 @@ const MusicPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Spacer />
-      <Itinerary itinerary={itinerary} />
+      <Itinerary year={2024} />
       <Spacer />
       <CardGallery items={allStrapiMusician.edges} />
       <Spacer />
@@ -69,51 +69,59 @@ const MusicPage = ({ data }) => {
 
 export default MusicPage;
 
-export const pageQuery = graphql`query MusicQuery {
-  panelImage: strapiGalleryImage(role: {eq: "panel"}, page: {eq: "music"}) {
-    title
-    description
-    image {
-      localFile {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
-  }
-  primaryImage: strapiGalleryImage(role: {eq: "marquee"}, page: {eq: "music"}) {
-    title
-    description
-    image {
-      localFile {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
-  }
-  allStrapiMusician(sort: {order: ASC}, filter: {year: {eq: 2023}}) {
-    edges {
-      node {
-        name
-        setTime
-        slug
-        image {
-          id
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        squareImage {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
+export const pageQuery = graphql`
+  query MusicQuery {
+    panelImage: strapiGalleryImage(
+      role: { eq: "panel" }
+      page: { eq: "music" }
+    ) {
+      title
+      description
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
           }
         }
       }
     }
+    primaryImage: strapiGalleryImage(
+      role: { eq: "marquee" }
+      page: { eq: "music" }
+    ) {
+      title
+      description
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+    allStrapiMusician(sort: { order: ASC }, filter: { year: { eq: 2023 } }) {
+      edges {
+        node {
+          name
+          setTime
+          slug
+          image {
+            id
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+          squareImage {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
   }
-}`;
+`;

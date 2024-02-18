@@ -9,16 +9,13 @@ export default function TicketsDetails() {
         <div className="prose lg:prose-lg mx-auto">
           <header>
             <p>
-              The ticket portal for the {new Date().getFullYear()} Terlingua
-              Chili Cook Off is{' '}
-              <span className="text-primary font-bold">closed</span>. You can
-              still purchase your tickets at the front gate when you arrive.
+              The 2024 Ticket portal has not opened yet. We hope to open it in
+              May.{' '}
+              <span className="text-primary font-bold">
+                If you do not buy online, you can buy with cash at the gate.
+              </span>
             </p>
-            <p>November 1st - 4th, {new Date().getFullYear()}</p>
-            <p>
-              Tickets are $<span className="text-primary font-bold">53</span>
-              /person
-            </p>
+            <p>Oct 30th - Nov 2nd, {new Date().getFullYear()}</p>
           </header>
 
           <section>

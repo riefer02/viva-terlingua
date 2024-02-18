@@ -73,10 +73,10 @@ export const ticketDetails = [
   <>
     {' '}
     <span>
-      Live music for four nights straight with ten
       <Link to="/music" className="text-primary ml-1 inline">
-        bands
-      </Link>
+        Live music
+      </Link>{' '}
+      for four nights straight.
     </span>
   </>,
   "Interact with over forty unique vendors from across the nation and meet Texas' finest authors and artists.",
