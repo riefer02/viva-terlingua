@@ -36,7 +36,7 @@ export default function Marquee({ marquee }) {
 
         <div className=" bottom-0 lg:bottom-4 flex items-center justify-center w-full">
           <div className=" bg-gray-light-1 border-t-2 border-b-2 border-secondary py-4 xl:rounded-b-lg flex flex-col gap-2 w-full min-h-[70px] lg:min-h-[80px] shadow-lg mx-auto text-gray-dark justify-center items-center">
-            <h1 className="text-3xl md:text-3xl lg:text-4xl max-w-sm sm:max-w-none lg:max-w-3xl leading-normal">
+            <h1 className="text-3xl md:text-3xl lg:text-4xl max-w-sm sm:max-w-none lg:max-w-3xl leading-normal lg:leading-[3rem]">
               {marquee.title}
             </h1>
             {activeSub && (
