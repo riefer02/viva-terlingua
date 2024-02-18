@@ -3,7 +3,7 @@ import React from 'react';
 export default function Itinerary({ year, itinerary = [] }) {
   return (
     <div className="bg-tertiary-light p-4 rounded-lg shadow max-w-sm sm:max-w-3xl mx-auto">
-      <h2 className="text-xl md:text-2xl font-bold my-4">
+      <h2 className="text-xl md:text-2xl lg:text-3xl font-bold my-4 text-center">
         {year} Music Lineup
       </h2>
       {itinerary?.length > 0 ? (
