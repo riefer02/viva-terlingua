@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ticketDetails } from '../content/tickets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import useHasMounted from '../utils/hooks/useHasMounted';
 
 export default function TicketsDetails() {
+  const hasMounted = useHasMounted();
+  if (!hasMounted) {
+    return null;
+  }
   const [currentYear, setCurrentYear] = useState('');
 
   useEffect(() => {

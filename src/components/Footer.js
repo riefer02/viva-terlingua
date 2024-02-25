@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import useHasMounted from '../utils/hooks/useHasMounted';
 
 export default function Footer() {
+  const hasMounted = useHasMounted();
+  if (!hasMounted) {
+    return null;
+  }
   const [currentYear, setCurrentYear] = useState('');
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());

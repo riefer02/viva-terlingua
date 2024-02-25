@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Sponsors from 'components/Sponsors';
+import useHasMounted from '../utils/hooks/useHasMounted';
 
 export default function Marquee({ marquee }) {
+  const hasMounted = useHasMounted();
+  if (!hasMounted) {
+    return null;
+  }
   const image = getImage(marquee.marqueeImage?.localFile?.childImageSharp);
   const activeSub = marquee.subhead ? true : false;
   const [currentYear, setCurrentYear] = useState('');
