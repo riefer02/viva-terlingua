@@ -12,6 +12,7 @@ import Spacer from 'components/Spacer';
 import CardCarousel from '../components/CardCarousel';
 import SectionTitle from '../components/SectionTitle';
 // import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
+import ClientOnly from '../components/ClientOnly';
 
 const IndexPage = ({ data }) => {
   const {
@@ -47,7 +48,9 @@ const IndexPage = ({ data }) => {
           'international',
         ]}
       />
-      <Marquee marquee={marqueeData} />
+      <ClientOnly>
+        <Marquee marquee={marqueeData} />
+      </ClientOnly>
       {/* <OfficialCookOffPoster className="lg:hidden" /> */}
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
       <Spacer />
