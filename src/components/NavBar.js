@@ -139,10 +139,29 @@ export default function NavBar() {
                 </h3>
                 <div className="flex flex-col gap-2">
                   {menuItems[category].items.map((item, index) => {
+                    const isExternalLink =
+                      category === 'Local Attractions' ||
+                      category === 'Sponsors';
+
                     const path =
                       category === 'Blogs'
                         ? `/blog/${slugify(item.title)}`
                         : item.slug || item.website || item.url;
+
+                    if (isExternalLink) {
+                      return (
+                        <a
+                          href={path}
+                          key={index}
+                          className="font-primary block cursor-pointer"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="px-0 line-clamp-1">{item.name}</span>
+                        </a>
+                      );
+                    }
+
                     return (
                       <Link
                         key={index}

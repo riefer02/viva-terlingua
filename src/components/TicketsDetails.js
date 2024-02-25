@@ -1,6 +1,7 @@
 import React from 'react';
 import { ticketDetails } from '../content/tickets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { CURRENT_YEAR } from '../constants';
 
 export default function TicketsDetails() {
   return (
@@ -15,7 +16,7 @@ export default function TicketsDetails() {
                 If you do not buy online, you can buy with cash at the gate.
               </span>
             </p>
-            <p>Oct 30th - Nov 2nd, {new Date().getFullYear()}</p>
+            <p>Oct 30th - Nov 2nd, {CURRENT_YEAR}</p>
           </header>
 
           <section>
