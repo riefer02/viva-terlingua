@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState('');
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   const linkStyles =
     'text-gray-light-1 hover:text-gray-dark transition ease-linear';
 
@@ -14,12 +19,13 @@ export default function Footer() {
             abowlofred@gmail.com
           </a>
         </div>
-        <div>&copy; {new Date().getFullYear()}, Viva Terlingua!</div>
+        <div>&copy; {currentYear}, Viva Terlingua!</div>
         <div>
           Website by:{' '}
           <a
             href="https://twitter.com/riefer02"
             target="_blank"
+            rel="noopener noreferrer"
             className={linkStyles}
           >
             Andrew Riefenstahl @riefer02

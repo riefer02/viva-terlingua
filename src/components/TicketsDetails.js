@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ticketDetails } from '../content/tickets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function TicketsDetails() {
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <article className="bg-tertiary-light p-4 lg:p-4 lg:rounded-lg">
       <section className="container mx-auto p-2 px-4 md:p-4 bg-gray-light-1 shadow-md rounded-lg">
@@ -15,7 +21,7 @@ export default function TicketsDetails() {
                 If you do not buy online, you can buy with cash at the gate.
               </span>
             </p>
-            <p>Oct 30th - Nov 2nd, {new Date().getFullYear()}</p>
+            <p>Oct 30th - Nov 2nd, {currentYear}</p>
           </header>
 
           <section>
