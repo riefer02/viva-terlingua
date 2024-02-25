@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Sponsors from 'components/Sponsors';
+import { CURRENT_YEAR } from '../constants';
 
 export default function Marquee({ marquee }) {
   const image = getImage(marquee.marqueeImage?.localFile.childImageSharp);
@@ -58,7 +59,7 @@ export default function Marquee({ marquee }) {
 
         <div className="bg-primary-light -skew-x-12 text-white absolute bottom-[-40px] lg:bottom-4 md:right-4 lg:right-8 p-2 px-4 transform-skew hidden md:block">
           <div className="skew-x-12 text-sm">
-            Oct 30th - Nov 2nd, {new Date().getFullYear()}
+            Oct 30th - Nov 2nd, {CURRENT_YEAR}
           </div>
         </div>
       </div>

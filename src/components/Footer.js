@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { CURRENT_YEAR } from '../constants';
 
 export default function Footer() {
   const linkStyles =
@@ -14,7 +15,7 @@ export default function Footer() {
             abowlofred@gmail.com
           </a>
         </div>
-        <div>&copy; {new Date().getFullYear()}, Viva Terlingua!</div>
+        <div>&copy; {CURRENT_YEAR}, Viva Terlingua!</div>
         <div>
           Website by:{' '}
           <a
