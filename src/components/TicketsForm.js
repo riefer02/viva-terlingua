@@ -185,9 +185,8 @@ export default function TicketsForm() {
             <button
               className="mt-4 w-full py-2 text-white bg-primary hover:bg-secondary focus:outline-none rounded-lg transition-opacity opacity-70 disabled:opacity-50"
               type="submit"
-              disabled
             >
-              Online Sales Closed
+              Review Submission
             </button>
             <p className="text-xs text-gray-dark">
               *All information is handled through

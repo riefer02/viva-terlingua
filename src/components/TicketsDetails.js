@@ -9,13 +9,7 @@ export default function TicketsDetails() {
       <section className="container mx-auto p-2 px-4 md:p-4 bg-gray-light-1 shadow-md rounded-lg">
         <div className="prose lg:prose-lg mx-auto">
           <header>
-            <p>
-              The 2024 Ticket portal has not opened yet. We hope to open it in
-              May.{' '}
-              <span className="text-primary font-bold">
-                If you do not buy online, you can buy with cash at the gate.
-              </span>
-            </p>
+            <p>The 2024 Ticket portal is now open!</p>
             <p>Oct 30th - Nov 2nd, {CURRENT_YEAR}</p>
           </header>
 

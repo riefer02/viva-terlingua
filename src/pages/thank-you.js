@@ -28,6 +28,7 @@ const ThankYouPage = ({ data }) => {
       </div>
       <Spacer />
       <QuickNav />
+      <div className="py-8"></div>
       <PanelImage image={getImage(panelImage)} />
     </Layout>
   );

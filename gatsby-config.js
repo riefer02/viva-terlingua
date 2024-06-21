@@ -19,7 +19,7 @@ module.exports = {
   },
   trailingSlash: `never`,
   flags: {
-    DEV_SSR: false,
+    DEV_SSR: true,
   },
   plugins: [
     'gatsby-plugin-resolve-src',
