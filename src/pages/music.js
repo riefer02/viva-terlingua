@@ -6,38 +6,37 @@ import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
 import CardGallery from 'components/CardGallery';
 import PanelImage from 'components/PanelImage';
-import Itinerary from 'components/Itinerary';
 import Spacer from 'components/Spacer';
 
 const itinerary = [
   {
-    date: 'Wednesday, November 1st',
+    date: 'Wednesday, October 30',
     events: [
-      { time: '6:30pm', event: 'The Moonshiners' },
-      { time: '8:15pm', event: 'Thomas Michael Riley' },
-      { time: '10:00pm', event: 'Sunny Sweeney' },
+      { time: '7:00-8:00', event: 'The Moonshiners' },
+      { time: '8:30-10:00', event: 'The Butch Hancock Band' },
+      { time: '10:30-12:00', event: 'James McMurtry' },
     ],
   },
   {
-    date: 'Thursday, November 2nd',
+    date: 'Thursday, October 31',
     events: [
-      { time: '6:30pm', event: 'The Scott Walker Band' },
-      { time: '8:15pm', event: 'Ellis Bullard' },
-      { time: '10:00pm', event: 'Gary P. Nunn' },
+      { time: '7:00-8:15', event: 'Scott Walker Band' },
+      { time: '8:45-10:00', event: 'Thomas Michael Riley' },
+      { time: '10:30-12:00', event: 'Gary P. Nunn' },
     ],
   },
   {
-    date: 'Friday, November 3rd',
+    date: 'Friday, November 1',
     events: [
-      { time: '7:30pm', event: 'Nathan Colt Young' },
-      { time: '10:00pm', event: 'Mike and the Moonpies' },
+      { time: '8:00-9:30', event: 'Mark David Manders' },
+      { time: '10:00-close', event: 'Kaitlin Butts' },
     ],
   },
   {
-    date: 'Saturday, November 4th',
+    date: 'Saturday, November 2',
     events: [
-      { time: '7:30pm', event: 'Nik Parr and the Selfless Lovers' },
-      { time: '10:00pm', event: 'Los Pinche Gringos' },
+      { time: '8:00-9:30', event: 'Summer Dean' },
+      { time: '10:00-close', event: 'Los Pinche Gringos' },
     ],
   },
 ];
@@ -58,9 +57,43 @@ const MusicPage = ({ data }) => {
       />
       <Marquee marquee={marqueeData} />
       <Spacer />
-      <Itinerary year={2024} />
+      <div className="bg-tertiary-light p-4 rounded-lg shadow max-w-sm sm:max-w-3xl mx-auto">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold my-4 text-center">
+          2024 Music Lineup
+        </h2>
+        {itinerary?.length > 0 ? (
+          <ul className="md:grid sm:grid-cols-2 gap-6 md:gap-8">
+            {itinerary.map((day, index) => (
+              <li key={index} className="md:col-span-1">
+                <h3 className="font-bold text-lg md:text-xl my-2 border-b border-primary-light">
+                  {day.date}
+                </h3>
+                <ul className="space-y-2">
+                  {day.events.map((event, index) => (
+                    <li
+                      key={index}
+                      className="flex justify-between items-center bg-gray-light-1 py-4 px-3 rounded-md shadow"
+                    >
+                      <span className="font-medium text-sm md:text-md">
+                        {event.time}
+                      </span>
+                      <span className="font-light text-sm md:text-md">
+                        {event.event}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-center text-lg font-light">
+            Lineup for 2024 to be determined.
+          </p>
+        )}
+      </div>
       <Spacer />
-      <CardGallery items={allStrapiMusician.edges} />
+      {/* <CardGallery items={allStrapiMusician.edges} /> */}
       <Spacer />
       <PanelImage image={panel} />
     </Layout>
