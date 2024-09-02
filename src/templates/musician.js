@@ -16,7 +16,7 @@ const MusicianTemplate = ({ data }) => {
       <Seo
         title={artist.name}
         keywords={[`${artist.name}`, `terlingua`, `chili`, `cook`, 'off']}
-        description={artist.meta.description}
+        description={artist?.meta?.description || artist.description}
       />
       <Marquee marquee={marqueeData} />
       <Spacer />
