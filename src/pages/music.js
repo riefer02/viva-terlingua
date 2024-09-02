@@ -93,7 +93,7 @@ const MusicPage = ({ data }) => {
         )}
       </div>
       <Spacer />
-      {/* <CardGallery items={allStrapiMusician.edges} /> */}
+      <CardGallery items={allStrapiMusician.edges} />
       <Spacer />
       <PanelImage image={panel} />
     </Layout>
@@ -132,7 +132,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allStrapiMusician(sort: { order: ASC }, filter: { year: { eq: 2023 } }) {
+    allStrapiMusician(sort: { order: ASC }, filter: { year: { eq: 2024 } }) {
       edges {
         node {
           name
