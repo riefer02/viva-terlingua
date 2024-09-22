@@ -134,6 +134,7 @@ export const pageQuery = graphql`
     sponsorLogos: allStrapiSponsor {
       edges {
         node {
+          website
           logo {
             localFile {
               childImageSharp {
