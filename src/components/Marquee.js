@@ -5,12 +5,13 @@ import Sponsors from 'components/Sponsors';
 import { CURRENT_YEAR } from '../constants';
 
 export default function Marquee({ marquee }) {
-  const image = getImage(marquee.marqueeImage?.localFile.childImageSharp);
+  const image = getImage(marquee.marqueeImage?.localFile?.childImageSharp);
   const activeSub = marquee.subhead ? true : false;
 
   const data = useStaticQuery(graphql`
     query LiftmasterLogoQuery {
       strapiSponsor(name: { eq: "Liftmaster" }) {
+        website
         logo {
           localFile {
             childImageSharp {
@@ -22,17 +23,24 @@ export default function Marquee({ marquee }) {
     }
   `);
 
+  const liftmasterImage = getImage(
+    data.strapiSponsor?.logo?.localFile?.childImageSharp
+  );
+  const liftmasterWebsite = data.strapiSponsor?.website;
+
   return (
     <div className="relative mx-auto max-w-7xl overflow-hidden text-center">
       <div className="flex flex-col">
         <div className="top-0 left-0 overflow-hidden w-full max-h-[356px]">
           <Sponsors />
-          <GatsbyImage
-            image={image}
-            alt="Fun exciting scene from Terlingua"
-            placeholder="blurred"
-            className="w-full h-full"
-          />
+          {image && (
+            <GatsbyImage
+              image={image}
+              alt="Fun exciting scene from Terlingua"
+              placeholder="blurred"
+              className="w-full h-full"
+            />
+          )}
         </div>
 
         <div className=" bottom-0 lg:bottom-4 flex items-center justify-center w-full">
@@ -47,14 +55,31 @@ export default function Marquee({ marquee }) {
         </div>
 
         <div className="hidden md:block absolute bottom-[-40px] lg:bottom-4 left-8 w-[160px]">
-          <GatsbyImage
-            image={getImage(
-              data.strapiSponsor?.logo?.localFile?.childImageSharp
-            )}
-            alt="Liftmasters Logo"
-            placeholder="blurred"
-            className="h-full w-full"
-          />
+          {liftmasterImage && (
+            <>
+              {liftmasterWebsite ? (
+                <a
+                  href={liftmasterWebsite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GatsbyImage
+                    image={liftmasterImage}
+                    alt="Liftmasters Logo"
+                    placeholder="blurred"
+                    className="h-full w-full"
+                  />
+                </a>
+              ) : (
+                <GatsbyImage
+                  image={liftmasterImage}
+                  alt="Liftmasters Logo"
+                  placeholder="blurred"
+                  className="h-full w-full"
+                />
+              )}
+            </>
+          )}
         </div>
 
         <div className="bg-primary-light -skew-x-12 text-white absolute bottom-[-40px] lg:bottom-4 md:right-4 lg:right-8 p-2 px-4 transform-skew hidden md:block">
