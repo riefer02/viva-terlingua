@@ -55,7 +55,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby clean && gatsby build --log-pages",
-    "develop": "gatsby develop",
+    "dev": "gatsby clean && gatsby develop",
     "serve": "gatsby serve",
     "debug": "netlify dev --inspect"
   },

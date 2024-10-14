@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from 'components/Layout';
 import Seo from 'components/SEO';
 import Marquee from 'components/Marquee';
@@ -12,9 +12,12 @@ import Spacer from 'components/Spacer';
 import CardCarousel from '../components/CardCarousel';
 import SectionTitle from '../components/SectionTitle';
 // import OfficialCookOffPoster from '../components/OfficialCookOffPoster';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../utils/fontawesome';
 
 const IndexPage = ({ data }) => {
   const {
+    scheduleOfEvents,
     allStrapiBlog,
     strapiHomePage: {
       title,
@@ -50,6 +53,23 @@ const IndexPage = ({ data }) => {
       <Marquee marquee={marqueeData} />
       {/* <OfficialCookOffPoster className="lg:hidden" /> */}
       {/* <OfficialCookOffPoster className="hidden lg:block" /> */}
+      <div className="flex pt-8 items-center justify-center">
+        <div className="-skew-x-12 inline-block px-8 py-1 relative skew-x-10 rounded-lg shadow-md bg-tertiary-light mb-8">
+          <a
+            href={scheduleOfEvents?.file?.localFile?.publicURL}
+            className="skew-x-12 flex justify-center items-center gap-4 font-primary p-2 text-gray-800 drop-shadow-lg capitalize lg:text-2xl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2024 Official Schedule of Events
+            <FontAwesomeIcon
+              className="text-xl"
+              icon="eye"
+              title="View"
+            ></FontAwesomeIcon>
+          </a>
+        </div>
+      </div>
       <Spacer />
       <Feature items={featured.featuresList} />
       <Spacer />
@@ -72,6 +92,17 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query HomePageQuery {
+    scheduleOfEvents: strapiResource(
+      name: { eq: "2024 Terlingua Cook Off Schedule of Events" }
+    ) {
+      id
+      name
+      file {
+        localFile {
+          publicURL
+        }
+      }
+    }
     strapiHomePage {
       id
       title
