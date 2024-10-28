@@ -185,6 +185,7 @@ export default function TicketsForm() {
             <button
               className="mt-4 w-full py-2 text-white bg-primary hover:bg-secondary focus:outline-none rounded-lg transition-opacity opacity-70 disabled:opacity-50"
               type="submit"
+              disabled
             >
               Review Submission
             </button>

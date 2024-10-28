@@ -9,7 +9,10 @@ export default function TicketsDetails() {
       <section className="container mx-auto p-2 px-4 md:p-4 bg-gray-light-1 shadow-md rounded-lg">
         <div className="prose lg:prose-lg mx-auto">
           <header className="-mb-6">
-            <p>The 2024 Ticket portal is now open!</p>
+            <p>
+              The 2024 Ticket portal is now closed! Don't worry you can still
+              purchase tickets at the front gate with cash.
+            </p>
             <p>Oct 30th - Nov 2nd, {CURRENT_YEAR}</p>
             <p>
               Price: <span className="text-primary">$53</span> per Chilihead!
